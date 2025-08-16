@@ -49,28 +49,44 @@ flowchart LR
 
 ## 🌉 EndOFDayStream (`modEOD.EndOFDayStream`) {#EndOFDayStream}
 
-- **Logging and Setup**
-    **EOLog (`modEOD.EOLog`)**
-    ```vb
-    EOLog "========================================================="
-    EOLog "End of Day - Start"
-    EOLog "========================================================="
-    ```
-    - Logs the start of the EOD process.
-        ```vb
-        EOLog "========================================================="
-        EOLog "End of Day - Start"
-        EOLog "========================================================="
-        ```
+#### 📝Logging and Setup (`modEOD.EOLog`) {#EOLog}
 
-    - Loads default configuration values (`gstrMailDir`, `gstrNetworkDatabase`) if missing.
-        
-        ```vb
-        modKMDS.LoadDefaults
-        ```
-    - Logs the mail directory and network database paths.
+  - Loads default settings if `gstrMailDir` is empty.
+      ```vb
+      If gstrMailDir = "" Then LoadDefaults
+      ```
+      The **`modKMDS.LoadDefaults`** function initializes global variables and system settings for the application.
+      ```vb
+      rstemp.Open "SysFile", CurrentProject.Connection, adOpenKeyset, adLockOptimistic
+      gstrMailDir = !NetworkMailDir
+      ```
+  - Builds a folder path for the log file using `gstrMailDir` and the current date (year/month/day).
+  - Opens (or creates) the log file `EOLog.Txt` in append mode.
+      ```vb
+      c:\KMDS\reports\2025\08\01\EOLog.Txt
+      ```
+  - Logs the start of the EOD process.
+      ```vb
+      EOLog "========================================================="
+      EOLog "End of Day - Start"
+      EOLog "========================================================="
+      ```
+
+  - Loads default configuration values (`gstrMailDir`, `gstrNetworkDatabase`) if missing.
+      
+      ```vb
+      modKMDS.LoadDefaults
+      ```
+  - Logs the mail directory and network database paths.
 
 
+```mermaid
+flowchart TD
+    Start --> EOLog[Create EOLog.txt File]
+        click EOLog "#EOLog" "Go to EOLog"
+    EOLog --> Next
+
+```
 
 
 
