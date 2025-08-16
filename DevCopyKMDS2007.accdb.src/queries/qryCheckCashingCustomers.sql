@@ -1,0 +1,20 @@
+﻿SELECT
+  CheckCashing.ID,
+  CheckCashing.FirstName,
+  CheckCashing.LastName,
+  CheckCashing.Address,
+  CheckCashing.City,
+  CheckCashing.State,
+  CheckCashing.Zip,
+  CheckCashing.Address2,
+  CheckCashing.BankAccount,
+  CheckCashing.CheckCode,
+  CheckCashing.BankName,
+  CheckCashing.DriverLState,
+  CheckCashing.DriverLicense,
+  CheckCashing.TelephoneNumbr,
+  CheckCashing.CheckGuarNum,
+  CheckCashing.CheckCashLimt,
+  CheckCashing.Dob
+FROM
+  CheckCashing;

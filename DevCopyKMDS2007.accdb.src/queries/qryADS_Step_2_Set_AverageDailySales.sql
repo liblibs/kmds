@@ -1,0 +1,5 @@
+﻿UPDATE
+  Item
+  INNER JOIN qryADS_ItemMovementWeightedByVendorADS ON Item.ID = qryADS_ItemMovementWeightedByVendorADS.Code
+SET
+  Item.AverageDailySales = qryADS_ItemMovementWeightedByVendorADS.WADSCurrMM + qryADS_ItemMovementWeightedByVendorADS.WADSJan + qryADS_ItemMovementWeightedByVendorADS.WADSFeb + qryADS_ItemMovementWeightedByVendorADS.WADSMar + qryADS_ItemMovementWeightedByVendorADS.WADSApr + qryADS_ItemMovementWeightedByVendorADS.WADSMay + qryADS_ItemMovementWeightedByVendorADS.WADSJun + qryADS_ItemMovementWeightedByVendorADS.WADSJul + qryADS_ItemMovementWeightedByVendorADS.WADSAug + qryADS_ItemMovementWeightedByVendorADS.WADSSep + qryADS_ItemMovementWeightedByVendorADS.WADSOct + qryADS_ItemMovementWeightedByVendorADS.WADSNov + qryADS_ItemMovementWeightedByVendorADS.WADSDec;

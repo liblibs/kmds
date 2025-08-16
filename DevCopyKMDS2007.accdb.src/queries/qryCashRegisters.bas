@@ -1,0 +1,120 @@
+﻿Operation =1
+Option =0
+Begin InputTables
+    Name ="CashSys"
+    Name ="Sysfile"
+End
+Begin OutputColumns
+    Expression ="CashSys.ID"
+    Expression ="CashSys.ComputerName"
+    Expression ="CashSys.Description"
+    Expression ="Sysfile.Cr1Installed"
+    Expression ="Sysfile.Cr2Installed"
+    Expression ="Sysfile.Cr3Installed"
+    Expression ="Sysfile.Cr4Installed"
+    Expression ="Sysfile.Cr5Installed"
+    Expression ="Sysfile.Cr1CheckOut"
+    Expression ="Sysfile.Cr2CheckOut"
+    Expression ="Sysfile.Cr3CheckOut"
+    Expression ="Sysfile.Cr4CheckOut"
+    Expression ="Sysfile.Cr5CheckOut"
+End
+Begin OrderBy
+    Expression ="CashSys.ID"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+dbBoolean "FilterOnLoad" ="0"
+dbBoolean "OrderByOnLoad" ="-1"
+dbBoolean "TotalsRow" ="0"
+Begin
+    Begin
+        dbText "Name" ="CashSys.ID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="CashSys.ComputerName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="CashSys.Description"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Sysfile.Cr1Installed"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Sysfile.Cr2Installed"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Sysfile.Cr3Installed"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Sysfile.Cr4Installed"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Sysfile.Cr4CheckOut"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Sysfile.Cr1CheckOut"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Sysfile.Cr2CheckOut"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Sysfile.Cr3CheckOut"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Sysfile.Cr5Installed"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Sysfile.Cr5CheckOut"
+        dbLong "AggregateType" ="-1"
+    End
+End
+Begin
+    State =0
+    Left =0
+    Top =0
+    Right =1225
+    Bottom =677
+    Left =-1
+    Top =-1
+    Right =1209
+    Bottom =173
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =23
+        Top =17
+        Right =207
+        Bottom =221
+        Top =0
+        Name ="CashSys"
+        Name =""
+    End
+    Begin
+        Left =221
+        Top =13
+        Right =370
+        Bottom =232
+        Top =0
+        Name ="Sysfile"
+        Name =""
+    End
+End

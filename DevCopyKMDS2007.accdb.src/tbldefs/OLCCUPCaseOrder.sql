@@ -1,0 +1,9 @@
+﻿CREATE TABLE [OLCCUPCaseOrder] (
+  [ID] AUTOINCREMENT CONSTRAINT [ID] PRIMARY KEY UNIQUE NOT NULL,
+  [Category] VARCHAR (255),
+  [ItemID] DOUBLE,
+  [Description] VARCHAR (255),
+  [Cost] DOUBLE,
+  [CaseCost] DOUBLE,
+  [UnitsPerCase] DOUBLE
+)

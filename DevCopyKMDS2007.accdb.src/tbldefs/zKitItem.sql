@@ -1,0 +1,9 @@
+﻿CREATE TABLE [zKitItem] (
+  [ID] AUTOINCREMENT CONSTRAINT [ID] UNIQUE CONSTRAINT [PrimaryKey] PRIMARY KEY UNIQUE NOT NULL,
+  [KitID] LONG,
+  [ItemID] VARCHAR,
+  [Price] CURRENCY,
+  [SetupDate] DATETIME,
+  [ChangeDate] DATETIME,
+  [upsize_ts] BINARY
+)

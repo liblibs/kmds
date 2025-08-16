@@ -1,0 +1,12 @@
+﻿{
+  "Info": {
+    "Class": "clsDbTableDef",
+    "Description": "Linked Table"
+  },
+  "Items": {
+    "Name": "vwItemsWithCurrentPricing",
+    "Connect": "ODBC;DSN=KMDSSQL7;Trusted_Connection=Yes;APP=Microsoft Office 2010;DATABASE=KMDSSQL7;",
+    "SourceTableName": "dbo.vwItemsWithCurrentPricing",
+    "Attributes": 536870912
+  }
+}

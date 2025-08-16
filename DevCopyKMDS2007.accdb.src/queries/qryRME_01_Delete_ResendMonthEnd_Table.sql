@@ -1,0 +1,3 @@
+﻿DELETE ResendMonthEnd.*
+FROM
+  ResendMonthEnd;

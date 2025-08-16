@@ -1,0 +1,3 @@
+﻿DELETE RecreateInventoryTransmit.*
+FROM
+  RecreateInventoryTransmit;

@@ -1,0 +1,110 @@
+﻿{
+  "Info": {
+    "Class": "clsDbImexSpec",
+    "Description": "Import/Export Specification from MSysIMEXSpecs"
+  },
+  "Items": {
+    "DateDelim": "/",
+    "DateFourDigitYear": true,
+    "DateLeadingZeros": false,
+    "DateOrder": 2,
+    "DecimalPoint": ".",
+    "FieldSeparator": ",",
+    "FileType": 437,
+    "SpecName": "SBLCImportSpecification",
+    "SpecType": 1,
+    "StartRow": 1,
+    "TextDelim": "\"",
+    "TimeDelim": ":",
+    "Columns": {
+      "CashierID": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 1,
+        "SkipColumn": false,
+        "Start": 42,
+        "Width": 10
+      },
+      "ChangeDate": {
+        "Attributes": 0,
+        "DataType": 8,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 166,
+        "Width": 20
+      },
+      "CountQuantity": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 124,
+        "Width": 14
+      },
+      "InputMethod": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 26,
+        "Width": 16
+      },
+      "ItemID": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 1,
+        "SkipColumn": false,
+        "Start": 19,
+        "Width": 7
+      },
+      "Location": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 52,
+        "Width": 21
+      },
+      "OnShelf": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 138,
+        "Width": 8
+      },
+      "OnShelfDate": {
+        "Attributes": 0,
+        "DataType": 8,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 186,
+        "Width": 20
+      },
+      "ScanBatchHeaderID": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 1,
+        "SkipColumn": false,
+        "Start": 1,
+        "Width": 18
+      },
+      "ScanCode": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 1,
+        "SkipColumn": false,
+        "Start": 73,
+        "Width": 51
+      },
+      "SetupDate": {
+        "Attributes": 0,
+        "DataType": 8,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 146,
+        "Width": 20
+      }
+    }
+  }
+}

@@ -1,0 +1,3 @@
+﻿DELETE pcChargeDebitsAndCredits.*
+FROM
+  pcChargeDebitsAndCredits;

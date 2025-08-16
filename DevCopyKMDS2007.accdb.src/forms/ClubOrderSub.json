@@ -1,0 +1,28 @@
+﻿{
+  "Info": {
+    "Class": "clsDbForm",
+    "Description": "ClubOrderSub Print Settings"
+  },
+  "Items": {
+    "Printer": {
+      "Orientation": "Portrait",
+      "PaperSize": "Letter"
+    },
+    "Margins": {
+      "LeftMargin": 0,
+      "TopMargin": 0,
+      "RightMargin": 0,
+      "BotMargin": 0,
+      "DataOnly": false,
+      "Width": 8.2083,
+      "Height": 0.5417,
+      "DefaultSize": true,
+      "Columns": 1,
+      "ColumnSpacing": 0.25,
+      "RowSpacing": 0,
+      "ItemLayout": "Horizontal Columns",
+      "FastPrint": 1,
+      "Datasheet": 1
+    }
+  }
+}

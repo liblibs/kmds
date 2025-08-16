@@ -1,0 +1,10 @@
+﻿{
+  "Info": {
+    "Class": "clsDbSavedSpec",
+    "Description": "Saved Import/Export Specification"
+  },
+  "Items": {
+    "Name": "Export-qryMetrologicOptimiserLookup",
+    "XML": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<ImportExportSpecification Path = \"K:\\Metrologic\\Out\\qryMetrologicOptimiserLookup.txt\" xmlns=\"urn:www.microsoft.com/office/access/imexspec\">\r\n    <ExportText TextFormat=\"Fixedwidth\" FirstRowHasNames=\"false\" FieldDelimiter=\"\" TextDelimiter=\"\" CodePage=\"1252\" AccessObject=\"qryMetrologicOptimiserLookup\" ObjectType=\"Query\" >\r\n               <DateFormat DateOrder=\"MDY\" DateDelimiter=\"/\" TimeDelimiter=\":\" FourYearDates=\"true\" DatesLeadingZeros=\"false\" />\r\n           <NumberFormat DecimalSymbol=\".\" />\r\n             <Columns PrimaryKey=\"{Auto}\">\r\n                 <Column Name=\"Col1\" FieldName=\"UPC\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Text\" Width=\"14\" />\r\n                 <Column Name=\"Col2\" FieldName=\"Descr\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Text\" Width=\"10\" />\r\n                 <Column Name=\"Col3\" FieldName=\"Item\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Text\" Width=\"6\" />\r\n                 <Column Name=\"Col4\" FieldName=\"PRI\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Text\" Width=\"6\" />\r\n                 <Column Name=\"Col5\" FieldName=\"Price\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Currency\" Width=\"1\" />\r\n             </Columns>\r\n        </ExportText>\r\n</ImportExportSpecification>"
+  }
+}

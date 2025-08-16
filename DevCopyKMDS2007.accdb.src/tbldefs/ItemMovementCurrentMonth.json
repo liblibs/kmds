@@ -1,0 +1,13 @@
+﻿{
+  "Info": {
+    "Class": "clsDbTableDef",
+    "Description": "Linked Table"
+  },
+  "Items": {
+    "Name": "ItemMovementCurrentMonth",
+    "Connect": "ODBC;DSN=KMDSSQL7;Trusted_Connection=Yes;APP=Microsoft Office 2010;DATABASE=KMDSSQL7;",
+    "SourceTableName": "dbo.ItemMovementCurrentMonth",
+    "Attributes": 536870912,
+    "PrimaryKey": "[Code], [Description]"
+  }
+}

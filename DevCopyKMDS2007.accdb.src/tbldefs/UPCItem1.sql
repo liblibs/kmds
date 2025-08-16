@@ -1,0 +1,7 @@
+﻿CREATE TABLE [UPCItem1] (
+  [ID] VARCHAR (25) CONSTRAINT [ID] UNIQUE CONSTRAINT [PrimaryKey] PRIMARY KEY UNIQUE NOT NULL,
+  [ItemID] LONG,
+  [SetupDate] DATETIME,
+  [ChangeDate] DATETIME,
+  [upsize_ts] BINARY
+)

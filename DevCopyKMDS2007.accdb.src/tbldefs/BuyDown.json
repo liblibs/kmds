@@ -1,0 +1,13 @@
+﻿{
+  "Info": {
+    "Class": "clsDbTableDef",
+    "Description": "Linked Table"
+  },
+  "Items": {
+    "Name": "BuyDown",
+    "Connect": "ODBC;DSN=KMDSSQL7;Trusted_Connection=Yes;APP=Microsoft Office 2010;DATABASE=KMDSSQL7;",
+    "SourceTableName": "dbo.BuyDown",
+    "Attributes": 536870912,
+    "PrimaryKey": "[ID]"
+  }
+}

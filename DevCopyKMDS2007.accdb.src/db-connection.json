@@ -1,0 +1,17 @@
+﻿{
+  "Info": {
+    "Class": "clsDbConnection",
+    "Description": "Database connections used within the project used to prime Access' internal cache during import."
+  },
+  "Items": {
+    "ODBC;DSN=KMDSSQL7;DATABASE=KMDSSQL7": {
+      "ODBC;DSN=KMDSSQL7;Trusted_Connection=Yes;APP=Microsoft Office 2010;DATABASE=KMDSSQL7;": "Agents"
+    },
+    "ODBC;DSN=KMDSSQL;DATABASE=KMDSSQL;UID=SA": {
+      "ODBC;DSN=KMDSSQL;UID=SA;PWD=;DATABASE=KMDSSQL": "sp_Assign_InvoiceNO"
+    },
+    "ODBC;DSN=KMDSSQL;DATABASE=KMDSSQL;UID=sa": {
+      "ODBC;DSN=KMDSSQL;UID=sa;PWD=;DATABASE=KMDSSQL": "sp_ShrinkFile"
+    }
+  }
+}

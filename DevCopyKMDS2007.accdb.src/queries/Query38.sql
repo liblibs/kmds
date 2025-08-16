@@ -1,0 +1,9 @@
+﻿SELECT
+  SubCategory.ID,
+  SubCategory.CategoryID,
+  SubCategory.Description,
+  SubCategory.TargetGP,
+  SubCategory.Setup,
+  SubCategory.Change
+FROM
+  SubCategory;

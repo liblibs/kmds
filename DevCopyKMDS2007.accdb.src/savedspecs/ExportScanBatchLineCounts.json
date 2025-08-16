@@ -1,0 +1,10 @@
+﻿{
+  "Info": {
+    "Class": "clsDbSavedSpec",
+    "Description": "Saved Import/Export Specification"
+  },
+  "Items": {
+    "Name": "ExportScanBatchLineCounts",
+    "XML": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<ImportExportSpecification Path = \"C:\\Users\\SKelly\\My Documents\\ScanBatchLineCounts.txt\" xmlns=\"urn:www.microsoft.com/office/access/imexspec\">\n\t<ExportTextPresentation  AccessObject=\"ScanBatchLineCounts\" ObjectType=\"Table\" AutoStart=\"false\" Encoding=\"WindowsDefault\" />\n</ImportExportSpecification>"
+  }
+}

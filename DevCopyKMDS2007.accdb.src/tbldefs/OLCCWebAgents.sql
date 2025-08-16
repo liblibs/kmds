@@ -1,0 +1,11 @@
+﻿CREATE TABLE [OLCCWebAgents] (
+  [ID] DOUBLE,
+  [Name] VARCHAR (255),
+  [Phone] VARCHAR (255),
+  [HOURS] VARCHAR (255),
+  [ADDRESS] VARCHAR (255),
+  [CITY] VARCHAR (255),
+  [ZIP] VARCHAR (255),
+  [Field8] DOUBLE,
+  [Field9] VARCHAR (255)
+)

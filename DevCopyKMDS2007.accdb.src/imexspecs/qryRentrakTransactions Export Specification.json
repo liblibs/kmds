@@ -1,0 +1,150 @@
+﻿{
+  "Info": {
+    "Class": "clsDbImexSpec",
+    "Description": "Import/Export Specification from MSysIMEXSpecs"
+  },
+  "Items": {
+    "DateDelim": "/",
+    "DateFourDigitYear": false,
+    "DateLeadingZeros": false,
+    "DateOrder": 2,
+    "DecimalPoint": ".",
+    "FieldSeparator": "|",
+    "FileType": 1252,
+    "SpecName": "qryRentrakTransactions Export Specification",
+    "SpecType": 0,
+    "StartRow": 0,
+    "TextDelim": null,
+    "TimeDelim": ":",
+    "Columns": {
+      "Add1": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 52,
+        "Width": 40
+      },
+      "Add2": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 92,
+        "Width": 40
+      },
+      "Add3": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 132,
+        "Width": 50
+      },
+      "AgentNumber": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 1,
+        "Width": 11
+      },
+      "CustomerID": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 476,
+        "Width": 11
+      },
+      "Description": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 498,
+        "Width": 50
+      },
+      "ExtendPrice": {
+        "Attributes": 0,
+        "DataType": 5,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 861,
+        "Width": 21
+      },
+      "InvoiceNumber": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 202,
+        "Width": 255
+      },
+      "Name": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 12,
+        "Width": 40
+      },
+      "Phone": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 182,
+        "Width": 20
+      },
+      "Quantity": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 850,
+        "Width": 11
+      },
+      "SetupDate": {
+        "Attributes": 0,
+        "DataType": 8,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 457,
+        "Width": 19
+      },
+      "SizeDesc": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 548,
+        "Width": 25
+      },
+      "SKU": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 487,
+        "Width": 11
+      },
+      "UnitPrice": {
+        "Attributes": 0,
+        "DataType": 7,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 828,
+        "Width": 22
+      },
+      "UPC": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 573,
+        "Width": 255
+      }
+    }
+  }
+}

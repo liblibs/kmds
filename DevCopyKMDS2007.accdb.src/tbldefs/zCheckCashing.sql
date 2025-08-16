@@ -1,0 +1,20 @@
+﻿CREATE TABLE [zCheckCashing] (
+  [ID] AUTOINCREMENT CONSTRAINT [ID] UNIQUE CONSTRAINT [PrimaryKey] PRIMARY KEY UNIQUE NOT NULL,
+  [FirstName] VARCHAR (25),
+  [LastName] VARCHAR (25),
+  [Address] VARCHAR (25),
+  [Address2] VARCHAR (25),
+  [City] VARCHAR (25),
+  [State] VARCHAR (2),
+  [Zip] VARCHAR (10),
+  [BankAccount] VARCHAR (50),
+  [CheckCode] VARCHAR (1),
+  [BankName] VARCHAR (25),
+  [DriverLState] VARCHAR (2),
+  [DriverLicense] VARCHAR (255),
+  [TelephoneNumbr] VARCHAR (15),
+  [CheckGuarNum] VARCHAR (25),
+  [CheckCashLimt] CURRENCY,
+  [Dob] DATETIME,
+  [upsize_ts] BINARY
+)

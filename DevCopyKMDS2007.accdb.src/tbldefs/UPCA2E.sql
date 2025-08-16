@@ -1,0 +1,5 @@
+﻿CREATE TABLE [UPCA2E] (
+  [ID] VARCHAR (25),
+  [id8] VARCHAR (255),
+  [lid] LONG
+)

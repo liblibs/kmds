@@ -1,0 +1,13 @@
+﻿{
+  "Info": {
+    "Class": "clsDbTableDef",
+    "Description": "Linked Table"
+  },
+  "Items": {
+    "Name": "InvoLine",
+    "Connect": "ODBC;DSN=KMDSSQL7;Trusted_Connection=Yes;APP=Microsoft Office 2010;DATABASE=KMDSSQL7;",
+    "SourceTableName": "dbo.InvoLine",
+    "Attributes": 536870912,
+    "PrimaryKey": "[InvoHeadID], [ID], [CashSysID], [SetupDate]"
+  }
+}

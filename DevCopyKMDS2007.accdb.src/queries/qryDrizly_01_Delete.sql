@@ -1,0 +1,3 @@
+﻿DELETE Drizly.*
+FROM
+  Drizly;

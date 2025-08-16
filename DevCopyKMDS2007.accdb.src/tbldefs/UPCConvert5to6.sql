@@ -1,0 +1,4 @@
+﻿CREATE TABLE [UPCConvert5to6] (
+  [Vendor6Digit] VARCHAR (6) CONSTRAINT [PrimaryKey] PRIMARY KEY UNIQUE NOT NULL,
+  [Vendor5Digit] VARCHAR (6)
+)

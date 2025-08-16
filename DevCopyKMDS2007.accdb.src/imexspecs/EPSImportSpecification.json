@@ -1,0 +1,94 @@
+﻿{
+  "Info": {
+    "Class": "clsDbImexSpec",
+    "Description": "Import/Export Specification from MSysIMEXSpecs"
+  },
+  "Items": {
+    "DateDelim": "/",
+    "DateFourDigitYear": true,
+    "DateLeadingZeros": false,
+    "DateOrder": 2,
+    "DecimalPoint": ".",
+    "FieldSeparator": ",",
+    "FileType": 437,
+    "SpecName": "EPSImportSpecification",
+    "SpecType": 2,
+    "StartRow": 0,
+    "TextDelim": "",
+    "TimeDelim": ":",
+    "Columns": {
+      "AgencyNumber": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 1,
+        "Width": 4
+      },
+      "Description": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 26,
+        "Width": 26
+      },
+      "OLCCAlpha": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 75,
+        "Width": 6
+      },
+      "OLCCItem": {
+        "Attributes": 0,
+        "DataType": 7,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 15,
+        "Width": 11
+      },
+      "Ordered": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 65,
+        "Width": 5
+      },
+      "OrderNumber": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 5,
+        "Width": 10
+      },
+      "Price": {
+        "Attributes": 0,
+        "DataType": 7,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 55,
+        "Width": 10
+      },
+      "Shipped": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 70,
+        "Width": 5
+      },
+      "UnitsPerCase": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 52,
+        "Width": 3
+      }
+    }
+  }
+}

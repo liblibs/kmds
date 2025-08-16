@@ -1,0 +1,62 @@
+﻿{
+  "Info": {
+    "Class": "clsDbImexSpec",
+    "Description": "Import/Export Specification from MSysIMEXSpecs"
+  },
+  "Items": {
+    "DateDelim": "/",
+    "DateFourDigitYear": true,
+    "DateLeadingZeros": false,
+    "DateOrder": 2,
+    "DecimalPoint": ".",
+    "FieldSeparator": ",",
+    "FileType": 1252,
+    "SpecName": "QryMetrologicOptimiserLookup Export Specification",
+    "SpecType": 2,
+    "StartRow": 0,
+    "TextDelim": "",
+    "TimeDelim": ":",
+    "Columns": {
+      "Descr": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 15,
+        "Width": 10
+      },
+      "Item": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 25,
+        "Width": 6
+      },
+      "PRI": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 31,
+        "Width": 6
+      },
+      "Price": {
+        "Attributes": 0,
+        "DataType": 5,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 37,
+        "Width": 1
+      },
+      "UPC": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 1,
+        "Width": 14
+      }
+    }
+  }
+}

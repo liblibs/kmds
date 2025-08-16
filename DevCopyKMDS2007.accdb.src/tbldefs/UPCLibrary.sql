@@ -1,0 +1,7 @@
+﻿CREATE TABLE [UPCLibrary] (
+  [UPCCode] VARCHAR (15) CONSTRAINT [PrimaryKey] PRIMARY KEY UNIQUE NOT NULL,
+  [Description] VARCHAR (25),
+  [SetupDate] DATETIME,
+  [ChangeDate] DATETIME,
+  [AutoID] AUTOINCREMENT
+)

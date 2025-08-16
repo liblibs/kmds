@@ -1,0 +1,27 @@
+﻿SELECT
+  Club.ID,
+  Club.Name,
+  Club.Contact,
+  Club.Address1,
+  Club.Address2,
+  Club.City,
+  Club.St,
+  Club.Zip,
+  Club.Phone1,
+  Club.Phone2,
+  Club.Phone3,
+  Club.MaintainParLevels,
+  Club.OrderGuideByCategory,
+  Club.EMail,
+  Club.Licensee,
+  Club.SetupDate,
+  Club.ChangeDate,
+  Club.OuncesColumn
+FROM
+  Club
+WHERE
+  (
+    (
+      (Club.EMail)<> ""
+    )
+  );

@@ -1,0 +1,10 @@
+﻿SELECT
+  SalesDepartment.ID,
+  SalesDepartment.SalesGroupID,
+  SalesDepartment.Description,
+  SalesDepartment.Discounts,
+  SalesDepartment.AllowClubDiscounts,
+  SalesDepartment.SetupDate,
+  SalesDepartment.ChangeDate
+FROM
+  SalesDepartment;

@@ -1,0 +1,17 @@
+﻿dbMemo "SQL" ="PARAMETERS parPriceGroupID Short, parPrice Currency, parQtyPack Short, parQtyPac"
+    "kPrice Currency, parCost Currency;\015\012UPDATE Item SET Item.Price = [parPrice"
+    "], Item.QtyPack = [parQtyPack], Item.QtyPackPrice = [parQtyPackPrice], Item.Chan"
+    "geDate = Now(), Item.Cost = [parCost]\015\012WHERE (((Item.PriceGroupID)=[parPri"
+    "ceGroupID]) AND ((Item.SalesDepartmentID)<>1));\015\012"
+dbMemo "Connect" =""
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "DefaultView" ="2"
+dbBoolean "FilterOnLoad" ="0"
+dbBoolean "OrderByOnLoad" ="-1"
+Begin
+End

@@ -1,0 +1,28 @@
+﻿{
+  "Info": {
+    "Class": "clsDbReport",
+    "Description": "Batch Scan Print Settings"
+  },
+  "Items": {
+    "Printer": {
+      "Orientation": "Portrait",
+      "PaperSize": "Letter"
+    },
+    "Margins": {
+      "LeftMargin": 0.5,
+      "TopMargin": 0.5,
+      "RightMargin": 0.5,
+      "BotMargin": 0.5,
+      "DataOnly": false,
+      "Width": 4,
+      "Height": 0.7076,
+      "DefaultSize": false,
+      "Columns": 2,
+      "ColumnSpacing": 0.125,
+      "RowSpacing": 0,
+      "ItemLayout": "Vertical Columns",
+      "FastPrint": 1,
+      "Datasheet": 1
+    }
+  }
+}

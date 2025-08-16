@@ -1,0 +1,225 @@
+08:43:30 =========================================================
+08:43:30 End of Day - Start
+08:43:30 =========================================================
+08:43:30 gstrMailDir = \\FS1\KMDS\
+08:43:30 gstrNetworkDatabase = C:\KMDS\KMDS2007.ACCDR
+08:43:30 Creating Folder : \\FS1\KMDS\Backup\2025\06\28\
+08:43:30 Dumping SQL Tables
+08:43:30 MakeSQLBackup
+08:43:36 Delete : C:\kmds\EOD File Transmit List.txt
+08:43:36 Delete : K:LastNiteFiles.BAT
+08:43:36 qryEOD001InventoryValueBegin -32764
+08:43:39 qryEOD010DeleteInvoHead5 5
+08:43:39 qryEOD011DeleteInvoLine5 5
+08:43:39 qryEOD021AppendCR1InvoLine 5
+08:43:39 qryEOD023AppendCR2InvoLine 5
+08:43:39 qryEOD025AppendCR3InvoLine 5
+08:43:39 qryEOD027AppendCR4InvoLine 5
+08:43:39 qryEOD027AppendCR5InvoLine 5
+08:43:40 qryEOD028UpdateInvo5LineCost 5
+08:43:40 qryEOD029UpdateInvo5LineCostByDptGP 5
+08:43:40 qryEOD029UpdateInvo5LineCostLiquorClub 5
+08:43:40 qryEOD029UpdateInvo5LineCostLiquorClubDiscount 5
+08:43:40 qryEOD029UpdateInvo5LineCostLiquorCounter 5
+08:43:40 qryEOD029UpdateInvo5LineCostTransfersToZero 5
+08:43:40 qryEOD030CashierAutodropCharges 5
+08:43:40 qryEOD030CashierAutodropChargesReverse 5
+08:43:40 qryEOD031CashierAutodropChecks 5
+08:43:40 qryEOD031CashierAutodropChecksReverse 5
+08:43:40 qryEOD033BottleDepositQtyAdjAtEOD 5
+08:43:40 qryEOD040SalesByDepartment -32764
+08:43:41 qryEOD040SalesByTenderByRegister -32764
+08:43:42 qryEOD041ChecksTenderedByCashier -32764
+08:43:42 qryEOD042ChargesTenderedByCashier -32764
+08:43:43 qryEOD043CashDropsAndLoans -32764
+08:43:43 qryEOD050SalesByAllCashiersByDepartment -32764
+08:43:44 qryEOD051CashiersProductivity -32764
+08:43:44 qryEOD052SalesReturnsByCashier -32764
+08:43:45 qryEOD053CancelledSalesByCashier -32764
+08:43:45 qryEOD054ReturnsCancelledSalesByCashier -32764
+08:43:46 qryEOD060ClubInvoices -32764
+08:43:46 qryEOD065ClubInvoicesDelete 5
+08:43:46 qryEOD100DeleteItemsSold 5
+08:43:46 qryEOD101AppendItemsSold 5
+08:43:46 qryEOD102UpdateItemsOnhand 5
+08:43:47 qryEOD103AppendShifts 5
+08:43:47 qryEOD104AppendInvo5Line 5
+08:43:48 qryEOD120RItemsSoldToday -32764
+08:43:49 qryEOD121RItemsSetupToday -32764
+08:43:49 qryEOD122RItemsWithNegativeOnhands -32764
+08:43:49 qryEOD123ROnhandChangesToday -32764
+08:43:50 qryEOD124ROpenAccounts -32764
+08:43:50 qryEOD125SalesByDepartmentByTender -32764
+08:43:50 qryEOD126ItemRestockList -32764
+08:43:51 qryEOD126ItemRestockListNOSubtotals -32764
+08:43:52 qryEOD127RFintech -32764
+08:43:52 qryEOD128RLiquorItemsNotScanned -32764
+08:43:52 qryEOD129RInvoicesWithCoupons -32764
+08:43:53 qryEOD200InventoryValueEnd -32764
+08:43:54 qryEOD900ItemZeroSoldToday 5
+08:43:55 qryEOD901SetSysfileCheckFlagTo0 5
+08:43:55 qryEOD902DeleteItemsSold 5
+08:43:55 qryEOD910CashierDropCountReset 5
+08:43:55 qryEOD921PurgeInvoline_1_Mark_With_Z 5
+08:44:00 qryEOD921PurgeInvoline_2_Delete_With_Z 5
+08:44:01 qryEOD921PurgeKMDSLog500Days 5
+08:44:01 qryEOD922SetItemSubCategoryIDTo0 5
+08:44:01 Moving :\\FS1\KMDS\Mail\CR1.MDB to \\FS1\KMDS\Backup\2025\06\28\
+08:44:01 Moving :\\FS1\KMDS\Mail\CR2.MDB to \\FS1\KMDS\Backup\2025\06\28\
+08:44:01 Moving :\\FS1\KMDS\Mail\CR3.MDB to \\FS1\KMDS\Backup\2025\06\28\
+08:44:01 Moving :\\FS1\KMDS\Mail\CR4.MDB to \\FS1\KMDS\Backup\2025\06\28\
+08:44:01 Moving :\\FS1\KMDS\Mail\CR5.MDB to \\FS1\KMDS\Backup\2025\06\28\
+08:44:01 Fintech = False
+08:44:01 Create Daily Transmit files
+08:44:02 Creating transmit file for inventory levels...
+08:44:02 Append Lottery Tickets Recon Info Begin
+08:44:02 Append Lottery Tickets Recon Info End
+08:44:02 Reindex Tables Begin
+08:44:05 Reindex Tables End
+08:44:05 Updating ItemMovement
+08:44:07 Updating ItemCost
+08:44:07 Updating Average Daily Sales and Assign DaysSupplyGroupIDs to Item Table...
+08:44:14 ... VerifyCurrentKMDSCustomer: True
+08:44:14 Sending OLCC Daily Transmit Files
+08:44:14    Sending KMDS Daily Transmit Files
+08:44:20 ...Complete Sending KMDS 
+08:44:21 ...Complete Sending OLCC Daily Transmit Files
+08:44:21 MailSQLBackup
+08:45:45 Backup Complete
+08:45:45 SkipCopying c:\kmds\backup\KMDSBACK.zip to \\FS1\kmds\backup\KMDSSQL.ZIP
+08:45:45 EODTextMessage
+08:45:45 qryEOSalesForEMail
+Error #94 Invalid use of Null : EOProcess
+08:45:45 EODeMail Recap
+
+
+
+08:45:45 EODeMailReports
+08:45:45 Make Online Backup Batch File
+08:45:45 Append UPCItems With ItemID
+08:45:45 DropBoxInstalled = False
+08:45:45 Getting OLCC ICE Item Files
+08:45:45 .... complete!
+08:45:45 =========================================================
+08:45:45 End of Day = Finished Success
+08:45:45 =========================================================
+09:56:16 =========================================================
+09:56:16 End of Day - Start
+09:56:16 =========================================================
+09:56:16 gstrMailDir = \\FS1\KMDS\
+09:56:16 gstrNetworkDatabase = C:\KMDS\KMDS2007.ACCDR
+09:56:17 Dumping SQL Tables
+09:56:17 MakeSQLBackup
+09:56:33 Delete : C:\kmds\EOD File Transmit List.txt
+09:56:34 Delete : K:LastNiteFiles.BAT
+09:56:34 qryEOD001InventoryValueBegin -32764
+09:56:39 qryEOD010DeleteInvoHead5 5
+09:56:39 qryEOD011DeleteInvoLine5 5
+09:56:39 qryEOD021AppendCR1InvoLine 5
+09:56:39 qryEOD023AppendCR2InvoLine 5
+09:56:39 qryEOD025AppendCR3InvoLine 5
+09:56:39 qryEOD027AppendCR4InvoLine 5
+09:56:39 qryEOD027AppendCR5InvoLine 5
+09:56:39 qryEOD028UpdateInvo5LineCost 5
+09:56:39 qryEOD029UpdateInvo5LineCostByDptGP 5
+09:56:39 qryEOD029UpdateInvo5LineCostLiquorClub 5
+09:56:39 qryEOD029UpdateInvo5LineCostLiquorClubDiscount 5
+09:56:39 qryEOD029UpdateInvo5LineCostLiquorCounter 5
+09:56:39 qryEOD029UpdateInvo5LineCostTransfersToZero 5
+09:56:39 qryEOD030CashierAutodropCharges 5
+09:56:39 qryEOD030CashierAutodropChargesReverse 5
+09:56:39 qryEOD031CashierAutodropChecks 5
+09:56:39 qryEOD031CashierAutodropChecksReverse 5
+09:56:39 qryEOD033BottleDepositQtyAdjAtEOD 5
+09:56:39 qryEOD040SalesByDepartment -32764
+09:56:40 qryEOD040SalesByTenderByRegister -32764
+09:56:41 qryEOD041ChecksTenderedByCashier -32764
+09:56:41 qryEOD042ChargesTenderedByCashier -32764
+09:56:41 qryEOD043CashDropsAndLoans -32764
+09:56:41 qryEOD050SalesByAllCashiersByDepartment -32764
+09:56:42 qryEOD051CashiersProductivity -32764
+09:56:42 qryEOD052SalesReturnsByCashier -32764
+09:56:42 qryEOD053CancelledSalesByCashier -32764
+09:56:43 qryEOD054ReturnsCancelledSalesByCashier -32764
+09:56:43 qryEOD060ClubInvoices -32764
+09:56:43 qryEOD065ClubInvoicesDelete 5
+09:56:43 qryEOD100DeleteItemsSold 5
+09:56:43 qryEOD101AppendItemsSold 5
+09:56:43 qryEOD102UpdateItemsOnhand 5
+09:56:43 qryEOD103AppendShifts 5
+09:56:43 qryEOD104AppendInvo5Line 5
+09:56:44 qryEOD120RItemsSoldToday -32764
+09:56:44 qryEOD121RItemsSetupToday -32764
+09:56:45 qryEOD122RItemsWithNegativeOnhands -32764
+09:56:45 qryEOD123ROnhandChangesToday -32764
+09:56:46 qryEOD124ROpenAccounts -32764
+09:56:46 qryEOD125SalesByDepartmentByTender -32764
+09:56:46 qryEOD126ItemRestockList -32764
+09:56:47 qryEOD126ItemRestockListNOSubtotals -32764
+09:56:48 qryEOD127RFintech -32764
+09:56:48 qryEOD128RLiquorItemsNotScanned -32764
+09:56:48 qryEOD129RInvoicesWithCoupons -32764
+09:56:49 qryEOD200InventoryValueEnd -32764
+09:56:50 qryEOD900ItemZeroSoldToday 5
+09:56:50 qryEOD901SetSysfileCheckFlagTo0 5
+09:56:50 qryEOD902DeleteItemsSold 5
+09:56:50 qryEOD910CashierDropCountReset 5
+09:56:50 qryEOD921PurgeInvoline_1_Mark_With_Z 5
+09:56:56 qryEOD921PurgeInvoline_2_Delete_With_Z 5
+09:56:56 qryEOD921PurgeKMDSLog500Days 5
+09:56:56 qryEOD922SetItemSubCategoryIDTo0 5
+09:56:56 Moving :\\FS1\KMDS\Mail\CR1.MDB to \\FS1\KMDS\Backup\2025\06\28\
+09:56:56 Moving :\\FS1\KMDS\Mail\CR2.MDB to \\FS1\KMDS\Backup\2025\06\28\
+09:56:56 Moving :\\FS1\KMDS\Mail\CR3.MDB to \\FS1\KMDS\Backup\2025\06\28\
+09:56:56 Moving :\\FS1\KMDS\Mail\CR4.MDB to \\FS1\KMDS\Backup\2025\06\28\
+09:56:56 Moving :\\FS1\KMDS\Mail\CR5.MDB to \\FS1\KMDS\Backup\2025\06\28\
+09:56:56 Fintech = False
+09:56:56 Create Daily Transmit files
+09:56:57 Creating transmit file for inventory levels...
+09:56:57 Append Lottery Tickets Recon Info Begin
+09:56:57 Append Lottery Tickets Recon Info End
+09:56:57 Reindex Tables Begin
+09:57:01 Reindex Tables End
+09:57:01 Updating ItemMovement
+09:57:03 Updating ItemCost
+09:57:03 Updating Average Daily Sales and Assign DaysSupplyGroupIDs to Item Table...
+09:57:11 ... VerifyCurrentKMDSCustomer: True
+09:57:11 Sending OLCC Daily Transmit Files
+09:57:11    Sending KMDS Daily Transmit Files
+09:57:16 ...Complete Sending KMDS 
+09:57:17 ...Complete Sending OLCC Daily Transmit Files
+09:57:17 MailSQLBackup
+09:58:51 Backup Complete
+09:58:51 SkipCopying c:\kmds\backup\KMDSBACK.zip to \\FS1\kmds\backup\KMDSSQL.ZIP
+09:58:51 EODTextMessage
+09:58:51 qryEOSalesForEMail
+Error #94 Invalid use of Null : EOProcess
+09:58:51 EODeMail Recap
+
+
+
+09:58:51 EODeMailReports
+09:58:51   \\fs1\kmds\Reports\EndOfDay\2025\06\28\qryEOD040SalesByDepartment DayEnd 2025-06-28 09-56-40.pdf
+09:58:56 EODeMail Recap
+
+
+
+09:58:56 Make Online Backup Batch File
+09:58:56 Append UPCItems With ItemID
+09:58:56 DropBoxInstalled = False
+09:58:56 Getting OLCC ICE Item Files
+09:58:56 .... complete!
+09:58:56 =========================================================
+09:58:56 End of Day = Finished Success
+09:58:56 =========================================================
+10:08:05 qryEOM050DeleteNewpriceNulls 5
+10:08:06 qryEOM099_Set_Cost_To_Price 5
+10:08:07 qryEOM100ApplyNewPricesReport -32764
+10:08:08 qryEOM101ApplyNewPricesUpdate 5
+10:08:10 qryEOM110SalePricesReport -32764
+10:08:10 qryEOM111SalePricesAppend 5
+10:08:10 qryEOM201_Set_Price_To_CurPrice 5
+10:08:10 qryEOM202MarkUpsAndDowns -32764
+10:08:11 qryEOM203_Set_Cost_To_Price 5
+10:08:12 qryEOM300WebPriceVariance -32764
+10:08:14 qryEOM301WebScanVariance -32764

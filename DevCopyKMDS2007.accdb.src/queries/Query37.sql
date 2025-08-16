@@ -1,0 +1,16 @@
+﻿SELECT
+  SalesDepartment.ID,
+  SalesDepartment.SalesGroupID,
+  SalesDepartment.Description,
+  SalesDepartment.Discounts,
+  SalesDepartment.NegativeOnhand,
+  SalesDepartment.AllowDiscounts,
+  SalesDepartment.IncludeInInventoryValueReports,
+  SalesDepartment.TargetGP,
+  SalesDepartment.AllowClubDiscounts,
+  SalesDepartment.CatchAllItemID,
+  SalesDepartment.MinimumAgeToBuy,
+  SalesDepartment.SetupDate,
+  SalesDepartment.ChangeDate
+FROM
+  SalesDepartment;

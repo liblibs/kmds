@@ -1,0 +1,19 @@
+﻿SELECT
+  CashSys.ID,
+  CashSys.ComputerName,
+  CashSys.Description,
+  Sysfile.Cr1Installed,
+  Sysfile.Cr2Installed,
+  Sysfile.Cr3Installed,
+  Sysfile.Cr4Installed,
+  Sysfile.Cr5Installed,
+  Sysfile.Cr1CheckOut,
+  Sysfile.Cr2CheckOut,
+  Sysfile.Cr3CheckOut,
+  Sysfile.Cr4CheckOut,
+  Sysfile.Cr5CheckOut
+FROM
+  CashSys,
+  Sysfile
+ORDER BY
+  CashSys.ID;

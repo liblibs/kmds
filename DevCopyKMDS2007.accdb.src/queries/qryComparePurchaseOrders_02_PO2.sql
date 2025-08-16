@@ -1,0 +1,5 @@
+﻿SELECT
+  qryPurchaseOrderCompare_2.ItemID,
+  qryPurchaseOrderCompare_2.QuantityShipped AS SumOfCountQuantity INTO CompareScanItemToPurchaseOrderScanCounts
+FROM
+  qryPurchaseOrderCompare_2;

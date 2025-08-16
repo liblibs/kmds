@@ -1,0 +1,3 @@
+﻿DELETE Newprice.*
+FROM
+  Newprice;

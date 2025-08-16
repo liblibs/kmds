@@ -1,0 +1,3 @@
+﻿DELETE ClubInvoiceForCSVExport.*
+FROM
+  ClubInvoiceForCSVExport;

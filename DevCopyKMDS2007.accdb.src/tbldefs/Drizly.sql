@@ -1,0 +1,20 @@
+﻿CREATE TABLE [Drizly] (
+  [StoreLocationId] VARCHAR (255),
+  [ProductID] LONG CONSTRAINT [PrimaryKey] PRIMARY KEY UNIQUE NOT NULL,
+  [Description] VARCHAR (255),
+  [RetailPrice] CURRENCY,
+  [PromoPrice] CURRENCY,
+  [QuantityOnHand] LONG,
+  [UPCCode] VARCHAR (255),
+  [AlternateUPCCode] VARCHAR (255),
+  [Size] VARCHAR (255),
+  [PackQty] LONG,
+  [PackRetailPrice] CURRENCY,
+  [PackPromoPrice] CURRENCY,
+  [Container] VARCHAR (255),
+  [Vintage] LONG,
+  [ItemStatus] VARCHAR (255),
+  [OtherInfo] VARCHAR (255),
+  [MiscInfo] VARCHAR (255),
+  [Deposit] CURRENCY
+)

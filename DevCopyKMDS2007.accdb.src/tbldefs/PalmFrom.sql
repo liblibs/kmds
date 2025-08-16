@@ -1,0 +1,13 @@
+﻿CREATE TABLE [PalmFrom] (
+  [Code] VARCHAR (255),
+  [Description] VARCHAR (50),
+  [UPCCode] VARCHAR (255),
+  [OnShelf] LONG,
+  [Physical] LONG,
+  [ItemID] LONG,
+  [FIELD7] VARCHAR (255),
+  [FIELD8] VARCHAR (255),
+  [FIELD9] VARCHAR (255),
+  [FIELD10] VARCHAR (255),
+  [FIELD11] VARCHAR (255)
+)

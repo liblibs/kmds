@@ -1,0 +1,4 @@
+﻿CREATE TABLE [ItemUPCID] (
+  [ItemID] VARCHAR,
+  [UPCID] VARCHAR (255)
+)

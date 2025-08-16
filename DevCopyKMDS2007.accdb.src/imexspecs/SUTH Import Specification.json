@@ -1,0 +1,126 @@
+﻿{
+  "Info": {
+    "Class": "clsDbImexSpec",
+    "Description": "Import/Export Specification from MSysIMEXSpecs"
+  },
+  "Items": {
+    "DateDelim": "-",
+    "DateFourDigitYear": true,
+    "DateLeadingZeros": false,
+    "DateOrder": 5,
+    "DecimalPoint": ".",
+    "FieldSeparator": "\u0001",
+    "FileType": 437,
+    "SpecName": "SUTH Import Specification",
+    "SpecType": 2,
+    "StartRow": 1,
+    "TextDelim": "\u0002",
+    "TimeDelim": ":",
+    "Columns": {
+      "APR": {
+        "Attributes": 0,
+        "DataType": 7,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 30,
+        "Width": 4
+      },
+      "AUG": {
+        "Attributes": 0,
+        "DataType": 7,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 46,
+        "Width": 4
+      },
+      "CODE": {
+        "Attributes": 0,
+        "DataType": 7,
+        "IndexType": 1,
+        "SkipColumn": false,
+        "Start": 1,
+        "Width": 5
+      },
+      "DEC": {
+        "Attributes": 0,
+        "DataType": 7,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 14,
+        "Width": 4
+      },
+      "FEB": {
+        "Attributes": 0,
+        "DataType": 7,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 22,
+        "Width": 4
+      },
+      "JAN": {
+        "Attributes": 0,
+        "DataType": 7,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 18,
+        "Width": 4
+      },
+      "JUL": {
+        "Attributes": 0,
+        "DataType": 7,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 42,
+        "Width": 4
+      },
+      "JUN": {
+        "Attributes": 0,
+        "DataType": 7,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 38,
+        "Width": 4
+      },
+      "MAR": {
+        "Attributes": 0,
+        "DataType": 7,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 26,
+        "Width": 4
+      },
+      "MAY": {
+        "Attributes": 0,
+        "DataType": 7,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 34,
+        "Width": 4
+      },
+      "NOV": {
+        "Attributes": 0,
+        "DataType": 7,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 10,
+        "Width": 4
+      },
+      "OCT": {
+        "Attributes": 0,
+        "DataType": 7,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 6,
+        "Width": 4
+      },
+      "SEP": {
+        "Attributes": 0,
+        "DataType": 7,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 50,
+        "Width": 4
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+﻿CREATE TABLE [zSettings] (
+  [ID] AUTOINCREMENT CONSTRAINT [ID] UNIQUE CONSTRAINT [PrimaryKey] PRIMARY KEY UNIQUE NOT NULL,
+  [KeyName] VARCHAR (50),
+  [Value] VARCHAR (50),
+  [Setup] DATETIME,
+  [Change] DATETIME,
+  [upsize_ts] BINARY
+)

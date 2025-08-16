@@ -1,0 +1,15 @@
+﻿dbMemo "SQL" ="PARAMETERS parClubID Long, parLineID Long;\015\012DELETE ClubOrderGuideTemp.*\015"
+    "\012FROM ClubOrderGuideTemp\015\012WHERE (((ClubOrderGuideTemp.ClubID)=[parClubI"
+    "D]) AND ((ClubOrderGuideTemp.LineID)=[parLineID]));\015\012"
+dbMemo "Connect" =""
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FilterOnLoad" ="0"
+dbBoolean "OrderByOnLoad" ="-1"
+Begin
+End

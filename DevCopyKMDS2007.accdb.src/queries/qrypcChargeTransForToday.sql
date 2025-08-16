@@ -1,0 +1,83 @@
+﻿SELECT
+  pcChargeTrans.Date AS Expr1,
+  pcChargeTrans.Number AS Expr2,
+  pcChargeTrans.Ticket AS Expr3,
+  pcChargeTrans.Date AS Expr4,
+  pcChargeTrans.Time AS Expr5,
+  pcChargeTrans.Station AS Expr6,
+  pcChargeTrans.Processor AS Expr7,
+  pcChargeTrans.TID AS Expr8,
+  pcChargeTrans.Card AS Expr9,
+  pcChargeTrans.Issuer AS Expr10,
+  pcChargeTrans.Member AS Expr11,
+  pcChargeTrans.ExpDate AS Expr12,
+  pcChargeTrans.Action AS Expr13,
+  pcChargeTrans.Manual AS Expr14,
+  pcChargeTrans.Amount AS Expr15,
+  pcChargeTrans.Ref AS Expr16,
+  pcChargeTrans.Zip AS Expr17,
+  pcChargeTrans.Street AS Expr18,
+  pcChargeTrans.Result AS Expr19,
+  pcChargeTrans.Auth AS Expr20,
+  pcChargeTrans.Result_Ref AS Expr21,
+  pcChargeTrans.Result_Add AS Expr22,
+  pcChargeTrans.[CID Number] AS Expr23,
+  pcChargeTrans.Response AS Expr24,
+  pcChargeTrans.[Tax Amount] AS Expr25,
+  pcChargeTrans.Post_Amount AS Expr26,
+  pcChargeTrans.Total_Auth AS Expr27,
+  pcChargeTrans.IND AS Expr28,
+  pcChargeTrans.TranID AS Expr29,
+  pcChargeTrans.ValCode AS Expr30,
+  pcChargeTrans.MSI AS Expr31,
+  pcChargeTrans.RET AS Expr32,
+  pcChargeTrans.PEM AS Expr33,
+  pcChargeTrans.Trans_Indicator AS Expr34,
+  pcChargeTrans.ReqACI AS Expr35,
+  pcChargeTrans.RetACI AS Expr36,
+  pcChargeTrans.RespCode AS Expr37,
+  pcChargeTrans.DownGrade AS Expr38,
+  pcChargeTrans.TransDate AS Expr39,
+  pcChargeTrans.TransTime AS Expr40,
+  pcChargeTrans.EncryptedCard AS Expr41,
+  pcChargeTrans.PeriodicPayment AS Expr42,
+  pcChargeTrans.BatchNumber AS Expr43,
+  pcChargeTrans.ItemNumber AS Expr44,
+  pcChargeTrans.[Business Date] AS Expr45,
+  pcChargeTrans.Gratuity AS Expr46,
+  pcChargeTrans.BType AS Expr47,
+  pcChargeTrans.ServerID AS Expr48,
+  pcChargeTrans.AuthNetworkID AS Expr49,
+  pcChargeTrans.AuthSource AS Expr50,
+  pcChargeTrans.FMReferenceNum AS Expr51,
+  pcChargeTrans.CheckInDate AS Expr52,
+  pcChargeTrans.CheckOutDate AS Expr53,
+  pcChargeTrans.RoomRateAmount AS Expr54,
+  pcChargeTrans.CVV2_Resp AS Expr55,
+  pcChargeTrans.Selected AS Expr56,
+  pcChargeTrans.Estimated_Gratuity AS Expr57,
+  pcChargeTrans.Commercial_Card AS Expr58,
+  pcChargeTrans.Offline AS Expr59,
+  pcChargeTrans.Status AS Expr60,
+  pcChargeTrans.TroutD AS Expr61,
+  pcChargeTrans.Comment AS Expr62,
+  pcChargeTrans.CardPresent AS Expr63,
+  pcChargeTrans.CardholderID AS Expr64,
+  pcChargeTrans.AccountDataSrc AS Expr65,
+  pcChargeTrans.ECommIndicator AS Expr66,
+  pcChargeTrans.Business_Type AS Expr67
+FROM
+  pcChargeTrans
+WHERE
+  (
+    (
+      ([pcChargeTrans].[Date]) Between Format(
+        Now(),
+        "mm/dd/yy"" 00"":""00"""
+      )
+      And Format(
+        Now(),
+        "mm/dd/yyyy"" 23"":""59"":""59"""
+      )
+    )
+  );

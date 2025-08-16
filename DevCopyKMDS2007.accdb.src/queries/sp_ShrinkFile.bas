@@ -1,0 +1,6 @@
+﻿dbMemo "SQL" ="sp_ShrinkIT\015\012"
+dbMemo "Connect" ="ODBC;DSN=KMDSSQL;UID=sa;PWD=;DATABASE=KMDSSQL"
+dbBoolean "ReturnsRecords" ="0"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "LogMessages" ="0"
+dbByte "Orientation" ="0"

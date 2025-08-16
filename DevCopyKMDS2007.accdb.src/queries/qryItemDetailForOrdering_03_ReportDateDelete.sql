@@ -1,0 +1,3 @@
+﻿DELETE OLASiItemDetailForOrderingReportDate.*
+FROM
+  OLASiItemDetailForOrderingReportDate;

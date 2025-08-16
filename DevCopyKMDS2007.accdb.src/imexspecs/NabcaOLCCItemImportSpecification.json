@@ -1,0 +1,94 @@
+﻿{
+  "Info": {
+    "Class": "clsDbImexSpec",
+    "Description": "Import/Export Specification from MSysIMEXSpecs"
+  },
+  "Items": {
+    "DateDelim": "-",
+    "DateFourDigitYear": true,
+    "DateLeadingZeros": false,
+    "DateOrder": 5,
+    "DecimalPoint": ".",
+    "FieldSeparator": ",",
+    "FileType": 437,
+    "SpecName": "NabcaOLCCItemImportSpecification",
+    "SpecType": 2,
+    "StartRow": 0,
+    "TextDelim": "",
+    "TimeDelim": ":",
+    "Columns": {
+      "Age": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 44,
+        "Width": 4
+      },
+      "Code": {
+        "Attributes": 0,
+        "DataType": 7,
+        "IndexType": 1,
+        "SkipColumn": false,
+        "Start": 1,
+        "Width": 11
+      },
+      "Description": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 18,
+        "Width": 26
+      },
+      "OldCode": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 12,
+        "Width": 6
+      },
+      "Price": {
+        "Attributes": 0,
+        "DataType": 7,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 62,
+        "Width": 7
+      },
+      "Proof": {
+        "Attributes": 0,
+        "DataType": 7,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 48,
+        "Width": 5
+      },
+      "SizeDescription": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 53,
+        "Width": 9
+      },
+      "StockStatus": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 72,
+        "Width": 1
+      },
+      "UnitsPerCase": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 69,
+        "Width": 3
+      }
+    }
+  }
+}

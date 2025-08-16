@@ -1,0 +1,7 @@
+﻿CREATE TABLE [CRObjects] (
+  [ID] AUTOINCREMENT CONSTRAINT [aaaaaCRObjects_PK] PRIMARY KEY UNIQUE NOT NULL,
+  [Name] VARCHAR (50),
+  [Type] VARCHAR (50),
+  [TypeExtra] VARCHAR (50),
+  [upsize_ts] BINARY
+)

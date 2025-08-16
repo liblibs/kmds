@@ -1,0 +1,54 @@
+﻿{
+  "Info": {
+    "Class": "clsDbImexSpec",
+    "Description": "Import/Export Specification from MSysIMEXSpecs"
+  },
+  "Items": {
+    "DateDelim": "/",
+    "DateFourDigitYear": true,
+    "DateLeadingZeros": false,
+    "DateOrder": 2,
+    "DecimalPoint": ".",
+    "FieldSeparator": ",",
+    "FileType": 437,
+    "SpecName": "MetrologicScanbatchImportSpec",
+    "SpecType": 1,
+    "StartRow": 0,
+    "TextDelim": "",
+    "TimeDelim": ":",
+    "Columns": {
+      "ScanCode": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 1,
+        "SkipColumn": false,
+        "Start": 1,
+        "Width": 15
+      },
+      "ScanDate": {
+        "Attributes": 0,
+        "DataType": 8,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 29,
+        "Width": 11
+      },
+      "ScanTime": {
+        "Attributes": 0,
+        "DataType": 8,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 40,
+        "Width": 9
+      },
+      "txtQuantity": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 16,
+        "Width": 13
+      }
+    }
+  }
+}

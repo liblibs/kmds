@@ -1,0 +1,21 @@
+﻿CREATE TABLE [zBuyDown] (
+  [ID] AUTOINCREMENT CONSTRAINT [ID] UNIQUE CONSTRAINT [PrimaryKey] PRIMARY KEY UNIQUE NOT NULL,
+  [RepsName] VARCHAR (25),
+  [ReferenceNo] VARCHAR (25),
+  [Club] LONG,
+  [Order] LONG,
+  [InvoiceNo] LONG,
+  [BeginDate] DATETIME,
+  [EndDate] DATETIME,
+  [BuydownDollars] CURRENCY,
+  [DollarsToDate] CURRENCY,
+  [BuydownQty] LONG,
+  [Quantity] LONG,
+  [LastSoldDate] DATETIME,
+  [Status] VARCHAR (1),
+  [PaidFlag] VARCHAR (255),
+  [ItemsID] DOUBLE,
+  [SetupDate] DATETIME,
+  [ChangeDate] DATETIME,
+  [upsize_ts] BINARY
+)

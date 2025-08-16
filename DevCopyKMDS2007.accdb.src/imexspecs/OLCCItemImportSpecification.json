@@ -1,0 +1,102 @@
+﻿{
+  "Info": {
+    "Class": "clsDbImexSpec",
+    "Description": "Import/Export Specification from MSysIMEXSpecs"
+  },
+  "Items": {
+    "DateDelim": "-",
+    "DateFourDigitYear": true,
+    "DateLeadingZeros": false,
+    "DateOrder": 5,
+    "DecimalPoint": ".",
+    "FieldSeparator": ",",
+    "FileType": 437,
+    "SpecName": "OLCCItemImportSpecification",
+    "SpecType": 2,
+    "StartRow": 0,
+    "TextDelim": "",
+    "TimeDelim": ":",
+    "Columns": {
+      "Age": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 38,
+        "Width": 4
+      },
+      "Code": {
+        "Attributes": 0,
+        "DataType": 7,
+        "IndexType": 1,
+        "SkipColumn": false,
+        "Start": 1,
+        "Width": 11
+      },
+      "Description": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 12,
+        "Width": 26
+      },
+      "OldItemAlpha": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 75,
+        "Width": 6
+      },
+      "OldItemID": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 69,
+        "Width": 6
+      },
+      "Price": {
+        "Attributes": 0,
+        "DataType": 5,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 56,
+        "Width": 9
+      },
+      "Proof": {
+        "Attributes": 0,
+        "DataType": 7,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 42,
+        "Width": 5
+      },
+      "SizeDesc": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 47,
+        "Width": 9
+      },
+      "StockStatus": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 68,
+        "Width": 1
+      },
+      "UnitsPerCase": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 65,
+        "Width": 3
+      }
+    }
+  }
+}

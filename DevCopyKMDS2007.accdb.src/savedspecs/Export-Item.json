@@ -1,0 +1,10 @@
+﻿{
+  "Info": {
+    "Class": "clsDbSavedSpec",
+    "Description": "Saved Import/Export Specification"
+  },
+  "Items": {
+    "Name": "Export-Item",
+    "XML": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<ImportExportSpecification Path = \"C:\\Item.txt\" xmlns=\"urn:www.microsoft.com/office/access/imexspec\">\n\t<ExportTextPresentation  AccessObject=\"Item\" ObjectType=\"Table\" AutoStart=\"false\" Encoding=\"WindowsDefault\" />\n</ImportExportSpecification>"
+  }
+}

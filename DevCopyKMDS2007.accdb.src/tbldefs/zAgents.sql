@@ -1,0 +1,20 @@
+﻿CREATE TABLE [zAgents] (
+  [AgentNumber] LONG,
+  [FirstName] VARCHAR (255),
+  [LastName] VARCHAR (255),
+  [Address] VARCHAR (255),
+  [City] VARCHAR (255),
+  [ST] VARCHAR (255),
+  [Zip] VARCHAR (255),
+  [Phone] VARCHAR (15),
+  [Fax/Modem] VARCHAR (15),
+  [Home] VARCHAR (15),
+  [Mobile] VARCHAR (15),
+  [ActiveForTransfer] BIT,
+  [OrderCount] LONG,
+  [KMDScustomer] BIT,
+  [EMail] VARCHAR (50),
+  [SetupDate] DATETIME,
+  [ChangeDate] DATETIME,
+  [upsize_ts] BINARY
+)

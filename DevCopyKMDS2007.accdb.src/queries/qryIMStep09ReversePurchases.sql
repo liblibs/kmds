@@ -1,0 +1,23 @@
+﻿UPDATE
+  ItemMovement
+SET
+  ItemMovement.CurrMM = 0 - [CurrMM],
+  ItemMovement.YTDQty = 0 - [YTDQty],
+  ItemMovement.Jan = 0 - [Jan],
+  ItemMovement.Feb = 0 - [Feb],
+  ItemMovement.Mar = 0 - [Mar],
+  ItemMovement.Apr = 0 - [Apr],
+  ItemMovement.May = 0 - [May],
+  ItemMovement.Jun = 0 - [Jun],
+  ItemMovement.Jul = 0 - [Jul],
+  ItemMovement.Aug = 0 - [Aug],
+  ItemMovement.Sep = 0 - [Sep],
+  ItemMovement.Oct = 0 - [Oct],
+  ItemMovement.Nov = 0 - [Nov],
+  ItemMovement.[Dec] = 0 - [Dec]
+WHERE
+  (
+    (
+      (ItemMovement.Description)= "Purchases"
+    )
+  );

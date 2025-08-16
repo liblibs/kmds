@@ -1,0 +1,3 @@
+﻿DELETE OLCC_8_and_12_UPC.*
+FROM
+  OLCC_8_and_12_UPC;

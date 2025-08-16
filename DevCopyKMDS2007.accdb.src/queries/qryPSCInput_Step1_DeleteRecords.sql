@@ -1,0 +1,3 @@
+﻿DELETE PSCInput.*
+FROM
+  PSCInput;

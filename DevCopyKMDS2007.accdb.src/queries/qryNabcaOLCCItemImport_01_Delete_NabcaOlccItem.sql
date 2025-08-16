@@ -1,0 +1,3 @@
+﻿DELETE NabcaOlccItem.*
+FROM
+  NabcaOlccItem;

@@ -1,0 +1,3 @@
+﻿DELETE OLCCItemsDetailList.*
+FROM
+  OLCCItemsDetailList;

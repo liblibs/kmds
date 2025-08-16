@@ -1,0 +1,10 @@
+﻿{
+  "Info": {
+    "Class": "clsDbSavedSpec",
+    "Description": "Saved Import/Export Specification"
+  },
+  "Items": {
+    "Name": "Import-OLCCItem",
+    "XML": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<ImportExportSpecification Path = \"\\\\fs1\\npos\\item.txt\" xmlns=\"urn:www.microsoft.com/office/access/imexspec\">\r\n      <ImportText TextFormat=\"Fixedwidth\" FirstRowHasNames=\"false\" FieldDelimiter=\"\" TextDelimiter=\"\" CodePage=\"437\" Destination=\"OLCCItem\" >\r\n               <DateFormat DateOrder=\"YMD\" DateDelimiter=\"-\" TimeDelimiter=\":\" FourYearDates=\"true\" DatesLeadingZeros=\"false\" />\r\n           <NumberFormat DecimalSymbol=\".\" />\r\n             <Columns PrimaryKey=\"Code\">\r\n                 <Column Name=\"Col1\" FieldName=\"Code\" Indexed=\"YESDUPLICATES\" SkipColumn=\"false\" DataType=\"Long\" Width=\"6\" />\r\n                 <Column Name=\"Col2\" FieldName=\"Field2\" Indexed=\"NO\" SkipColumn=\"true\" DataType=\"Text\" Width=\"5\" />\r\n                 <Column Name=\"Col3\" FieldName=\"Description\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Text\" Width=\"26\" />\r\n                 <Column Name=\"Col4\" FieldName=\"Age\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Text\" Width=\"4\" />\r\n                 <Column Name=\"Col5\" FieldName=\"Proof\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Double\" Width=\"5\" />\r\n                 <Column Name=\"Col6\" FieldName=\"Field6\" Indexed=\"NO\" SkipColumn=\"true\" DataType=\"Text\" Width=\"9\" />\r\n                 <Column Name=\"Col7\" FieldName=\"Price\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Double\" Width=\"7\" />\r\n                 <Column Name=\"Col8\" FieldName=\"UnitsPerCase\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Long\" Width=\"3\" />\r\n                 <Column Name=\"Col9\" FieldName=\"StockStatus\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Text\" Width=\"1\" />\r\n             </Columns>\r\n   </ImportText>\r\n</ImportExportSpecification>"
+  }
+}

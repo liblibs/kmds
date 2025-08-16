@@ -1,0 +1,7 @@
+﻿CREATE TABLE [zUPCItem] (
+  [ID] VARCHAR (25) CONSTRAINT [ID] UNIQUE CONSTRAINT [PrimaryKey] PRIMARY KEY UNIQUE NOT NULL,
+  [ItemID] VARCHAR,
+  [SetupDate] DATETIME,
+  [ChangeDate] DATETIME,
+  [upsize_ts] BINARY
+)

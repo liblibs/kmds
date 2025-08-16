@@ -1,0 +1,4 @@
+﻿CREATE TABLE [TranTypesLocal] (
+  [Code] VARCHAR (1) CONSTRAINT [Code] UNIQUE CONSTRAINT [PrimaryKey] PRIMARY KEY UNIQUE NOT NULL,
+  [Description] VARCHAR (50)
+)

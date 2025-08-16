@@ -1,0 +1,3 @@
+﻿DELETE ItemMovement.*
+FROM
+  ItemMovement;

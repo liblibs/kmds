@@ -1,0 +1,3 @@
+﻿DELETE OLASItemDetailForOrdering.*
+FROM
+  OLASItemDetailForOrdering;

@@ -1,0 +1,11 @@
+﻿{
+  "Info": {
+    "Class": "clsDbSavedSpec",
+    "Description": "Saved Import/Export Specification"
+  },
+  "Items": {
+    "Name": "Import-case_quantities",
+    "Description": "",
+    "XML": "<?xml version=\"1.0\"?>\r\n<ImportExportSpecification Path=\"C:\\npos\\case_quantities.txt\" xmlns=\"urn:www.microsoft.com/office/access/imexspec\">\r\n\t<ImportText TextFormat=\"Delimited\" FirstRowHasNames=\"false\" FieldDelimiter=\"|\" TextDelimiter=\"\" CodePage=\"437\" Destination=\"Case_quantities\">\r\n\t\t<DateFormat DateOrder=\"MDY\" DateDelimiter=\"/\" TimeDelimiter=\":\" FourYearDates=\"true\" DatesLeadingZeros=\"false\"/>\r\n\t\t<NumberFormat DecimalSymbol=\".\"/>\r\n\t\t<Columns PrimaryKey=\"{Auto}\">\r\n\t\t\t<Column Name=\"Col1\" FieldName=\"CreateDate\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"DateTime\" Width=\"10\"/>\r\n\t\t\t<Column Name=\"Col2\" FieldName=\"ItemId\" Indexed=\"YESDUPLICATES\" SkipColumn=\"false\" DataType=\"Long\" Width=\"5\"/>\r\n\t\t\t<Column Name=\"Col3\" FieldName=\"NABCA\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Text\" Width=\"6\"/>\r\n\t\t\t<Column Name=\"Col4\" FieldName=\"Description\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Text\" Width=\"41\"/>\r\n\t\t\t<Column Name=\"Col5\" FieldName=\"UnitsPerOrder\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Long\" Width=\"3\"/>\r\n\t\t\t<Column Name=\"Col6\" FieldName=\"UnitsPerCase\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Long\" Width=\"3\"/>\r\n\t\t\t<Column Name=\"Col7\" FieldName=\"StatusDesc\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Text\" Width=\"20\"/>\r\n\t\t\t<Column Name=\"Col8\" FieldName=\"StatusCode\" Indexed=\"YESDUPLICATES\" SkipColumn=\"false\" DataType=\"Text\" Width=\"2\"/>\r\n\t\t</Columns>\r\n\t</ImportText>\r\n</ImportExportSpecification>\r\n"
+  }
+}

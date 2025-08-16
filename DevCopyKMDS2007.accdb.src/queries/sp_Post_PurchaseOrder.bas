@@ -1,0 +1,6 @@
+﻿dbMemo "SQL" ="sp_PostPO 99, 4, 2000005, 1, 445"
+dbMemo "Connect" ="ODBC;DSN=KMDSSQL;UID=SA;PWD=;DATABASE=KMDSSQL"
+dbBoolean "ReturnsRecords" ="0"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "LogMessages" ="0"
+dbByte "Orientation" ="0"

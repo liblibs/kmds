@@ -1,0 +1,17 @@
+﻿SELECT
+  vwUPCItemsWithCurrentPricing.UPCCode,
+  vwUPCItemsWithCurrentPricing.Description,
+  vwUPCItemsWithCurrentPricing.PkgSize,
+  vwUPCItemsWithCurrentPricing.ID,
+  vwUPCItemsWithCurrentPricing.OnShelf,
+  vwUPCItemsWithCurrentPricing.CurPrice,
+  vwUPCItemsWithCurrentPricing.Cost,
+  Format(
+    ([CurPrice] - [cost])/ [CurPrice],
+    "Percent"
+  ) AS GP
+FROM
+  vwUPCItemsWithCurrentPricing
+ORDER BY
+  vwUPCItemsWithCurrentPricing.LenID,
+  vwUPCItemsWithCurrentPricing.UPCCode;

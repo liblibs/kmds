@@ -1,0 +1,3 @@
+﻿DELETE ItemsSoldToday.*
+FROM
+  ItemsSoldToday;

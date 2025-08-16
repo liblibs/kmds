@@ -1,0 +1,3 @@
+﻿DELETE ItemMovementCurrentMonth.*
+FROM
+  ItemMovementCurrentMonth;

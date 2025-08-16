@@ -1,0 +1,7 @@
+﻿CREATE TABLE [zPriceGroup] (
+  [ID] AUTOINCREMENT CONSTRAINT [ID] UNIQUE CONSTRAINT [PrimaryKey] PRIMARY KEY UNIQUE NOT NULL,
+  [Description] VARCHAR (25) CONSTRAINT [Description] UNIQUE,
+  [SetupDate] DATETIME,
+  [ChangeDate] DATETIME,
+  [upsize_ts] BINARY
+)

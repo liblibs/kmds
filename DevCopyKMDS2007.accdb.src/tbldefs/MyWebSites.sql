@@ -1,0 +1,6 @@
+﻿CREATE TABLE [MyWebSites] (
+  [ID] AUTOINCREMENT CONSTRAINT [PrimaryKey] PRIMARY KEY UNIQUE NOT NULL,
+  [CashssysID] LONG,
+  [Friendly] VARCHAR (50),
+  [url] LONGTEXT
+)

@@ -1,0 +1,4 @@
+﻿CREATE TABLE [ItemCaseQty] (
+  [Code] DOUBLE CONSTRAINT [PrimaryKey] PRIMARY KEY UNIQUE NOT NULL,
+  [CaseQty] DOUBLE
+)

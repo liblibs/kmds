@@ -1,0 +1,23 @@
+﻿CREATE TABLE [zVendor] (
+  [ID] AUTOINCREMENT CONSTRAINT [ID] UNIQUE CONSTRAINT [PrimaryKey] PRIMARY KEY UNIQUE NOT NULL,
+  [Name] VARCHAR (25) CONSTRAINT [Name] UNIQUE,
+  [Contact] VARCHAR (25),
+  [Address1] VARCHAR (25),
+  [Address2] VARCHAR (25),
+  [City] VARCHAR (25),
+  [St] VARCHAR (4),
+  [Zip] VARCHAR (10),
+  [Phone1] VARCHAR (25),
+  [Phone2] VARCHAR (25),
+  [Phone3] VARCHAR (25),
+  [OrderCount] LONG,
+  [PoAtCost] BIT,
+  [PrintUpcOnPo] BIT,
+  [POReportForm] VARCHAR (50),
+  [VendorNotes] LONGTEXT,
+  [AverageDaySupplyID] LONG,
+  [POMethodDefault] LONG,
+  [SetupDate] DATETIME,
+  [ChangeDate] DATETIME,
+  [upsize_ts] BINARY
+)

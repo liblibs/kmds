@@ -1,0 +1,3 @@
+﻿DELETE MetrologicScanbatch.*
+FROM
+  MetrologicScanbatch;

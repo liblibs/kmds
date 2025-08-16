@@ -1,0 +1,3 @@
+﻿DELETE PalmFrom.*
+FROM
+  PalmFrom;

@@ -1,0 +1,30 @@
+﻿{
+  "Info": {
+    "Class": "clsDbImexSpec",
+    "Description": "Import/Export Specification from MSysIMEXSpecs"
+  },
+  "Items": {
+    "DateDelim": "/",
+    "DateFourDigitYear": false,
+    "DateLeadingZeros": false,
+    "DateOrder": 2,
+    "DecimalPoint": ".",
+    "FieldSeparator": ",",
+    "FileType": 1252,
+    "SpecName": "QryPSCDownloadDescr Export Specification",
+    "SpecType": 0,
+    "StartRow": 0,
+    "TextDelim": null,
+    "TimeDelim": ":",
+    "Columns": {
+      "DESCR": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 1,
+        "Width": 5
+      }
+    }
+  }
+}

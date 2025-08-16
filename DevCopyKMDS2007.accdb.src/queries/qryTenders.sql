@@ -1,0 +1,11 @@
+﻿SELECT
+  Tender.ID,
+  Tender.Description,
+  Tender.ChangeAllowed,
+  Tender.ManagerOnly,
+  Tender.GetCheckCashing,
+  Tender.GetCheckNumber,
+  Tender.NonCashDetailReport,
+  Tender.OpenCashDrawer
+FROM
+  Tender;

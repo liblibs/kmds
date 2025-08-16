@@ -1,0 +1,622 @@
+﻿{
+  "Info": {
+    "Class": "clsDbImexSpec",
+    "Description": "Import/Export Specification from MSysIMEXSpecs"
+  },
+  "Items": {
+    "DateDelim": "/",
+    "DateFourDigitYear": true,
+    "DateLeadingZeros": false,
+    "DateOrder": 2,
+    "DecimalPoint": ".",
+    "FieldSeparator": ",",
+    "FileType": 437,
+    "SpecName": "AgentTransferFTPImportSpec",
+    "SpecType": 1,
+    "StartRow": 1,
+    "TextDelim": "\"",
+    "TimeDelim": ":",
+    "Columns": {
+      "Add1": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 30,
+        "Width": 33
+      },
+      "Add2": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 63,
+        "Width": 21
+      },
+      "Add3": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 84,
+        "Width": 29
+      },
+      "Address": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 905,
+        "Width": 19
+      },
+      "Adv3": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 113,
+        "Width": 11
+      },
+      "AgentID": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 1,
+        "SkipColumn": false,
+        "Start": 856,
+        "Width": 8
+      },
+      "AgentName": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 889,
+        "Width": 16
+      },
+      "AgentNumber": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 1,
+        "Width": 12
+      },
+      "BlankLines": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 138,
+        "Width": 11
+      },
+      "CancelTenderID": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 1,
+        "SkipColumn": true,
+        "Start": 537,
+        "Width": 15
+      },
+      "CashDropItemID": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 1,
+        "SkipColumn": true,
+        "Start": 328,
+        "Width": 15
+      },
+      "CashLoanItemID": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 1,
+        "SkipColumn": true,
+        "Start": 343,
+        "Width": 15
+      },
+      "CashsysInsLoc": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 598,
+        "Width": 14
+      },
+      "ChangeDate": {
+        "Attributes": 0,
+        "DataType": 8,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 832,
+        "Width": 19
+      },
+      "ChargeDropItemID": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 1,
+        "SkipColumn": true,
+        "Start": 358,
+        "Width": 17
+      },
+      "CheckDropItemID": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 1,
+        "SkipColumn": true,
+        "Start": 375,
+        "Width": 16
+      },
+      "CitySTZ": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 924,
+        "Width": 20
+      },
+      "ClaimCode": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 1,
+        "SkipColumn": true,
+        "Start": 1086,
+        "Width": 10
+      },
+      "ClubDiscntItemID": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 1,
+        "SkipColumn": true,
+        "Start": 418,
+        "Width": 17
+      },
+      "ClubDiscRate": {
+        "Attributes": 0,
+        "DataType": 7,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 405,
+        "Width": 13
+      },
+      "ClubInvItemID": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 1,
+        "SkipColumn": true,
+        "Start": 391,
+        "Width": 14
+      },
+      "ColorDropDown": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 729,
+        "Width": 14
+      },
+      "ColorInfo": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 719,
+        "Width": 10
+      },
+      "ColorLockedForAll": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 769,
+        "Width": 18
+      },
+      "ColorTotals": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 757,
+        "Width": 12
+      },
+      "ColorViewOnly": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 743,
+        "Width": 14
+      },
+      "Cost": {
+        "Attributes": 0,
+        "DataType": 5,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 1071,
+        "Width": 7
+      },
+      "CouponItemID": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 1,
+        "SkipColumn": true,
+        "Start": 435,
+        "Width": 13
+      },
+      "Cr1CheckOut": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 273,
+        "Width": 12
+      },
+      "Cr1Installed": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 181,
+        "Width": 13
+      },
+      "Cr1Online": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 233,
+        "Width": 10
+      },
+      "Cr2CheckOut": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 285,
+        "Width": 12
+      },
+      "Cr2Installed": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 194,
+        "Width": 13
+      },
+      "Cr2Online": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 243,
+        "Width": 10
+      },
+      "Cr3CheckOut": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 297,
+        "Width": 12
+      },
+      "Cr3Installed": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 207,
+        "Width": 13
+      },
+      "Cr3Online": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 253,
+        "Width": 10
+      },
+      "Cr4CheckOut": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 309,
+        "Width": 12
+      },
+      "Cr4Installed": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 220,
+        "Width": 13
+      },
+      "Cr4Online": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 263,
+        "Width": 10
+      },
+      "CurrShiftDate": {
+        "Attributes": 0,
+        "DataType": 8,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 149,
+        "Width": 19
+      },
+      "Description": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 991,
+        "Width": 12
+      },
+      "DiscountItemID": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 1,
+        "SkipColumn": true,
+        "Start": 448,
+        "Width": 15
+      },
+      "ExtCost": {
+        "Attributes": 0,
+        "DataType": 5,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 1078,
+        "Width": 8
+      },
+      "ExtPrice": {
+        "Attributes": 0,
+        "DataType": 5,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 1046,
+        "Width": 9
+      },
+      "ID": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 1,
+        "SkipColumn": false,
+        "Start": 851,
+        "Width": 5
+      },
+      "InvoiceCounter": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 704,
+        "Width": 15
+      },
+      "ItemID": {
+        "Attributes": 0,
+        "DataType": 7,
+        "IndexType": 1,
+        "SkipColumn": false,
+        "Start": 979,
+        "Width": 12
+      },
+      "LineID": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 1,
+        "SkipColumn": false,
+        "Start": 972,
+        "Width": 7
+      },
+      "LotteryPaidOutItemID": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 1,
+        "SkipColumn": true,
+        "Start": 463,
+        "Width": 21
+      },
+      "NetworkDatabase": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 655,
+        "Width": 23
+      },
+      "NetworkDataBaseConnectString": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 612,
+        "Width": 43
+      },
+      "NetworkMailDir": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 678,
+        "Width": 15
+      },
+      "NonClubDiscntItemID": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 1,
+        "SkipColumn": true,
+        "Start": 484,
+        "Width": 20
+      },
+      "NonClubDiscRate": {
+        "Attributes": 0,
+        "DataType": 7,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 504,
+        "Width": 16
+      },
+      "NonClubInvItemID": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 1,
+        "SkipColumn": true,
+        "Start": 520,
+        "Width": 17
+      },
+      "NoSaleTenderID": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 1,
+        "SkipColumn": true,
+        "Start": 552,
+        "Width": 15
+      },
+      "OLCCVendor": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 693,
+        "Width": 11
+      },
+      "Online": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 321,
+        "Width": 7
+      },
+      "OrdDate": {
+        "Attributes": 0,
+        "DataType": 8,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 870,
+        "Width": 19
+      },
+      "Order": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 864,
+        "Width": 6
+      },
+      "Price": {
+        "Attributes": 0,
+        "DataType": 5,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 1026,
+        "Width": 7
+      },
+      "PrintReceiptCancelledSale": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 787,
+        "Width": 26
+      },
+      "qryAgentTransferLines_Phone": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 944,
+        "Width": 28
+      },
+      "QuantityShipped": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 1010,
+        "Width": 16
+      },
+      "ReportsDir": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 586,
+        "Width": 12
+      },
+      "SalesTaxRate": {
+        "Attributes": 0,
+        "DataType": 5,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 168,
+        "Width": 13
+      },
+      "ScannedODLTenderID": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 1,
+        "SkipColumn": true,
+        "Start": 567,
+        "Width": 19
+      },
+      "SetupDate": {
+        "Attributes": 0,
+        "DataType": 8,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 813,
+        "Width": 19
+      },
+      "SizeDesc": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 1062,
+        "Width": 9
+      },
+      "SizeID": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 1,
+        "SkipColumn": false,
+        "Start": 1003,
+        "Width": 7
+      },
+      "Status": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 1055,
+        "Width": 7
+      },
+      "Sysfile_Phone": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": true,
+        "Start": 124,
+        "Width": 14
+      },
+      "ThisAgentName": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 13,
+        "Width": 17
+      },
+      "UPCCodeMax": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 1033,
+        "Width": 13
+      }
+    }
+  }
+}

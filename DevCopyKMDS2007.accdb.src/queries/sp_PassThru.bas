@@ -1,0 +1,6 @@
+﻿dbMemo "SQL" ="DELETE FROM dbo.ItemMovement"
+dbMemo "Connect" ="ODBC;DSN=KMDSSQL;UID=SA;PWD=;DATABASE=KMDSSQL"
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "LogMessages" ="0"
+dbByte "Orientation" ="0"

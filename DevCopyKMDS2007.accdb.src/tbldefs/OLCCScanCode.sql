@@ -1,0 +1,4 @@
+﻿CREATE TABLE [OLCCScanCode] (
+  [Code] VARCHAR,
+  [UPCCode] VARCHAR (20)
+)

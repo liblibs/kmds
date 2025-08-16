@@ -1,0 +1,14 @@
+﻿SELECT
+  ScanBatchLineCounts.ScanBatchHeaderID,
+  ScanBatchLineCounts.ItemID,
+  ScanBatchLineCounts.InputMethod,
+  ScanBatchLineCounts.CashierID,
+  ScanBatchLineCounts.Location,
+  ScanBatchLineCounts.ScanCode,
+  ScanBatchLineCounts.CountQuantity,
+  ScanBatchLineCounts.OnShelf,
+  ScanBatchLineCounts.SetupDate,
+  ScanBatchLineCounts.ChangeDate,
+  ScanBatchLineCounts.OnShelfDate
+FROM
+  ScanBatchLineCounts;

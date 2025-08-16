@@ -1,0 +1,9 @@
+﻿SELECT
+  Size.ID,
+  Size.Description,
+  Size.Oz,
+  Size.CaseQty,
+  Size.SetupDate,
+  Size.ChangeDate
+FROM
+  [Size];

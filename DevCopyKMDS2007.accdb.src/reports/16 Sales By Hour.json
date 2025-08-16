@@ -1,0 +1,28 @@
+﻿{
+  "Info": {
+    "Class": "clsDbReport",
+    "Description": "16 Sales By Hour Print Settings"
+  },
+  "Items": {
+    "Printer": {
+      "Orientation": "Landscape",
+      "PaperSize": "Letter"
+    },
+    "Margins": {
+      "LeftMargin": 0.5,
+      "TopMargin": 0.5,
+      "RightMargin": 0.5,
+      "BotMargin": 0.5,
+      "DataOnly": false,
+      "Width": 9.625,
+      "Height": 0.1771,
+      "DefaultSize": true,
+      "Columns": 1,
+      "ColumnSpacing": 0.25,
+      "RowSpacing": 0,
+      "ItemLayout": "Horizontal Columns",
+      "FastPrint": 1,
+      "Datasheet": 1
+    }
+  }
+}

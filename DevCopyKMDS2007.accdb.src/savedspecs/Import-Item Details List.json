@@ -1,0 +1,10 @@
+﻿{
+  "Info": {
+    "Class": "clsDbSavedSpec",
+    "Description": "Saved Import/Export Specification"
+  },
+  "Items": {
+    "Name": "Import-Item Details List",
+    "XML": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<ImportExportSpecification Path = \"C:\\Users\\Administrator\\Downloads\\Item Details List.xls\" xmlns=\"urn:www.microsoft.com/office/access/imexspec\">\r\n     <ImportExcel FirstRowHasNames=\"false\" Destination=\"Sheet1\" Range=\"Sheet1$\" >\r\n            <Columns PrimaryKey=\"{Auto}\">\r\n                  <Column Name=\"Col1\" FieldName=\"Field1\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Text\" />\r\n                  <Column Name=\"Col2\" FieldName=\"Field2\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Text\" />\r\n                  <Column Name=\"Col3\" FieldName=\"Field3\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Text\" />\r\n                  <Column Name=\"Col4\" FieldName=\"Field4\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Text\" />\r\n                  <Column Name=\"Col5\" FieldName=\"Field5\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Text\" />\r\n                  <Column Name=\"Col6\" FieldName=\"Field6\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Double\" />\r\n                  <Column Name=\"Col7\" FieldName=\"Field7\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Double\" />\r\n                  <Column Name=\"Col8\" FieldName=\"Field8\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Text\" />\r\n                  <Column Name=\"Col9\" FieldName=\"Field9\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Text\" />\r\n                  <Column Name=\"Col10\" FieldName=\"Field10\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Text\" />\r\n                  <Column Name=\"Col11\" FieldName=\"Field11\" Indexed=\"NO\" SkipColumn=\"false\" DataType=\"Text\" />\r\n             </Columns>\r\n        </ImportExcel>\r\n</ImportExportSpecification>"
+  }
+}

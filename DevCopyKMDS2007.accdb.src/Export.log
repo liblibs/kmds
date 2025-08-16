@@ -1,0 +1,4540 @@
+﻿-------------------------------------
+Beginning Export of Source Files
+DevCopyKMDS2007.accdb
+VCS Version 4.1.2
+Full Path: D:\Documents\Work\Eric Fitzsimmons\Version Development\20250421 - 31544 - for STORE\DevCopyKMDS2007.accdb
+Export Folder: D:\Documents\Work\Eric Fitzsimmons\Version Development\20250421 - 31544 - for STORE\DevCopyKMDS2007.accdb.src\
+Performing Full Export
+7/30/2025 9:06:52 PM
+-------------------------------------
+Scanning source files...
+
+-------------------------------------
+WARNING: Broken reference for {86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}This may cause errors in the export process.
+Source: clsDbVbeReference.GetDictionary
+-------------------------------------
+
+-------------------------------------
+WARNING: Broken reference for {90359D74-B7D9-467F-B938-3883F4CAB582}This may cause errors in the export process.
+Source: clsDbVbeReference.GetDictionary
+-------------------------------------
+
+-------------------------------------
+WARNING: Broken reference for {86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}This may cause errors in the export process.
+Source: clsDbVbeReference.GetDictionary
+-------------------------------------
+
+-------------------------------------
+WARNING: Broken reference for {90359D74-B7D9-467F-B938-3883F4CAB582}This may cause errors in the export process.
+Source: clsDbVbeReference.GetDictionary
+-------------------------------------
+
+-------------------------------------
+ERROR: Unhandled error, likely before `On Error` directive
+Error -2147319779: Method 'Name' of object 'Reference' failed Source: .Unknown.LogUnhandledErrors
+-------------------------------------
+No vbe forms found in this database.
+No proj properties found in this database.
+No shared images found in this database.
+No table data found in this database.
+No table data macros found in this database.
+No relations found in this database.
+No hidden attributes found in this database.
+-------------------------------------
+Exporting db connections...   
+  Database Connection
+[3]
+-------------------------------------
+Exporting project...          
+  DevCopyKMDS2007.accdb
+[1]
+-------------------------------------
+Exporting vb project...       
+  KMDS2007Import
+[1]
+-------------------------------------
+Exporting vbe references...   
+  KMDS2007Import
+[1]
+-------------------------------------
+Exporting saved specs...      
+  Import-CLOUD 9
+  Import-InventoryValue
+  Import-InventoryReport13
+  Import-OLCCItem
+  ExportScanBatchLineCounts
+  Import-20140906102312-10279
+  Export-Item
+  Export-qryMetrologicOptimiserLookup
+  Import-Item Details List
+  Import-case_quantities
+[10]
+-------------------------------------
+Exporting modules...          
+  modLabelPrinting
+  UPCModule
+  clsCDO
+  modDumpTable
+  modRedirectHelp
+  modPunchTheClock
+  modPurchaseOrder
+  modAgeCalc
+  modWaitForExecCmd
+  modPOSPrinter
+  modEOD
+  modPSC
+  modRentrak
+  modPlaySound
+  modEMail
+  modWinSCP
+  modConditionalFormats
+  modWebOrder
+  modAcc2007
+  modRegisterReports
+  modScanBatchRoutines
+  modCreatelDatabase
+  modAPI
+  modBrotherLabelPrinter
+  modKMDS
+  modAuditInventory
+  modClubOrders
+  modOLCTransmit
+  modGetUserName
+  modFTPScript
+  zTest
+[31]
+-------------------------------------
+Exporting commandbars...      
+  KMDS
+  KMDSPopup
+  OASIS-Logger
+[3]
+-------------------------------------
+Exporting themes...           
+  Office Theme
+[1]
+-------------------------------------
+Exporting db properties...    
+  Database Properties (DAO)
+[54]
+-------------------------------------
+Exporting imex specs...       
+  AgentTransferFTPImportSpec
+  AuditVariance
+  Case_quantities Import Specification
+  ClubOrderCSVImportSpecification
+  EPSImportSpecification
+  FulPrice Import Specification
+  HourlySalesExportSpec
+  INVENT Link Specification
+  InvoiceLineLDImportSpec
+  KMDSSWImportSpecification
+  Licensee Import Specification
+  MetrologicScanbatchImportSpec
+  NabcaOLCCItemImportSpecification
+  Newprice Import Specification
+  NewpriceImportSpecification
+  OLCCAuditVarianceImportSpec
+  OLCCItemImportSpecification
+  OLCCScancodeImportSpecification
+  ORDER Link Specification
+  Palm Export Specification
+  PalmFrom Import  Specification
+  PalmFrom Import Specification
+  PalmFrom Import Specification Comma
+  PalmFrom Import Specification Tab
+  PDTINPUT Import Specification
+  PSCINPUT Import Specification
+  QryMetrologicOptimiserLookup Export Specification
+  QryPSCDownloadDescr Export Specification
+  QryPSCDownloadItem Export Specification
+  qryRentrakTransactions Export Specification
+  RentrakTransactions
+  SBLCImportSpecification
+  SUTH Import Specification
+  WebOrderImportSpec
+[34]
+-------------------------------------
+Exporting tables...           
+  AdjustReasons
+    Sanitized in 0.002 seconds.
+  AdjustReasons (SQL)
+  AdjustReasons1
+    Sanitized in 0.001 seconds.
+  AdjustReasons1 (SQL)
+  Agents
+  AgentTransferFTPImport
+    Sanitized in 0.009 seconds.
+  AgentTransferFTPImport (SQL)
+  AgentTransferHead
+  AgentTransferLines
+  Audit
+  AverageDaySupply
+  AverageDaySupplyLevels
+  AverageDaySupplyLevelsTemplate
+    Sanitized in 0.002 seconds.
+  AverageDaySupplyLevelsTemplate (SQL)
+  AverageDaySupplyTemplate
+    Sanitized in 0.004 seconds.
+  AverageDaySupplyTemplate (SQL)
+  Booze
+  BuyDown
+  BuyDownItem
+  Case_quantities
+    Sanitized in 0.002 seconds.
+  Case_quantities (SQL)
+  Cashier
+  CashiersAndPrograms
+  CashSys
+  Category
+  CheckCashing
+  Club
+  ClubHistoryByBottleByMonth
+    Sanitized in 0.001 seconds.
+  ClubHistoryByBottleByMonth (SQL)
+  ClubInvoiceForCSVExport
+    Sanitized in 0.001 seconds.
+  ClubInvoiceForCSVExport (SQL)
+  ClubOrderCSV
+    Sanitized in 0.002 seconds.
+  ClubOrderCSV (SQL)
+  ClubOrderGuides
+  ClubOrderGuideTemp
+    Sanitized in 0.002 seconds.
+  ClubOrderGuideTemp (SQL)
+  ClubOrderGuideTempx
+  ClubOrderXL
+    Sanitized in 0.003 seconds.
+  ClubOrderXL (SQL)
+  CompareScanItemToPurchaseOrder
+    Sanitized in 0.001 seconds.
+  CompareScanItemToPurchaseOrder (SQL)
+  CompareScanItemToPurchaseOrderScanCounts
+    Sanitized in 0.001 seconds.
+  CompareScanItemToPurchaseOrderScanCounts (SQL)
+  CRES_ITEM
+  CRObjects
+    Sanitized in 0.002 seconds.
+  CRObjects (SQL)
+  CRReports
+    Sanitized in 0.001 seconds.
+  CRReports (SQL)
+  DataSheetTemplate
+    Sanitized in 0.007 seconds.
+  DataSheetTemplate (SQL)
+  DaysSupplyADSForNewItems
+    Sanitized in 0.001 seconds.
+  DaysSupplyADSForNewItems (SQL)
+  DaysSupplyGroupLevels
+    Sanitized in 0.002 seconds.
+  DaysSupplyGroupLevels (SQL)
+  DaysSupplyItemSales
+    Sanitized in 0.001 seconds.
+  DaysSupplyItemSales (SQL)
+  dbo_Agents
+  dbo_AgentTransferHead
+  dbo_AgentTransferLines
+  dbo_Club
+  dbo_CRReports
+  dbo_Item
+  dbo_KMDSLog
+  dbo_KMDSLog1
+  dbo_OLCCitem
+  dbo_OLCCScanCode
+  dbo_PurchaseOrderLine
+  dbo_PurchaseOrderLine1
+  dbo_SalesLeads
+  dbo_Sysfile
+  dbo_UPCItem
+  dbo_Vendor
+  dbo_vwItemsWithCurrentPricing
+  DepositTable
+    Sanitized in 0.001 seconds.
+  DepositTable (SQL)
+  Drizly
+    Sanitized in 0.003 seconds.
+  Drizly (SQL)
+  EOReport
+  Fulprice
+    Sanitized in 0.001 seconds.
+  Fulprice (SQL)
+  HourlySales
+    Sanitized in 0.002 seconds.
+  HourlySales (SQL)
+  InventNotOnFile
+    Sanitized in 0.001 seconds.
+  InventNotOnFile (SQL)
+  InventOnhands
+    Sanitized in 0.001 seconds.
+  InventOnhands (SQL)
+  InventoryReportOrderBys
+    Sanitized in 0.001 seconds.
+  InventoryReportOrderBys (SQL)
+  InventoryReportParameters
+    Sanitized in 0.003 seconds.
+  InventoryReportParameters (SQL)
+  InvoHead
+  InvoHead5
+  InvoiceLineLD
+    Sanitized in 0.002 seconds.
+  InvoiceLineLD (SQL)
+  InvoLine
+  InvoLine1
+
+-------------------------------------
+ERROR: Unable to access table InvoLine1. Please ensure that this table exists and is accessible in the current database.
+Source: clsDbTableDef.Export
+-------------------------------------
+  InvoLine2
+
+-------------------------------------
+ERROR: Unable to access table InvoLine2. Please ensure that this table exists and is accessible in the current database.
+Source: clsDbTableDef.Export
+-------------------------------------
+  InvoLine3
+
+-------------------------------------
+ERROR: Unable to access table InvoLine3. Please ensure that this table exists and is accessible in the current database.
+Source: clsDbTableDef.Export
+-------------------------------------
+  InvoLine4
+
+-------------------------------------
+ERROR: Unable to access table InvoLine4. Please ensure that this table exists and is accessible in the current database.
+Source: clsDbTableDef.Export
+-------------------------------------
+  InvoLine5
+  InvoLine5mdb
+
+-------------------------------------
+ERROR: Unable to access table InvoLine5mdb. Please ensure that this table exists and is accessible in the current database.
+Source: clsDbTableDef.Export
+-------------------------------------
+  InvoLineAllRegisters
+    Sanitized in 0.003 seconds.
+  InvoLineAllRegisters (SQL)
+  InvoLineClubInvoices
+    Sanitized in 0.001 seconds.
+  InvoLineClubInvoices (SQL)
+  InvoLineKTransMostRecent
+    Sanitized in 0.001 seconds.
+  InvoLineKTransMostRecent (SQL)
+  InvoLineLD
+    Sanitized in 0.002 seconds.
+  InvoLineLD (SQL)
+  Item
+  Item_ICExpansion
+    Sanitized in 0.002 seconds.
+  Item_ICExpansion (SQL)
+  item_ICExpansion_ImportErrors
+    Sanitized in 0.001 seconds.
+  item_ICExpansion_ImportErrors (SQL)
+  item_ICExpansion_ImportErrors1
+    Sanitized in 0.001 seconds.
+  item_ICExpansion_ImportErrors1 (SQL)
+  ItemAudit
+  ItemCaseQty
+    Sanitized in 0.001 seconds.
+  ItemCaseQty (SQL)
+  ItemDetailForOrdering
+
+-------------------------------------
+ERROR: Unable to access table ItemDetailForOrdering. Please ensure that this table exists and is accessible in the current database.
+Source: clsDbTableDef.Export
+-------------------------------------
+  ItemFirstSale
+    Sanitized in 0.001 seconds.
+  ItemFirstSale (SQL)
+  ItemLabels
+    Sanitized in 0.001 seconds.
+  ItemLabels (SQL)
+  ItemMovement
+  ItemMovementCurrentMonth
+  ItemSalePrice
+  ItemsSoldToday
+  ItemUPCID
+    Sanitized in 0.001 seconds.
+  ItemUPCID (SQL)
+  Kit
+  KitItem
+  KMDSKS
+    Sanitized in 0.001 seconds.
+  KMDSKS (SQL)
+  KMDSLinks
+  KMDSLinksLocal
+    Sanitized in 0.001 seconds.
+  KMDSLinksLocal (SQL)
+  LASTCOST
+    Sanitized in 0.001 seconds.
+  LASTCOST (SQL)
+  Licensee
+  LocalCRObjects
+    Sanitized in 0.001 seconds.
+  LocalCRObjects (SQL)
+  LocalCRReports
+    Sanitized in 0.001 seconds.
+  LocalCRReports (SQL)
+  LocalTranTypes
+    Sanitized in 0.001 seconds.
+  LocalTranTypes (SQL)
+  LocLicensee
+    Sanitized in 0.002 seconds.
+  LocLicensee (SQL)
+  LotteryScratch
+  LotteryScratchRecon
+  MetrologicLookup
+    Sanitized in 0.001 seconds.
+  MetrologicLookup (SQL)
+  MetrologicScanbatch
+    Sanitized in 0.002 seconds.
+  MetrologicScanbatch (SQL)
+  MetrologicScanbatchTestData
+    Sanitized in 0.002 seconds.
+  MetrologicScanbatchTestData (SQL)
+  MyWebSites
+    Sanitized in 0.001 seconds.
+  MyWebSites (SQL)
+  NabcaOlccItem
+    Sanitized in 0.002 seconds.
+  NabcaOlccItem (SQL)
+  Name AutoCorrect Save Failures
+    Sanitized in 0.001 seconds.
+  Name AutoCorrect Save Failures (SQL)
+  Newprice
+    Sanitized in 0.002 seconds.
+  Newprice (SQL)
+  NewUPC
+    Sanitized in 0.001 seconds.
+  NewUPC (SQL)
+  OLASiItemDetailForOrderingReportDate
+    Sanitized in 0.001 seconds.
+  OLASiItemDetailForOrderingReportDate (SQL)
+  OLASInventory
+    Sanitized in 0.001 seconds.
+  OLASInventory (SQL)
+  OLASItemDetailForOrdering
+    Sanitized in 0.002 seconds.
+  OLASItemDetailForOrdering (SQL)
+  OLCC
+    Sanitized in 0.002 seconds.
+  OLCC (SQL)
+  OLCC Categories
+    Sanitized in 0.002 seconds.
+  OLCC Categories (SQL)
+  OLCC Items from OLAS Website
+
+-------------------------------------
+ERROR: Unable to access table OLCC Items from OLAS Website. Please ensure that this table exists and is accessible in the current database.
+Source: clsDbTableDef.Export
+-------------------------------------
+  olcc order
+    Sanitized in 0.002 seconds.
+  olcc order (SQL)
+  OLCC_8_and_12_UPC
+    Sanitized in 0.002 seconds.
+  OLCC_8_and_12_UPC (SQL)
+  OLCCAgents
+    Sanitized in 0.003 seconds.
+  OLCCAgents (SQL)
+  OLCCAgentsXLS
+
+-------------------------------------
+ERROR: Unable to access table OLCCAgentsXLS. Please ensure that this table exists and is accessible in the current database.
+Source: clsDbTableDef.Export
+-------------------------------------
+  OLCCAuditVariance
+    Sanitized in 0.001 seconds.
+  OLCCAuditVariance (SQL)
+  OLCCEPS
+    Sanitized in 0.002 seconds.
+  OLCCEPS (SQL)
+  OLCCitem
+    Sanitized in 0.002 seconds.
+  OLCCitem (SQL)
+  OLCCItemsDetailList
+    Sanitized in 0.003 seconds.
+  OLCCItemsDetailList (SQL)
+  OLCCItemsDetailListXLS
+
+-------------------------------------
+ERROR: Unable to access table OLCCItemsDetailListXLS. Please ensure that this table exists and is accessible in the current database.
+Source: clsDbTableDef.Export
+-------------------------------------
+  OLCCScanCode
+    Sanitized in 0.001 seconds.
+  OLCCScanCode (SQL)
+  OLCCScancode_ICExpansion
+    Sanitized in 0.002 seconds.
+  OLCCScancode_ICExpansion (SQL)
+  OLCCUPCaseOrder
+    Sanitized in 0.002 seconds.
+  OLCCUPCaseOrder (SQL)
+  OLCCWebAgents
+    Sanitized in 0.002 seconds.
+  OLCCWebAgents (SQL)
+  OLCCWebItems
+    Sanitized in 0.002 seconds.
+  OLCCWebItems (SQL)
+  OLCCWebMinimumOrderQty
+    Sanitized in 0.001 seconds.
+  OLCCWebMinimumOrderQty (SQL)
+  OrderLine
+  OrdHead
+  PalmFrom
+    Sanitized in 0.002 seconds.
+  PalmFrom (SQL)
+  PalmOrderGuideFrom
+    Sanitized in 0.002 seconds.
+  PalmOrderGuideFrom (SQL)
+  PalmTo
+    Sanitized in 0.001 seconds.
+  PalmTo (SQL)
+  pcChargeDebitsAndCredits
+    Sanitized in 0.002 seconds.
+  pcChargeDebitsAndCredits (SQL)
+  PhysicalCounts
+    Sanitized in 0.001 seconds.
+  PhysicalCounts (SQL)
+  PriceGroup
+  PricingWorkTable
+    Sanitized in 0.002 seconds.
+  PricingWorkTable (SQL)
+  Programs
+  PSCInput
+    Sanitized in 0.002 seconds.
+  PSCInput (SQL)
+  PurchaseOrder
+  PurchaseOrderItemDaysSupply
+    Sanitized in 0.001 seconds.
+  PurchaseOrderItemDaysSupply (SQL)
+  PurchaseOrderItemWADS
+    Sanitized in 0.001 seconds.
+  PurchaseOrderItemWADS (SQL)
+  PurchaseOrderLine
+  PurchaseOrderLineUpdatePrice
+    Sanitized in 0.001 seconds.
+  PurchaseOrderLineUpdatePrice (SQL)
+  PurchaseOrderPercents
+    Sanitized in 0.003 seconds.
+  PurchaseOrderPercents (SQL)
+  qryClubOrderGuidesForExports
+    Sanitized in 0.003 seconds.
+  qryClubOrderGuidesForExports (SQL)
+  RecreateInventoryTransmit
+    Sanitized in 0.001 seconds.
+  RecreateInventoryTransmit (SQL)
+  RentrakTransactions
+    Sanitized in 0.003 seconds.
+  RentrakTransactions (SQL)
+  ReportForms
+    Sanitized in 0.001 seconds.
+  ReportForms (SQL)
+  ResendMonthEnd
+    Sanitized in 0.001 seconds.
+  ResendMonthEnd (SQL)
+  SalesDepartment
+  SalesGroup
+  SalesLeads
+  SalesPictures
+  SalesPicturesTemp
+    Sanitized in 0.001 seconds.
+  SalesPicturesTemp (SQL)
+  ScanBatchHeader
+  ScanBatchLine
+  ScanBatchLineCounts
+  scratch
+    Sanitized in 0.001 seconds.
+  scratch (SQL)
+  Settings
+  Sheet1
+
+-------------------------------------
+ERROR: Unable to access table Sheet1. Please ensure that this table exists and is accessible in the current database.
+Source: clsDbTableDef.Export
+-------------------------------------
+  Sheet1x
+
+-------------------------------------
+ERROR: Unable to access table Sheet1x. Please ensure that this table exists and is accessible in the current database.
+Source: clsDbTableDef.Export
+-------------------------------------
+  Sheet2
+
+-------------------------------------
+ERROR: Unable to access table Sheet2. Please ensure that this table exists and is accessible in the current database.
+Source: clsDbTableDef.Export
+-------------------------------------
+  Shifts
+  Size
+  SubCategory
+  Switchboard Items
+    Sanitized in 0.002 seconds.
+  Switchboard Items (SQL)
+  Sysfile
+  tem
+  Tender
+  TimeClockPunches
+  TranTypes
+  TranTypesLocal
+    Sanitized in 0.001 seconds.
+  TranTypesLocal (SQL)
+  UPCA2E
+    Sanitized in 0.001 seconds.
+  UPCA2E (SQL)
+  UPCConvert5to6
+    Sanitized in 0.001 seconds.
+  UPCConvert5to6 (SQL)
+  UPCItem
+  UPCItem1
+    Sanitized in 0.001 seconds.
+  UPCItem1 (SQL)
+  UPCItemMax
+    Sanitized in 0.001 seconds.
+  UPCItemMax (SQL)
+  UPCLibrary
+    Sanitized in 0.002 seconds.
+  UPCLibrary (SQL)
+  UPCTemp
+    Sanitized in 0.001 seconds.
+  UPCTemp (SQL)
+  Vendor
+  vw_PurgeItems_Step_3_Source
+  vw_WebLogErrorCode-1
+  vwItemsWithCurrentPricing
+  vwOrderLinesTotalsByOrdheadID
+  vwOrdhead
+  vwUPCItemsWithCurrentPricing
+  WebLog
+  WebOrders
+    Sanitized in 0.002 seconds.
+  WebOrders (SQL)
+  WHISKEY
+  ysdepends
+  zAgents
+    Sanitized in 0.003 seconds.
+  zAgents (SQL)
+  zBuyDown
+    Sanitized in 0.003 seconds.
+  zBuyDown (SQL)
+  zBuyDownItem
+    Sanitized in 0.002 seconds.
+  zBuyDownItem (SQL)
+  zCashier
+    Sanitized in 0.005 seconds.
+  zCashier (SQL)
+  zCashSys
+    Sanitized in 0.006 seconds.
+  zCashSys (SQL)
+  zCheckCashing
+    Sanitized in 0.003 seconds.
+  zCheckCashing (SQL)
+  zClub
+    Sanitized in 0.005 seconds.
+  zClub (SQL)
+  zCRREports
+    Sanitized in 0.001 seconds.
+  zCRREports (SQL)
+  zInvoHead
+    Sanitized in 0.002 seconds.
+  zInvoHead (SQL)
+  zInvoLine
+    Sanitized in 0.002 seconds.
+  zInvoLine (SQL)
+  zItem
+    Sanitized in 0.006 seconds.
+  zItem (SQL)
+  zItemSalePrice
+    Sanitized in 0.002 seconds.
+  zItemSalePrice (SQL)
+  zKit
+    Sanitized in 0.002 seconds.
+  zKit (SQL)
+  zKitItem
+    Sanitized in 0.002 seconds.
+  zKitItem (SQL)
+  zOrdHead
+    Sanitized in 0.003 seconds.
+  zOrdHead (SQL)
+  zPriceGroup
+    Sanitized in 0.002 seconds.
+  zPriceGroup (SQL)
+  zSalesDepartment
+    Sanitized in 0.006 seconds.
+  zSalesDepartment (SQL)
+  zSalesGroup
+    Sanitized in 0.002 seconds.
+  zSalesGroup (SQL)
+  zSalesLeads
+    Sanitized in 0.002 seconds.
+  zSalesLeads (SQL)
+  zSalesPictures
+    Sanitized in 0.002 seconds.
+  zSalesPictures (SQL)
+  zSettings
+    Sanitized in 0.001 seconds.
+  zSettings (SQL)
+  zSize
+    Sanitized in 0.002 seconds.
+  zSize (SQL)
+  zSysfile
+    Sanitized in 0.010 seconds.
+  zSysfile (SQL)
+  zTender
+    Sanitized in 0.002 seconds.
+  zTender (SQL)
+  zUPCItem
+    Sanitized in 0.002 seconds.
+  zUPCItem (SQL)
+  zVendor
+    Sanitized in 0.003 seconds.
+  zVendor (SQL)
+[222]
+-------------------------------------
+Exporting queries...          
+  13 Make NewUPC
+    Sanitized in 0.003 seconds.
+  13 Make NewUPC (SQL)
+  205hEAD
+    Sanitized in 0.001 seconds.
+  205hEAD (SQL)
+  CashiersAndPrograms_Crosstab
+    Sanitized in 0.002 seconds.
+  CashiersAndPrograms_Crosstab (SQL)
+  Copy of qryClubOrderCSV
+    Sanitized in 0.004 seconds.
+  Copy of qryClubOrderCSV (SQL)
+  Copy of qryOLCC_8_and_12_UPC_Step_3_Append_dbo
+    Sanitized in 0.001 seconds.
+  Copy of qryOLCC_8_and_12_UPC_Step_3_Append_dbo (SQL)
+  cres_01_RestoreOnhands
+    Sanitized in 0.001 seconds.
+  cres_01_RestoreOnhands (SQL)
+  cres_02_make_crescinventory
+    Sanitized in 0.001 seconds.
+  cres_02_make_crescinventory (SQL)
+  cres_03_append_Audit
+    Sanitized in 0.001 seconds.
+  cres_03_append_Audit (SQL)
+  EOD
+    Sanitized in 0.000 seconds.
+  EOD (SQL)
+  EOM
+    Sanitized in 0.000 seconds.
+  EOM (SQL)
+  FixUnitsPerCaseMaxGTUnitsPerCase
+    Sanitized in 0.001 seconds.
+  FixUnitsPerCaseMaxGTUnitsPerCase (SQL)
+  FixUnitsPerOrder
+    Sanitized in 0.001 seconds.
+  FixUnitsPerOrder (SQL)
+  FixUnitsPerOrderMaxEqualCase
+    Sanitized in 0.001 seconds.
+  FixUnitsPerOrderMaxEqualCase (SQL)
+  IncrementVersion
+    Sanitized in 0.001 seconds.
+  IncrementVersion (SQL)
+  Item Query
+    Sanitized in 0.002 seconds.
+  Item Query (SQL)
+  KenoSalesHistAppend
+    Sanitized in 0.002 seconds.
+  KenoSalesHistAppend (SQL)
+  lkupAverageDaySupply
+    Sanitized in 0.000 seconds.
+  lkupAverageDaySupply (SQL)
+  lkupAverageDaySupply1
+    Sanitized in 0.000 seconds.
+  lkupAverageDaySupply1 (SQL)
+  lkupAverageDaySupplyLevels
+    Sanitized in 0.000 seconds.
+  lkupAverageDaySupplyLevels (SQL)
+  lkupCluOrderItemByCode
+    Sanitized in 0.002 seconds.
+  lkupCluOrderItemByCode (SQL)
+  lkupCluOrderItemByCurrentDaysSupply
+    Sanitized in 0.001 seconds.
+  lkupCluOrderItemByCurrentDaysSupply (SQL)
+  lkupCluOrderItemByDesc
+    Sanitized in 0.002 seconds.
+  lkupCluOrderItemByDesc (SQL)
+  lkupCluOrderItemByPkgSize
+    Sanitized in 0.000 seconds.
+  lkupCluOrderItemByPkgSize (SQL)
+  lkupCluOrderItemByStockNumber
+    Sanitized in 0.001 seconds.
+  lkupCluOrderItemByStockNumber (SQL)
+  lkupFormItemByCategory
+    Sanitized in 0.000 seconds.
+  lkupFormItemByCategory (SQL)
+  lkupFormItemByCode
+    Sanitized in 0.002 seconds.
+  lkupFormItemByCode (SQL)
+  lkupFormItemByDescription
+    Sanitized in 0.000 seconds.
+  lkupFormItemByDescription (SQL)
+  lkupFormItemByLocation
+    Sanitized in 0.001 seconds.
+  lkupFormItemByLocation (SQL)
+  lkupFormItemByPriceGroup
+    Sanitized in 0.001 seconds.
+  lkupFormItemByPriceGroup (SQL)
+  lkupFormItemBySalesDepartmentID
+    Sanitized in 0.000 seconds.
+  lkupFormItemBySalesDepartmentID (SQL)
+  lkupFormItemByUPC
+    Sanitized in 0.001 seconds.
+  lkupFormItemByUPC (SQL)
+  lkupFormItemByUPCSorted
+    Sanitized in 0.000 seconds.
+  lkupFormItemByUPCSorted (SQL)
+  lkupFormItemByVendor
+    Sanitized in 0.000 seconds.
+  lkupFormItemByVendor (SQL)
+  lkupFormItemOnTransfer
+    Sanitized in 0.000 seconds.
+  lkupFormItemOnTransfer (SQL)
+  lkupFormKitItemByDescription
+    Sanitized in 0.001 seconds.
+  lkupFormKitItemByDescription (SQL)
+  lkupFormKitItemByUPC
+    Sanitized in 0.001 seconds.
+  lkupFormKitItemByUPC (SQL)
+  lkupItemTransfer
+    Sanitized in 0.000 seconds.
+  lkupItemTransfer (SQL)
+  lkupOrderBy
+    Sanitized in 0.000 seconds.
+  lkupOrderBy (SQL)
+  MeadowlandInventoryValuex Query
+    Sanitized in 0.001 seconds.
+  MeadowlandInventoryValuex Query (SQL)
+  nyssa
+    Sanitized in 0.004 seconds.
+  nyssa (SQL)
+  qry EOD060
+    Sanitized in 0.001 seconds.
+  qry EOD060 (SQL)
+  qry EOD060InvoiceNumber
+    Sanitized in 0.003 seconds.
+  qry EOD060InvoiceNumber (SQL)
+  qry EODClubInvoices
+    Sanitized in 0.002 seconds.
+  qry EODClubInvoices (SQL)
+  qry EODClubInvoicesDetail
+    Sanitized in 0.002 seconds.
+  qry EODClubInvoicesDetail (SQL)
+  qry EODInventoryValue
+    Sanitized in 0.002 seconds.
+  qry EODInventoryValue (SQL)
+  qry EODInventoryValueByCategory
+    Sanitized in 0.002 seconds.
+  qry EODInventoryValueByCategory (SQL)
+  qry EODOnhandChanges
+    Sanitized in 0.002 seconds.
+  qry EODOnhandChanges (SQL)
+  qry EOM100ApplyNewPricesReport
+    Sanitized in 0.002 seconds.
+  qry EOM100ApplyNewPricesReport (SQL)
+  qry EOM110SalePricesReport
+    Sanitized in 0.001 seconds.
+  qry EOM110SalePricesReport (SQL)
+  qry EOM202MarkUpsAndDownsReport
+    Sanitized in 0.001 seconds.
+  qry EOM202MarkUpsAndDownsReport (SQL)
+  qry51SalesByDepartmentNoOS
+    Sanitized in 0.003 seconds.
+  qry51SalesByDepartmentNoOS (SQL)
+  qry66ScanBatchDetail
+    Sanitized in 0.002 seconds.
+  qry66ScanBatchDetail (SQL)
+  qry72NegativeSalesByCashierByItem
+    Sanitized in 0.002 seconds.
+  qry72NegativeSalesByCashierByItem (SQL)
+  qry76LiquorItemsNotScanned
+    Sanitized in 0.002 seconds.
+  qry76LiquorItemsNotScanned (SQL)
+  qry79ItemRestockListByCategory
+    Sanitized in 0.001 seconds.
+  qry79ItemRestockListByCategory (SQL)
+  qryADS_ItemMovement
+    Sanitized in 0.002 seconds.
+  qryADS_ItemMovement (SQL)
+  qryADS_ItemMovementWeightedByVendorADS
+    Sanitized in 0.002 seconds.
+  qryADS_ItemMovementWeightedByVendorADS (SQL)
+  qryADS_ItemSold
+    Sanitized in 0.001 seconds.
+  qryADS_ItemSold (SQL)
+  qryADS_ItemSoldByPacks
+    Sanitized in 0.001 seconds.
+  qryADS_ItemSoldByPacks (SQL)
+  qryADS_Step_1_Reset_DaysSupplyGroupID
+    Sanitized in 0.001 seconds.
+  qryADS_Step_1_Reset_DaysSupplyGroupID (SQL)
+  qryADS_Step_2_Set_AverageDailySales
+    Sanitized in 0.001 seconds.
+  qryADS_Step_2_Set_AverageDailySales (SQL)
+  qryADS_Step_3_Make_DaysSupplyADSForNewItems
+    Sanitized in 0.001 seconds.
+  qryADS_Step_3_Make_DaysSupplyADSForNewItems (SQL)
+  qryADS_Step_4_Set_ADSForNewItems
+    Sanitized in 0.001 seconds.
+  qryADS_Step_4_Set_ADSForNewItems (SQL)
+  qryADS_Step_5_Make_DaysSupplyItemSales
+    Sanitized in 0.001 seconds.
+  qryADS_Step_5_Make_DaysSupplyItemSales (SQL)
+  qryADS_Step_5_Make_DaysSupplyItemSalesx
+    Sanitized in 0.001 seconds.
+  qryADS_Step_5_Make_DaysSupplyItemSalesx (SQL)
+  qryADS_Step_6_AssignDaysSupplyGroupID
+    Sanitized in 0.001 seconds.
+  qryADS_Step_6_AssignDaysSupplyGroupID (SQL)
+  qryADS_VendorsWithAverageDaySupplyID
+    Sanitized in 0.001 seconds.
+  qryADS_VendorsWithAverageDaySupplyID (SQL)
+  qryadss3
+    Sanitized in 0.002 seconds.
+  qryadss3 (SQL)
+  qryadss3_upd
+    Sanitized in 0.002 seconds.
+  qryadss3_upd (SQL)
+  qryAgentList
+    Sanitized in 0.001 seconds.
+  qryAgentList (SQL)
+  qryAgentOrderCount
+    Sanitized in 0.001 seconds.
+  qryAgentOrderCount (SQL)
+  qryAgentsAppendOLCCClaims
+    Sanitized in 0.001 seconds.
+  qryAgentsAppendOLCCClaims (SQL)
+  qryAgentsFromOLCCAgentsAppend
+    Sanitized in 0.002 seconds.
+  qryAgentsFromOLCCAgentsAppend (SQL)
+  qryAgentsFromOLCCAgentsUpdate
+    Sanitized in 0.002 seconds.
+  qryAgentsFromOLCCAgentsUpdate (SQL)
+  qryAgentsFromOLCCWebAgentsAppend
+    Sanitized in 0.001 seconds.
+  qryAgentsFromOLCCWebAgentsAppend (SQL)
+  qryAgentsFromOLCCWebAgentsUpdate
+    Sanitized in 0.001 seconds.
+  qryAgentsFromOLCCWebAgentsUpdate (SQL)
+  qryAgentTransferCount
+    Sanitized in 0.001 seconds.
+  qryAgentTransferCount (SQL)
+  qryAgentTransferFromFTPHead
+    Sanitized in 0.001 seconds.
+  qryAgentTransferFromFTPHead (SQL)
+  qryAgentTransferFTP_Step1_Not_On_File
+    Sanitized in 0.001 seconds.
+  qryAgentTransferFTP_Step1_Not_On_File (SQL)
+  qryAgentTransferFTP_Step1_Related
+    Sanitized in 0.001 seconds.
+  qryAgentTransferFTP_Step1_Related (SQL)
+  qryAgentTransferFTP_Step2_AppendHead
+    Sanitized in 0.001 seconds.
+  qryAgentTransferFTP_Step2_AppendHead (SQL)
+  qryAgentTransferFTP_Step3_AppendLine
+    Sanitized in 0.001 seconds.
+  qryAgentTransferFTP_Step3_AppendLine (SQL)
+  qryAgentTransferHeadIDFromFTP
+    Sanitized in 0.001 seconds.
+  qryAgentTransferHeadIDFromFTP (SQL)
+  qryAgentTransferLines
+    Sanitized in 0.002 seconds.
+  qryAgentTransferLines (SQL)
+  qryAgentTransferLinesAndSysfile
+    Sanitized in 0.007 seconds.
+  qryAgentTransferLinesAndSysfile (SQL)
+  qryALLItemsAndALLTransTypes
+    Sanitized in 0.001 seconds.
+  qryALLItemsAndALLTransTypes (SQL)
+  qryAppendBuydowns
+    Sanitized in 0.004 seconds.
+  qryAppendBuydowns (SQL)
+  qryAppendCashierID
+    Sanitized in 0.000 seconds.
+  qryAppendCashierID (SQL)
+  qryAudit
+    Sanitized in 0.002 seconds.
+  qryAudit (SQL)
+  qryAuditAppendByCategory
+    Sanitized in 0.001 seconds.
+  qryAuditAppendByCategory (SQL)
+  qryAuditAppendByCode
+    Sanitized in 0.001 seconds.
+  qryAuditAppendByCode (SQL)
+  qryAuditAppendbyDescription
+    Sanitized in 0.002 seconds.
+  qryAuditAppendbyDescription (SQL)
+  qryAuditAppendByLocation
+    Sanitized in 0.001 seconds.
+  qryAuditAppendByLocation (SQL)
+  qryAuditAppendByPriceGroup
+    Sanitized in 0.002 seconds.
+  qryAuditAppendByPriceGroup (SQL)
+  qryAuditAppendBySalesDept
+    Sanitized in 0.001 seconds.
+  qryAuditAppendBySalesDept (SQL)
+  qryAuditAppendBySize
+    Sanitized in 0.001 seconds.
+  qryAuditAppendBySize (SQL)
+  qryAuditAppendByVendor
+    Sanitized in 0.001 seconds.
+  qryAuditAppendByVendor (SQL)
+  qryAuditFileFromPalm_Step_1
+    Sanitized in 0.001 seconds.
+  qryAuditFileFromPalm_Step_1 (SQL)
+  qryAuditFileFromPalm_Step_2
+    Sanitized in 0.001 seconds.
+  qryAuditFileFromPalm_Step_2 (SQL)
+  qryAuditFileFromPalm_Step_3
+    Sanitized in 0.002 seconds.
+  qryAuditFileFromPalm_Step_3 (SQL)
+  qryAuditFileFromPalm_Step_4
+    Sanitized in 0.001 seconds.
+  qryAuditFileFromPalm_Step_4 (SQL)
+  qryAuditFileToPalm_Step_1
+    Sanitized in 0.001 seconds.
+  qryAuditFileToPalm_Step_1 (SQL)
+  qryAuditFileToPalm_Step_2
+    Sanitized in 0.000 seconds.
+  qryAuditFileToPalm_Step_2 (SQL)
+  qryAuditFileToPalm_Step_2a
+    Sanitized in 0.001 seconds.
+  qryAuditFileToPalm_Step_2a (SQL)
+  qryAuditFileToPalm_Step_3
+    Sanitized in 0.002 seconds.
+  qryAuditFileToPalm_Step_3 (SQL)
+  qryAuditReport
+    Sanitized in 0.002 seconds.
+  qryAuditReport (SQL)
+  qryAuditUpdateOnShelf
+    Sanitized in 0.001 seconds.
+  qryAuditUpdateOnShelf (SQL)
+  qryAverageDaySupplyAppend
+    Sanitized in 0.001 seconds.
+  qryAverageDaySupplyAppend (SQL)
+  qryAverageDaySupplyLevels
+    Sanitized in 0.001 seconds.
+  qryAverageDaySupplyLevels (SQL)
+  qryBottleDepositQtyAdjAtEOD
+    Sanitized in 0.001 seconds.
+  qryBottleDepositQtyAdjAtEOD (SQL)
+  qryBottleHistoryByClubMonth
+    Sanitized in 0.003 seconds.
+  qryBottleHistoryByClubMonth (SQL)
+  qryBusinessLedger
+    Sanitized in 0.001 seconds.
+  qryBusinessLedger (SQL)
+  qryBusinessLedgerChart
+    Sanitized in 0.002 seconds.
+  qryBusinessLedgerChart (SQL)
+  qryBusinessLedgerNonLiquor
+    Sanitized in 0.002 seconds.
+  qryBusinessLedgerNonLiquor (SQL)
+  qryBuydownDetail
+    Sanitized in 0.002 seconds.
+  qryBuydownDetail (SQL)
+  qryBuyDownGoingOnNow
+    Sanitized in 0.001 seconds.
+  qryBuyDownGoingOnNow (SQL)
+  qryBuyDownHistory
+    Sanitized in 0.001 seconds.
+  qryBuyDownHistory (SQL)
+  qryBuyDownReport
+    Sanitized in 0.002 seconds.
+  qryBuyDownReport (SQL)
+  qryBuyDowns
+    Sanitized in 0.002 seconds.
+  qryBuyDowns (SQL)
+  qryCaseSKU
+    Sanitized in 0.001 seconds.
+  qryCaseSKU (SQL)
+  qryCashierAndProgramsSetAllowedFlag
+    Sanitized in 0.001 seconds.
+  qryCashierAndProgramsSetAllowedFlag (SQL)
+  qryCashierAndProgramsSetAllowedFlagByProgram
+    Sanitized in 0.002 seconds.
+  qryCashierAndProgramsSetAllowedFlagByProgram (SQL)
+  qryCashierLogin
+    Sanitized in 0.001 seconds.
+  qryCashierLogin (SQL)
+  qryCashierPasswordHistory
+    Sanitized in 0.001 seconds.
+  qryCashierPasswordHistory (SQL)
+  qryCashierRightsCashierList
+    Sanitized in 0.001 seconds.
+  qryCashierRightsCashierList (SQL)
+  qryCashierRightsProgramList
+    Sanitized in 0.001 seconds.
+  qryCashierRightsProgramList (SQL)
+  qryCashiers
+    Sanitized in 0.001 seconds.
+  qryCashiers (SQL)
+  qryCashiersAndProgramAllowedCount
+    Sanitized in 0.001 seconds.
+  qryCashiersAndProgramAllowedCount (SQL)
+  qryCashiersAndPrograms
+    Sanitized in 0.001 seconds.
+  qryCashiersAndPrograms (SQL)
+  qryCashiersAndProgramsAppend
+    Sanitized in 0.001 seconds.
+  qryCashiersAndProgramsAppend (SQL)
+  qryCashiersAndProgramsForm
+    Sanitized in 0.001 seconds.
+  qryCashiersAndProgramsForm (SQL)
+  qryCashiersAndProgramsFormLogin
+    Sanitized in 0.001 seconds.
+  qryCashiersAndProgramsFormLogin (SQL)
+  qryCashiersAndProgramsFormSub
+    Sanitized in 0.001 seconds.
+  qryCashiersAndProgramsFormSub (SQL)
+  qryCashiersAndProgramsLogin
+    Sanitized in 0.001 seconds.
+  qryCashiersAndProgramsLogin (SQL)
+  qryCashierSwitchBoardMain
+    Sanitized in 0.001 seconds.
+  qryCashierSwitchBoardMain (SQL)
+  qryCashierSwitchBoardPrograms
+    Sanitized in 0.002 seconds.
+  qryCashierSwitchBoardPrograms (SQL)
+  qryCashRegisters
+    Sanitized in 0.002 seconds.
+  qryCashRegisters (SQL)
+  qryCashsysIncrementLastInvoiceNo
+    Sanitized in 0.001 seconds.
+  qryCashsysIncrementLastInvoiceNo (SQL)
+  qryCashsysOnLine
+    Sanitized in 0.001 seconds.
+  qryCashsysOnLine (SQL)
+  qryCategory
+    Sanitized in 0.006 seconds.
+  qryCategory (SQL)
+  qryCheckCashing
+    Sanitized in 0.001 seconds.
+  qryCheckCashing (SQL)
+  qryCheckCashingCustomers
+    Sanitized in 0.002 seconds.
+  qryCheckCashingCustomers (SQL)
+  qryClubHistoryByBottleByMonth
+    Sanitized in 0.002 seconds.
+  qryClubHistoryByBottleByMonth (SQL)
+  qryClubHistoryByBottleByMonthMakeTable
+    Sanitized in 0.003 seconds.
+  qryClubHistoryByBottleByMonthMakeTable (SQL)
+  qryClubInvoice
+    Sanitized in 0.007 seconds.
+  qryClubInvoice (SQL)
+  qryClubInvoiceAndSysfile
+    Sanitized in 0.002 seconds.
+  qryClubInvoiceAndSysfile (SQL)
+  qryClubInvoiceAndSysfilePOSPrinter
+    Sanitized in 0.002 seconds.
+  qryClubInvoiceAndSysfilePOSPrinter (SQL)
+  qryClubInvoiceForClubScreen
+    Sanitized in 0.005 seconds.
+  qryClubInvoiceForClubScreen (SQL)
+  qryClubInvoiceForExport_00_MakeTable1
+    Sanitized in 0.002 seconds.
+  qryClubInvoiceForExport_00_MakeTable1 (SQL)
+  qryClubInvoiceForExport_01_Delete_Records
+    Sanitized in 0.001 seconds.
+  qryClubInvoiceForExport_01_Delete_Records (SQL)
+  qryClubInvoiceForExport_02_Append_Lines
+    Sanitized in 0.002 seconds.
+  qryClubInvoiceForExport_02_Append_Lines (SQL)
+  qryClubInvoiceForExport_03_Append_Discount_Liquor
+    Sanitized in 0.004 seconds.
+  qryClubInvoiceForExport_03_Append_Discount_Liquor (SQL)
+  qryClubInvoiceForExport_04_Append_Discount_NonLiquor
+    Sanitized in 0.005 seconds.
+  qryClubInvoiceForExport_04_Append_Discount_NonLiquor (SQL)
+  qryClubInvoiceHistoryByInvoice
+    Sanitized in 0.002 seconds.
+  qryClubInvoiceHistoryByInvoice (SQL)
+  qryClubInvoiceHistoryByInvoiceDetail
+    Sanitized in 0.014 seconds.
+  qryClubInvoiceHistoryByInvoiceDetail (SQL)
+  qryClubInvoiceHistoryByInvoiceDetailYYYYMM
+    Sanitized in 0.004 seconds.
+  qryClubInvoiceHistoryByInvoiceDetailYYYYMM (SQL)
+  qryClubInvoiceLiquorAndNonLiquor
+    Sanitized in 0.003 seconds.
+  qryClubInvoiceLiquorAndNonLiquor (SQL)
+  qryClubInvoiceLiquorAndNonLiquorClubScreen
+    Sanitized in 0.003 seconds.
+  qryClubInvoiceLiquorAndNonLiquorClubScreen (SQL)
+  qryClubInvoicePOSPrinter
+    Sanitized in 0.003 seconds.
+  qryClubInvoicePOSPrinter (SQL)
+  qryClubInvoices
+    Sanitized in 0.001 seconds.
+  qryClubInvoices (SQL)
+  qryClubInvoicesReport
+    Sanitized in 0.003 seconds.
+  qryClubInvoicesReport (SQL)
+  qryClubList
+    Sanitized in 0.001 seconds.
+  qryClubList (SQL)
+  qryClubOrderCount
+    Sanitized in 0.001 seconds.
+  qryClubOrderCount (SQL)
+  qryClubOrderCreateFromSalesHistory
+    Sanitized in 0.003 seconds.
+  qryClubOrderCreateFromSalesHistory (SQL)
+  qryClubOrderCreateFromSalesHistoryReport
+    Sanitized in 0.004 seconds.
+  qryClubOrderCreateFromSalesHistoryReport (SQL)
+  qryClubOrderCSV
+    Sanitized in 0.002 seconds.
+  qryClubOrderCSV (SQL)
+  qryClubOrderCSVAppend
+    Sanitized in 0.001 seconds.
+  qryClubOrderCSVAppend (SQL)
+  qryClubOrderGuideAppend
+    Sanitized in 0.002 seconds.
+  qryClubOrderGuideAppend (SQL)
+  qryClubOrderGuideDelete
+    Sanitized in 0.001 seconds.
+  qryClubOrderGuideDelete (SQL)
+  qryClubOrderGuideFromPalm_Step_1
+    Sanitized in 0.001 seconds.
+  qryClubOrderGuideFromPalm_Step_1 (SQL)
+  qryClubOrderGuideFromPalm_Step_2
+    Sanitized in 0.001 seconds.
+  qryClubOrderGuideFromPalm_Step_2 (SQL)
+  qryClubOrderGuideFromPalm_Step_3
+    Sanitized in 0.002 seconds.
+  qryClubOrderGuideFromPalm_Step_3 (SQL)
+  qryClubOrderGuides
+    Sanitized in 0.002 seconds.
+  qryClubOrderGuides (SQL)
+  qryClubOrderGuidesByCategoryReportAndSysfile
+    Sanitized in 0.005 seconds.
+  qryClubOrderGuidesByCategoryReportAndSysfile (SQL)
+  qryClubOrderGuidesForExport
+    Sanitized in 0.003 seconds.
+  qryClubOrderGuidesForExport (SQL)
+  qryClubOrderGuidesForExportAll
+    Sanitized in 0.002 seconds.
+  qryClubOrderGuidesForExportAll (SQL)
+  qryClubOrderGuidesLiquorRelated
+    Sanitized in 0.002 seconds.
+  qryClubOrderGuidesLiquorRelated (SQL)
+  qryClubOrderGuidesOriginal
+    Sanitized in 0.002 seconds.
+  qryClubOrderGuidesOriginal (SQL)
+  qryClubOrderGuidesReport
+    Sanitized in 0.004 seconds.
+  qryClubOrderGuidesReport (SQL)
+  qryClubOrderGuidesReportAndSysfile
+    Sanitized in 0.006 seconds.
+  qryClubOrderGuidesReportAndSysfile (SQL)
+  qryClubOrderGuidesReportByCategory
+    Sanitized in 0.003 seconds.
+  qryClubOrderGuidesReportByCategory (SQL)
+  qryClubOrderGuidesWithActualSales
+    Sanitized in 0.002 seconds.
+  qryClubOrderGuidesWithActualSales (SQL)
+  qryClubOrderGuideTempAppend
+    Sanitized in 0.001 seconds.
+  qryClubOrderGuideTempAppend (SQL)
+  qryClubOrderGuideTempDelete
+    Sanitized in 0.001 seconds.
+  qryClubOrderGuideTempDelete (SQL)
+  qryClubOrderGuideTempDeleteLineID
+    Sanitized in 0.000 seconds.
+  qryClubOrderGuideTempDeleteLineID (SQL)
+  qryClubOrderGuideTempIncrementLineID
+    Sanitized in 0.001 seconds.
+  qryClubOrderGuideTempIncrementLineID (SQL)
+  qryClubOrderGuideTempInsertLineID
+    Sanitized in 0.001 seconds.
+  qryClubOrderGuideTempInsertLineID (SQL)
+  qryClubOrderGuideWeb
+    Sanitized in 0.002 seconds.
+  qryClubOrderGuideWeb (SQL)
+  qryClubOrderGuideWebExport
+    Sanitized in 0.002 seconds.
+  qryClubOrderGuideWebExport (SQL)
+  qryClubOrderLineTotals
+    Sanitized in 0.004 seconds.
+  qryClubOrderLineTotals (SQL)
+  qryClubOrderLineTotalsPOS
+    Sanitized in 0.003 seconds.
+  qryClubOrderLineTotalsPOS (SQL)
+  qryClubOrderPrevious
+    Sanitized in 0.002 seconds.
+  qryClubOrderPrevious (SQL)
+  qryClubOrderSizeTot
+    Sanitized in 0.002 seconds.
+  qryClubOrderSizeTot (SQL)
+  qryClubOrderSizeTotals
+    Sanitized in 0.001 seconds.
+  qryClubOrderSizeTotals (SQL)
+  qryClubOrderXL
+    Sanitized in 0.002 seconds.
+  qryClubOrderXL (SQL)
+  qryClubOrderXLAppend
+    Sanitized in 0.003 seconds.
+  qryClubOrderXLAppend (SQL)
+  qryClubSalesThisMonthByItemByWeek
+    Sanitized in 0.002 seconds.
+  qryClubSalesThisMonthByItemByWeek (SQL)
+  qryClubSelect
+    Sanitized in 0.001 seconds.
+  qryClubSelect (SQL)
+  qryCompareLicenseeOrders_01_MakeTable
+    Sanitized in 0.002 seconds.
+  qryCompareLicenseeOrders_01_MakeTable (SQL)
+  qryCompareLicenseeOrders_02_PO2
+    Sanitized in 0.001 seconds.
+  qryCompareLicenseeOrders_02_PO2 (SQL)
+  qryComparePurchaseOrders_01_MakeTable
+    Sanitized in 0.002 seconds.
+  qryComparePurchaseOrders_01_MakeTable (SQL)
+  qryComparePurchaseOrders_02_PO2
+    Sanitized in 0.001 seconds.
+  qryComparePurchaseOrders_02_PO2 (SQL)
+  qryCompareScanItemToPurchaseOrder_01_MakeTable
+    Sanitized in 0.001 seconds.
+  qryCompareScanItemToPurchaseOrder_01_MakeTable (SQL)
+  qryCompareScanItemToPurchaseOrder_02_ScanTotals
+    Sanitized in 0.001 seconds.
+  qryCompareScanItemToPurchaseOrder_02_ScanTotals (SQL)
+  qryCompareScanItemToPurchaseOrder_03_UpdateQuantityScanned
+    Sanitized in 0.001 seconds.
+  qryCompareScanItemToPurchaseOrder_03_UpdateQuantityScanned (SQL)
+  qryCompareScanItemToPurchaseOrder_04_Append
+    Sanitized in 0.002 seconds.
+  qryCompareScanItemToPurchaseOrder_04_Append (SQL)
+  qryCompareScanItemToPurchaseOrder_04a_Repacks
+    Sanitized in 0.001 seconds.
+  qryCompareScanItemToPurchaseOrder_04a_Repacks (SQL)
+  qryCompareScanItemToPurchaseOrder_05
+    Sanitized in 0.002 seconds.
+  qryCompareScanItemToPurchaseOrder_05 (SQL)
+  qryCompareScanItemToPurchaseOrderSub
+    Sanitized in 0.002 seconds.
+  qryCompareScanItemToPurchaseOrderSub (SQL)
+  qryConvertItemSalesPrice
+    Sanitized in 0.001 seconds.
+  qryConvertItemSalesPrice (SQL)
+  qryConvItems1WithMarchPrices
+    Sanitized in 0.001 seconds.
+  qryConvItems1WithMarchPrices (SQL)
+  qryCorvallisItem
+    Sanitized in 0.003 seconds.
+  qryCorvallisItem (SQL)
+  qryCorvallisUPCItem
+    Sanitized in 0.001 seconds.
+  qryCorvallisUPCItem (SQL)
+  qryCorvallisUPCItemMFG
+    Sanitized in 0.001 seconds.
+  qryCorvallisUPCItemMFG (SQL)
+  qryCRBuydowns
+    Sanitized in 0.002 seconds.
+  qryCRBuydowns (SQL)
+  qryCRCashiers
+    Sanitized in 0.000 seconds.
+  qryCRCashiers (SQL)
+  qryCreatePurchaseOrderBasedOnSalesHistory
+    Sanitized in 0.001 seconds.
+  qryCreatePurchaseOrderBasedOnSalesHistory (SQL)
+  qryCreateTransmitDailySales
+    Sanitized in 0.003 seconds.
+  qryCreateTransmitDailySales (SQL)
+  qryCreateTransmitDailySalesInvoiceNo
+    Sanitized in 0.002 seconds.
+  qryCreateTransmitDailySalesInvoiceNo (SQL)
+  qryCreateTransmitDailySalesOldItemCode
+    Sanitized in 0.003 seconds.
+  qryCreateTransmitDailySalesOldItemCode (SQL)
+  qryCreateTransmitDailySalesTenderCode
+    Sanitized in 0.001 seconds.
+  qryCreateTransmitDailySalesTenderCode (SQL)
+  qryCreateTransmitInventory
+    Sanitized in 0.001 seconds.
+  qryCreateTransmitInventory (SQL)
+  qryCreateTransmitInventoryNABCA
+    Sanitized in 0.001 seconds.
+  qryCreateTransmitInventoryNABCA (SQL)
+  qryCreateTransmitInventoryRecreate
+    Sanitized in 0.001 seconds.
+  qryCreateTransmitInventoryRecreate (SQL)
+  qryCreateTransmitPurchaseOrder
+    Sanitized in 0.002 seconds.
+  qryCreateTransmitPurchaseOrder (SQL)
+  qryCRItemsPLUList
+    Sanitized in 0.001 seconds.
+  qryCRItemsPLUList (SQL)
+  qryCRObjects
+    Sanitized in 0.001 seconds.
+  qryCRObjects (SQL)
+  qryCROrdheadStatus
+    Sanitized in 0.000 seconds.
+  qryCROrdheadStatus (SQL)
+  qryCRReceipt
+    Sanitized in 0.003 seconds.
+  qryCRReceipt (SQL)
+  qryCRReceipt1
+    Sanitized in 0.003 seconds.
+  qryCRReceipt1 (SQL)
+  qryCRReceiptCheckInfo
+    Sanitized in 0.001 seconds.
+  qryCRReceiptCheckInfo (SQL)
+  qryCRReceiptCheckInfo1
+    Sanitized in 0.001 seconds.
+  qryCRReceiptCheckInfo1 (SQL)
+  qryCRReceiptODLInfo
+    Sanitized in 0.001 seconds.
+  qryCRReceiptODLInfo (SQL)
+  qryCRReceiptODLInfo1
+    Sanitized in 0.003 seconds.
+  qryCRReceiptODLInfo1 (SQL)
+  qryCRSalesDepartments
+    Sanitized in 0.001 seconds.
+  qryCRSalesDepartments (SQL)
+  qryCustomerCountsByTenderCode
+    Sanitized in 0.002 seconds.
+  qryCustomerCountsByTenderCode (SQL)
+  qryDaysSupplyInvoLineItemSalesByMinMaxDate
+    Sanitized in 0.002 seconds.
+  qryDaysSupplyInvoLineItemSalesByMinMaxDate (SQL)
+  qryDaysSupplyItemMovementADS
+    Sanitized in 0.002 seconds.
+  qryDaysSupplyItemMovementADS (SQL)
+  qryDaysSupplyItemMovementWeightedADS
+    Sanitized in 0.002 seconds.
+  qryDaysSupplyItemMovementWeightedADS (SQL)
+  qryDaysSupplyStep1_Reset_GroupLevel_ADS
+    Sanitized in 0.001 seconds.
+  qryDaysSupplyStep1_Reset_GroupLevel_ADS (SQL)
+  qryDaysSupplyStep2_SetAverageDailySales
+    Sanitized in 0.002 seconds.
+  qryDaysSupplyStep2_SetAverageDailySales (SQL)
+  qryDaysSupplyStep3_MakeDaysSupplyADSForNewItems
+    Sanitized in 0.001 seconds.
+  qryDaysSupplyStep3_MakeDaysSupplyADSForNewItems (SQL)
+  qryDaysSupplyStep4_SetAverageDailySalesForNewItems
+    Sanitized in 0.001 seconds.
+  qryDaysSupplyStep4_SetAverageDailySalesForNewItems (SQL)
+  qryDaysSupplyStep5_MakeDaysSupplyItemSales
+    Sanitized in 0.001 seconds.
+  qryDaysSupplyStep5_MakeDaysSupplyItemSales (SQL)
+  qryDaysSupplyStep6_SetGroupLevel
+    Sanitized in 0.002 seconds.
+  qryDaysSupplyStep6_SetGroupLevel (SQL)
+  qryDaysToRetain
+    Sanitized in 0.001 seconds.
+  qryDaysToRetain (SQL)
+  qrydbo_CRReportsAppend
+    Sanitized in 0.001 seconds.
+  qrydbo_CRReportsAppend (SQL)
+  qrydbo_CRReportsUpdate
+    Sanitized in 0.001 seconds.
+  qrydbo_CRReportsUpdate (SQL)
+  qrydbo_OLCCScanCode_12Or8
+    Sanitized in 0.001 seconds.
+  qrydbo_OLCCScanCode_12Or8 (SQL)
+  qrydbo_OLCCScanCode_14_to_12
+    Sanitized in 0.003 seconds.
+  qrydbo_OLCCScanCode_14_to_12 (SQL)
+  qrydbo_OLCCUPCItem_01_Append_12_From_10
+    Sanitized in 0.002 seconds.
+  qrydbo_OLCCUPCItem_01_Append_12_From_10 (SQL)
+  qrydbo_OLCCUPCItem_01_UPC_FirstChar
+    Sanitized in 0.002 seconds.
+  qrydbo_OLCCUPCItem_01_UPC_FirstChar (SQL)
+  qrydbo_OLCCUPCItem_02_Append_8_From_6
+    Sanitized in 0.001 seconds.
+  qrydbo_OLCCUPCItem_02_Append_8_From_6 (SQL)
+  qrydbo_OLCCUPCItem_03_Update_UPCCodeKMDS
+    Sanitized in 0.001 seconds.
+  qrydbo_OLCCUPCItem_03_Update_UPCCodeKMDS (SQL)
+  qrydbo_OLCCUPCItem_06_UPC_FirstChar
+    Sanitized in 0.002 seconds.
+  qrydbo_OLCCUPCItem_06_UPC_FirstChar (SQL)
+  qrydbo_OLCCUPCItemUpdate_01_14DigitWith12
+    Sanitized in 0.001 seconds.
+  qrydbo_OLCCUPCItemUpdate_01_14DigitWith12 (SQL)
+  qrydbo_OLCCUPCItemUpdate_02_6DigitWith8
+    Sanitized in 0.002 seconds.
+  qrydbo_OLCCUPCItemUpdate_02_6DigitWith8 (SQL)
+  qrydbo_OLCCUPCItemUpdate_03_10DigitWith10
+    Sanitized in 0.001 seconds.
+  qrydbo_OLCCUPCItemUpdate_03_10DigitWith10 (SQL)
+  qrydbo_OLCCUPCItemUpdate_04_DeleteTheRest
+    Sanitized in 0.001 seconds.
+  qrydbo_OLCCUPCItemUpdate_04_DeleteTheRest (SQL)
+  qryDeleteOrdhead
+    Sanitized in 0.001 seconds.
+  qryDeleteOrdhead (SQL)
+  qryDeposit_01_MakeDepositTable
+    Sanitized in 0.001 seconds.
+  qryDeposit_01_MakeDepositTable (SQL)
+  qryDeposit_02_UpdateDepositItemTable
+    Sanitized in 0.001 seconds.
+  qryDeposit_02_UpdateDepositItemTable (SQL)
+  qryDepositByItem
+    Sanitized in 0.002 seconds.
+  qryDepositByItem (SQL)
+  qryDrizly_01_Delete
+    Sanitized in 0.001 seconds.
+  qryDrizly_01_Delete (SQL)
+  qryDrizly_02_Append
+    Sanitized in 0.003 seconds.
+  qryDrizly_02_Append (SQL)
+  qryDrizly_03_Select
+    Sanitized in 0.003 seconds.
+  qryDrizly_03_Select (SQL)
+  qryEndOfDayObjects
+    Sanitized in 0.001 seconds.
+  qryEndOfDayObjects (SQL)
+  qryEO D030UpdateInvoLine5TenderPrice
+    Sanitized in 0.001 seconds.
+  qryEO D030UpdateInvoLine5TenderPrice (SQL)
+  qryEO M010DeleteNewPriceStaging
+    Sanitized in 0.001 seconds.
+  qryEO M010DeleteNewPriceStaging (SQL)
+  qryEO128LiquorItemsNotScanned
+    Sanitized in 0.003 seconds.
+  qryEO128LiquorItemsNotScanned (SQL)
+  qryEO129RInvoicesWithCoupons
+    Sanitized in 0.003 seconds.
+  qryEO129RInvoicesWithCoupons (SQL)
+  qryEO129RInvoicesWithCouponsLines
+    Sanitized in 0.003 seconds.
+  qryEO129RInvoicesWithCouponsLines (SQL)
+  qryEOCashDropsAndLoans
+    Sanitized in 0.002 seconds.
+  qryEOCashDropsAndLoans (SQL)
+  qryEOCashiersProductivityReport
+    Sanitized in 0.001 seconds.
+  qryEOCashiersProductivityReport (SQL)
+  qryEOCashReconOther
+    Sanitized in 0.002 seconds.
+  qryEOCashReconOther (SQL)
+  qryEOChargesTendered
+    Sanitized in 0.002 seconds.
+  qryEOChargesTendered (SQL)
+  qryEOChecksTender
+    Sanitized in 0.002 seconds.
+  qryEOChecksTender (SQL)
+  qryEOD010DeleteInvoHead5
+    Sanitized in 0.001 seconds.
+  qryEOD010DeleteInvoHead5 (SQL)
+  qryEOD011DeleteInvoLine5
+    Sanitized in 0.001 seconds.
+  qryEOD011DeleteInvoLine5 (SQL)
+  qryEOD021AppendCR1InvoLine
+    Sanitized in 0.001 seconds.
+  qryEOD021AppendCR1InvoLine (SQL)
+  qryEOD023AppendCR2InvoLine
+    Sanitized in 0.001 seconds.
+  qryEOD023AppendCR2InvoLine (SQL)
+  qryEOD025AppendCR3InvoLine
+    Sanitized in 0.001 seconds.
+  qryEOD025AppendCR3InvoLine (SQL)
+  qryEOD027AppendCR4InvoLine
+    Sanitized in 0.001 seconds.
+  qryEOD027AppendCR4InvoLine (SQL)
+  qryEOD027AppendCR5InvoLine
+    Sanitized in 0.001 seconds.
+  qryEOD027AppendCR5InvoLine (SQL)
+  qryEOD028UpdateInvo5LineCost
+    Sanitized in 0.001 seconds.
+  qryEOD028UpdateInvo5LineCost (SQL)
+  qryEOD029UpdateInvo5LineCostByDptGP
+    Sanitized in 0.001 seconds.
+  qryEOD029UpdateInvo5LineCostByDptGP (SQL)
+  qryEOD029UpdateInvo5LineCostLiquorClub
+    Sanitized in 0.001 seconds.
+  qryEOD029UpdateInvo5LineCostLiquorClub (SQL)
+  qryEOD029UpdateInvo5LineCostLiquorClubDiscount
+    Sanitized in 0.001 seconds.
+  qryEOD029UpdateInvo5LineCostLiquorClubDiscount (SQL)
+  qryEOD029UpdateInvo5LineCostLiquorCounter
+    Sanitized in 0.001 seconds.
+  qryEOD029UpdateInvo5LineCostLiquorCounter (SQL)
+  qryEOD029UpdateInvo5LineCostTransfersToZero
+    Sanitized in 0.001 seconds.
+  qryEOD029UpdateInvo5LineCostTransfersToZero (SQL)
+  qryEOD030CashierAutodropCharges
+    Sanitized in 0.002 seconds.
+  qryEOD030CashierAutodropCharges (SQL)
+  qryEOD030CashierAutodropChargesReverse
+    Sanitized in 0.002 seconds.
+  qryEOD030CashierAutodropChargesReverse (SQL)
+  qryEOD031CashierAutodropChecks
+    Sanitized in 0.001 seconds.
+  qryEOD031CashierAutodropChecks (SQL)
+  qryEOD031CashierAutodropChecksReverse
+    Sanitized in 0.002 seconds.
+  qryEOD031CashierAutodropChecksReverse (SQL)
+  qryEOD033BottleDepositQtyAdjAtEOD
+    Sanitized in 0.002 seconds.
+  qryEOD033BottleDepositQtyAdjAtEOD (SQL)
+  qryEOD065ClubInvoicesDelete
+    Sanitized in 0.001 seconds.
+  qryEOD065ClubInvoicesDelete (SQL)
+  qryEOD100DeleteItemsSold
+    Sanitized in 0.001 seconds.
+  qryEOD100DeleteItemsSold (SQL)
+  qryEOD101AppendItemsSold
+    Sanitized in 0.001 seconds.
+  qryEOD101AppendItemsSold (SQL)
+  qryEOD102UpdateItemsOnhand
+    Sanitized in 0.001 seconds.
+  qryEOD102UpdateItemsOnhand (SQL)
+  qryEOD103AppendShifts
+    Sanitized in 0.001 seconds.
+  qryEOD103AppendShifts (SQL)
+  qryEOD104AppendInvo5Line
+    Sanitized in 0.001 seconds.
+  qryEOD104AppendInvo5Line (SQL)
+  qryEOD900ItemZeroSoldToday
+    Sanitized in 0.001 seconds.
+  qryEOD900ItemZeroSoldToday (SQL)
+  qryEOD901SetSysfileCheckFlagTo0
+    Sanitized in 0.001 seconds.
+  qryEOD901SetSysfileCheckFlagTo0 (SQL)
+  qryEOD902DeleteItemsSold
+    Sanitized in 0.001 seconds.
+  qryEOD902DeleteItemsSold (SQL)
+  qryEOD910CashierDropCountReset
+    Sanitized in 0.001 seconds.
+  qryEOD910CashierDropCountReset (SQL)
+  qryEOD921PurgeInvoline_1_Mark_With_Z
+    Sanitized in 0.002 seconds.
+  qryEOD921PurgeInvoline_1_Mark_With_Z (SQL)
+  qryEOD921PurgeInvoline_2_Delete_With_Z
+    Sanitized in 0.001 seconds.
+  qryEOD921PurgeInvoline_2_Delete_With_Z (SQL)
+  qryEOD921PurgeKMDSLog500Days
+    Sanitized in 0.000 seconds.
+  qryEOD921PurgeKMDSLog500Days (SQL)
+  qryEOD922SetItemSubCategoryIDTo0
+    Sanitized in 0.001 seconds.
+  qryEOD922SetItemSubCategoryIDTo0 (SQL)
+  qryEOFintechAccountsTendered
+    Sanitized in 0.002 seconds.
+  qryEOFintechAccountsTendered (SQL)
+  qryEOItemsSetupToday
+    Sanitized in 0.002 seconds.
+  qryEOItemsSetupToday (SQL)
+  qryEOItemsSoldToday
+    Sanitized in 0.002 seconds.
+  qryEOItemsSoldToday (SQL)
+  qryEOItemsSoldToday1
+    Sanitized in 0.002 seconds.
+  qryEOItemsSoldToday1 (SQL)
+  qryEOItemsWithNegativeOnhands
+    Sanitized in 0.003 seconds.
+  qryEOItemsWithNegativeOnhands (SQL)
+  qryEOM050DeleteNewpriceNulls
+    Sanitized in 0.001 seconds.
+  qryEOM050DeleteNewpriceNulls (SQL)
+  qryEOM099_Set_Cost_To_Price
+    Sanitized in 0.001 seconds.
+  qryEOM099_Set_Cost_To_Price (SQL)
+  qryEOM101ApplyNewPricesUpdate
+    Sanitized in 0.002 seconds.
+  qryEOM101ApplyNewPricesUpdate (SQL)
+  qryEOM111SalePricesAppend
+    Sanitized in 0.001 seconds.
+  qryEOM111SalePricesAppend (SQL)
+  qryEOM201_Set_Price_To_CurPrice
+    Sanitized in 0.001 seconds.
+  qryEOM201_Set_Price_To_CurPrice (SQL)
+  qryEOM203_Set_Cost_To_Price
+    Sanitized in 0.001 seconds.
+  qryEOM203_Set_Cost_To_Price (SQL)
+  qryEOOpenAccountsTendered
+    Sanitized in 0.002 seconds.
+  qryEOOpenAccountsTendered (SQL)
+  qryEOSalesbyAllCashiersByDepartment
+    Sanitized in 0.005 seconds.
+  qryEOSalesbyAllCashiersByDepartment (SQL)
+  qryEOSalesbyAllCashiersByDepartmentx
+    Sanitized in 0.004 seconds.
+  qryEOSalesbyAllCashiersByDepartmentx (SQL)
+  qryEOSalesByDepartment
+    Sanitized in 0.003 seconds.
+  qryEOSalesByDepartment (SQL)
+  qryEOSalesByDepartment20051210
+    Sanitized in 0.004 seconds.
+  qryEOSalesByDepartment20051210 (SQL)
+  qryEOSalesByDepartmentByCashier
+    Sanitized in 0.002 seconds.
+  qryEOSalesByDepartmentByCashier (SQL)
+  qryEOSalesByDepartmentDetail
+    Sanitized in 0.004 seconds.
+  qryEOSalesByDepartmentDetail (SQL)
+  qryEOSalesByDepartmentNoOS
+    Sanitized in 0.004 seconds.
+  qryEOSalesByDepartmentNoOS (SQL)
+  qryEOSalesByDepartmentNoOS0206
+    Sanitized in 0.004 seconds.
+  qryEOSalesByDepartmentNoOS0206 (SQL)
+  qryEOSalesForEMail
+    Sanitized in 0.003 seconds.
+  qryEOSalesForEMail (SQL)
+  qryEOSalesReturnsAndCancelsByCashierByItem
+    Sanitized in 0.002 seconds.
+  qryEOSalesReturnsAndCancelsByCashierByItem (SQL)
+  qryEOSalesReturnsByCashierByItem
+    Sanitized in 0.002 seconds.
+  qryEOSalesReturnsByCashierByItem (SQL)
+  qryEOTenderByDepartment
+    Sanitized in 0.002 seconds.
+  qryEOTenderByDepartment (SQL)
+  qryEOTenderByDepartmentByCashier
+    Sanitized in 0.002 seconds.
+  qryEOTenderByDepartmentByCashier (SQL)
+  qryEOTenderByDepartmentByRegister
+    Sanitized in 0.002 seconds.
+  qryEOTenderByDepartmentByRegister (SQL)
+  qryFintechDivisionID
+    Sanitized in 0.001 seconds.
+  qryFintechDivisionID (SQL)
+  qryFintechDivisionIDRelated
+    Sanitized in 0.001 seconds.
+  qryFintechDivisionIDRelated (SQL)
+  qryFintechExport
+    Sanitized in 0.003 seconds.
+  qryFintechExport (SQL)
+  qryFintechExportLiquor
+    Sanitized in 0.003 seconds.
+  qryFintechExportLiquor (SQL)
+  qryFintechExportRelated
+    Sanitized in 0.003 seconds.
+  qryFintechExportRelated (SQL)
+  qryFintechReport
+    Sanitized in 0.002 seconds.
+  qryFintechReport (SQL)
+  qryFintechTransactionClubID
+    Sanitized in 0.002 seconds.
+  qryFintechTransactionClubID (SQL)
+  qryFinTechTransactions
+    Sanitized in 0.001 seconds.
+  qryFinTechTransactions (SQL)
+  qryFixClubOrders
+    Sanitized in 0.002 seconds.
+  qryFixClubOrders (SQL)
+  qryFixClubs_01_Ordhead
+    Sanitized in 0.002 seconds.
+  qryFixClubs_01_Ordhead (SQL)
+  qryFixClubs_02_Ordline
+    Sanitized in 0.005 seconds.
+  qryFixClubs_02_Ordline (SQL)
+  qryForms
+    Sanitized in 0.001 seconds.
+  qryForms (SQL)
+  qryFulPrice
+    Sanitized in 0.002 seconds.
+  qryFulPrice (SQL)
+  qryFulPriceFixPrice
+    Sanitized in 0.001 seconds.
+  qryFulPriceFixPrice (SQL)
+  qryFulPriceMaxCode
+    Sanitized in 0.001 seconds.
+  qryFulPriceMaxCode (SQL)
+  qryFulPriceMinCode
+    Sanitized in 0.001 seconds.
+  qryFulPriceMinCode (SQL)
+  qryFulPriceUpdate
+    Sanitized in 0.001 seconds.
+  qryFulPriceUpdate (SQL)
+  qryIMStep01DeleteItemMovement
+    Sanitized in 0.001 seconds.
+  qryIMStep01DeleteItemMovement (SQL)
+  qryIMStep02aAppendItemMovement
+    Sanitized in 0.004 seconds.
+  qryIMStep02aAppendItemMovement (SQL)
+  qryIMStep02bAppendItemMovementPacks
+    Sanitized in 0.003 seconds.
+  qryIMStep02bAppendItemMovementPacks (SQL)
+  qryIMStep03DeleteItemMovementCM
+    Sanitized in 0.001 seconds.
+  qryIMStep03DeleteItemMovementCM (SQL)
+  qryIMStep04AppendItemMovementCM
+    Sanitized in 0.001 seconds.
+  qryIMStep04AppendItemMovementCM (SQL)
+  qryIMStep05UpdateItemMovementCM
+    Sanitized in 0.001 seconds.
+  qryIMStep05UpdateItemMovementCM (SQL)
+  qryIMStep06AppendItemMovementNewCM
+    Sanitized in 0.001 seconds.
+  qryIMStep06AppendItemMovementNewCM (SQL)
+  qryIMStep07DeleteItemMovementSalesTotal
+    Sanitized in 0.001 seconds.
+  qryIMStep07DeleteItemMovementSalesTotal (SQL)
+  qryIMStep08AppendIMSalesTotal
+    Sanitized in 0.002 seconds.
+  qryIMStep08AppendIMSalesTotal (SQL)
+  qryIMStep09ReversePurchases
+    Sanitized in 0.000 seconds.
+  qryIMStep09ReversePurchases (SQL)
+  qryIMStep10AppendAllTransactions
+    Sanitized in 0.002 seconds.
+  qryIMStep10AppendAllTransactions (SQL)
+  qryInstallItemsUpdateOrdeInfoOnhandGTCase
+    Sanitized in 0.001 seconds.
+  qryInstallItemsUpdateOrdeInfoOnhandGTCase (SQL)
+  qryInstallItemsUpdateOrderInfoOnhandLTCaseQty
+    Sanitized in 0.001 seconds.
+  qryInstallItemsUpdateOrderInfoOnhandLTCaseQty (SQL)
+  qryInstallItemsUpdateUnitsPerCase
+    Sanitized in 0.001 seconds.
+  qryInstallItemsUpdateUnitsPerCase (SQL)
+  qryInventoryByItemID
+    Sanitized in 0.002 seconds.
+  qryInventoryByItemID (SQL)
+  qryInventoryByLocation
+    Sanitized in 0.002 seconds.
+  qryInventoryByLocation (SQL)
+  qryInventoryCountByDepartment
+    Sanitized in 0.002 seconds.
+  qryInventoryCountByDepartment (SQL)
+  qryInventoryCountBySubCategory
+    Sanitized in 0.002 seconds.
+  qryInventoryCountBySubCategory (SQL)
+  qryInventoryValueByCategory
+    Sanitized in 0.003 seconds.
+  qryInventoryValueByCategory (SQL)
+  qryInventoryValueByCategory75
+    Sanitized in 0.002 seconds.
+  qryInventoryValueByCategory75 (SQL)
+  qryInventoryValueByCategoryOnSale
+    Sanitized in 0.003 seconds.
+  qryInventoryValueByCategoryOnSale (SQL)
+  qryInventoryValueByCategoryOnTPR
+    Sanitized in 0.002 seconds.
+  qryInventoryValueByCategoryOnTPR (SQL)
+  qryInventoryValueByCode
+    Sanitized in 0.004 seconds.
+  qryInventoryValueByCode (SQL)
+  qryInventoryValueByCodeAll
+    Sanitized in 0.004 seconds.
+  qryInventoryValueByCodeAll (SQL)
+  qryInventoryValueByCodeByDateLastSold
+    Sanitized in 0.003 seconds.
+  qryInventoryValueByCodeByDateLastSold (SQL)
+  qryInventoryValueByCodeWithSpecialOrder
+    Sanitized in 0.004 seconds.
+  qryInventoryValueByCodeWithSpecialOrder (SQL)
+  qryInventoryValueByDepartment
+    Sanitized in 0.002 seconds.
+  qryInventoryValueByDepartment (SQL)
+  qryInventoryValueReport
+    Sanitized in 0.002 seconds.
+  qryInventoryValueReport (SQL)
+  qryInventoryValueReportx
+    Sanitized in 0.002 seconds.
+  qryInventoryValueReportx (SQL)
+  qryInvo5LineAppend
+    Sanitized in 0.001 seconds.
+  qryInvo5LineAppend (SQL)
+  qryInvoicesWithCoupons
+    Sanitized in 0.002 seconds.
+  qryInvoicesWithCoupons (SQL)
+  qryInvoicesWithLottery
+    Sanitized in 0.001 seconds.
+  qryInvoicesWithLottery (SQL)
+  qryInvoicesWithLotteryAndCouponsMake
+    Sanitized in 0.001 seconds.
+  qryInvoicesWithLotteryAndCouponsMake (SQL)
+  qryInvoLine4AppendNewItems
+    Sanitized in 0.001 seconds.
+  qryInvoLine4AppendNewItems (SQL)
+  qryInvoLine4UpdateDrawerToSizeID
+    Sanitized in 0.001 seconds.
+  qryInvoLine4UpdateDrawerToSizeID (SQL)
+  qryInvoLine4UpdateNullTransTypesToS
+    Sanitized in 0.001 seconds.
+  qryInvoLine4UpdateNullTransTypesToS (SQL)
+  qryInvoLine5CancelledSales
+    Sanitized in 0.001 seconds.
+  qryInvoLine5CancelledSales (SQL)
+  qryInvoLine5CancelledSalesDetail
+    Sanitized in 0.002 seconds.
+  qryInvoLine5CancelledSalesDetail (SQL)
+  qryInvoline5Charges
+    Sanitized in 0.001 seconds.
+  qryInvoline5Charges (SQL)
+  qryInvoLine5InvoheadByFirstPaymentType
+    Sanitized in 0.001 seconds.
+  qryInvoLine5InvoheadByFirstPaymentType (SQL)
+  qryInvoLine5InvoheadByPayment
+    Sanitized in 0.002 seconds.
+  qryInvoLine5InvoheadByPayment (SQL)
+  qryInvoLine5SalesByCashierByInvoice
+    Sanitized in 0.003 seconds.
+  qryInvoLine5SalesByCashierByInvoice (SQL)
+  qryInvoLine5SalesByCashierSummary
+    Sanitized in 0.002 seconds.
+  qryInvoLine5SalesByCashierSummary (SQL)
+  qryInvoLineByFirstPaymentType
+    Sanitized in 0.001 seconds.
+  qryInvoLineByFirstPaymentType (SQL)
+  qryInvoLineByItemByTransByMonth
+    Sanitized in 0.002 seconds.
+  qryInvoLineByItemByTransByMonth (SQL)
+  qryInvoLineByItemByTransByMonthPO
+    Sanitized in 0.002 seconds.
+  qryInvoLineByItemByTransByMonthPO (SQL)
+  qryInvoLineByPayment
+    Sanitized in 0.002 seconds.
+  qryInvoLineByPayment (SQL)
+  qryInvoLineClubInvoices
+    Sanitized in 0.001 seconds.
+  qryInvoLineClubInvoices (SQL)
+  qryInvoLineClubSalesByItemByWeek
+    Sanitized in 0.001 seconds.
+  qryInvoLineClubSalesByItemByWeek (SQL)
+  qryInvoLineCountByCode
+    Sanitized in 0.001 seconds.
+  qryInvoLineCountByCode (SQL)
+  qryInvoLineFixPOVendorLines
+    Sanitized in 0.001 seconds.
+  qryInvoLineFixPOVendorLines (SQL)
+  qryInvoLineMaxSetup
+    Sanitized in 0.001 seconds.
+  qryInvoLineMaxSetup (SQL)
+  qryInvoLineMinimumSetupDate
+    Sanitized in 0.001 seconds.
+  qryInvoLineMinimumSetupDate (SQL)
+  qryInvoLineReceiptsSelected
+    Sanitized in 0.002 seconds.
+  qryInvoLineReceiptsSelected (SQL)
+  qryInvoLineReceiptsWithItemsSelected
+    Sanitized in 0.001 seconds.
+  qryInvoLineReceiptsWithItemsSelected (SQL)
+  qryInvoLineSetCodeToCatchAllCode
+    Sanitized in 0.001 seconds.
+  qryInvoLineSetCodeToCatchAllCode (SQL)
+  qryInvoLineSetCost
+    Sanitized in 0.001 seconds.
+  qryInvoLineSetCost (SQL)
+  qryInvoLineTransCount
+    Sanitized in 0.001 seconds.
+  qryInvoLineTransCount (SQL)
+  qryInvolineTransfersByAgent
+    Sanitized in 0.002 seconds.
+  qryInvolineTransfersByAgent (SQL)
+  qryInvolineTransfersByAgentByLineID
+    Sanitized in 0.002 seconds.
+  qryInvolineTransfersByAgentByLineID (SQL)
+  qryInvoLineUPC_MRU
+    Sanitized in 0.001 seconds.
+  qryInvoLineUPC_MRU (SQL)
+  qryInvoLineVisas
+    Sanitized in 0.001 seconds.
+  qryInvoLineVisas (SQL)
+  qryInvoLineVisasWithChange
+    Sanitized in 0.001 seconds.
+  qryInvoLineVisasWithChange (SQL)
+  qryInvoLineYTransMostRecent
+    Sanitized in 0.001 seconds.
+  qryInvoLineYTransMostRecent (SQL)
+  qryItemAvailByItem
+    Sanitized in 0.001 seconds.
+  qryItemAvailByItem (SQL)
+  qryItemAvailByItemx
+    Sanitized in 0.002 seconds.
+  qryItemAvailByItemx (SQL)
+  qryItemAvailByItemxx
+    Sanitized in 0.002 seconds.
+  qryItemAvailByItemxx (SQL)
+  qryItemBySalesDepartmentCount
+    Sanitized in 0.001 seconds.
+  qryItemBySalesDepartmentCount (SQL)
+  qryItemByVendorCount
+    Sanitized in 0.001 seconds.
+  qryItemByVendorCount (SQL)
+  qryItemCartonsAndPacks
+    Sanitized in 0.002 seconds.
+  qryItemCartonsAndPacks (SQL)
+  qryItemChartMovement
+    Sanitized in 0.002 seconds.
+  qryItemChartMovement (SQL)
+  qryItemDetailForOrdering_00_VerifyDownload
+    Sanitized in 0.002 seconds.
+  qryItemDetailForOrdering_00_VerifyDownload (SQL)
+  qryItemDetailForOrdering_01_Delete
+    Sanitized in 0.001 seconds.
+  qryItemDetailForOrdering_01_Delete (SQL)
+  qryItemDetailForOrdering_02_Append
+    Sanitized in 0.002 seconds.
+  qryItemDetailForOrdering_02_Append (SQL)
+  qryItemDetailForOrdering_03_ReportDateDelete
+    Sanitized in 0.001 seconds.
+  qryItemDetailForOrdering_03_ReportDateDelete (SQL)
+  qryItemDetailForOrdering_04_ReportDateAppend
+    Sanitized in 0.001 seconds.
+  qryItemDetailForOrdering_04_ReportDateAppend (SQL)
+  qryItemDetailForOrdering_05_ReportDateUpdate
+    Sanitized in 0.001 seconds.
+  qryItemDetailForOrdering_05_ReportDateUpdate (SQL)
+  qryItemDetailForOrdering_06_QtyPack_Update_Reset
+    Sanitized in 0.001 seconds.
+  qryItemDetailForOrdering_06_QtyPack_Update_Reset (SQL)
+  qryItemDetailForOrdering_07_QtyPack_Update
+    Sanitized in 0.002 seconds.
+  qryItemDetailForOrdering_07_QtyPack_Update (SQL)
+  qryItemDetailForOrdering_07_QtyPackNoStock_Update
+    Sanitized in 0.001 seconds.
+  qryItemDetailForOrdering_07_QtyPackNoStock_Update (SQL)
+  qryItemDetailForOrdering_08_NotFound
+    Sanitized in 0.001 seconds.
+  qryItemDetailForOrdering_08_NotFound (SQL)
+  qryItemDetailForOrdering_CaseQtyVariance
+    Sanitized in 0.001 seconds.
+  qryItemDetailForOrdering_CaseQtyVariance (SQL)
+  qryItemDetailForOrdering_CaseQtyVariance_Update
+    Sanitized in 0.001 seconds.
+  qryItemDetailForOrdering_CaseQtyVariance_Update (SQL)
+  qryItemDetailForOrdering_UnitsPerOrder_MinOrder_Update
+    Sanitized in 0.001 seconds.
+  qryItemDetailForOrdering_UnitsPerOrder_MinOrder_Update (SQL)
+  qryItemDetailForOrdering_UnitsPerOrder_MinOrder_Var
+    Sanitized in 0.002 seconds.
+  qryItemDetailForOrdering_UnitsPerOrder_MinOrder_Var (SQL)
+  qryItemExpandSubPack10to12
+    Sanitized in 0.001 seconds.
+  qryItemExpandSubPack10to12 (SQL)
+  qryItemExpandSubPack6to8
+    Sanitized in 0.001 seconds.
+  qryItemExpandSubPack6to8 (SQL)
+  qryItemLabelMakeTable
+    Sanitized in 0.003 seconds.
+  qryItemLabelMakeTable (SQL)
+  qryItemLabelMakeTable2
+    Sanitized in 0.003 seconds.
+  qryItemLabelMakeTable2 (SQL)
+  qryItemLabelMakeTableForCurrentItem
+    Sanitized in 0.003 seconds.
+  qryItemLabelMakeTableForCurrentItem (SQL)
+  qryItemLabelMakeTableOneOff
+    Sanitized in 0.002 seconds.
+  qryItemLabelMakeTableOneOff (SQL)
+  qryItemLabelMakeTableUpdateLiquorUPC
+    Sanitized in 0.001 seconds.
+  qryItemLabelMakeTableUpdateLiquorUPC (SQL)
+  qryItemLabelsForBrother
+    Sanitized in 0.002 seconds.
+  qryItemLabelsForBrother (SQL)
+  qryItemLabelsResetLabels
+    Sanitized in 0.001 seconds.
+  qryItemLabelsResetLabels (SQL)
+  qryItemLabelsUpdateLabels
+    Sanitized in 0.001 seconds.
+  qryItemLabelsUpdateLabels (SQL)
+  qryItemLabelsUpdateLabelsFromPO
+    Sanitized in 0.001 seconds.
+  qryItemLabelsUpdateLabelsFromPO (SQL)
+  qryItemLabelsWithUPCGlyph
+    Sanitized in 0.002 seconds.
+  qryItemLabelsWithUPCGlyph (SQL)
+  qryItemMovement
+    Sanitized in 0.001 seconds.
+  qryItemMovement (SQL)
+  qryItemMovementByPriceGroupReport
+    Sanitized in 0.003 seconds.
+  qryItemMovementByPriceGroupReport (SQL)
+  qryItemMovementByView
+    Sanitized in 0.001 seconds.
+  qryItemMovementByView (SQL)
+  qryItemMovementCross
+    Sanitized in 0.002 seconds.
+  qryItemMovementCross (SQL)
+  qryItemMovementPackSales
+    Sanitized in 0.002 seconds.
+  qryItemMovementPackSales (SQL)
+  qryItemMovementReport
+    Sanitized in 0.002 seconds.
+  qryItemMovementReport (SQL)
+  qryItemMovementWithTransfersReversed
+    Sanitized in 0.002 seconds.
+  qryItemMovementWithTransfersReversed (SQL)
+  qryItemMovementx
+    Sanitized in 0.001 seconds.
+  qryItemMovementx (SQL)
+  qryItemOnhandChanges
+    Sanitized in 0.002 seconds.
+  qryItemOnhandChanges (SQL)
+  qryItemOnhandRecalcByTranTypes
+    Sanitized in 0.001 seconds.
+  qryItemOnhandRecalcByTranTypes (SQL)
+  qryItemOnOrder
+    Sanitized in 0.001 seconds.
+  qryItemOnOrder (SQL)
+  qryItemOnOrders
+    Sanitized in 0.002 seconds.
+  qryItemOnOrders (SQL)
+  qryItemOnOtherPO
+    Sanitized in 0.001 seconds.
+  qryItemOnOtherPO (SQL)
+  qryItemOnReserve
+    Sanitized in 0.001 seconds.
+  qryItemOnReserve (SQL)
+  qryItemOnReserves
+    Sanitized in 0.002 seconds.
+  qryItemOnReserves (SQL)
+  qryItemOnTransfer
+    Sanitized in 0.002 seconds.
+  qryItemOnTransfer (SQL)
+  qryItemRestockList
+    Sanitized in 0.002 seconds.
+  qryItemRestockList (SQL)
+  qryItemsAfterRecalcOfUnitsPerOrder
+    Sanitized in 0.002 seconds.
+  qryItemsAfterRecalcOfUnitsPerOrder (SQL)
+  qryItemSalesAndTransfersByMonth
+    Sanitized in 0.002 seconds.
+  qryItemSalesAndTransfersByMonth (SQL)
+  qryItemSalesByCashierReport
+    Sanitized in 0.002 seconds.
+  qryItemSalesByCashierReport (SQL)
+  qryItemSalesByCategoryReport
+    Sanitized in 0.002 seconds.
+  qryItemSalesByCategoryReport (SQL)
+  qryItemSalesByDepartmentByVendorReport
+    Sanitized in 0.003 seconds.
+  qryItemSalesByDepartmentByVendorReport (SQL)
+  qryItemSalesReport
+    Sanitized in 0.002 seconds.
+  qryItemSalesReport (SQL)
+  qryItemsByCategoryCounts
+    Sanitized in 0.001 seconds.
+  qryItemsByCategoryCounts (SQL)
+  qryItemsByDaysSupplyAvgDailySales
+    Sanitized in 0.002 seconds.
+  qryItemsByDaysSupplyAvgDailySales (SQL)
+  qryItemsByDaysSupplyReport
+    Sanitized in 0.002 seconds.
+  qryItemsByDaysSupplyReport (SQL)
+  qryItemsByDaysSupplySoldTotals
+    Sanitized in 0.001 seconds.
+  qryItemsByDaysSupplySoldTotals (SQL)
+  qryItemsBySalesDepartment
+    Sanitized in 0.001 seconds.
+  qryItemsBySalesDepartment (SQL)
+  qryItemsBySalesDepartmentDetail
+    Sanitized in 0.002 seconds.
+  qryItemsBySalesDepartmentDetail (SQL)
+  qryItemsBySalesDepartmentTotals
+    Sanitized in 0.001 seconds.
+  qryItemsBySalesDepartmentTotals (SQL)
+  qryItemsBySizeCounts
+    Sanitized in 0.001 seconds.
+  qryItemsBySizeCounts (SQL)
+  qryItemsByVendor
+    Sanitized in 0.002 seconds.
+  qryItemsByVendor (SQL)
+  qryItemsCartonsToPacks_Step1_Report
+    Sanitized in 0.002 seconds.
+  qryItemsCartonsToPacks_Step1_Report (SQL)
+  qryItemsCartonsToPacks_Step2_UpdatePacks
+    Sanitized in 0.001 seconds.
+  qryItemsCartonsToPacks_Step2_UpdatePacks (SQL)
+  qryItemsCartonsToPacks_Step3_UpdateCartons
+    Sanitized in 0.002 seconds.
+  qryItemsCartonsToPacks_Step3_UpdateCartons (SQL)
+  qryItemSetLocation_1_BACK
+    Sanitized in 0.001 seconds.
+  qryItemSetLocation_1_BACK (SQL)
+  qryItemSetLocation_2_SHELF
+    Sanitized in 0.001 seconds.
+  qryItemSetLocation_2_SHELF (SQL)
+  qryItemSetLocation_3_OFFICE
+    Sanitized in 0.001 seconds.
+  qryItemSetLocation_3_OFFICE (SQL)
+  qryItemSetPrice
+    Sanitized in 0.001 seconds.
+  qryItemSetPrice (SQL)
+  qryItemSetPriceGroupID0ForOrphans
+    Sanitized in 0.003 seconds.
+  qryItemSetPriceGroupID0ForOrphans (SQL)
+  qryItemSetPriceGroupIDTo0
+    Sanitized in 0.001 seconds.
+  qryItemSetPriceGroupIDTo0 (SQL)
+  qryItemsSalePriceNow
+    Sanitized in 0.001 seconds.
+  qryItemsSalePriceNow (SQL)
+  qryItemsSalePriceNowparItemID
+    Sanitized in 0.001 seconds.
+  qryItemsSalePriceNowparItemID (SQL)
+  qryItemsSetCaseQty
+    Sanitized in 0.001 seconds.
+  qryItemsSetCaseQty (SQL)
+  qryItemsSetCategoryToOLCC_Step_1_Reset_To_0
+    Sanitized in 0.001 seconds.
+  qryItemsSetCategoryToOLCC_Step_1_Reset_To_0 (SQL)
+  qryItemsSetCategoryToOLCC_Step_2_Delete_Liquor_SubCategory
+    Sanitized in 0.001 seconds.
+  qryItemsSetCategoryToOLCC_Step_2_Delete_Liquor_SubCategory (SQL)
+  qryItemsSetCategoryToOLCC_Step_3_Append_SubCategories
+    Sanitized in 0.001 seconds.
+  qryItemsSetCategoryToOLCC_Step_3_Append_SubCategories (SQL)
+  qryItemsSetCategoryToOLCC_Step_4_Update_SubCategoryID
+    Sanitized in 0.001 seconds.
+  qryItemsSetCategoryToOLCC_Step_4_Update_SubCategoryID (SQL)
+  qryItemsSetRestockAmountToZero
+    Sanitized in 0.001 seconds.
+  qryItemsSetRestockAmountToZero (SQL)
+  qryItemsSetTPRto0
+    Sanitized in 0.001 seconds.
+  qryItemsSetTPRto0 (SQL)
+  qryItemsSetUnitsPerCase
+    Sanitized in 0.001 seconds.
+  qryItemsSetUnitsPerCase (SQL)
+  qryItemsSetUnitsPerOrder
+    Sanitized in 0.001 seconds.
+  qryItemsSetUnitsPerOrder (SQL)
+  qryItemsSold
+    Sanitized in 0.003 seconds.
+  qryItemsSold (SQL)
+  qryItemsSoldToday
+    Sanitized in 0.003 seconds.
+  qryItemsSoldToday (SQL)
+  qryItemsSoldToday 1 Delete
+    Sanitized in 0.001 seconds.
+  qryItemsSoldToday 1 Delete (SQL)
+  qryItemsSoldToday 2 Append
+    Sanitized in 0.001 seconds.
+  qryItemsSoldToday 2 Append (SQL)
+  qryItemsSoldToday 3 Update
+    Sanitized in 0.001 seconds.
+  qryItemsSoldToday 3 Update (SQL)
+  qryItemSubCategoryIDAssign
+    Sanitized in 0.000 seconds.
+  qryItemSubCategoryIDAssign (SQL)
+  qryItemsUnitsPerCaseAssign
+    Sanitized in 0.000 seconds.
+  qryItemsUnitsPerCaseAssign (SQL)
+  qryItemsWithAlphaUPC
+    Sanitized in 0.004 seconds.
+  qryItemsWithAlphaUPC (SQL)
+  qryItemsWithASubPack
+    Sanitized in 0.003 seconds.
+  qryItemsWithASubPack (SQL)
+  qryItemsWithIDAsUPC
+    Sanitized in 0.001 seconds.
+  qryItemsWithIDAsUPC (SQL)
+  qryItemsWithMarchPrice
+    Sanitized in 0.001 seconds.
+  qryItemsWithMarchPrice (SQL)
+  qryItemsWithMoreThan4UPCCodes
+    Sanitized in 0.002 seconds.
+  qryItemsWithMoreThan4UPCCodes (SQL)
+  qryItemsWithMostRecentScanBatch
+    Sanitized in 0.002 seconds.
+  qryItemsWithMostRecentScanBatch (SQL)
+  qryItemsWithTodaysPrice
+    Sanitized in 0.001 seconds.
+  qryItemsWithTodaysPrice (SQL)
+  qryItemsWithUPCGlyph
+    Sanitized in 0.001 seconds.
+  qryItemsWithUPCGlyph (SQL)
+  qryItemTransactionInvoice
+    Sanitized in 0.002 seconds.
+  qryItemTransactionInvoice (SQL)
+  qryItemTransactionInvoiceForVendors
+    Sanitized in 0.003 seconds.
+  qryItemTransactionInvoiceForVendors (SQL)
+  qryItemTransactionInvoicePO
+    Sanitized in 0.002 seconds.
+  qryItemTransactionInvoicePO (SQL)
+  qryItemUpdateSetupDate
+    Sanitized in 0.000 seconds.
+  qryItemUpdateSetupDate (SQL)
+  qryKitItemsTotalRetail
+    Sanitized in 0.001 seconds.
+  qryKitItemsTotalRetail (SQL)
+  qryKitsOnFile
+    Sanitized in 0.002 seconds.
+  qryKitsOnFile (SQL)
+  qryKitsWithTotalsAndItems
+    Sanitized in 0.002 seconds.
+  qryKitsWithTotalsAndItems (SQL)
+  qryKMDGlobalInvolineUPC
+    Sanitized in 0.001 seconds.
+  qryKMDGlobalInvolineUPC (SQL)
+  qryKMDGlobalUPCItems
+    Sanitized in 0.001 seconds.
+  qryKMDGlobalUPCItems (SQL)
+  qryKMDSLinksAppend
+    Sanitized in 0.001 seconds.
+  qryKMDSLinksAppend (SQL)
+  qryLabelList
+    Sanitized in 0.001 seconds.
+  qryLabelList (SQL)
+  qryLicensee_01_SetPremisesNumber
+    Sanitized in 0.001 seconds.
+  qryLicensee_01_SetPremisesNumber (SQL)
+  qryLicensee_02_AppendFromLoc
+    Sanitized in 0.001 seconds.
+  qryLicensee_02_AppendFromLoc (SQL)
+  qryLicensee_03_UpdateFromLoc
+    Sanitized in 0.001 seconds.
+  qryLicensee_03_UpdateFromLoc (SQL)
+  qryLicenseeOrderCompare_2
+    Sanitized in 0.002 seconds.
+  qryLicenseeOrderCompare_2 (SQL)
+  qryLiquorItemsNotScanned76
+    Sanitized in 0.003 seconds.
+  qryLiquorItemsNotScanned76 (SQL)
+  qryLiquorSalesByDay
+    Sanitized in 0.003 seconds.
+  qryLiquorSalesByDay (SQL)
+  qryLiquorSalesByHour
+    Sanitized in 0.002 seconds.
+  qryLiquorSalesByHour (SQL)
+  qryLotteryScratchRecon
+    Sanitized in 0.001 seconds.
+  qryLotteryScratchRecon (SQL)
+  qryLotteryScratchReport
+    Sanitized in 0.001 seconds.
+  qryLotteryScratchReport (SQL)
+  qryLotteryScratchSub
+    Sanitized in 0.001 seconds.
+  qryLotteryScratchSub (SQL)
+  qryMakeItemSetupDate
+    Sanitized in 0.001 seconds.
+  qryMakeItemSetupDate (SQL)
+  qryMetrologicAppendToAudit
+    Sanitized in 0.002 seconds.
+  qryMetrologicAppendToAudit (SQL)
+  qryMetrologicAppendToInvoLine
+    Sanitized in 0.004 seconds.
+  qryMetrologicAppendToInvoLine (SQL)
+  qryMetrologicForOLCCShelfTags
+    Sanitized in 0.001 seconds.
+  qryMetrologicForOLCCShelfTags (SQL)
+  qryMetrologicForOLCCShelfTagsAppend
+    Sanitized in 0.001 seconds.
+  qryMetrologicForOLCCShelfTagsAppend (SQL)
+  qryMetrologicItemsNotScanned
+    Sanitized in 0.002 seconds.
+  qryMetrologicItemsNotScanned (SQL)
+  qryMetrologicLookup_01_MakeTable
+    Sanitized in 0.002 seconds.
+  qryMetrologicLookup_01_MakeTable (SQL)
+  qryMetroLogicLookup_02_Append_10_Digit_Shelf_Tags
+    Sanitized in 0.005 seconds.
+  qryMetroLogicLookup_02_Append_10_Digit_Shelf_Tags (SQL)
+  qryMetrologicLookup_03
+    Sanitized in 0.001 seconds.
+  qryMetrologicLookup_03 (SQL)
+  qryMetrologicOptimiserLookup
+    Sanitized in 0.002 seconds.
+  qryMetrologicOptimiserLookup (SQL)
+  qryMetrologicScanBatch_DeleteHeaderScans
+    Sanitized in 0.001 seconds.
+  qryMetrologicScanBatch_DeleteHeaderScans (SQL)
+  qryMetrologicScanBatch_Upd_CashierID
+    Sanitized in 0.001 seconds.
+  qryMetrologicScanBatch_Upd_CashierID (SQL)
+  qryMetrologicScanBatch_Upd_KMDSQty
+    Sanitized in 0.001 seconds.
+  qryMetrologicScanBatch_Upd_KMDSQty (SQL)
+  qryMetrologicScanBatch_Upd_Qty
+    Sanitized in 0.001 seconds.
+  qryMetrologicScanBatch_Upd_Qty (SQL)
+  qryMetrologicScanBatch_Validate_Qty
+    Sanitized in 0.001 seconds.
+  qryMetrologicScanBatch_Validate_Qty (SQL)
+  qryMetrologicScanBatchDelete
+    Sanitized in 0.001 seconds.
+  qryMetrologicScanBatchDelete (SQL)
+  qryMetrologicScanBatchForOrders
+    Sanitized in 0.001 seconds.
+  qryMetrologicScanBatchForOrders (SQL)
+  qryMetrologicScanBatchTotalByItemID
+    Sanitized in 0.001 seconds.
+  qryMetrologicScanBatchTotalByItemID (SQL)
+  qryMetrologicScanBatchVariance
+    Sanitized in 0.002 seconds.
+  qryMetrologicScanBatchVariance (SQL)
+  qryMetroScanBatchDetail
+    Sanitized in 0.002 seconds.
+  qryMetroScanBatchDetail (SQL)
+  qryMinimumOrderQ_01_Delete
+    Sanitized in 0.001 seconds.
+  qryMinimumOrderQ_01_Delete (SQL)
+  qryMinimumOrderQ_02_Delete_Nulls
+    Sanitized in 0.001 seconds.
+  qryMinimumOrderQ_02_Delete_Nulls (SQL)
+  qryMonthlySalesByCategory
+    Sanitized in 0.004 seconds.
+  qryMonthlySalesByCategory (SQL)
+  qryMonthlySalesByDepartment
+    Sanitized in 0.003 seconds.
+  qryMonthlySalesByDepartment (SQL)
+  qryNabcaOLCCItemImport_01_Delete_NabcaOlccItem
+    Sanitized in 0.001 seconds.
+  qryNabcaOLCCItemImport_01_Delete_NabcaOlccItem (SQL)
+  qryNabcaOLCCItemImport_02_Update_A
+    Sanitized in 0.001 seconds.
+  qryNabcaOLCCItemImport_02_Update_A (SQL)
+  qryNabcaOLCCItemImport_03_Update_B
+    Sanitized in 0.001 seconds.
+  qryNabcaOLCCItemImport_03_Update_B (SQL)
+  qryNabcaOLCCItemImport_04_Update_D
+    Sanitized in 0.001 seconds.
+  qryNabcaOLCCItemImport_04_Update_D (SQL)
+  qryNabcaOLCCItemImport_05_Update_E
+    Sanitized in 0.001 seconds.
+  qryNabcaOLCCItemImport_05_Update_E (SQL)
+  qryNabcaOLCCItemImport_06_Update_F
+    Sanitized in 0.001 seconds.
+  qryNabcaOLCCItemImport_06_Update_F (SQL)
+  qryNabcaOLCCItemImport_07_Update_H
+    Sanitized in 0.001 seconds.
+  qryNabcaOLCCItemImport_07_Update_H (SQL)
+  qryOCTOB
+    Sanitized in 0.001 seconds.
+  qryOCTOB (SQL)
+  qryOLCC_8_and_12_UPC_Step_1_Delete
+    Sanitized in 0.001 seconds.
+  qryOLCC_8_and_12_UPC_Step_1_Delete (SQL)
+  qryOLCC_8_and_12_UPC_Step_2_Append
+    Sanitized in 0.001 seconds.
+  qryOLCC_8_and_12_UPC_Step_2_Append (SQL)
+  qryOLCC_8_and_12_UPC_Xref
+    Sanitized in 0.001 seconds.
+  qryOLCC_8_and_12_UPC_Xref (SQL)
+  qryOLCCAuditVarianceAppendToAudit
+    Sanitized in 0.002 seconds.
+  qryOLCCAuditVarianceAppendToAudit (SQL)
+  qryOLCCCategoriesAppend
+    Sanitized in 0.001 seconds.
+  qryOLCCCategoriesAppend (SQL)
+  qryOLCCDepositRecap
+    Sanitized in 0.001 seconds.
+  qryOLCCDepositRecap (SQL)
+  qryOLCCDepositRecapSales
+    Sanitized in 0.001 seconds.
+  qryOLCCDepositRecapSales (SQL)
+  qryOLCCDepositRecapTenders
+    Sanitized in 0.001 seconds.
+  qryOLCCDepositRecapTenders (SQL)
+  qryOLCCEPS_Update_UnitsPerCase
+    Sanitized in 0.001 seconds.
+  qryOLCCEPS_Update_UnitsPerCase (SQL)
+  qryOLCCEPSForOrders
+    Sanitized in 0.001 seconds.
+  qryOLCCEPSForOrders (SQL)
+  qryOLCCEPSForOrdersNotOnFile
+    Sanitized in 0.001 seconds.
+  qryOLCCEPSForOrdersNotOnFile (SQL)
+  qryOLCCEPSForOrdersNotOnFileAppend
+    Sanitized in 0.002 seconds.
+  qryOLCCEPSForOrdersNotOnFileAppend (SQL)
+  qryOLCCEPSPriceDiff
+    Sanitized in 0.002 seconds.
+  qryOLCCEPSPriceDiff (SQL)
+  qryOLCCEPSTotals
+    Sanitized in 0.001 seconds.
+  qryOLCCEPSTotals (SQL)
+  qryOLCCItemAppend
+    Sanitized in 0.001 seconds.
+  qryOLCCItemAppend (SQL)
+  qryOLCCItemAppendUPC
+    Sanitized in 0.001 seconds.
+  qryOLCCItemAppendUPC (SQL)
+  qryOLCCItemsDetailList_01_Delete
+    Sanitized in 0.001 seconds.
+  qryOLCCItemsDetailList_01_Delete (SQL)
+  qryOLCCItemsDetailList_02_Append
+    Sanitized in 0.002 seconds.
+  qryOLCCItemsDetailList_02_Append (SQL)
+  qryOLCCItemsDetailList_03_Delete_InvalidRows
+    Sanitized in 0.001 seconds.
+  qryOLCCItemsDetailList_03_Delete_InvalidRows (SQL)
+  qryOLCCItemsDetailList_04_Update_ItemID
+    Sanitized in 0.001 seconds.
+  qryOLCCItemsDetailList_04_Update_ItemID (SQL)
+  qryOLCCItemsDetailList_04_Update_ItemID_A
+    Sanitized in 0.002 seconds.
+  qryOLCCItemsDetailList_04_Update_ItemID_A (SQL)
+  qryOLCCItemsDetailList_04_Update_ItemID_B
+    Sanitized in 0.001 seconds.
+  qryOLCCItemsDetailList_04_Update_ItemID_B (SQL)
+  qryOLCCItemsDetailList_04_Update_ItemID_C
+    Sanitized in 0.001 seconds.
+  qryOLCCItemsDetailList_04_Update_ItemID_C (SQL)
+  qryOLCCItemsDetailList_04_Update_ItemID_D
+    Sanitized in 0.002 seconds.
+  qryOLCCItemsDetailList_04_Update_ItemID_D (SQL)
+  qryOLCCItemsDetailList_04_Update_ItemID_E
+    Sanitized in 0.001 seconds.
+  qryOLCCItemsDetailList_04_Update_ItemID_E (SQL)
+  qryOLCCItemsDetailList_04_Update_ItemID_F
+    Sanitized in 0.002 seconds.
+  qryOLCCItemsDetailList_04_Update_ItemID_F (SQL)
+  qryOLCCItemsDetailList_04_Update_ItemID_H
+    Sanitized in 0.001 seconds.
+  qryOLCCItemsDetailList_04_Update_ItemID_H (SQL)
+  qryOLCCItemsNotOnFile
+    Sanitized in 0.002 seconds.
+  qryOLCCItemsNotOnFile (SQL)
+  qryOLCCItemsNotOnFileSub
+    Sanitized in 0.003 seconds.
+  qryOLCCItemsNotOnFileSub (SQL)
+  qryOLCCitemUpdateUnitsPerCase
+    Sanitized in 0.001 seconds.
+  qryOLCCitemUpdateUnitsPerCase (SQL)
+  qryOLCCProductList
+    Sanitized in 0.001 seconds.
+  qryOLCCProductList (SQL)
+  qryOLCCScanCodeComparedToUPCItems
+    Sanitized in 0.002 seconds.
+  qryOLCCScanCodeComparedToUPCItems (SQL)
+  qryOpenAccountsTendered
+    Sanitized in 0.002 seconds.
+  qryOpenAccountsTendered (SQL)
+  qryOrderLineByLineIDDescending
+    Sanitized in 0.001 seconds.
+  qryOrderLineByLineIDDescending (SQL)
+  qryOrderLineInsertLineNumbers
+    Sanitized in 0.001 seconds.
+  qryOrderLineInsertLineNumbers (SQL)
+  qryOrderLineInsertNewItem
+    Sanitized in 0.001 seconds.
+  qryOrderLineInsertNewItem (SQL)
+  qryOrderLineItemID
+    Sanitized in 0.001 seconds.
+  qryOrderLineItemID (SQL)
+  qryOrderLineMaxLineID
+    Sanitized in 0.001 seconds.
+  qryOrderLineMaxLineID (SQL)
+  qryOrderLineSetBuydownTo0
+    Sanitized in 0.001 seconds.
+  qryOrderLineSetBuydownTo0 (SQL)
+  qryOrderLineUpdatePrice
+    Sanitized in 0.001 seconds.
+  qryOrderLineUpdatePrice (SQL)
+  qryPackUPC
+    Sanitized in 0.001 seconds.
+  qryPackUPC (SQL)
+  qryPalm
+    Sanitized in 0.001 seconds.
+  qryPalm (SQL)
+  qrypcChargeCreditInvo5LineVariance
+    Sanitized in 0.001 seconds.
+  qrypcChargeCreditInvo5LineVariance (SQL)
+  qrypcChargeDebitInvo5LineVariance
+    Sanitized in 0.001 seconds.
+  qrypcChargeDebitInvo5LineVariance (SQL)
+  qrypcChargeDebitsAndCredits
+    Sanitized in 0.002 seconds.
+  qrypcChargeDebitsAndCredits (SQL)
+  qrypcChargeDebitsAndCreditsDelete
+    Sanitized in 0.001 seconds.
+  qrypcChargeDebitsAndCreditsDelete (SQL)
+  qrypcChargeDetailDebitAppend
+    Sanitized in 0.005 seconds.
+  qrypcChargeDetailDebitAppend (SQL)
+  qrypcChargeDetailTransAppend
+    Sanitized in 0.003 seconds.
+  qrypcChargeDetailTransAppend (SQL)
+  qrypcChargeTransForToday
+    Sanitized in 0.012 seconds.
+  qrypcChargeTransForToday (SQL)
+  qryPriceGroup
+    Sanitized in 0.003 seconds.
+  qryPriceGroup (SQL)
+  qryPriceGroupAppend0NotAssigned
+    Sanitized in 0.001 seconds.
+  qryPriceGroupAppend0NotAssigned (SQL)
+  qryPriceTo5Case1
+    Sanitized in 0.001 seconds.
+  qryPriceTo5Case1 (SQL)
+  qryPriceTo5Case11
+    Sanitized in 0.002 seconds.
+  qryPriceTo5Case11 (SQL)
+  qryPriceTo5Case2
+    Sanitized in 0.002 seconds.
+  qryPriceTo5Case2 (SQL)
+  qryPriceTo5Case21
+    Sanitized in 0.002 seconds.
+  qryPriceTo5Case21 (SQL)
+  qryPriceTo5Case3
+    Sanitized in 0.002 seconds.
+  qryPriceTo5Case3 (SQL)
+  qryPriceTo5Case31
+    Sanitized in 0.003 seconds.
+  qryPriceTo5Case31 (SQL)
+  qryPriceTo5Case4
+    Sanitized in 0.001 seconds.
+  qryPriceTo5Case4 (SQL)
+  qryPriceTo5Case41
+    Sanitized in 0.002 seconds.
+  qryPriceTo5Case41 (SQL)
+  qryPriceTo9Case6
+    Sanitized in 0.001 seconds.
+  qryPriceTo9Case6 (SQL)
+  qryPriceTo9Case61
+    Sanitized in 0.002 seconds.
+  qryPriceTo9Case61 (SQL)
+  qryPriceTo9Case7
+    Sanitized in 0.001 seconds.
+  qryPriceTo9Case7 (SQL)
+  qryPriceTo9Case71
+    Sanitized in 0.002 seconds.
+  qryPriceTo9Case71 (SQL)
+  qryPriceTo9Case8
+    Sanitized in 0.001 seconds.
+  qryPriceTo9Case8 (SQL)
+  qryPriceTo9Case81
+    Sanitized in 0.002 seconds.
+  qryPriceTo9Case81 (SQL)
+  qryPriceTo9CaseChange9to0
+    Sanitized in 0.002 seconds.
+  qryPriceTo9CaseChange9to0 (SQL)
+  qryPriceTo9CaseChange9to01
+    Sanitized in 0.002 seconds.
+  qryPriceTo9CaseChange9to01 (SQL)
+  qryPricingToolForPurchasOrder
+    Sanitized in 0.002 seconds.
+  qryPricingToolForPurchasOrder (SQL)
+  qryPricingWorkTable_1_Delete
+    Sanitized in 0.001 seconds.
+  qryPricingWorkTable_1_Delete (SQL)
+  qryPricingWorkTable_2_Append
+    Sanitized in 0.002 seconds.
+  qryPricingWorkTable_2_Append (SQL)
+  qryPricingWorkTable_2_AppendSalesDepartment
+    Sanitized in 0.003 seconds.
+  qryPricingWorkTable_2_AppendSalesDepartment (SQL)
+  qryPricingWorkTable_3_UpdateNewPrice
+    Sanitized in 0.001 seconds.
+  qryPricingWorkTable_3_UpdateNewPrice (SQL)
+  qryPricingWorkTable_4_UpdateNewGP
+    Sanitized in 0.002 seconds.
+  qryPricingWorkTable_4_UpdateNewGP (SQL)
+  qryProd1
+    Sanitized in 0.000 seconds.
+  qryProd1 (SQL)
+  qryProductListFromOLCCWeb 1 ItemsAppend
+    Sanitized in 0.001 seconds.
+  qryProductListFromOLCCWeb 1 ItemsAppend (SQL)
+  qryProductListFromOLCCWeb 2 ChangePrices
+    Sanitized in 0.001 seconds.
+  qryProductListFromOLCCWeb 2 ChangePrices (SQL)
+  qryProductListFromOLCCWeb 3 ChangeDescription
+    Sanitized in 0.001 seconds.
+  qryProductListFromOLCCWeb 3 ChangeDescription (SQL)
+  qryProductListFromOLCCWebsiteQ
+    Sanitized in 0.002 seconds.
+  qryProductListFromOLCCWebsiteQ (SQL)
+  qryProductListWithCategoryFromOLCCWebSiteQ
+    Sanitized in 0.002 seconds.
+  qryProductListWithCategoryFromOLCCWebSiteQ (SQL)
+  qryProgramAppend
+    Sanitized in 0.002 seconds.
+  qryProgramAppend (SQL)
+  qryPSCAuditAppend
+    Sanitized in 0.002 seconds.
+  qryPSCAuditAppend (SQL)
+  qryPSCAuditInventory
+    Sanitized in 0.002 seconds.
+  qryPSCAuditInventory (SQL)
+  qryPSCClubOrder
+    Sanitized in 0.002 seconds.
+  qryPSCClubOrder (SQL)
+  qryPSCDownloadDescr
+    Sanitized in 0.002 seconds.
+  qryPSCDownloadDescr (SQL)
+  qryPSCDownloadItem
+    Sanitized in 0.001 seconds.
+  qryPSCDownloadItem (SQL)
+  qryPSCDownloadRecordCount
+    Sanitized in 0.001 seconds.
+  qryPSCDownloadRecordCount (SQL)
+  qryPSCDownloadShowMe
+    Sanitized in 0.002 seconds.
+  qryPSCDownloadShowMe (SQL)
+  qryPSCInput_Step1_DeleteRecords
+    Sanitized in 0.001 seconds.
+  qryPSCInput_Step1_DeleteRecords (SQL)
+  qryPSCInput_Step2_UpdateWithItemInfo
+    Sanitized in 0.002 seconds.
+  qryPSCInput_Step2_UpdateWithItemInfo (SQL)
+  qryPSCInputByItem
+    Sanitized in 0.002 seconds.
+  qryPSCInputByItem (SQL)
+  qryPunchCashierSummary
+    Sanitized in 0.001 seconds.
+  qryPunchCashierSummary (SQL)
+  qryPunchDates
+    Sanitized in 0.001 seconds.
+  qryPunchDates (SQL)
+  qryPunchDatesSummary
+    Sanitized in 0.001 seconds.
+  qryPunchDatesSummary (SQL)
+  qryPunchHoursReport
+    Sanitized in 0.002 seconds.
+  qryPunchHoursReport (SQL)
+  qryPunchHoursWorked
+    Sanitized in 0.002 seconds.
+  qryPunchHoursWorked (SQL)
+  qryPunchHoursWorkedToday
+    Sanitized in 0.001 seconds.
+  qryPunchHoursWorkedToday (SQL)
+  qryPurchaseOrder
+    Sanitized in 0.005 seconds.
+  qryPurchaseOrder (SQL)
+  qryPurchaseOrderAndSysfile
+    Sanitized in 0.008 seconds.
+  qryPurchaseOrderAndSysfile (SQL)
+  qryPurchaseOrderAndSysfileForVendorScr
+    Sanitized in 0.002 seconds.
+  qryPurchaseOrderAndSysfileForVendorScr (SQL)
+  qryPurchaseOrderCompare
+    Sanitized in 0.002 seconds.
+  qryPurchaseOrderCompare (SQL)
+  qryPurchaseOrderCompare_1
+    Sanitized in 0.001 seconds.
+  qryPurchaseOrderCompare_1 (SQL)
+  qryPurchaseOrderCompare_2
+    Sanitized in 0.002 seconds.
+  qryPurchaseOrderCompare_2 (SQL)
+  qryPurchaseOrderCount
+    Sanitized in 0.001 seconds.
+  qryPurchaseOrderCount (SQL)
+  qryPurchaseOrderCreate
+    Sanitized in 0.003 seconds.
+  qryPurchaseOrderCreate (SQL)
+  qryPurchaseOrderCreateAppend
+    Sanitized in 0.003 seconds.
+  qryPurchaseOrderCreateAppend (SQL)
+  qryPurchaseOrderCreateByDeptByDesc
+    Sanitized in 0.002 seconds.
+  qryPurchaseOrderCreateByDeptByDesc (SQL)
+  qryPurchaseOrderCreateByWADS
+    Sanitized in 0.002 seconds.
+  qryPurchaseOrderCreateByWADS (SQL)
+  qryPurchaseOrderCreateItemsSupplied
+    Sanitized in 0.002 seconds.
+  qryPurchaseOrderCreateItemsSupplied (SQL)
+  qryPurchaseOrderCreateSaleItems
+    Sanitized in 0.002 seconds.
+  qryPurchaseOrderCreateSaleItems (SQL)
+  qryPurchaseOrderCreateTPRItems
+    Sanitized in 0.001 seconds.
+  qryPurchaseOrderCreateTPRItems (SQL)
+  qryPurchaseOrderCreateWithNoOnOrders
+    Sanitized in 0.001 seconds.
+  qryPurchaseOrderCreateWithNoOnOrders (SQL)
+  qryPurchaseOrderItemDaysSupply
+    Sanitized in 0.004 seconds.
+  qryPurchaseOrderItemDaysSupply (SQL)
+  qryPurchaseOrderItemDaysSupplyADS
+    Sanitized in 0.002 seconds.
+  qryPurchaseOrderItemDaysSupplyADS (SQL)
+  qryPurchaseOrderItemDaysSupplyMake
+    Sanitized in 0.001 seconds.
+  qryPurchaseOrderItemDaysSupplyMake (SQL)
+  qryPurchaseOrderItemInfo
+    Sanitized in 0.005 seconds.
+  qryPurchaseOrderItemInfo (SQL)
+  qryPurchaseOrderItemInfoWithNoOnOrder
+    Sanitized in 0.006 seconds.
+  qryPurchaseOrderItemInfoWithNoOnOrder (SQL)
+  qryPurchaseOrderItemReplenish
+    Sanitized in 0.005 seconds.
+  qryPurchaseOrderItemReplenish (SQL)
+  qryPurchaseOrderItemReplenish Save
+    Sanitized in 0.003 seconds.
+  qryPurchaseOrderItemReplenish Save (SQL)
+  qryPurchaseOrderItemReplenishMake
+    Sanitized in 0.001 seconds.
+  qryPurchaseOrderItemReplenishMake (SQL)
+  qryPurchaseOrderItemReplenishNoOnhandsAppend
+    Sanitized in 0.001 seconds.
+  qryPurchaseOrderItemReplenishNoOnhandsAppend (SQL)
+  qryPurchaseOrderItemsWithTodaysPrice
+    Sanitized in 0.002 seconds.
+  qryPurchaseOrderItemsWithTodaysPrice (SQL)
+  qryPurchaseOrderLineMaxID
+    Sanitized in 0.001 seconds.
+  qryPurchaseOrderLineMaxID (SQL)
+  qryPurchaseOrderLines
+    Sanitized in 0.002 seconds.
+  qryPurchaseOrderLines (SQL)
+  qryPurchaseOrderLinesRetailPriceChange
+    Sanitized in 0.001 seconds.
+  qryPurchaseOrderLinesRetailPriceChange (SQL)
+  qryPurchaseOrderLineTotals
+    Sanitized in 0.001 seconds.
+  qryPurchaseOrderLineTotals (SQL)
+  qryPurchaseOrderLineUpdateCost
+    Sanitized in 0.002 seconds.
+  qryPurchaseOrderLineUpdateCost (SQL)
+  qryPurchaseOrderLineUpdateCost20131031
+    Sanitized in 0.002 seconds.
+  qryPurchaseOrderLineUpdateCost20131031 (SQL)
+  qryPurchaseOrderLineUpdatePrice
+    Sanitized in 0.001 seconds.
+  qryPurchaseOrderLineUpdatePrice (SQL)
+  qryPurchaseOrderLineUpdatePrice20131031
+    Sanitized in 0.001 seconds.
+  qryPurchaseOrderLineUpdatePrice20131031 (SQL)
+  qryPurchaseOrderLineUpdatePriceMakeTable
+    Sanitized in 0.003 seconds.
+  qryPurchaseOrderLineUpdatePriceMakeTable (SQL)
+  qryPurchaseOrderLineUpdatePriceOLD
+    Sanitized in 0.002 seconds.
+  qryPurchaseOrderLineUpdatePriceOLD (SQL)
+  qryPurchaseOrderPost_Step1_Update_Onhands
+    Sanitized in 0.002 seconds.
+  qryPurchaseOrderPost_Step1_Update_Onhands (SQL)
+  qryPurchaseOrderPost_Step2_Append_Involine
+    Sanitized in 0.004 seconds.
+  qryPurchaseOrderPost_Step2_Append_Involine (SQL)
+  qryPurchaseOrdersOnFile
+    Sanitized in 0.002 seconds.
+  qryPurchaseOrdersOnFile (SQL)
+  qryPurchaseOrdersOnFileChartSalesTotal
+    Sanitized in 0.002 seconds.
+  qryPurchaseOrdersOnFileChartSalesTotal (SQL)
+  qryPurchaseOrderWithOnShelf
+    Sanitized in 0.007 seconds.
+  qryPurchaseOrderWithOnShelf (SQL)
+  qryPurchaseOrderWithOnShelfAndSysfile
+    Sanitized in 0.013 seconds.
+  qryPurchaseOrderWithOnShelfAndSysfile (SQL)
+  qryPurchasesByVendorByDepartmentByItem
+    Sanitized in 0.004 seconds.
+  qryPurchasesByVendorByDepartmentByItem (SQL)
+  qryPurgeItems_Step_1_Delete_Involine_0_Qty_Not_R
+    Sanitized in 0.001 seconds.
+  qryPurgeItems_Step_1_Delete_Involine_0_Qty_Not_R (SQL)
+  qryPurgeItems_Step_2_Set_AVGTurns999
+    Sanitized in 0.002 seconds.
+  qryPurgeItems_Step_2_Set_AVGTurns999 (SQL)
+  qryPurgeItems_Step_3_Delete_AVGTurns999
+    Sanitized in 0.001 seconds.
+  qryPurgeItems_Step_3_Delete_AVGTurns999 (SQL)
+  qryPurgeItemsExceptKits
+    Sanitized in 0.002 seconds.
+  qryPurgeItemsExceptKits (SQL)
+  qryqryOLCCItemAppendRemoveApostrophe
+    Sanitized in 0.001 seconds.
+  qryqryOLCCItemAppendRemoveApostrophe (SQL)
+  qryQuickInventory
+    Sanitized in 0.001 seconds.
+  qryQuickInventory (SQL)
+  qryRecreateTransmitFileOnhands_Step1_Set_AvgTurns_to_Onhand
+    Sanitized in 0.001 seconds.
+  qryRecreateTransmitFileOnhands_Step1_Set_AvgTurns_to_Onhand (SQL)
+  qryRecreateTransmitFileOnhands_Step2a_Delete_Movement
+    Sanitized in 0.001 seconds.
+  qryRecreateTransmitFileOnhands_Step2a_Delete_Movement (SQL)
+  qryRecreateTransmitFileOnhands_Step2b_Append_Movement
+    Sanitized in 0.002 seconds.
+  qryRecreateTransmitFileOnhands_Step2b_Append_Movement (SQL)
+  qryRecreateTransmitFileOnhands_Step3_Update_AvgTurns
+    Sanitized in 0.002 seconds.
+  qryRecreateTransmitFileOnhands_Step3_Update_AvgTurns (SQL)
+  qryRegistersInstalledAndOnLine
+    Sanitized in 0.002 seconds.
+  qryRegistersInstalledAndOnLine (SQL)
+  qryRentrak
+    Sanitized in 0.003 seconds.
+  qryRentrak (SQL)
+  qryRentrakRetransmitAppend
+    Sanitized in 0.002 seconds.
+  qryRentrakRetransmitAppend (SQL)
+  qryRentrakTransactions
+    Sanitized in 0.003 seconds.
+  qryRentrakTransactions (SQL)
+  qryRestockList
+    Sanitized in 0.003 seconds.
+  qryRestockList (SQL)
+  qryRME_01_Delete_ResendMonthEnd_Table
+    Sanitized in 0.001 seconds.
+  qryRME_01_Delete_ResendMonthEnd_Table (SQL)
+  qryRME_02_Append_Current_Month_Transactions
+    Sanitized in 0.002 seconds.
+  qryRME_02_Append_Current_Month_Transactions (SQL)
+  qryRME_03_Last_Month_End
+    Sanitized in 0.002 seconds.
+  qryRME_03_Last_Month_End (SQL)
+  qryRMEItemsUpdatedThisMonth
+    Sanitized in 0.003 seconds.
+  qryRMEItemsUpdatedThisMonth (SQL)
+  qrySalesByDay
+    Sanitized in 0.002 seconds.
+  qrySalesByDay (SQL)
+  qrySalesByDayChart
+    Sanitized in 0.004 seconds.
+  qrySalesByDayChart (SQL)
+  qrySalesByDayForPC
+    Sanitized in 0.003 seconds.
+  qrySalesByDayForPC (SQL)
+  qrySalesByDepartment
+    Sanitized in 0.003 seconds.
+  qrySalesByDepartment (SQL)
+  qrySalesByDepartmentByCategory
+    Sanitized in 0.005 seconds.
+  qrySalesByDepartmentByCategory (SQL)
+  qrySalesByDepartmentByVendor
+    Sanitized in 0.005 seconds.
+  qrySalesByDepartmentByVendor (SQL)
+  qrySalesByDepartmentByVendorByItem
+    Sanitized in 0.004 seconds.
+  qrySalesByDepartmentByVendorByItem (SQL)
+  qrySalesByDepartmentChart
+    Sanitized in 0.005 seconds.
+  qrySalesByDepartmentChart (SQL)
+  qrySalesByDepartmentSB
+    Sanitized in 0.011 seconds.
+  qrySalesByDepartmentSB (SQL)
+  qrySalesByDept
+    Sanitized in 0.003 seconds.
+  qrySalesByDept (SQL)
+  qrySalesByHour
+    Sanitized in 0.005 seconds.
+  qrySalesByHour (SQL)
+  qrySalesByHourChart
+    Sanitized in 0.004 seconds.
+  qrySalesByHourChart (SQL)
+  qrySalesByHourInvoices
+    Sanitized in 0.001 seconds.
+  qrySalesByHourInvoices (SQL)
+  qrySalesByHourInvoiceTotals
+    Sanitized in 0.001 seconds.
+  qrySalesByHourInvoiceTotals (SQL)
+  qrySalesByHourMakeTable
+    Sanitized in 0.003 seconds.
+  qrySalesByHourMakeTable (SQL)
+  qrySalesByHourTranC
+    Sanitized in 0.003 seconds.
+  qrySalesByHourTranC (SQL)
+  qrySalesByHourTranS
+    Sanitized in 0.004 seconds.
+  qrySalesByHourTranS (SQL)
+  qrySalesByHourWithCustomerCount
+    Sanitized in 0.002 seconds.
+  qrySalesByHourWithCustomerCount (SQL)
+  qrySalesCostByDptByItem
+    Sanitized in 0.003 seconds.
+  qrySalesCostByDptByItem (SQL)
+  qrySalesCostProfitByDepartment
+    Sanitized in 0.003 seconds.
+  qrySalesCostProfitByDepartment (SQL)
+  qrySalesDepartmentCatchAllItemsByID
+    Sanitized in 0.002 seconds.
+  qrySalesDepartmentCatchAllItemsByID (SQL)
+  qrySalesDepartments
+    Sanitized in 0.003 seconds.
+  qrySalesDepartments (SQL)
+  qrySalesGroupSalesDepartment
+    Sanitized in 0.003 seconds.
+  qrySalesGroupSalesDepartment (SQL)
+  qrySalesPictures_1_Append
+    Sanitized in 0.002 seconds.
+  qrySalesPictures_1_Append (SQL)
+  qrySalesPictures_2_Delete
+    Sanitized in 0.002 seconds.
+  qrySalesPictures_2_Delete (SQL)
+  qrySalesPictures_3_ResetItemSalespictureID
+    Sanitized in 0.001 seconds.
+  qrySalesPictures_3_ResetItemSalespictureID (SQL)
+  qrySalesReturnsAndCancelsByCashierByItem
+    Sanitized in 0.002 seconds.
+  qrySalesReturnsAndCancelsByCashierByItem (SQL)
+  qrySalesReturnsByCashier
+    Sanitized in 0.001 seconds.
+  qrySalesReturnsByCashier (SQL)
+  qryScanBatch
+    Sanitized in 0.002 seconds.
+  qryScanBatch (SQL)
+  qryScanBatchAppendToAudit
+    Sanitized in 0.003 seconds.
+  qryScanBatchAppendToAudit (SQL)
+  qryScanBatchAppendToAuditRecalcVariance
+    Sanitized in 0.001 seconds.
+  qryScanBatchAppendToAuditRecalcVariance (SQL)
+  qryScanBatchAppendToInvoLine
+    Sanitized in 0.003 seconds.
+  qryScanBatchAppendToInvoLine (SQL)
+  qryScanBatchForOrders
+    Sanitized in 0.002 seconds.
+  qryScanBatchForOrders (SQL)
+  qryScanBatchLabels
+    Sanitized in 0.001 seconds.
+  qryScanBatchLabels (SQL)
+  qryScanBatchLineCounts
+    Sanitized in 0.003 seconds.
+  qryScanBatchLineCounts (SQL)
+  qryScanBatchLineCountsExport
+    Sanitized in 0.001 seconds.
+  qryScanBatchLineCountsExport (SQL)
+  qryScanBatchLineCountsTotal
+    Sanitized in 0.001 seconds.
+  qryScanBatchLineCountsTotal (SQL)
+  qryScanBatchVariance
+    Sanitized in 0.002 seconds.
+  qryScanBatchVariance (SQL)
+  qryScanBatchVarianceCrossTab
+    Sanitized in 0.003 seconds.
+  qryScanBatchVarianceCrossTab (SQL)
+  qryScannedODL
+    Sanitized in 0.002 seconds.
+  qryScannedODL (SQL)
+  qrySettingsKMDSMailSendUserName
+    Sanitized in 0.001 seconds.
+  qrySettingsKMDSMailSendUserName (SQL)
+  qrySetupPriceGroup_Step_1_PriceGroup0
+    Sanitized in 0.001 seconds.
+  qrySetupPriceGroup_Step_1_PriceGroup0 (SQL)
+  qrySetupPriceGroup_Step_2_UpdatePriceGroup_0
+    Sanitized in 0.002 seconds.
+  qrySetupPriceGroup_Step_2_UpdatePriceGroup_0 (SQL)
+  qrySetupSubCategory_Step_1_AppendCategory
+    Sanitized in 0.001 seconds.
+  qrySetupSubCategory_Step_1_AppendCategory (SQL)
+  qrySetupSubCategory_Step_2_AppendSubCategory_0
+    Sanitized in 0.001 seconds.
+  qrySetupSubCategory_Step_2_AppendSubCategory_0 (SQL)
+  qrySetupSubCategory_Step_3_UpdateSubCategory_0
+    Sanitized in 0.000 seconds.
+  qrySetupSubCategory_Step_3_UpdateSubCategory_0 (SQL)
+  qrySetupSubCategory_Step_4_AppendSubCategory
+    Sanitized in 0.001 seconds.
+  qrySetupSubCategory_Step_4_AppendSubCategory (SQL)
+  qrySetupSubCategory_Step_5_UpdateItemSubCategory
+    Sanitized in 0.001 seconds.
+  qrySetupSubCategory_Step_5_UpdateItemSubCategory (SQL)
+  qrySetupVendor_Step_1_AppendVendor0
+    Sanitized in 0.001 seconds.
+  qrySetupVendor_Step_1_AppendVendor0 (SQL)
+  qrySetupVendor_Step_2_UpdateVendor_0
+    Sanitized in 0.001 seconds.
+  qrySetupVendor_Step_2_UpdateVendor_0 (SQL)
+  qrySizeMaxID
+    Sanitized in 0.000 seconds.
+  qrySizeMaxID (SQL)
+  qrySizes
+    Sanitized in 0.001 seconds.
+  qrySizes (SQL)
+  qrySQLTables
+    Sanitized in 0.001 seconds.
+  qrySQLTables (SQL)
+  qrySwitchBoardFirstLetter
+    Sanitized in 0.001 seconds.
+  qrySwitchBoardFirstLetter (SQL)
+  qrySwitchBoardMain
+    Sanitized in 0.001 seconds.
+  qrySwitchBoardMain (SQL)
+  qrySysfileKMDSKS
+    Sanitized in 0.002 seconds.
+  qrySysfileKMDSKS (SQL)
+  qryTemp
+    Sanitized in 0.003 seconds.
+  qryTemp (SQL)
+  qryTenders
+    Sanitized in 0.001 seconds.
+  qryTenders (SQL)
+  qryTimeClockPunchesByCashierSub
+    Sanitized in 0.001 seconds.
+  qryTimeClockPunchesByCashierSub (SQL)
+  qryTimeClockPunchesByDateSub
+    Sanitized in 0.001 seconds.
+  qryTimeClockPunchesByDateSub (SQL)
+  qryTodaysLiquor
+    Sanitized in 0.001 seconds.
+  qryTodaysLiquor (SQL)
+  qryTodaysLiquorTransactions
+    Sanitized in 0.002 seconds.
+  qryTodaysLiquorTransactions (SQL)
+  qryTodaysLiquorValueNow
+    Sanitized in 0.001 seconds.
+  qryTodaysLiquorValueNow (SQL)
+  qryTransactionsWithCoupons
+    Sanitized in 0.001 seconds.
+  qryTransactionsWithCoupons (SQL)
+  qryTransferByDateByInvoHeadID
+    Sanitized in 0.002 seconds.
+  qryTransferByDateByInvoHeadID (SQL)
+  qryTransferByDateByInvoHeadIDByItem
+    Sanitized in 0.002 seconds.
+  qryTransferByDateByInvoHeadIDByItem (SQL)
+  qryTranTypes_Step_1_Append
+    Sanitized in 0.001 seconds.
+  qryTranTypes_Step_1_Append (SQL)
+  qryTranTypes_Step_2_Update
+    Sanitized in 0.001 seconds.
+  qryTranTypes_Step_2_Update (SQL)
+  qryUndoPostedPO List
+    Sanitized in 0.001 seconds.
+  qryUndoPostedPO List (SQL)
+  qryUndoPostedPO Step 1
+    Sanitized in 0.001 seconds.
+  qryUndoPostedPO Step 1 (SQL)
+  qryUndoPostedPO Step 2
+    Sanitized in 0.001 seconds.
+  qryUndoPostedPO Step 2 (SQL)
+  qryUndoPostedPONegative
+    Sanitized in 0.002 seconds.
+  qryUndoPostedPONegative (SQL)
+  qryUndoPostedPOPositive
+    Sanitized in 0.001 seconds.
+  qryUndoPostedPOPositive (SQL)
+  qryUPC_Step_1_NotUsedInLast6Months
+    Sanitized in 0.001 seconds.
+  qryUPC_Step_1_NotUsedInLast6Months (SQL)
+  qryUPC_Step_2_setupdate_07271956
+    Sanitized in 0.000 seconds.
+  qryUPC_Step_2_setupdate_07271956 (SQL)
+  qryUPC_Step_3_setupdate_07271956_Delete
+    Sanitized in 0.001 seconds.
+  qryUPC_Step_3_setupdate_07271956_Delete (SQL)
+  qryUPCAppend6DigitVendors
+    Sanitized in 0.001 seconds.
+  qryUPCAppend6DigitVendors (SQL)
+  qryUPCCodeWithUPC10
+    Sanitized in 0.001 seconds.
+  qryUPCCodeWithUPC10 (SQL)
+  qryUPCConvert5to6AppendFromUPCItemsWith6DigitVendors
+    Sanitized in 0.001 seconds.
+  qryUPCConvert5to6AppendFromUPCItemsWith6DigitVendors (SQL)
+  qryUPCGlyph
+    Sanitized in 0.001 seconds.
+  qryUPCGlyph (SQL)
+  qryUPCItemAppendConvertUPC6to8
+    Sanitized in 0.001 seconds.
+  qryUPCItemAppendConvertUPC6to8 (SQL)
+  qryUPCItemConvertUPCA10toUPCA12
+    Sanitized in 0.001 seconds.
+  qryUPCItemConvertUPCA10toUPCA12 (SQL)
+  qryUPCItemConvertUPCAtoUPCE
+    Sanitized in 0.001 seconds.
+  qryUPCItemConvertUPCAtoUPCE (SQL)
+  qryUPCItemConvertUPCAtoUPCEqry
+    Sanitized in 0.002 seconds.
+  qryUPCItemConvertUPCAtoUPCEqry (SQL)
+  qryUPCItemCount
+    Sanitized in 0.001 seconds.
+  qryUPCItemCount (SQL)
+  qryUPCItemCountPerItemID
+    Sanitized in 0.001 seconds.
+  qryUPCItemCountPerItemID (SQL)
+  qryUPCItemIDstr
+    Sanitized in 0.001 seconds.
+  qryUPCItemIDstr (SQL)
+  qryUPCItemMax
+    Sanitized in 0.002 seconds.
+  qryUPCItemMax (SQL)
+  qryUPCItemMax999999
+    Sanitized in 0.001 seconds.
+  qryUPCItemMax999999 (SQL)
+  qryUPCItemMaxMakeTable
+    Sanitized in 0.001 seconds.
+  qryUPCItemMaxMakeTable (SQL)
+  qryUPCItemsAddItemID
+    Sanitized in 0.001 seconds.
+  qryUPCItemsAddItemID (SQL)
+  qryUPCItemsAppendItemID
+    Sanitized in 0.001 seconds.
+  qryUPCItemsAppendItemID (SQL)
+  qryUPCItemsAppendItemID_01_Make_ItemUPCID
+    Sanitized in 0.001 seconds.
+  qryUPCItemsAppendItemID_01_Make_ItemUPCID (SQL)
+  qryUPCItemsAppendItemID_02_Append
+    Sanitized in 0.002 seconds.
+  qryUPCItemsAppendItemID_02_Append (SQL)
+  qryUPCItemsAppendItemIDAsUPCCodeSelect
+    Sanitized in 0.002 seconds.
+  qryUPCItemsAppendItemIDAsUPCCodeSelect (SQL)
+  qryUPCItemsDeleteLen4to7
+    Sanitized in 0.001 seconds.
+  qryUPCItemsDeleteLen4to7 (SQL)
+  qryUPCItemsFromdboOLCCUPCitems
+    Sanitized in 0.002 seconds.
+  qryUPCItemsFromdboOLCCUPCitems (SQL)
+  qryUPCItemsObsolete
+    Sanitized in 0.002 seconds.
+  qryUPCItemsObsolete (SQL)
+  qryUPCItemsObsoleteDelete
+    Sanitized in 0.002 seconds.
+  qryUPCItemsObsoleteDelete (SQL)
+  qryUPCItemsVendor5And6
+    Sanitized in 0.001 seconds.
+  qryUPCItemsVendor5And6 (SQL)
+  qryUpcItemsWithMoreThan_1_UPCCode
+    Sanitized in 0.001 seconds.
+  qryUpcItemsWithMoreThan_1_UPCCode (SQL)
+  qryUpcItemsWithMoreThan_1_UPCCodeReport
+    Sanitized in 0.002 seconds.
+  qryUpcItemsWithMoreThan_1_UPCCodeReport (SQL)
+  qryUPCItemUPC10withItemID
+    Sanitized in 0.002 seconds.
+  qryUPCItemUPC10withItemID (SQL)
+  qryUPCLibraryAppend
+    Sanitized in 0.001 seconds.
+  qryUPCLibraryAppend (SQL)
+  qryUPCMRU
+    Sanitized in 0.002 seconds.
+  qryUPCMRU (SQL)
+  qryUPCSystemDigit1
+    Sanitized in 0.001 seconds.
+  qryUPCSystemDigit1 (SQL)
+  qryUPCVendor5
+    Sanitized in 0.001 seconds.
+  qryUPCVendor5 (SQL)
+  qryupdAgentTransferHeadInvoiceNo
+    Sanitized in 0.001 seconds.
+  qryupdAgentTransferHeadInvoiceNo (SQL)
+  qryUpdateItemsUnitsPerOrderCaseQty
+    Sanitized in 0.001 seconds.
+  qryUpdateItemsUnitsPerOrderCaseQty (SQL)
+  qryUpdateItemsUnitsPerOrderSetTo1
+    Sanitized in 0.001 seconds.
+  qryUpdateItemsUnitsPerOrderSetTo1 (SQL)
+  qryUpdBuyDownItem
+    Sanitized in 0.001 seconds.
+  qryUpdBuyDownItem (SQL)
+  qryUpdItemPriceGroupID
+    Sanitized in 0.000 seconds.
+  qryUpdItemPriceGroupID (SQL)
+  qryUpdItemsPriceGroup
+    Sanitized in 0.000 seconds.
+  qryUpdItemsPriceGroup (SQL)
+  qryupdOrdheadInvoiceNo
+    Sanitized in 0.001 seconds.
+  qryupdOrdheadInvoiceNo (SQL)
+  qryUpdPurchaseOrderLineRepack
+    Sanitized in 0.001 seconds.
+  qryUpdPurchaseOrderLineRepack (SQL)
+  qryUpdRestockQtyToZero
+    Sanitized in 0.001 seconds.
+  qryUpdRestockQtyToZero (SQL)
+  qryUpdSoldToday
+    Sanitized in 0.001 seconds.
+  qryUpdSoldToday (SQL)
+  qryUpdSoldTodayAll
+    Sanitized in 0.001 seconds.
+  qryUpdSoldTodayAll (SQL)
+  qryupdSysfileIncrementInvoiceCounter
+    Sanitized in 0.001 seconds.
+  qryupdSysfileIncrementInvoiceCounter (SQL)
+  qryUpdXfrToday
+    Sanitized in 0.001 seconds.
+  qryUpdXfrToday (SQL)
+  qryVendorAppend0NotAssigned
+    Sanitized in 0.001 seconds.
+  qryVendorAppend0NotAssigned (SQL)
+  qryVendorItemCount
+    Sanitized in 0.001 seconds.
+  qryVendorItemCount (SQL)
+  qryVendorItemSupplyList
+    Sanitized in 0.002 seconds.
+  qryVendorItemSupplyList (SQL)
+  qryVendorItemSupplyListRAW
+    Sanitized in 0.002 seconds.
+  qryVendorItemSupplyListRAW (SQL)
+  qryVendorList
+    Sanitized in 0.002 seconds.
+  qryVendorList (SQL)
+  qryVendorPurchaseOrders
+    Sanitized in 0.003 seconds.
+  qryVendorPurchaseOrders (SQL)
+  qryVendorSetupItemSupplyList
+    Sanitized in 0.007 seconds.
+  qryVendorSetupItemSupplyList (SQL)
+  qryVendorSetupItemSupplyListRAW
+    Sanitized in 0.004 seconds.
+  qryVendorSetupItemSupplyListRAW (SQL)
+  qryVendorsWithItems
+    Sanitized in 0.002 seconds.
+  qryVendorsWithItems (SQL)
+  qryVWItemsWithCurrentPricing
+    Sanitized in 0.002 seconds.
+  qryVWItemsWithCurrentPricing (SQL)
+  qryWebClubOrderPrevious
+    Sanitized in 0.003 seconds.
+  qryWebClubOrderPrevious (SQL)
+  qryWebCSVClub
+    Sanitized in 0.004 seconds.
+  qryWebCSVClub (SQL)
+  qryWebCSVItem
+    Sanitized in 0.002 seconds.
+  qryWebCSVItem (SQL)
+  qryWebCSVSalePrice
+    Sanitized in 0.001 seconds.
+  qryWebCSVSalePrice (SQL)
+  qryWebCSVSalesDepartment
+    Sanitized in 0.001 seconds.
+  qryWebCSVSalesDepartment (SQL)
+  qryWebCSVSize
+    Sanitized in 0.001 seconds.
+  qryWebCSVSize (SQL)
+  qryWebCSVSubcategory
+    Sanitized in 0.002 seconds.
+  qryWebCSVSubcategory (SQL)
+  qryWebItem
+    Sanitized in 0.006 seconds.
+  qryWebItem (SQL)
+  qryWebOrdersWithLines
+    Sanitized in 0.002 seconds.
+  qryWebOrdersWithLines (SQL)
+  qryWebOrderTotalByInvoice
+    Sanitized in 0.003 seconds.
+  qryWebOrderTotalByInvoice (SQL)
+  qryXCancelledSales
+    Sanitized in 0.001 seconds.
+  qryXCancelledSales (SQL)
+  qryXCashReconCashChange
+    Sanitized in 0.001 seconds.
+  qryXCashReconCashChange (SQL)
+  qryXCashReconCashChangeAllRegisters
+    Sanitized in 0.002 seconds.
+  qryXCashReconCashChangeAllRegisters (SQL)
+  qryXCashReconCashChangeByCashier
+    Sanitized in 0.003 seconds.
+  qryXCashReconCashChangeByCashier (SQL)
+  qryXCashReconOther
+    Sanitized in 0.003 seconds.
+  qryXCashReconOther (SQL)
+  qryXCashReconOtherAllRegisters
+    Sanitized in 0.002 seconds.
+  qryXCashReconOtherAllRegisters (SQL)
+  qryXCashReconOtherByCashier
+    Sanitized in 0.003 seconds.
+  qryXCashReconOtherByCashier (SQL)
+  qryXCashReconOtherByCashierAllRegisters
+    Sanitized in 0.001 seconds.
+  qryXCashReconOtherByCashierAllRegisters (SQL)
+  qryXCustomerCount
+    Sanitized in 0.002 seconds.
+  qryXCustomerCount (SQL)
+  qryXCustomerCountByCashier
+    Sanitized in 0.001 seconds.
+  qryXCustomerCountByCashier (SQL)
+  qryXNonCashDetail
+    Sanitized in 0.003 seconds.
+  qryXNonCashDetail (SQL)
+  qryXNoSaleCount
+    Sanitized in 0.001 seconds.
+  qryXNoSaleCount (SQL)
+  qryXSalesByDepartment
+    Sanitized in 0.002 seconds.
+  qryXSalesByDepartment (SQL)
+  qryXSalesByDepartmentAllRegisters
+    Sanitized in 0.002 seconds.
+  qryXSalesByDepartmentAllRegisters (SQL)
+  qryXSalesByDepartmentByCashier
+    Sanitized in 0.003 seconds.
+  qryXSalesByDepartmentByCashier (SQL)
+  qryXSalesByDepartmentByCashierAllRegisters
+    Sanitized in 0.003 seconds.
+  qryXSalesByDepartmentByCashierAllRegisters (SQL)
+  qryXSalesByHour
+    Sanitized in 0.001 seconds.
+  qryXSalesByHour (SQL)
+  qryXSalesByHourAllRegisters
+    Sanitized in 0.002 seconds.
+  qryXSalesByHourAllRegisters (SQL)
+  qryXSalesByTender
+    Sanitized in 0.001 seconds.
+  qryXSalesByTender (SQL)
+  qryXSalesByTenderAllRegisters
+    Sanitized in 0.001 seconds.
+  qryXSalesByTenderAllRegisters (SQL)
+  qryXSalesByTenderByCashier
+    Sanitized in 0.002 seconds.
+  qryXSalesByTenderByCashier (SQL)
+  qryXSalesReturns
+    Sanitized in 0.003 seconds.
+  qryXSalesReturns (SQL)
+  qt
+    Sanitized in 0.001 seconds.
+  qt (SQL)
+  Query1
+    Sanitized in 0.001 seconds.
+  Query1 (SQL)
+  Query10
+    Sanitized in 0.001 seconds.
+  Query10 (SQL)
+  Query11
+    Sanitized in 0.002 seconds.
+  Query11 (SQL)
+  Query12
+    Sanitized in 0.001 seconds.
+  Query12 (SQL)
+  Query13
+    Sanitized in 0.001 seconds.
+  Query13 (SQL)
+  Query14
+    Sanitized in 0.001 seconds.
+  Query14 (SQL)
+  Query15
+    Sanitized in 0.000 seconds.
+  Query15 (SQL)
+  Query16
+    Sanitized in 0.001 seconds.
+  Query16 (SQL)
+  Query17
+    Sanitized in 0.001 seconds.
+  Query17 (SQL)
+  Query18
+    Sanitized in 0.001 seconds.
+  Query18 (SQL)
+  Query19
+    Sanitized in 0.002 seconds.
+  Query19 (SQL)
+  Query2
+    Sanitized in 0.001 seconds.
+  Query2 (SQL)
+  Query20
+    Sanitized in 0.001 seconds.
+  Query20 (SQL)
+  Query21
+    Sanitized in 0.001 seconds.
+  Query21 (SQL)
+  Query22
+    Sanitized in 0.001 seconds.
+  Query22 (SQL)
+  Query23
+    Sanitized in 0.001 seconds.
+  Query23 (SQL)
+  Query24
+    Sanitized in 0.001 seconds.
+  Query24 (SQL)
+  Query25
+    Sanitized in 0.000 seconds.
+  Query25 (SQL)
+  Query26
+    Sanitized in 0.001 seconds.
+  Query26 (SQL)
+  Query27
+    Sanitized in 0.001 seconds.
+  Query27 (SQL)
+  Query28
+    Sanitized in 0.001 seconds.
+  Query28 (SQL)
+  Query29
+    Sanitized in 0.001 seconds.
+  Query29 (SQL)
+  Query3
+    Sanitized in 0.001 seconds.
+  Query3 (SQL)
+  Query30
+    Sanitized in 0.002 seconds.
+  Query30 (SQL)
+  Query31
+    Sanitized in 0.002 seconds.
+  Query31 (SQL)
+  Query32
+    Sanitized in 0.003 seconds.
+  Query32 (SQL)
+  Query33
+    Sanitized in 0.001 seconds.
+  Query33 (SQL)
+  Query34
+    Sanitized in 0.001 seconds.
+  Query34 (SQL)
+  Query35
+    Sanitized in 0.000 seconds.
+  Query35 (SQL)
+  Query36
+    Sanitized in 0.002 seconds.
+  Query36 (SQL)
+  Query37
+    Sanitized in 0.002 seconds.
+  Query37 (SQL)
+  Query38
+    Sanitized in 0.001 seconds.
+  Query38 (SQL)
+  Query39
+    Sanitized in 0.001 seconds.
+  Query39 (SQL)
+  Query4
+    Sanitized in 0.001 seconds.
+  Query4 (SQL)
+  Query40
+    Sanitized in 0.002 seconds.
+  Query40 (SQL)
+  Query41
+    Sanitized in 0.002 seconds.
+  Query41 (SQL)
+  Query42
+    Sanitized in 0.003 seconds.
+  Query42 (SQL)
+  Query43
+    Sanitized in 0.001 seconds.
+  Query43 (SQL)
+  Query44
+    Sanitized in 0.001 seconds.
+  Query44 (SQL)
+  Query45
+    Sanitized in 0.002 seconds.
+  Query45 (SQL)
+  Query46
+    Sanitized in 0.002 seconds.
+  Query46 (SQL)
+  Query47
+    Sanitized in 0.001 seconds.
+  Query47 (SQL)
+  Query48
+    Sanitized in 0.003 seconds.
+  Query48 (SQL)
+  Query49
+    Sanitized in 0.001 seconds.
+  Query49 (SQL)
+  Query5
+    Sanitized in 0.001 seconds.
+  Query5 (SQL)
+  Query50
+    Sanitized in 0.001 seconds.
+  Query50 (SQL)
+  Query51
+    Sanitized in 0.002 seconds.
+  Query51 (SQL)
+  Query52
+    Sanitized in 0.001 seconds.
+  Query52 (SQL)
+  Query53
+    Sanitized in 0.002 seconds.
+  Query53 (SQL)
+  Query6
+    Sanitized in 0.001 seconds.
+  Query6 (SQL)
+  Query7
+    Sanitized in 0.001 seconds.
+  Query7 (SQL)
+  Query8
+    Sanitized in 0.000 seconds.
+  Query8 (SQL)
+  Query9
+    Sanitized in 0.001 seconds.
+  Query9 (SQL)
+  qyPurchaseOrderItemInfoByWADS
+    Sanitized in 0.004 seconds.
+  qyPurchaseOrderItemInfoByWADS (SQL)
+  qyPurchaseOrderItemInfoByWADSAdjustSOQ
+    Sanitized in 0.001 seconds.
+  qyPurchaseOrderItemInfoByWADSAdjustSOQ (SQL)
+  qyPurchaseOrderItemInfoByWADSx
+    Sanitized in 0.005 seconds.
+  qyPurchaseOrderItemInfoByWADSx (SQL)
+  ScioIntialOrderAppend
+    Sanitized in 0.002 seconds.
+  ScioIntialOrderAppend (SQL)
+  ScioNotOnFileAppendItem
+    Sanitized in 0.002 seconds.
+  ScioNotOnFileAppendItem (SQL)
+  ScioNotOnFileCreate
+    Sanitized in 0.002 seconds.
+  ScioNotOnFileCreate (SQL)
+  Sheet2 Query
+    Sanitized in 0.001 seconds.
+  Sheet2 Query (SQL)
+  sp_Assign_InvoiceNO
+    Sanitized in 0.000 seconds.
+  sp_Assign_InvoiceNO (SQL)
+  sp_LotteryScratch
+    Sanitized in 0.000 seconds.
+  sp_LotteryScratch (SQL)
+  sp_PassThru
+    Sanitized in 0.000 seconds.
+  sp_PassThru (SQL)
+  sp_Post_PurchaseOrder
+    Sanitized in 0.000 seconds.
+  sp_Post_PurchaseOrder (SQL)
+  sp_ShrinkFile
+    Sanitized in 0.000 seconds.
+  sp_ShrinkFile (SQL)
+  sp_UpdateItemMovement
+    Sanitized in 0.000 seconds.
+  sp_UpdateItemMovement (SQL)
+  UPC12to10
+    Sanitized in 0.001 seconds.
+  UPC12to10 (SQL)
+  UPC12With0Begin
+    Sanitized in 0.001 seconds.
+  UPC12With0Begin (SQL)
+  UPC8to6
+    Sanitized in 0.001 seconds.
+  UPC8to6 (SQL)
+  zqryEOD903DeleteInvoHead5
+    Sanitized in 0.001 seconds.
+  zqryEOD903DeleteInvoHead5 (SQL)
+  zqryEOD904DeleteInvoLine5
+    Sanitized in 0.001 seconds.
+  zqryEOD904DeleteInvoLine5 (SQL)
+[960]
+-------------------------------------
+Exporting forms...            
+  ItemDataSheetSub
+    Sanitized in 0.013 seconds.
+  VendorItemsSub
+    Sanitized in 0.006 seconds.
+  PricingToolBySalesdepartmentSelectSub
+    Sanitized in 0.006 seconds.
+  AuditSubx
+    Sanitized in 0.013 seconds.
+  UPCConvert5to6
+    Sanitized in 0.004 seconds.
+  PurchaseOrdersOnFilex
+    Sanitized in 0.029 seconds.
+  PurchaseOrdersOnFileSubItemSetupx
+    Sanitized in 0.011 seconds.
+  PurchaseOrdersOnFileSub2011-03-04
+    Sanitized in 0.021 seconds.
+  Category
+    Sanitized in 0.019 seconds.
+  TranTypes
+    Sanitized in 0.004 seconds.
+  ClubOrderXLImport
+    Sanitized in 0.008 seconds.
+  qryForms
+    Sanitized in 0.005 seconds.
+  BuyDowns
+    Sanitized in 0.029 seconds.
+  AdjustReasons
+    Sanitized in 0.005 seconds.
+  OLCCPackingList
+    Sanitized in 0.013 seconds.
+  CheckCashingCustomers
+    Sanitized in 0.024 seconds.
+  ItemDetailForOrderingFromOLAS
+    Sanitized in 1.375 seconds.
+  CRReports
+    Sanitized in 0.006 seconds.
+  ReadInvolineTXT
+    Sanitized in 0.004 seconds.
+  ClubOrderGuides
+    Sanitized in 0.011 seconds.
+  AgentsTransfers
+    Sanitized in 0.039 seconds.
+  SetDefaultPrinter
+    Sanitized in 0.017 seconds.
+  Auditx
+    Sanitized in 0.022 seconds.
+  KMDSSettings
+    Sanitized in 0.006 seconds.
+  PSCInputEditScans
+    Sanitized in 0.006 seconds.
+  SalesGroup
+    Sanitized in 0.028 seconds.
+  AgentTransferOut
+    Sanitized in 0.014 seconds.
+  BrotherLabels
+    Sanitized in 0.005 seconds.
+  ClubOrderGuideTemp
+    Sanitized in 0.019 seconds.
+  TimeClockPunchesByCashier
+    Sanitized in 0.013 seconds.
+  PricingToolSelect
+    Sanitized in 0.014 seconds.
+  CashierAssignRegisters
+    Sanitized in 0.019 seconds.
+  RecordCounts
+    Sanitized in 0.017 seconds.
+  PriceGroup
+    Sanitized in 0.022 seconds.
+  EOReport
+    Sanitized in 0.005 seconds.
+  CashierRightsCashierList
+    Sanitized in 0.006 seconds.
+  Programs
+    Sanitized in 0.005 seconds.
+  Item with Views
+    Sanitized in 0.069 seconds.
+  InventoryReportOrderBys
+    Sanitized in 0.006 seconds.
+  Item3
+    Sanitized in 0.009 seconds.
+  ItemDataSheet
+    Sanitized in 0.016 seconds.
+  OLCCCaseQuantities
+    Sanitized in 0.005 seconds.
+  CashiersBackOfficeFlags
+    Sanitized in 0.011 seconds.
+  CashierRegisterFlags
+    Sanitized in 0.015 seconds.
+  Clubs
+    Sanitized in 0.080 seconds.
+  PurchaseOrdersOnFileSubItemSetup
+    Sanitized in 0.023 seconds.
+  frmQueryRunner
+    Sanitized in 0.010 seconds.
+  Item2
+    Sanitized in 0.014 seconds.
+  KMDSLinks
+    Sanitized in 0.005 seconds.
+  Login
+    Sanitized in 0.045 seconds.
+  ReportsExplorer
+    Sanitized in 0.020 seconds.
+  WebOrderStatus
+    Sanitized in 0.015 seconds.
+  CashRegisterSystem
+    Sanitized in 0.058 seconds.
+  UPCItem1
+    Sanitized in 0.005 seconds.
+  Item1
+    Sanitized in 0.027 seconds.
+  ItemLabels
+    Sanitized in 0.021 seconds.
+  ScanBatch1
+    Sanitized in 0.006 seconds.
+  ItemsByListBoxSubForm
+    Sanitized in 0.021 seconds.
+  vw_WebLogErrorCode-1 subform
+    Sanitized in 0.007 seconds.
+  ScanBatchLineCounts subform
+    Sanitized in 0.015 seconds.
+  SalesLeadsSubForm
+    Sanitized in 0.006 seconds.
+  qryWebOrdersWithLines subform
+    Sanitized in 0.011 seconds.
+  qrySysfileKMDSKS subform
+    Sanitized in 0.006 seconds.
+  qryCashierSwitchBoardPrograms subform
+    Sanitized in 0.009 seconds.
+  KMDSKS subform
+    Sanitized in 0.005 seconds.
+  qryCashiersAndProgramsForm
+    Sanitized in 0.006 seconds.
+  PurchaseOrdersOnFileChartSalesTotal
+    Sanitized in 0.021 seconds.
+  CreateTransmitPO
+    Sanitized in 0.019 seconds.
+  AdjustReasonSetup
+    Sanitized in 0.007 seconds.
+  KitNewItem
+    Sanitized in 0.013 seconds.
+  Palm
+    Sanitized in 0.002 seconds.
+  AgentTransferIn
+    Sanitized in 0.019 seconds.
+  PricingTool
+    Sanitized in 0.019 seconds.
+  SetNewConnectString
+    Sanitized in 0.006 seconds.
+  ScanBatchRestore
+    Sanitized in 0.004 seconds.
+  ScanBatchWithoutVoice
+    Sanitized in 0.030 seconds.
+  AgentsActiveForTransferTrue
+    Sanitized in 0.005 seconds.
+  ClubOrderCompare
+    Sanitized in 0.010 seconds.
+  PurchaseOrdersOnFile
+    Sanitized in 0.028 seconds.
+  Switchboard
+    Sanitized in 0.033 seconds.
+  SalesPicturesRefresh
+    Sanitized in 0.025 seconds.
+  CashierAssignRegistersOld
+    Sanitized in 0.013 seconds.
+  OLCCItemsNotOnFile
+    Sanitized in 0.008 seconds.
+  MetrologicOptimiserSubAuditLog
+    Sanitized in 0.009 seconds.
+  ItemTransactionsByMonth
+    Sanitized in 0.010 seconds.
+  ClubOrderGuidesWeb
+    Sanitized in 0.007 seconds.
+  ClubOrderGuideTempSub
+    Sanitized in 0.008 seconds.
+  TimeClockPunchesByCashierSub
+    Sanitized in 0.012 seconds.
+  SetupPriceGroupForNotAssigned
+    Sanitized in 0.002 seconds.
+  AgentsTransfersSub
+    Sanitized in 0.022 seconds.
+  MetrologicScanBatchSubVariance
+    Sanitized in 0.010 seconds.
+  CashierSAVE
+    Sanitized in 0.026 seconds.
+  ScanBatchLineCountsSub
+    Sanitized in 0.013 seconds.
+  PurchaseOrderCompare
+    Sanitized in 0.009 seconds.
+  OLCCItemsNotOnFileSub
+    Sanitized in 0.014 seconds.
+  FormTemplate
+    Sanitized in 0.010 seconds.
+  CashierPassword
+    Sanitized in 0.007 seconds.
+  Sysfile
+    Sanitized in 0.104 seconds.
+  CashierPwd
+    Sanitized in 0.006 seconds.
+  ItemOnReserve
+    Sanitized in 0.010 seconds.
+  CashiersAndProgramsSwitchBoard
+    Sanitized in 0.004 seconds.
+  ClubOrderSub
+    Sanitized in 0.019 seconds.
+  SetupVendorForNotAssigned
+    Sanitized in 0.003 seconds.
+  ClubOrderWebImportSib
+    Sanitized in 0.006 seconds.
+  AgentsActiveForTransferFalse
+    Sanitized in 0.003 seconds.
+  ItemUPC
+    Sanitized in 0.005 seconds.
+  AuditSub
+    Sanitized in 0.017 seconds.
+  CompareScanItemToPurchaseOrderSub
+    Sanitized in 0.011 seconds.
+  ClubsPreviousOrderSub
+    Sanitized in 0.009 seconds.
+  TimeClockPunchesByDateSub
+    Sanitized in 0.008 seconds.
+  ScanBatchSub
+    Sanitized in 0.008 seconds.
+  Filezilla
+    Sanitized in 0.235 seconds.
+  ClubOrderGuideTempRelatedSub
+    Sanitized in 0.005 seconds.
+  CashRegisterUpdateData
+    Sanitized in 0.002 seconds.
+  PurchaseOrdersOnFileSubx
+    Sanitized in 0.022 seconds.
+  PurchaseOrdersOnFileSubItemSetupxx
+    Sanitized in 0.012 seconds.
+  AverageDaySupply
+    Sanitized in 0.030 seconds.
+  Form5
+    Sanitized in 0.003 seconds.
+  ClubOrderWebImport
+    Sanitized in 0.014 seconds.
+  EndOfDay
+    Sanitized in 0.003 seconds.
+  PrintInventoryAuditReport
+    Sanitized in 0.005 seconds.
+  PrintInventoryReport
+    Sanitized in 0.048 seconds.
+  ItemDetailForOrderingFromOLAS_subCaseQty
+    Sanitized in 0.006 seconds.
+  ItemDataSheetSelect
+    Sanitized in 0.035 seconds.
+  Form4
+    Sanitized in 0.005 seconds.
+  FintechExport
+    Sanitized in 0.005 seconds.
+  AgentsListBox
+    Sanitized in 0.005 seconds.
+  ItemWithSalesTotalChart
+    Sanitized in 0.044 seconds.
+  SetupRepairCategories
+    Sanitized in 0.002 seconds.
+  LabelList
+    Sanitized in 0.006 seconds.
+  ClubOrder
+    Sanitized in 0.033 seconds.
+  ItemOnOrder
+    Sanitized in 0.006 seconds.
+  Form3
+    Sanitized in 0.003 seconds.
+  CashierRightsProgramList
+    Sanitized in 0.005 seconds.
+  AgentTransferOutClaims
+    Sanitized in 0.013 seconds.
+  x
+    Sanitized in 0.011 seconds.
+  AgentsTransfersChoices
+    Sanitized in 0.015 seconds.
+  ItemOnTransfer
+    Sanitized in 0.009 seconds.
+  MyWebSites
+    Sanitized in 0.005 seconds.
+  TimeClockPunches
+    Sanitized in 0.005 seconds.
+  ItemsTPR
+    Sanitized in 0.007 seconds.
+  ItemNew
+    Sanitized in 0.042 seconds.
+  Form2
+    Sanitized in 0.007 seconds.
+  CashierRights
+    Sanitized in 0.002 seconds.
+  Vendors
+    Sanitized in 0.032 seconds.
+  ImportInvoiceLDFromCSV
+    Sanitized in 0.007 seconds.
+  Form1
+    Sanitized in 0.002 seconds.
+  Cashier1
+    Sanitized in 0.008 seconds.
+  ItemChartMovement
+    Sanitized in 0.011 seconds.
+  PurchaseOrdersOnFileSubItemMovement
+    Sanitized in 0.013 seconds.
+  ItemLabelsSubWithout
+    Sanitized in 0.008 seconds.
+  CRViewLoader
+    Sanitized in 0.001 seconds.
+  Audit
+    Sanitized in 0.020 seconds.
+  CashRegister
+    Sanitized in 0.009 seconds.
+  CompareScanItemToPurchaseOrder
+    Sanitized in 0.007 seconds.
+  ItemDetailForOrderingFromOLAS_subMinOrder
+    Sanitized in 0.004 seconds.
+  LotteryScratchSetup
+    Sanitized in 0.004 seconds.
+  ItemTransactionsByMonthPO
+    Sanitized in 0.009 seconds.
+  AgentsPreviousOrderWithLines
+    Sanitized in 0.010 seconds.
+  CashiersAndProgramsDatasheet
+    Sanitized in 0.006 seconds.
+  InventoryReportParameters
+    Sanitized in 0.009 seconds.
+  PurchaseOrderChoices
+    Sanitized in 0.007 seconds.
+  Sizes
+    Sanitized in 0.019 seconds.
+  SalesLeads
+    Sanitized in 0.004 seconds.
+  Kit
+    Sanitized in 0.018 seconds.
+  PurchaseOrderPercents
+    Sanitized in 0.027 seconds.
+  qryCashierSwitchBoardMain
+    Sanitized in 0.004 seconds.
+  CashSys
+    Sanitized in 0.011 seconds.
+  Tender
+    Sanitized in 0.010 seconds.
+  Cashier
+    Sanitized in 0.029 seconds.
+  MetrologicOptimiser
+    Sanitized in 0.040 seconds.
+  Agents
+    Sanitized in 0.024 seconds.
+  ItemChartSalesTotal
+    Sanitized in 0.009 seconds.
+  SalesPicturesRefreshForm
+    Sanitized in 0.011 seconds.
+  Agents1
+    Sanitized in 0.007 seconds.
+  PurchaseOrderPercentsDSGroupLevelSubForm
+    Sanitized in 0.004 seconds.
+  MailChangesForm
+    Sanitized in 0.010 seconds.
+  DrizlyForm
+    Sanitized in 0.007 seconds.
+  Table1
+    Sanitized in 0.004 seconds.
+  ItemSetup
+    Sanitized in 0.013 seconds.
+  ItemLabelsSubWith
+    Sanitized in 0.007 seconds.
+  UPCItem
+    Sanitized in 0.004 seconds.
+  KitISubForm
+    Sanitized in 0.009 seconds.
+  Item
+    Sanitized in 0.047 seconds.
+  ScanBatch
+    Sanitized in 0.036 seconds.
+  LotteryScratch
+    Sanitized in 0.008 seconds.
+  SalesDepartmentGroupID
+    Sanitized in 0.005 seconds.
+  TimeClockPunchesByDate
+    Sanitized in 0.007 seconds.
+  MetrologicOptimiserSubItemsNotScanned
+    Sanitized in 0.015 seconds.
+  LocalTablesDelete
+    Sanitized in 0.004 seconds.
+  ItemDetailForOrderingFromOLAS_subReportDate
+    Sanitized in 0.003 seconds.
+  BackupSQLDatabase
+    Sanitized in 0.008 seconds.
+  CategorySub
+    Sanitized in 0.005 seconds.
+  SalesGroupSub
+    Sanitized in 0.012 seconds.
+  ScanBatchTotalsSub
+    Sanitized in 0.006 seconds.
+  VendorsPurchaseOrdersSub
+    Sanitized in 0.009 seconds.
+  ClubOrderGuidesTempSub
+    Sanitized in 0.001 seconds.
+  PSCInputEditScansSub
+    Sanitized in 0.005 seconds.
+  ReportFormsSub
+    Sanitized in 0.003 seconds.
+  PricingToolSelectSub
+    Sanitized in 0.006 seconds.
+  PriceGroupSub
+    Sanitized in 0.004 seconds.
+  ClubOrderPrintDialog
+    Sanitized in 0.020 seconds.
+  CashiersAndProgramsSub
+    Sanitized in 0.005 seconds.
+  PricingToolSub
+    Sanitized in 0.009 seconds.
+  PurchaseOrdersOnFileSub
+    Sanitized in 0.022 seconds.
+  MonthEndRoutine
+    Sanitized in 0.013 seconds.
+  ClubOrderCreate
+    Sanitized in 0.016 seconds.
+  PurchaseOrderCreate
+    Sanitized in 0.031 seconds.
+  AuditorsAuditFile
+    Sanitized in 0.008 seconds.
+  ItemMovementPivotTable
+    Sanitized in 0.010 seconds.
+  CreateTransmitpcAnywhere
+    Sanitized in 0.006 seconds.
+  CreateOLCCAuditFile
+    Sanitized in 0.007 seconds.
+  CashiersAndProgramsSwitchBoardSub
+    Sanitized in 0.005 seconds.
+  ReAssignItemID
+    Sanitized in 0.005 seconds.
+  NabcaOLCC
+    Sanitized in 0.006 seconds.
+  AverageDaySupplySub
+    Sanitized in 0.006 seconds.
+  ItemsTPRSub
+    Sanitized in 0.004 seconds.
+  BuyDownItemsSub
+    Sanitized in 0.006 seconds.
+  AgentsPreviousOrdersSub
+    Sanitized in 0.008 seconds.
+  PSC
+    Sanitized in 0.005 seconds.
+  NabcaOlccItemSub
+    Sanitized in 0.009 seconds.
+  LotteryScratchSub
+    Sanitized in 0.013 seconds.
+  ItemDetailForOrderingSub
+    Sanitized in 0.010 seconds.
+  CreateTransmitInventory
+    Sanitized in 0.009 seconds.
+  ItemsByListBox
+    Sanitized in 0.012 seconds.
+  PurchaseOrdersOnFileChartSalesTotalx
+    Sanitized in 0.009 seconds.
+  PricingToolSelectBySalesDepartment
+    Sanitized in 0.005 seconds.
+  OLCCEPSPriceDiffSub
+    Sanitized in 0.011 seconds.
+  OLCCEPSPriceDiff
+    Sanitized in 0.005 seconds.
+[229]
+-------------------------------------
+Exporting macros...           
+  macKMDSDelete
+    Sanitized in 0.001 seconds.
+  macOnlineBackup
+    Sanitized in 0.000 seconds.
+  macMailSQLBackup
+    Sanitized in 0.000 seconds.
+  Macro1
+    Sanitized in 0.000 seconds.
+  macChart
+    Sanitized in 0.000 seconds.
+  macKMDSAdd
+    Sanitized in 0.000 seconds.
+  macKMDSClose
+    Sanitized in 0.000 seconds.
+  macKMDSPrintPreview
+    Sanitized in 0.000 seconds.
+  Macro2
+    Sanitized in 0.000 seconds.
+  macClearWorkTables
+    Sanitized in 0.003 seconds.
+  macEOD
+    Sanitized in 0.000 seconds.
+  AutoExec
+    Sanitized in 0.000 seconds.
+  AutoKeys
+    Sanitized in 0.000 seconds.
+  macKMDSSave
+    Sanitized in 0.000 seconds.
+  MakeMDE
+    Sanitized in 0.000 seconds.
+  macCreateDatabase
+    Sanitized in 0.000 seconds.
+  macKMDSDatasheet
+    Sanitized in 0.000 seconds.
+  macKMDSUndo
+    Sanitized in 0.001 seconds.
+  macUpdateMovement
+    Sanitized in 0.000 seconds.
+[19]
+-------------------------------------
+Exporting reports...          
+  78 Special Order Liquor Inventory Value
+    Sanitized in 0.019 seconds.
+  LabelItemLabels5267x
+    Sanitized in 0.004 seconds.
+  ClubInvoiceLiquorAndNonLiquorByCategory
+    Sanitized in 0.023 seconds.
+  27 Buydown History
+    Sanitized in 0.009 seconds.
+  MetrologicItemsScanBatchAudit
+    Sanitized in 0.011 seconds.
+  qryEOM100ApplyNewPricesReport
+    Sanitized in 0.019 seconds.
+  qryEOM110SalePricesReport
+    Sanitized in 0.012 seconds.
+  ClubPickListByCategory
+    Sanitized in 0.019 seconds.
+  18 Item Movement
+    Sanitized in 0.012 seconds.
+  34 Sales By Vendor By Department
+    Sanitized in 0.019 seconds.
+  50 Monthly Sales By Department
+    Sanitized in 0.042 seconds.
+  PurchaseOrderItemsWADS
+    Sanitized in 0.011 seconds.
+  17 Sales By Day
+    Sanitized in 0.020 seconds.
+  25 Tender Codes
+    Sanitized in 0.009 seconds.
+  qryEOM202MarkUpsAndDowns
+    Sanitized in 0.012 seconds.
+  ClubOrderSizeTotals
+    Sanitized in 0.005 seconds.
+  LabelItemLabels5267WithPricex
+    Sanitized in 0.003 seconds.
+  qryEOD050SalesByAllCashiersByDepartment
+    Sanitized in 0.029 seconds.
+  qryEOD126ItemRestockListNOSubtotals
+    Sanitized in 0.011 seconds.
+  Copy of PurchaseOrderLiquor
+    Sanitized in 0.022 seconds.
+  77 Item Sales By Department By Vendor
+    Sanitized in 0.018 seconds.
+  PurchaseOrderLiquor
+    Sanitized in 0.019 seconds.
+  77 Sales By Department By Vendor
+    Sanitized in 0.021 seconds.
+  ClubOrderGuides
+    Sanitized in 0.012 seconds.
+  ClubInvoiceBW
+    Sanitized in 0.017 seconds.
+  ClubOrderGuidesBW
+    Sanitized in 0.012 seconds.
+  qryEOD052SalesReturnsByCashier
+    Sanitized in 0.010 seconds.
+  12 Item Sales
+    Sanitized in 0.011 seconds.
+  qryEOD054ReturnsCancelledSalesByCashier
+    Sanitized in 0.011 seconds.
+  11 Items on TPR
+    Sanitized in 0.017 seconds.
+  19 Item Movement By Price Group
+    Sanitized in 0.019 seconds.
+  22 Check Cashing Customers
+    Sanitized in 0.010 seconds.
+  qryEOD124ROpenAccounts
+    Sanitized in 0.012 seconds.
+  qryEO D040SalesByDepartmentNoOS
+    Sanitized in 0.021 seconds.
+  ClubInvoiceLiquorAndNonLiquorForClubScreen
+    Sanitized in 0.032 seconds.
+  qryKitsWithTotalsAndItems
+    Sanitized in 0.009 seconds.
+  Vendor Supply List
+    Sanitized in 0.012 seconds.
+  qryEOChecksTender
+    Sanitized in 0.010 seconds.
+  21 Sales Departments
+    Sanitized in 0.007 seconds.
+  ClubInvoiceFatLines
+    Sanitized in 0.019 seconds.
+  ItemTransactionInvoiceForVendors
+    Sanitized in 0.011 seconds.
+  ClubInvoiceLiquorAndNonLiquor
+    Sanitized in 0.028 seconds.
+  LabelShelfTagsWithoutBarcodes8160
+    Sanitized in 0.004 seconds.
+  36 Hours Worked By Date By Cashier
+    Sanitized in 0.010 seconds.
+  LabelShelfTagsWithBarCodes8160
+    Sanitized in 0.003 seconds.
+  72 Negative Sales By Cashier
+    Sanitized in 0.009 seconds.
+  70 Item Sales By Cashier
+    Sanitized in 0.011 seconds.
+  49 Sales Returns And Cancels by Cashier
+    Sanitized in 0.011 seconds.
+  LABELS
+    Sanitized in 0.003 seconds.
+  LotteryScratchTicketRecon
+    Sanitized in 0.011 seconds.
+  qryBuydownDetail
+    Sanitized in 0.010 seconds.
+  ItemTransactionInvoicePO
+    Sanitized in 0.010 seconds.
+  35 Buydown History Sales Detail
+    Sanitized in 0.009 seconds.
+  09 Items on Buydown
+    Sanitized in 0.010 seconds.
+  qryEOD001InventoryValueBegin
+    Sanitized in 0.013 seconds.
+  59 Club Sales By Month
+    Sanitized in 0.015 seconds.
+  23 ItemSalesAndTransfersByMonth
+    Sanitized in 0.022 seconds.
+  PurchaseOrderItemDaysSupplyReplenish
+    Sanitized in 0.010 seconds.
+  07 Items on Sale
+    Sanitized in 0.023 seconds.
+  ItemTransactionInvoice
+    Sanitized in 0.009 seconds.
+  44 Store Transfers by Invoice
+    Sanitized in 0.018 seconds.
+  01 Inventory Value By Code
+    Sanitized in 0.015 seconds.
+  60 Items on TPR By Code
+    Sanitized in 0.012 seconds.
+  75 Inventory By Last Sold Date
+    Sanitized in 0.024 seconds.
+  Inventory Value By Code
+    Sanitized in 0.015 seconds.
+  MetrologicItemsNotScanned
+    Sanitized in 0.010 seconds.
+  OLCCEPSNotOnFile
+    Sanitized in 0.006 seconds.
+  71 Bottle History By Club Month
+    Sanitized in 0.024 seconds.
+  31 Items By Last Sold Date
+    Sanitized in 0.012 seconds.
+  68 Items By Category By Last Inventory Date
+    Sanitized in 0.014 seconds.
+  03 Inventory Count Sheets by Code
+    Sanitized in 0.007 seconds.
+  37 Hours Worked By Cashier By Date
+    Sanitized in 0.010 seconds.
+  56 Items with more than 1 UPC Code
+    Sanitized in 0.007 seconds.
+  qryEOM300WebPriceVariance
+    Sanitized in 0.008 seconds.
+  73 Bottle Deposit Inventory Value
+    Sanitized in 0.015 seconds.
+  39 Web Price Variance
+    Sanitized in 0.008 seconds.
+  65 Scan Batch Variance
+    Sanitized in 0.020 seconds.
+  38 Items Sold By Date Range
+    Sanitized in 0.022 seconds.
+  qryInvoLineReceiptsSelected
+    Sanitized in 0.009 seconds.
+  69 Sales By Department By Payment Type
+    Sanitized in 0.012 seconds.
+  PurchaseOrderLiquorWithOnShelf
+    Sanitized in 0.020 seconds.
+  10 Items By Days Supply of Onhand
+    Sanitized in 0.008 seconds.
+  17 Sales By Day - Related
+    Sanitized in 0.017 seconds.
+  74 Items with Alpha UPC
+    Sanitized in 0.020 seconds.
+  qryEOD121RItemsSetupToday
+    Sanitized in 0.009 seconds.
+  PurchaseOrderItemDaysSupply
+    Sanitized in 0.011 seconds.
+  79 Item Restock List By Category
+    Sanitized in 0.016 seconds.
+  02 Inventory Value By Category
+    Sanitized in 0.018 seconds.
+  43 Item Sales By Category
+    Sanitized in 0.013 seconds.
+  46 Monthly Sales By Category
+    Sanitized in 0.026 seconds.
+  PurchaseOrderForFax
+    Sanitized in 0.012 seconds.
+  ClubOrderGuidesByCategory
+    Sanitized in 0.020 seconds.
+  qryEOD123ROnhandChangesToday
+    Sanitized in 0.013 seconds.
+  ItemOnhandChangeAudit
+    Sanitized in 0.016 seconds.
+  qryClubOrderGuidesForExport
+    Sanitized in 0.005 seconds.
+  Club History
+    Sanitized in 0.012 seconds.
+  qryEOD126ItemRestockList
+    Sanitized in 0.016 seconds.
+  x70 Web UPC Code Discrepancy
+    Sanitized in 0.009 seconds.
+  LabelItemLabels5267
+    Sanitized in 0.004 seconds.
+  20 Size List
+    Sanitized in 0.007 seconds.
+  29 Vendor Supply List
+    Sanitized in 0.017 seconds.
+  ClubInvoiceByCategory
+    Sanitized in 0.032 seconds.
+  05 Inventory Count Sheets By Category
+    Sanitized in 0.013 seconds.
+  12 Item Salesx
+    Sanitized in 0.012 seconds.
+  42 Sales By Department By Category
+    Sanitized in 0.018 seconds.
+  61 Category List
+    Sanitized in 0.008 seconds.
+  67 Items Restock List
+    Sanitized in 0.014 seconds.
+  04 Inventory Count Sheets By Department
+    Sanitized in 0.012 seconds.
+  15 Sales By Department
+    Sanitized in 0.018 seconds.
+  48 Inventory Value by Sales Department
+    Sanitized in 0.015 seconds.
+  57 Sales Cost Profit By Department
+    Sanitized in 0.012 seconds.
+  qryEOD043CashDropsAndLoans
+    Sanitized in 0.012 seconds.
+  PurchaseOrderWithPriceAndCostVendorScr
+    Sanitized in 0.025 seconds.
+  62 Price Group List
+    Sanitized in 0.011 seconds.
+  AgentTransfer
+    Sanitized in 0.023 seconds.
+  ClubPickListBW
+    Sanitized in 0.017 seconds.
+  PurchaseOrderWithCaseQty
+    Sanitized in 0.032 seconds.
+  ItemLabelsForBrother
+    Sanitized in 0.013 seconds.
+  ClubInvoiceStoreCopy
+    Sanitized in 0.034 seconds.
+  63 OLCC Agent List
+    Sanitized in 0.010 seconds.
+  Items After Recalc of Units Per Order
+    Sanitized in 0.015 seconds.
+  qryEOD060ClubInvoices
+    Sanitized in 0.023 seconds.
+  ClubOrderGuidesWithSales
+    Sanitized in 0.030 seconds.
+  qryEO D040SalesByDepartment0206
+    Sanitized in 0.026 seconds.
+  28 Cashiers
+    Sanitized in 0.009 seconds.
+  TransferCartonsToPacks
+    Sanitized in 0.011 seconds.
+  30 SalesReturnsByCashier
+    Sanitized in 0.021 seconds.
+  qryEOD041ChecksTenderedByCashier
+    Sanitized in 0.021 seconds.
+  qryEOD053CancelledSalesByCashier
+    Sanitized in 0.019 seconds.
+  qryEOSalesByDepartmentByCashier
+    Sanitized in 0.026 seconds.
+  qryEOD042ChargesTenderedByCashier
+    Sanitized in 0.023 seconds.
+  16 Sales By Hour
+    Sanitized in 0.049 seconds.
+  14 BusinesLedger
+    Sanitized in 0.016 seconds.
+  qryEOS040CustomerCount
+    Sanitized in 0.006 seconds.
+  qryPunchHoursReport
+    Sanitized in 0.009 seconds.
+  qryEO D040SalesByDepartmentwithOS
+    Sanitized in 0.020 seconds.
+  Audit
+    Sanitized in 0.017 seconds.
+  33 Items Sold Today For OLCC Auditors
+    Sanitized in 0.020 seconds.
+  47 Negative Onhand Report
+    Sanitized in 0.012 seconds.
+  54 Club List
+    Sanitized in 0.008 seconds.
+  51 Todays Sales By Department By Register
+    Sanitized in 0.030 seconds.
+  PurchaseOrderWithPriceAndCost
+    Sanitized in 0.034 seconds.
+  qryEOS040OLCCDepositRecap
+    Sanitized in 0.009 seconds.
+  qryEOD129RInvoicesWithCoupons
+    Sanitized in 0.013 seconds.
+  qryEOD040SalesByTenderByRegister
+    Sanitized in 0.021 seconds.
+  13 Items With More Than 4 UPC Codes
+    Sanitized in 0.008 seconds.
+  53 Obsolete UPC Codes
+    Sanitized in 0.012 seconds.
+  Batch Scan
+    Sanitized in 0.004 seconds.
+  ClubPickList
+    Sanitized in 0.022 seconds.
+  qryEOD040SalesByDepartment
+    Sanitized in 0.029 seconds.
+  55 Vendor List
+    Sanitized in 0.008 seconds.
+  41 Open Accounts Charges
+    Sanitized in 0.012 seconds.
+  06 Inventory Count Sheets by Location
+    Sanitized in 0.011 seconds.
+  qryEOD125SalesByDepartmentByTender
+    Sanitized in 0.014 seconds.
+  qryEOS040SalesByTender
+    Sanitized in 0.012 seconds.
+  26 Club Invoices
+    Sanitized in 0.013 seconds.
+  PurchaseOrder
+    Sanitized in 0.020 seconds.
+  qryEOD122RItemsWithNegativeOnhands
+    Sanitized in 0.011 seconds.
+  64 Kit Sales
+    Sanitized in 0.013 seconds.
+  08 Items with Packs
+    Sanitized in 0.009 seconds.
+  Query10
+    Sanitized in 0.009 seconds.
+  45 Store Transfers by Invoice by Item
+    Sanitized in 0.018 seconds.
+  52 Purchases By Vendor By Item
+    Sanitized in 0.011 seconds.
+  AgentTransferClaim
+    Sanitized in 0.019 seconds.
+  58 Sale - Cost By Dpt By Item
+    Sanitized in 0.022 seconds.
+  66 Scan Batch Detail By Item
+    Sanitized in 0.013 seconds.
+  qryEOS040TodaysLiquorRecap
+    Sanitized in 0.006 seconds.
+  qryEOD127RFintech
+    Sanitized in 0.010 seconds.
+  qryItemsWithUPCGlyph
+    Sanitized in 0.003 seconds.
+  LabelsItemsWithUPCGlyph
+    Sanitized in 0.002 seconds.
+  ItemLabelsWithUPCGlyph
+    Sanitized in 0.009 seconds.
+  ClubInvoice
+    Sanitized in 0.021 seconds.
+  ClubOrderGuidesWithShotPrice
+    Sanitized in 0.012 seconds.
+  24 Club History By Bottle By Month
+    Sanitized in 0.025 seconds.
+  qryEOD128RLiquorItemsNotScanned
+    Sanitized in 0.010 seconds.
+  PurchaseOrderCreateItemsSupplied
+    Sanitized in 0.012 seconds.
+  qryEOM301WebScanVariance
+    Sanitized in 0.007 seconds.
+  MetrologicItemsScanBatchVariance
+    Sanitized in 0.008 seconds.
+  qryEOD200InventoryValueEnd
+    Sanitized in 0.012 seconds.
+  LabelItemLabels5267WithPrice
+    Sanitized in 0.003 seconds.
+  PurchaseOrderWithCaseQtyAndSize
+    Sanitized in 0.018 seconds.
+  PurchaseOrderCreate
+    Sanitized in 0.011 seconds.
+  76 Liquor Items Not Scanned
+    Sanitized in 0.011 seconds.
+  32 Scanned Oregon Drivers License
+    Sanitized in 0.006 seconds.
+  qryEOD051CashiersProductivity
+    Sanitized in 0.011 seconds.
+  40 Quick Inventory
+    Sanitized in 0.008 seconds.
+  qryEOD120RItemsSoldToday
+    Sanitized in 0.018 seconds.
+  qryEOX120RItemsSoldToday
+    Sanitized in 0.011 seconds.
+[188]
+-------------------------------------
+Exporting doc properties...   
+  Database Documents
+[3]
+-------------------------------------
+Exporting nav pane groups...  
+  Groups
+[2]
+-------------------------------------
+Done. (168.8 seconds)
+
+--------------------------------------------------
+                PERFORMANCE REPORTS
+--------------------------------------------------
+Category                      Count     Seconds
+--------------------------------------------------
+Queries                       960       100.51
+Forms                         229       27.53
+Reports                       188       19.61
+Tables                        222       10.21
+CommandBars                   3         2.86
+Modules                       31        2.07
+Doc Properties                3         1.46
+IMEX Specs                    34        1.23
+DB Connections                3         0.57
+Macros                        19        0.53
+DB Properties                 54        0.50
+Saved Specs                   10        0.23
+Nav Pane Groups               2         0.18
+Table Data Macros             0         0.17
+VBE References                1         0.16
+Hidden Attributes             0         0.08
+Themes                        1         0.05
+Project                       1         0.02
+VB Project                    1         0.02
+Relations                     0         0.01
+Proj Properties               0         0.01
+Shared Images                 0         0.00
+Table Data                    0         0.00
+VBE Forms                     0         0.00
+--------------------------------------------------
+TOTALS:                       1762      168.02
+--------------------------------------------------
+
+--------------------------------------------------
+Operations                    Count     Seconds
+--------------------------------------------------
+App.SaveAsText()              1396      44.47
+Read File Bytes               1553      27.89
+Save Query SQL                960       14.89
+Format SQL                    954       13.24
+Sanitize File                 1396      10.08
+Increment Progress            3408      6.63
+Write File                    3408      5.78
+Convert to JSON               19306     5.29
+App.ExportXML()               125       2.07
+Scan DB Objects               1         1.93
+Get File Property Hash        1692      1.67
+Read File DevMode             417       1.59
+Read File                     1552      1.47
+modFileAccess.VerifyPath      4932      1.23
+Delete File                   1553      1.00
+Compute SHA256                4192      0.84
+Save Table SQL                125       0.82
+Save CommandBar Images        2         0.70
+Console Updates               31        0.47
+Get Modified Date             3520      0.43
+Get VBA Hash                  448       0.42
+Check for linked table        222       0.34
+Export VBE Module             31        0.16
+Sanitize XML                  125       0.14
+Sanitize VBA Code             381       0.13
+Format XML                    116       0.08
+Format XML (alt)              9         0.02
+Close Open Objects            1         0.01
+Quick Count Objects           1         0.01
+modFileAccess.GetUncPath      172       0.01
+Quick Count Files             1         0.01
+Export Theme                  1         0.00
+Clear Files by Ext            6         0.00
+--------------------------------------------------
+Other Operations                        24.98
+--------------------------------------------------
+
+

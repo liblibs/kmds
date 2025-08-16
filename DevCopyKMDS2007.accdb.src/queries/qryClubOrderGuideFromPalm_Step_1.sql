@@ -1,0 +1,3 @@
+﻿DELETE PalmOrderGuideFrom.*
+FROM
+  PalmOrderGuideFrom;

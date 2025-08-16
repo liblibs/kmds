@@ -1,0 +1,19 @@
+﻿{
+  "Info": {
+    "Class": "clsDbDocument",
+    "Description": "Database Documents Properties (DAO)"
+  },
+  "Items": {
+    "Databases": {
+      "SummaryInfo": {
+        "Author": "Stephen Kelly",
+        "Title": "KMDS2007Import"
+      }
+    },
+    "Reports": {
+      "16 Sales By Hour": {
+        "Description": "Added Transaction Count 12/4/2004"
+      }
+    }
+  }
+}
