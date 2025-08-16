@@ -9,28 +9,28 @@ This document outlines the steps taken by the system at the end of each business
 - **Initial Setup**
     - Creates an ADODB recordset to read from the `qryCashRegisters` query.
         ```sql
-            SELECT CashSys.ID, CashSys.ComputerName, CashSys.Description, Sysfile.Cr1Installed, Sysfile.Cr2Installed, Sysfile.Cr3Installed, Sysfile.Cr4Installed, Sysfile.Cr5Installed, Sysfile.Cr1CheckOut, Sysfile.Cr2CheckOut, Sysfile.Cr3CheckOut, Sysfile.Cr4CheckOut, Sysfile.Cr5CheckOut
-            FROM CashSys, Sysfile
-            ORDER BY CashSys.ID;
+        SELECT CashSys.ID, CashSys.ComputerName, CashSys.Description, Sysfile.Cr1Installed, Sysfile.Cr2Installed, Sysfile.Cr3Installed, Sysfile.Cr4Installed, Sysfile.Cr5Installed, Sysfile.Cr1CheckOut, Sysfile.Cr2CheckOut, Sysfile.Cr3CheckOut, Sysfile.Cr4CheckOut, Sysfile.Cr5CheckOut
+        FROM CashSys, Sysfile
+        ORDER BY CashSys.ID;
         ```
 - **Register Check**
   - Loops through registers 1 to 5.
   - Checks if any register is checked out (Cr1CheckOut, Cr2CheckOut, etc.).
   - Sets `bAtLeastOneRegisterCheckedOut` to True if any are checked out.
     ```vb
-        Select Case !ID
-            Case 1
-            If !Cr1CheckOut = True Then bAtLeastOneRegisterCheckedOut = True
+    Select Case !ID
+        Case 1
+        If !Cr1CheckOut = True Then bAtLeastOneRegisterCheckedOut = True
     ```
 - **End of Day Trigger**
   - If at least one register is checked out:
     ```vb
-        If bAtLeastOneRegisterCheckedOut Then
+    If bAtLeastOneRegisterCheckedOut Then
     ```
     - Calls **EndOFDayStream** (starts the end of day process).
     - Runs a logout batch file (`kmdslogout.bat`).
         ```vb
-            Shell "c:\kmds\kmdslogout.bat", vbNormalFocus
+        Shell "c:\kmds\kmdslogout.bat", vbNormalFocus
         ```
     - Quits Access (`DoCmd.Quit`).
 
@@ -50,16 +50,23 @@ flowchart LR
 ## 🌉 EndOFDayStream (`modEOD.EndOFDayStream`) {#EndOFDayStream}
 
 - **Logging and Setup**
+    **EOLog (`modEOD.EOLog`)**
+    ```vb
+    EOLog "========================================================="
+    EOLog "End of Day - Start"
+    EOLog "========================================================="
+    ```
     - Logs the start of the EOD process.
         ```vb
-            EOLog "========================================================="
-            EOLog "End of Day - Start"
-            EOLog "========================================================="
+        EOLog "========================================================="
+        EOLog "End of Day - Start"
+        EOLog "========================================================="
         ```
+
     - Loads default configuration values (`gstrMailDir`, `gstrNetworkDatabase`) if missing.
         
         ```vb
-            modKMDS.LoadDefaults
+        modKMDS.LoadDefaults
         ```
     - Logs the mail directory and network database paths.
 
