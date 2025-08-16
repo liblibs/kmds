@@ -101,9 +101,25 @@ EOLog <span class="token string">"==============================================
 </li>
 </ul>
 <div class="mermaid">flowchart TD
-    Start --&gt; EOLog[Build EODLog Text File]
-        click EOLog "#EOLog" "Go to EOLog"
-    EOLog --&gt; Next
+    Start --&gt; LoadDefaults
+    subgraph LoadDefaults[modEOD.LoadDefaults]
+        direction LR
+        A[SysFile] --&gt; B[gstrMailDir = !NetworkMailDir]
+        A[SysFile] --&gt; C[gstrNetworkDatabase = !NetworkDatabase] 
+    end
+
+    Start --&gt; EOLog
+    subgraph EOLog[modEOD.EOLog]
+        direction LR
+        CheckFolder{Folder Created?}
+            CheckFolder -- NO --&gt; CreateFolder[Create Folder]
+            CreateFolder --&gt; CheckFile
+            CheckFolder -- YES --&gt; CheckFile{File Created?}
+                CheckFile -- NO --&gt; CreateFile[Create File]
+                CheckFile -- YES --&gt; UpdateFile[Update File]
+                CreateFile --&gt; UpdateFile
+    end
+
 
 </div><hr>
 <h1 id="below-are-sample-layout">Below are sample layout </h1>

@@ -71,7 +71,6 @@ flowchart LR
       EOLog "End of Day - Start"
       EOLog "========================================================="
       ```
-
   - Loads default configuration values (`gstrMailDir`, `gstrNetworkDatabase`) if missing.
       
       ```vb
@@ -82,12 +81,41 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-    Start --> EOLog[Create EOLog.txt File]
-        click EOLog "#EOLog" "Go to EOLog"
-    EOLog --> Next
+    Start["Start <br> (modEOD.EndOFDayStream)"] --> LoadDefaults
+
+    subgraph LoadDefaults[modEOD.LoadDefaults]
+        direction LR
+        SysFile --> gstrMailDir[gstrMailDir = !NetworkMailDir]
+        SysFile --> gstrNetworkDatabase[gstrNetworkDatabase = !NetworkDatabase] 
+    end
+
+    Start --> EOLog
+    subgraph EOLog[modEOD.EOLog]
+        direction LR
+        CheckFolder{Folder Created?}
+            CheckFolder -- NO --> CreateFolder[Create Folder]
+            CreateFolder --> CheckFile
+            CheckFolder -- YES --> CheckFile{File Created?}
+                CheckFile -- NO --> CreateFile[Create File]
+                CheckFile -- YES --> UpdateFile[Update File]
+                CreateFile --> UpdateFile
+    end
+
+    Start --> CreateBackup[Create SQL Backup]
+    CreateBackup --> MakeSQLBackup
+    subgraph MakeSQLBackup[modEOD.MakeSQLBackup]
+        direction LR
+        A --> B[gstrMailDir = !NetworkMailDir]
+        B --> C[gstrNetworkDatabase = !NetworkDatabase] 
+    end
+
+    CreateBackup --> DeleteFiles
+
+    DeleteFiles --> G
+
+    G --> F
 
 ```
-
 
 
 
