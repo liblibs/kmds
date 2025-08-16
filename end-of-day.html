@@ -101,11 +101,12 @@ EOLog <span class="token string">"==============================================
 </li>
 </ul>
 <div class="mermaid">flowchart TD
-    Start --&gt; LoadDefaults
+    Start["Start &lt;br&gt; (modEOD.EndOFDayStream)"] --&gt; LoadDefaults
+
     subgraph LoadDefaults[modEOD.LoadDefaults]
         direction LR
-        A[SysFile] --&gt; B[gstrMailDir = !NetworkMailDir]
-        A[SysFile] --&gt; C[gstrNetworkDatabase = !NetworkDatabase] 
+        SysFile --&gt; gstrMailDir[gstrMailDir = !NetworkMailDir]
+        SysFile --&gt; gstrNetworkDatabase[gstrNetworkDatabase = !NetworkDatabase] 
     end
 
     Start --&gt; EOLog
@@ -120,6 +121,19 @@ EOLog <span class="token string">"==============================================
                 CreateFile --&gt; UpdateFile
     end
 
+    Start --&gt; CreateBackup[Create SQL Backup]
+    CreateBackup --&gt; MakeSQLBackup
+    subgraph MakeSQLBackup[modEOD.MakeSQLBackup]
+        direction LR
+        A --&gt; B[gstrMailDir = !NetworkMailDir]
+        B --&gt; C[gstrNetworkDatabase = !NetworkDatabase] 
+    end
+
+    CreateBackup --&gt; DeleteFiles
+
+    DeleteFiles --&gt; G
+
+    G --&gt; F
 
 </div><hr>
 <h1 id="below-are-sample-layout">Below are sample layout </h1>
