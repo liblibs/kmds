@@ -1,4 +1,3 @@
-<div style="max-width: 2000px; margin: 0 auto; padding: 0 20px;">
 
 ## 📆 End of Day Process Flow
 
@@ -973,4 +972,3 @@ sequenceDiagram
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>mermaid.initialize({ startOnLoad: true });</script>
 
-</div>
