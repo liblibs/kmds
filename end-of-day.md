@@ -1,10 +1,59 @@
-## 🏭 End of Day Process Flow
+
+## 📆 End of Day Process Flow
+
+🖥️ **`KMDS Menu: Cash Register Functions > End of Day (A2)`**
 
 This document outlines the steps taken by the system at the end of each business day to ensure inventory levels are accurate, replenishment is triggered when necessary, automates all daily closing operations, ensuring backups, data integrity, reporting, and notifications are handled consistently and reliably.
 
+<a name="flowchart"></a>
+
 ---
 
-## 📚 KMDS D1 Menu (`Form_EndOfDay.Form_Open`)
+```mermaid 
+flowchart LR
+    Start["START <br> (A2)"] --> CheckCondition 
+    CheckCondition{Checked out?}  
+        CheckCondition -- Yes --> EndOFDayStream["Process EOD <br> (EndOFDayStream)"]
+        click EndOFDayStream "#EndOFDayStream" "Go to EndOFDayStream"
+            EndOFDayStream --> LogOut[Logout]
+                LogOut --> Quit[Quit KMDS]
+        CheckCondition -- No --> ContinueProcess["Cancel <br> (There are no registers checked out!)"] 
+    style EndOFDayStream fill:#90EE90,stroke:#333,stroke-width:2px;
+```
+
+```mermaid 
+flowchart LR 
+    subgraph EOD["Process EOD"]
+    direction LR
+        START --> LoggingSetup[Logging and Setup]; click LoggingSetup "#LoggingSetup"
+        LoggingSetup --> LoadDefaults[Load Defaults]; click LoadDefaults "#LoadDefaults"
+        LoadDefaults --> PrepBUDir[Prepare Backup Directory]; click PrepBUDir "#PrepBUDir"
+        PrepBUDir --> A((( ))):::connector
+
+        B((( ))):::connector --> CheckCashReg[Check Cash Register Files]; click CheckCashReg "#CheckCashReg"
+        CheckCashReg --> DatabaseBackup[Database Backup]; click DatabaseBackup "#DatabaseBackup"
+        DatabaseBackup --> CleanupReset[Cleanup/Reset]; click CleanupReset "#CleanupReset"
+        CleanupReset --> C((( ))):::connector
+
+        D((( ))):::connector --> ProcEODQryRpt[Process EOD Queries and Reports]; click ProcEODQryRpt "#ProcEODQryRpt"
+        ProcEODQryRpt --> ExportFintechData[Export Fintech Data]; click ExportFintechData "#ExportFintechData"
+        ExportFintechData --> DailyTransmit[Creates daily transmit files]; click DailyTransmit "#DailyTransmit"
+        DailyTransmit --> E((( ))):::connector
+
+        F((( ))):::connector --> EmailAndNotifications[Email & Notifications]
+        EmailAndNotifications --> AdditionalBackups[Additional Backups]
+        AdditionalBackups --> CloudBackup[Cloud Backup]
+        CloudBackup --> END
+
+        style START fill:#90EE90,stroke:#333,stroke-width:2px;
+        style END fill:#90EE90,stroke:#333,stroke-width:2px;
+        classDef connector fill:#f9f,stroke:#333,stroke-width:2px;
+    end
+```
+
+---
+
+## 📚 KMDS A2 Menu (`Form_EndOfDay.Form_Open`)
 
 - **Initial Setup**
     - Creates an ADODB recordset to read from the `qryCashRegisters` query.
@@ -34,17 +83,6 @@ This document outlines the steps taken by the system at the end of each business
         ```
     - Quits Access (`DoCmd.Quit`).
 
-```mermaid
-flowchart LR
-    Start["START <br> (D1)"] --> CheckCondition 
-    CheckCondition{Checked out?}  
-        CheckCondition -- Yes --> EndOFDayStream["Process EOD <br> (EndOFDayStream)"]
-        click EndOFDayStream "#EndOFDayStream" "Go to EndOFDayStream"
-            EndOFDayStream --> LogOut[Logout]
-                LogOut --> Quit[Quit KMDS]
-        CheckCondition -- No --> ContinueProcess["Cancel <br> (There are no registers checked out!)"]
-```
-
 ---
 
 ## 🌉 EndOFDayStream (`modEOD.EndOFDayStream`) {#EndOFDayStream}
@@ -52,7 +90,9 @@ flowchart LR
 Public Function EndOFDayStream()
 ```
 
-#### 1. Logging and Setup (`modEOD.EOLog`) 📝 {#EOLog}
+<a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+
+#### 1. Logging and Setup (`modEOD.EOLog`) 📝 {#LoggingSetup} 
   - Builds a folder path for the log file using `gstrMailDir` and the current date (year/month/day).
     ```vb
     If gstrMailDir = "" Then LoadDefaults
@@ -72,7 +112,9 @@ Public Function EndOFDayStream()
     EOLog "========================================================="
     ```
 
-### 2. Load Defaults ⚙️
+<a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+
+### 2. Load Defaults ⚙️ {#LoadDefaults}
   - Ensures key global variables (`gstrMailDir`, `gstrNetworkDatabase`) are set, loading defaults if needed.
     The **`modKMDS.LoadDefaults`** function initializes global variables and system settings for the application.
     ```vb
@@ -85,15 +127,20 @@ Public Function EndOFDayStream()
     EOLog "gstrMailDir = " & gstrMailDir    '\\FS1\KMDS\
     EOLog "gstrNetworkDatabase = " & gstrNetworkDatabase    'C:\KMDS\KMDS2007.ACCDR
     ```
+
+<a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
       
-### 3. Prepare Backup Directory 📁
+### 3. Prepare Backup Directory 📁 {#PrepBUDir}
   - Builds a backup folder path for today (year/month/day).
     ```vb
     strTargetPath = gstrMailDir & "Backup\"
     ...
     EOLog "Creating Folder : " & strTargetPath  '\\FS1\KMDS\Backup\2025\08\01
     ```
-### 4. Check Cash Register Files 🧾
+
+<a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+
+### 4. Check Cash Register Files 🧾 {#CheckCashReg}
   - Verifies that all required cash register files (`CR1.MDB` to `CR5.MDB`) exist.
   - Logs and shows errors if any are missing, then exits.
     ```vb
@@ -111,7 +158,10 @@ Public Function EndOFDayStream()
         GoTo ExitSub
     End If
     ```
-### 5. Database Backup 🗃️
+
+<a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+
+### 5. Database Backup 🗃️ {#DatabaseBackup}
   - Calls **`modDumpTable.MakeSQLBackup`** to back up SQL tables. 
     ```vb
     EOLog "Dumping SQL Tables"
@@ -133,7 +183,10 @@ Public Function EndOFDayStream()
     -----------------------------
     *** DOCUMENT THE SCRIPT HERE ***
     ```
-### 6. Cleanup/Reset 🧹
+
+<a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+
+### 6. Cleanup/Reset 🧹 {#CleanupReset}
   - Deletes old transmit list and LastNiteFiles batch file.
     ```vb
     EOLog "Delete : C:\kmds\EOD File Transmit List.txt"
@@ -170,7 +223,9 @@ Public Function EndOFDayStream()
         If Not IsNull(!Value) Then GetKMDSSettings = !Value
     ```
 
-### 7. Process End-of-Day Queries and Reports 📊
+<a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+
+### 7. Process End-of-Day Queries and Reports 📊 {#ProcEODQryRpt}
   - Runs queries and reports defined for day-end using `modEOD.EOProcess`.
     ```vb
     If EOProcess("qryEOD", "DayEnd") = True Then
@@ -397,9 +452,10 @@ Public Function EndOFDayStream()
     EOLog "Moving :" & gstrMailDir & "Mail\CR5.MDB to " & strTargetPath
     fso.MoveFile gstrMailDir & "Mail\CR5.MDB", strTargetPath & "CR5" & Format(Now, "yyyy-mm-dd hh-nn-ss") & ".mdb"
     ```
-    <br>
+<br>
+<a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
 
-### 8. Export Fintech Data ↗️
+### 8. Export Fintech Data ↗️ {#ExportFintechData}
   - Retrieve `Fintech.Active` in `Settings` and run the export if it's active.
     ```vb
     If GetKMDSSettings("Fintech.Active", "False") = "True" Then
@@ -468,8 +524,9 @@ Public Function EndOFDayStream()
         WaitForExecCmd "\\" & gstrCashsysInsLoc & "\kmds\kmdsftp.exe " & strDirName & "\FinTechPut.txt" ', vbNormalFocus
         ```
 <br>
+<a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
 
-### 9. Creates daily transmit files.🗄️
+### 9. Creates daily transmit files.🗄️ {#DailyTransmit}
   - This process automates the creation and preparation of daily inventory and sales transmission files for OLCC (Oregon Liquor Control Commission) reporting. It also generates FTP script files for batch transmission.
     ```vb
     EOLog "Create Daily Transmit files"
@@ -741,6 +798,7 @@ Public Function EndOFDayStream()
                     If gbKMDSFTPActive Then fsoTemp.CopyFile mstrFileNameArchive, mstrFileNameKMDSFTP
                 ```
 <br>
+<a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
 
 # CONTINUE HERE
 
@@ -782,31 +840,6 @@ Public Function EndOFDayStream()
 - Logs completion and success.
 ### 15. Error Handling 🚨
 - If errors occurred, logs and emails support with the log file.
-
-
-```mermaid
-flowchart TD
-    Start --> ErrorHandlingAndLogging[Error Handling & Logging]
-    ErrorHandlingAndLogging --> LoadDefaults[Load Defaults]
-    LoadDefaults --> PrepareBackupDirectory[Prepare Backup Directory]
-    PrepareBackupDirectory --> CheckCashRegisterFiles[Check Cash Register Files]
-    CheckCashRegisterFiles --> DatabaseBackupAndCleanup[Database Backup & Cleanup]
-    DatabaseBackupAndCleanup --> ProcessEODQueriesAndReports[Process EOD Queries and Reports]
-    ProcessEODQueriesAndReports --> FeatureSpecificTasks[Feature-Specific Tasks]
-    FeatureSpecificTasks --> DataUpdates[Data Updates]
-    DataUpdates --> TransmitFiles[Transmit Files]
-    TransmitFiles --> EmailAndNotifications[Email & Notifications]
-    EmailAndNotifications --> AdditionalBackups[Additional Backups]
-    AdditionalBackups --> CloudBackup[Cloud Backup]
-    CloudBackup --> OLCCICEItemFiles[OLCC ICE Item Files]
-    OLCCICEItemFiles --> FinishLogging[Finish Logging]
-    FinishLogging --> ErrorHandling[Error Handling]
-```
-
-
-
-
-
 
 
 

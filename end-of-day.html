@@ -24,10 +24,49 @@
     
       <div class="crossnote markdown-preview  ">
       
-<h2 id="-end-of-day-process-flow">🏭 End of Day Process Flow </h2>
+<h2 id="-end-of-day-process-flow">📆 End of Day Process Flow </h2>
+<p>🖥️ <strong><code>KMDS Menu: Cash Register Functions &gt; End of Day (A2)</code></strong></p>
 <p>This document outlines the steps taken by the system at the end of each business day to ensure inventory levels are accurate, replenishment is triggered when necessary, automates all daily closing operations, ensuring backups, data integrity, reporting, and notifications are handled consistently and reliably.</p>
+<p><a name="flowchart" href=""></a></p>
 <hr>
-<h2 id="-kmds-d1-menu-form_endofdayform_open">📚 KMDS D1 Menu (<code>Form_EndOfDay.Form_Open</code>) </h2>
+<div class="mermaid">flowchart LR
+    Start["START &lt;br&gt; (A2)"] --&gt; CheckCondition 
+    CheckCondition{Checked out?}  
+        CheckCondition -- Yes --&gt; EndOFDayStream["Process EOD &lt;br&gt; (EndOFDayStream)"]
+        click EndOFDayStream "#EndOFDayStream" "Go to EndOFDayStream"
+            EndOFDayStream --&gt; LogOut[Logout]
+                LogOut --&gt; Quit[Quit KMDS]
+        CheckCondition -- No --&gt; ContinueProcess["Cancel &lt;br&gt; (There are no registers checked out!)"] 
+    style EndOFDayStream fill:#90EE90,stroke:#333,stroke-width:2px;
+</div><div class="mermaid">flowchart LR 
+    subgraph EOD["Process EOD"]
+    direction LR
+        START --&gt; LoggingSetup[Logging and Setup]; click LoggingSetup "#LoggingSetup"
+        LoggingSetup --&gt; LoadDefaults[Load Defaults]; click LoadDefaults "#LoadDefaults"
+        LoadDefaults --&gt; PrepBUDir[Prepare Backup Directory]; click PrepBUDir "#PrepBUDir"
+        PrepBUDir --&gt; A((( ))):::connector
+
+        B((( ))):::connector --&gt; CheckCashReg[Check Cash Register Files]; click CheckCashReg "#CheckCashReg"
+        CheckCashReg --&gt; DatabaseBackup[Database Backup]; click DatabaseBackup "#DatabaseBackup"
+        DatabaseBackup --&gt; CleanupReset[Cleanup/Reset]; click CleanupReset "#CleanupReset"
+        CleanupReset --&gt; C((( ))):::connector
+
+        D((( ))):::connector --&gt; ProcEODQryRpt[Process EOD Queries and Reports]; click ProcEODQryRpt "#ProcEODQryRpt"
+        ProcEODQryRpt --&gt; ExportFintechData[Export Fintech Data]; click ExportFintechData "#ExportFintechData"
+        ExportFintechData --&gt; DailyTransmit[Creates daily transmit files]; click DailyTransmit "#DailyTransmit"
+        DailyTransmit --&gt; E((( ))):::connector
+
+        F((( ))):::connector --&gt; EmailAndNotifications[Email &amp; Notifications]
+        EmailAndNotifications --&gt; AdditionalBackups[Additional Backups]
+        AdditionalBackups --&gt; CloudBackup[Cloud Backup]
+        CloudBackup --&gt; END
+
+        style START fill:#90EE90,stroke:#333,stroke-width:2px;
+        style END fill:#90EE90,stroke:#333,stroke-width:2px;
+        classDef connector fill:#f9f,stroke:#333,stroke-width:2px;
+    end
+</div><hr>
+<h2 id="-kmds-a2-menu-form_endofdayform_open">📚 KMDS A2 Menu (<code>Form_EndOfDay.Form_Open</code>) </h2>
 <ul>
 <li><strong>Initial Setup</strong>
 <ul>
@@ -60,18 +99,11 @@
 </ul>
 </li>
 </ul>
-<div class="mermaid">flowchart LR
-    Start["START &lt;br&gt; (D1)"] --&gt; CheckCondition 
-    CheckCondition{Checked out?}  
-        CheckCondition -- Yes --&gt; EndOFDayStream["Process EOD &lt;br&gt; (EndOFDayStream)"]
-        click EndOFDayStream "#EndOFDayStream" "Go to EndOFDayStream"
-            EndOFDayStream --&gt; LogOut[Logout]
-                LogOut --&gt; Quit[Quit KMDS]
-        CheckCondition -- No --&gt; ContinueProcess["Cancel &lt;br&gt; (There are no registers checked out!)"]
-</div><hr>
+<hr>
 <h2 id="EndOFDayStream">🌉 EndOFDayStream (<code>modEOD.EndOFDayStream</code>) </h2>
 <pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-Public">Public</span> <span class="token keyword keyword-Function">Function</span> EndOFDayStream<span class="token punctuation">(</span><span class="token punctuation">)</span>
-</code></pre><h4 id="EOLog">1. Logging and Setup (<code>modEOD.EOLog</code>) 📝 </h4>
+</code></pre><p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
+<h4 id="LoggingSetup">1. Logging and Setup (<code>modEOD.EOLog</code>) 📝 </h4>
 <ul>
 <li>Builds a folder path for the log file using <code>gstrMailDir</code> and the current date (year/month/day).<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-If">If</span> gstrMailDir <span class="token operator">=</span> <span class="token string">""</span> <span class="token keyword keyword-Then">Then</span> LoadDefaults
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
@@ -86,7 +118,8 @@ EOLog <span class="token string">"End of Day - Start"</span>
 EOLog <span class="token string">"========================================================="</span>
 </code></pre></li>
 </ul>
-<h3 id="2-load-defaults-️">2. Load Defaults ⚙️ </h3>
+<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
+<h3 id="LoadDefaults">2. Load Defaults ⚙️ </h3>
 <ul>
 <li>Ensures key global variables (<code>gstrMailDir</code>, <code>gstrNetworkDatabase</code>) are set, loading defaults if needed.<br>
 The <strong><code>modKMDS.LoadDefaults</code></strong> function initializes global variables and system settings for the application.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>rstemp<span class="token punctuation">.</span>Open <span class="token string">"SysFile"</span><span class="token punctuation">,</span> CurrentProject<span class="token punctuation">.</span>Connection<span class="token punctuation">,</span> adOpenKeyset<span class="token punctuation">,</span> adLockOptimistic 
@@ -97,14 +130,16 @@ gstrNetworkDatabase <span class="token operator">=</span> <span class="token ope
 EOLog <span class="token string">"gstrNetworkDatabase = "</span> <span class="token operator">&amp;</span> gstrNetworkDatabase    <span class="token comment">'C:\KMDS\KMDS2007.ACCDR</span>
 </code></pre></li>
 </ul>
-<h3 id="3-prepare-backup-directory-">3. Prepare Backup Directory 📁 </h3>
+<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
+<h3 id="PrepBUDir">3. Prepare Backup Directory 📁 </h3>
 <ul>
 <li>Builds a backup folder path for today (year/month/day).<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>strTargetPath <span class="token operator">=</span> gstrMailDir <span class="token operator">&amp;</span> <span class="token string">"Backup\"</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 EOLog <span class="token string">"Creating Folder : "</span> <span class="token operator">&amp;</span> strTargetPath  <span class="token comment">'\\FS1\KMDS\Backup\2025\08\01</span>
 </code></pre></li>
 </ul>
-<h3 id="4-check-cash-register-files-">4. Check Cash Register Files 🧾 </h3>
+<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
+<h3 id="CheckCashReg">4. Check Cash Register Files 🧾 </h3>
 <ul>
 <li>Verifies that all required cash register files (<code>CR1.MDB</code> to <code>CR5.MDB</code>) exist.</li>
 <li>Logs and shows errors if any are missing, then exits.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-If">If</span> <span class="token keyword keyword-Not">Not</span> fso<span class="token punctuation">.</span>FileExists<span class="token punctuation">(</span>gstrMailDir <span class="token operator">&amp;</span> <span class="token string">"Mail\CR1.MDB"</span><span class="token punctuation">)</span> <span class="token keyword keyword-Then">Then</span>
@@ -122,7 +157,8 @@ EOLog <span class="token string">"Creating Folder : "</span> <span class="token 
 <span class="token keyword keyword-End">End</span> <span class="token keyword keyword-If">If</span>
 </code></pre></li>
 </ul>
-<h3 id="5-database-backup-️">5. Database Backup 🗃️ </h3>
+<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
+<h3 id="DatabaseBackup">5. Database Backup 🗃️ </h3>
 <ul>
 <li>Calls <strong><code>modDumpTable.MakeSQLBackup</code></strong> to back up SQL tables.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>EOLog <span class="token string">"Dumping SQL Tables"</span>
 <span class="token comment">'DumpSQLTables --&gt;&gt; this is commented out</span>
@@ -140,7 +176,8 @@ strPassString <span class="token operator">=</span> <span class="token string">"
 <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> DOCUMENT THE SCRIPT HERE <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span>
 </code></pre></li>
 </ul>
-<h3 id="6-cleanupreset-">6. Cleanup/Reset 🧹 </h3>
+<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
+<h3 id="CleanupReset">6. Cleanup/Reset 🧹 </h3>
 <ul>
 <li>
 <p>Deletes old transmit list and LastNiteFiles batch file.</p>
@@ -173,7 +210,8 @@ fso<span class="token punctuation">.</span>DeleteFile <span class="token string"
     <span class="token keyword keyword-If">If</span> <span class="token keyword keyword-Not">Not</span> IsNull<span class="token punctuation">(</span><span class="token operator">!</span>Value<span class="token punctuation">)</span> <span class="token keyword keyword-Then">Then</span> GetKMDSSettings <span class="token operator">=</span> <span class="token operator">!</span>Value
 </code></pre></li>
 </ul>
-<h3 id="7-process-end-of-day-queries-and-reports-">7. Process End-of-Day Queries and Reports 📊 </h3>
+<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
+<h3 id="ProcEODQryRpt">7. Process End-of-Day Queries and Reports 📊 </h3>
 <ul>
 <li>Runs queries and reports defined for day-end using <code>modEOD.EOProcess</code>.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-If">If</span> EOProcess<span class="token punctuation">(</span><span class="token string">"qryEOD"</span><span class="token punctuation">,</span> <span class="token string">"DayEnd"</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token boolean">True</span> <span class="token keyword keyword-Then">Then</span>
 </code></pre><ul>
@@ -370,10 +408,11 @@ fso<span class="token punctuation">.</span>MoveFile gstrMailDir <span class="tok
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 EOLog <span class="token string">"Moving :"</span> <span class="token operator">&amp;</span> gstrMailDir <span class="token operator">&amp;</span> <span class="token string">"Mail\CR5.MDB to "</span> <span class="token operator">&amp;</span> strTargetPath
 fso<span class="token punctuation">.</span>MoveFile gstrMailDir <span class="token operator">&amp;</span> <span class="token string">"Mail\CR5.MDB"</span><span class="token punctuation">,</span> strTargetPath <span class="token operator">&amp;</span> <span class="token string">"CR5"</span> <span class="token operator">&amp;</span> Format<span class="token punctuation">(</span>Now<span class="token punctuation">,</span> <span class="token string">"yyyy-mm-dd hh-nn-ss"</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token string">".mdb"</span>
-</code></pre><br>
-</li>
+</code></pre></li>
 </ul>
-<h3 id="8-export-fintech-data-️">8. Export Fintech Data ↗️ </h3>
+<br>
+<a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+<h3 id="ExportFintechData">8. Export Fintech Data ↗️ </h3>
 <ul>
 <li>Retrieve <code>Fintech.Active</code> in <code>Settings</code> and run the export if it's active.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-If">If</span> GetKMDSSettings<span class="token punctuation">(</span><span class="token string">"Fintech.Active"</span><span class="token punctuation">,</span> <span class="token string">"False"</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token string">"True"</span> <span class="token keyword keyword-Then">Then</span>
         EOLog <span class="token string">"Fintech.Active = True"</span>
@@ -427,7 +466,8 @@ txtstrTemp<span class="token punctuation">.</span>WriteLine strFinTechLogon
 </li>
 </ul>
 <br>
-<h3 id="9-creates-daily-transmit-files️">9. Creates daily transmit files.🗄️ </h3>
+<a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+<h3 id="DailyTransmit">9. Creates daily transmit files.🗄️ </h3>
 <ul>
 <li>This process automates the creation and preparation of daily inventory and sales transmission files for OLCC (Oregon Liquor Control Commission) reporting. It also generates FTP script files for batch transmission.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>EOLog <span class="token string">"Create Daily Transmit files"</span>
 OLCCCreateDailyTransmitFiles
@@ -667,6 +707,7 @@ txtstrTemp<span class="token punctuation">.</span>WriteLine <span class="token p
 </li>
 </ul>
 <br>
+<a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
 <h1 id="continue-here">CONTINUE HERE </h1>
 <h3 id="10-creating-transmit-file-for-inventory-levels">10. Creating transmit file for inventory levels📑 </h3>
 <ul>
@@ -715,22 +756,6 @@ OLCCInventFile <span class="token keyword keyword-CLng">CLng</span><span class="
 <li>If errors occurred, logs and emails support with the log file.</li>
 </ul>
 <div class="mermaid">flowchart TD
-    Start --&gt; ErrorHandlingAndLogging[Error Handling &amp; Logging]
-    ErrorHandlingAndLogging --&gt; LoadDefaults[Load Defaults]
-    LoadDefaults --&gt; PrepareBackupDirectory[Prepare Backup Directory]
-    PrepareBackupDirectory --&gt; CheckCashRegisterFiles[Check Cash Register Files]
-    CheckCashRegisterFiles --&gt; DatabaseBackupAndCleanup[Database Backup &amp; Cleanup]
-    DatabaseBackupAndCleanup --&gt; ProcessEODQueriesAndReports[Process EOD Queries and Reports]
-    ProcessEODQueriesAndReports --&gt; FeatureSpecificTasks[Feature-Specific Tasks]
-    FeatureSpecificTasks --&gt; DataUpdates[Data Updates]
-    DataUpdates --&gt; TransmitFiles[Transmit Files]
-    TransmitFiles --&gt; EmailAndNotifications[Email &amp; Notifications]
-    EmailAndNotifications --&gt; AdditionalBackups[Additional Backups]
-    AdditionalBackups --&gt; CloudBackup[Cloud Backup]
-    CloudBackup --&gt; OLCCICEItemFiles[OLCC ICE Item Files]
-    OLCCICEItemFiles --&gt; FinishLogging[Finish Logging]
-    FinishLogging --&gt; ErrorHandling[Error Handling]
-</div><div class="mermaid">flowchart TD
     Start["Start &lt;br&gt; (modEOD.EndOFDayStream)"] --&gt; LoadDefaults
 
     subgraph LoadDefaults[modEOD.LoadDefaults]
