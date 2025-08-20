@@ -24,6 +24,7 @@
     
       <div class="crossnote markdown-preview  ">
       
+<div style="max-width: 2000px; margin: 0 auto; padding: 0 20px;">
 <h2 id="-end-of-day-process-flow">📆 End of Day Process Flow </h2>
 <p>🖥️ <strong><code>KMDS Menu: Cash Register Functions &gt; End of Day (A2)</code></strong></p>
 <p>This document outlines the steps taken by the system at the end of each business day to ensure inventory levels are accurate, replenishment is triggered when necessary, automates all daily closing operations, ensuring backups, data integrity, reporting, and notifications are handled consistently and reliably.</p>
@@ -59,7 +60,7 @@
         F((( ))):::connector --&gt; EmailAndNotifications[Email &amp; Notifications]
         EmailAndNotifications --&gt; AdditionalBackups[Additional Backups]
         AdditionalBackups --&gt; CloudBackup[Cloud Backup]
-        CloudBackup --&gt; END
+        CloudBackup --&gt; END["FINISH"]
 
         style START fill:#90EE90,stroke:#333,stroke-width:2px;
         style END fill:#90EE90,stroke:#333,stroke-width:2px;
@@ -467,7 +468,7 @@ txtstrTemp<span class="token punctuation">.</span>WriteLine strFinTechLogon
 </ul>
 <br>
 <a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
-<h3 id="DailyTransmit">9. Creates daily transmit files.🗄️ </h3>
+<h3 id="DailyTransmit">9. Creates Daily Transmit Files 📂 </h3>
 <ul>
 <li>This process automates the creation and preparation of daily inventory and sales transmission files for OLCC (Oregon Liquor Control Commission) reporting. It also generates FTP script files for batch transmission.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>EOLog <span class="token string">"Create Daily Transmit files"</span>
 OLCCCreateDailyTransmitFiles
@@ -708,38 +709,48 @@ txtstrTemp<span class="token punctuation">.</span>WriteLine <span class="token p
 </ul>
 <br>
 <a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
-<h1 id="continue-here">CONTINUE HERE </h1>
-<h3 id="10-creating-transmit-file-for-inventory-levels">10. Creating transmit file for inventory levels📑 </h3>
+<h3 id="10-creating-transmit-file-for-inventory-levels-">10. Creating Transmit File for Inventory Levels 📑 </h3>
 <ul>
-<li><strong>CONTINUE HERE</strong><pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>EOLog <span class="token string">"Creating transmit file for inventory levels..."</span>   
+<li>
+<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>EOLog <span class="token string">"Creating transmit file for inventory levels..."</span>   
 OLCCInventFile <span class="token keyword keyword-CLng">CLng</span><span class="token punctuation">(</span>glnAgentNumber<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token boolean">True</span>
 </code></pre></li>
 </ul>
-<h3 id="8-feature-specific-tasks-">8. Feature-Specific Tasks 🧩 </h3>
-<ul>
-<li>Transfers cartons to packs if enabled.</li>
-<li>Runs Rentrak export if installed.</li>
-</ul>
-<h3 id="9-data-updates-">9. Data Updates 📂 </h3>
-<ul>
-<li>Updates lottery tickets, reindexes tables, updates item movement and cost, assigns supply group IDs.</li>
-</ul>
-<h3 id="10-transmit-files-">10. Transmit Files 📤 </h3>
+<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
+<h3 id="11-transfers-cartons-to-packs-️">11. Transfers Cartons to Packs ➡️ </h3>
+<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
+<h3 id="12-rentrak-export-️">12. Rentrak Export ⬆️ </h3>
+<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
+<h3 id="13-append-lottery-tickets-recon-info-️">13. Append Lottery Tickets Recon Info 🎟️ </h3>
+<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
+<h3 id="14-reindex-tables-">14. Reindex Tables 📇 </h3>
+<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
+<h3 id="15-updates-item-movement-">15. Updates Item Movement 🚇 </h3>
+<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
+<h3 id="16-update-sales-and-assigns-supply-group-ids-">16. Update Sales and Assigns Supply Group IDs 🪪 </h3>
+<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
+<h3 id="17-transmit-files-">17. Transmit Files 📤 </h3>
 <ul>
 <li>Sends daily transmit files to OLCC or KMDS, depending on customer status and settings.</li>
 </ul>
-<h3 id="10-email--notifications-">10. Email &amp; Notifications 📧 </h3>
+<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
+<h3 id="18-additional-backups-">18. Additional Backups 🔁 </h3>
+<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>MailSQLBackup
+</code></pre><p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
+<h3 id="19-email--notifications-">19. Email &amp; Notifications 📧 </h3>
 <ul>
-<li>Emails SQL backup and other reports.</li>
 <li>Sends EOD text message.</li>
 <li>Emails files listed in the transmit list.</li>
 </ul>
-<h3 id="11-additional-backups-">11. Additional Backups 🔁 </h3>
+<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
+<h3 id="20-make-online-backup-batch-file-️">20. Make Online Backup Batch File ☁️ </h3>
 <ul>
-<li>Creates online backup batch files.</li>
-<li>Appends UPC items with ItemID.</li>
+<li></li>
 </ul>
-<h3 id="12-cloud-backup-️">12. Cloud Backup ☁️ </h3>
+<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
+<h3 id="21-append-upcitems-with-itemid-">21. Append UPCItems With ItemID ➕ </h3>
+<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>AppendUPCItemsWithItemID
+</code></pre><h3 id="22-cloud-backup-️">22. Cloud Backup ☁️ </h3>
 <ul>
 <li>If Dropbox is installed, copies backup ZIP to Dropbox folder.</li>
 </ul>
@@ -827,6 +838,7 @@ OLCCInventFile <span class="token keyword keyword-CLng">CLng</span><span class="
 
 </div><script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>mermaid.initialize({ startOnLoad: true });</script>
+</div>
 
       </div>
       

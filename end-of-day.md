@@ -1,3 +1,4 @@
+<div style="max-width: 2000px; margin: 0 auto; padding: 0 20px;">
 
 ## 📆 End of Day Process Flow
 
@@ -43,7 +44,7 @@ flowchart LR
         F((( ))):::connector --> EmailAndNotifications[Email & Notifications]
         EmailAndNotifications --> AdditionalBackups[Additional Backups]
         AdditionalBackups --> CloudBackup[Cloud Backup]
-        CloudBackup --> END
+        CloudBackup --> END["FINISH"]
 
         style START fill:#90EE90,stroke:#333,stroke-width:2px;
         style END fill:#90EE90,stroke:#333,stroke-width:2px;
@@ -526,7 +527,7 @@ Public Function EndOFDayStream()
 <br>
 <a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
 
-### 9. Creates daily transmit files.🗄️ {#DailyTransmit}
+### 9. Creates Daily Transmit Files 📂 {#DailyTransmit}
   - This process automates the creation and preparation of daily inventory and sales transmission files for OLCC (Oregon Liquor Control Commission) reporting. It also generates FTP script files for batch transmission.
     ```vb
     EOLog "Create Daily Transmit files"
@@ -800,39 +801,71 @@ Public Function EndOFDayStream()
 <br>
 <a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
 
-# CONTINUE HERE
-
-### 10. Creating transmit file for inventory levels📑
-  - **CONTINUE HERE**
+### 10. Creating Transmit File for Inventory Levels 📑 
+  - 
     ```vb
     EOLog "Creating transmit file for inventory levels..."   
     OLCCInventFile CLng(glnAgentNumber), True
     ```
 
+<a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+
+### 11. Transfers Cartons to Packs ➡️
 
 
+<a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+
+### 12. Rentrak Export ⬆️
 
 
+<a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+
+### 13. Append Lottery Tickets Recon Info 🎟️
 
 
-### 8. Feature-Specific Tasks 🧩
+<a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
 
-  - Transfers cartons to packs if enabled.
-  - Runs Rentrak export if installed.
+### 14. Reindex Tables 📇
+
+<a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+
+### 15. Updates Item Movement 🚇
+
+<a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+
+### 16. Update Sales and Assigns Supply Group IDs 🪪
+
+<a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+
+### 17. Transmit Files 📤
+  - Sends daily transmit files to OLCC or KMDS, depending on customer status and settings.
   
-### 9. Data Updates 📂
-  - Updates lottery tickets, reindexes tables, updates item movement and cost, assigns supply group IDs.
-  
-### 10. Transmit Files 📤
-- Sends daily transmit files to OLCC or KMDS, depending on customer status and settings.
-### 10. Email & Notifications 📧
-- Emails SQL backup and other reports.
-- Sends EOD text message.
-- Emails files listed in the transmit list.
-### 11. Additional Backups 🔁
-- Creates online backup batch files.
-- Appends UPC items with ItemID.
-### 12. Cloud Backup ☁️
+<a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+
+### 18. Additional Backups 🔁
+```vb
+MailSQLBackup
+```
+
+<a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+
+### 19. Email & Notifications 📧 
+  - Sends EOD text message.
+  - Emails files listed in the transmit list.
+
+<a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+
+### 20. Make Online Backup Batch File ☁️
+  - 
+
+<a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+
+### 21. Append UPCItems With ItemID ➕
+```vb
+AppendUPCItemsWithItemID
+```
+
+### 22. Cloud Backup ☁️
 - If Dropbox is installed, copies backup ZIP to Dropbox folder.
 ### 13. OLCC ICE Item Files 📦
 - Gets OLCC ICE item files if enabled.
@@ -939,3 +972,5 @@ sequenceDiagram
 
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>mermaid.initialize({ startOnLoad: true });</script>
+
+</div>
