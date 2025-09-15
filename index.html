@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Brochure</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
+        mermaid.initialize({ startOnLoad: true });
+    </script> -->
+</head>
+<body>
+    <div class="container">
+        <!-- Left Sidebar: Table of Contents -->
+        <div id="sidebar" class="sidebar">
+            <h2>KMDS Documentation</h2>
+            <ul id="toc"> 
+                <li><a href="#" onclick="openInNewTab('../templates/end-of-day.html')">End of Day</a></li>
+                <li><a href="#" onclick="loadPage('../templates/b1-screen.html')">B1 Screen</a></li>
+                <li><a href="#" onclick="loadPage('../templates/c1-screen.html')">C1 Screen</a></li>
+            </ul>
+        </div>
+
+        <!-- Right Content Area -->
+        <div class="content">
+            <div id="page-content">
+                <h1>Welcome To Our KMDS Documentation</h1>
+                <p>Select a page from the left to see the content.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>c1-screen</title>
+
+    <!-- Include Mermaid.js from CDN (only once) -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js"></script>
+
+    <script>
+        // Initialize Mermaid.js after the script is loaded
+        document.addEventListener("DOMContentLoaded", function () {
+            mermaid.initialize({ startOnLoad: true });
+        });
+    </script>
+
+    <!-- Optional: Include KaTeX CSS if you're using math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+
+    <!-- Optional: Add custom CSS styles -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .mermaid {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>c1-screen</h1>
+    <p>This is the process flow chart for the "c1-screen".</p>
+
+    <!-- Mermaid flowchart -->
+    <div class="mermaid">
+        flowchart TD
+            A[Start] --> B{Is it raining?}
+            B -->|Yes| C[Take an umbrella]
+            B -->|No| D[Go outside]
+            C --> E[Continue day]
+            D --> E
+
+            %% Simulated note
+            Note1["Note: Check weather app before deciding"]
+            B --> Note1
+            style Note1 fill:#f9f,stroke:#333,stroke-width:1px
+    </div>
+
+    <script>
+        // Re-render Mermaid diagrams after loading the content (if dynamic)
+        document.addEventListener('DOMContentLoaded', () => {
+            mermaid.contentLoaded();
+        });
+    </script>
+
+</body>
+</html>
