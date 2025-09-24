@@ -1,12 +1,12 @@
 <!DOCTYPE html><html><head>
-      <title>c1-screen</title>
+      <title>b1-screen</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
       
       
-      <script src="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js"></script>
+      
       
       
       <style>
@@ -24,60 +24,50 @@
     
       <div class="crossnote markdown-preview  ">
       
-<div class="mermaid">flowchart TD
-    A[Start] --&gt; B{Is it raining?}
-    B -- Yes --&gt; C[Take an umbrella]
-    B -- No --&gt; D[Go outside]
-    C --&gt; E[Continue day]
-    D --&gt; E
-
-    %% Simulated note
-    Note1["Note: Check weather app before deciding"]
-    B --&gt; Note1
-    style Note1 fill:#f9f,stroke:#333,stroke-width:1px
+<h2 id="-b1-screen---create-licensee-order">📃 B1 Screen - Create Licensee Order </h2>
+<p>🖥️ <strong><code>KMDS Menu: On-Premise Licensee Management (B) &gt; Create Licensee Order (1)</code></strong></p>
+<div style="display: flex; align-items: center;">
+    <img src="..\assets\images\b1-screen-main-menu.png" alt="Image 1" style="width: 500px; height: auto;">
+    <span style="font-size: 4em; font-weight: bold; margin: 0 10px;">→</span>
+    <img src="..\assets\images\b1-screen-sub-menu.png" alt="Image 2" style="width: 500px; height: auto;">
 </div>
+<h2 id="-licensee-order-screen">🪟 Licensee Order Screen </h2>
+<p><img src="../assets/images/b1-screen-Licensee-Order.png" alt="alt text"></p>
+<ul>
+<li><strong>Licensee Name</strong> (Yellow Listbox)<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>    <span class="token keyword keyword-SELECT">SELECT</span> 
+        ID<span class="token punctuation">,</span> Name<span class="token punctuation">,</span>  
+        <span class="token string">'('</span> <span class="token operator">+</span> SUBSTRING<span class="token punctuation">(</span>Phone1<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">') '</span> <span class="token operator">+</span> SUBSTRING<span class="token punctuation">(</span>Phone1<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'-'</span> <span class="token operator">+</span> SUBSTRING<span class="token punctuation">(</span>Phone1<span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token keyword keyword-AS">AS</span> Phone<span class="token punctuation">,</span> 
+        LTRIM<span class="token punctuation">(</span>RTRIM<span class="token punctuation">(</span>Address1<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">', '</span> <span class="token operator">+</span> LTRIM<span class="token punctuation">(</span>RTRIM<span class="token punctuation">(</span>City<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">', '</span> <span class="token operator">+</span> LTRIM<span class="token punctuation">(</span>RTRIM<span class="token punctuation">(</span>St<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> LTRIM<span class="token punctuation">(</span>RTRIM<span class="token punctuation">(</span>Zip<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword keyword-AS">AS</span> googleAdd 
+    <span class="token keyword keyword-FROM">FROM</span> Club 
+    <span class="token keyword keyword-WHERE">WHERE</span> NonLiquor <span class="token operator">=</span> <span class="token number">0</span> 
+    <span class="token keyword keyword-ORDER">ORDER</span> <span class="token keyword keyword-BY">BY</span> Name<span class="token punctuation">;</span>
+</code></pre></li>
+<li><strong>Order Details</strong> (Blue Listbox)<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>    <span class="token keyword keyword-SELECT">SELECT</span> 
+        ID<span class="token punctuation">,</span> Name<span class="token punctuation">,</span>  
+        <span class="token string">'('</span> <span class="token operator">+</span> SUBSTRING<span class="token punctuation">(</span>Phone1<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">') '</span> <span class="token operator">+</span> SUBSTRING<span class="token punctuation">(</span>Phone1<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'-'</span> <span class="token operator">+</span> SUBSTRING<span class="token punctuation">(</span>Phone1<span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token keyword keyword-AS">AS</span> Phone<span class="token punctuation">,</span> 
+        LTRIM<span class="token punctuation">(</span>RTRIM<span class="token punctuation">(</span>Address1<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">', '</span> <span class="token operator">+</span> LTRIM<span class="token punctuation">(</span>RTRIM<span class="token punctuation">(</span>City<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">', '</span> <span class="token operator">+</span> LTRIM<span class="token punctuation">(</span>RTRIM<span class="token punctuation">(</span>St<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> LTRIM<span class="token punctuation">(</span>RTRIM<span class="token punctuation">(</span>Zip<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword keyword-AS">AS</span> googleAdd 
+    <span class="token keyword keyword-FROM">FROM</span> Club 
+    <span class="token keyword keyword-WHERE">WHERE</span> NonLiquor <span class="token operator">=</span> <span class="token number">0</span> 
+    <span class="token keyword keyword-ORDER">ORDER</span> <span class="token keyword keyword-BY">BY</span> Name<span class="token punctuation">;</span>
+</code></pre></li>
+</ul>
+<p>1️⃣ <strong>Process e-Mails</strong><br>
+2️⃣ <strong>Use Order Guide</strong><br>
+3️⃣ <strong>Do NOT User Order Guide (Blank)</strong><br>
+4️⃣ <strong>Clone Order Guide</strong><br>
+5️⃣ <strong>Edit This Order</strong><br>
+6️⃣ <strong>Pint Guide for #130</strong><br>
+7️⃣ <strong>Create Order from Sales History</strong><br>
+8️⃣ <strong>Purchase History Report</strong><br>
+9️⃣ <strong>Compare Licensee Orders</strong><br>
+🔟 <strong>Close Form</strong></p>
+
       </div>
       
       
     
     
-    <script type="module">
-// TODO: If ZenUML gets integrated into mermaid in the future,
-//      we can remove the following lines.
-
-
-var MERMAID_CONFIG = ({"startOnLoad":false});
-if (typeof MERMAID_CONFIG !== 'undefined') {
-  MERMAID_CONFIG.startOnLoad = false
-  MERMAID_CONFIG.cloneCssStyles = false
-  MERMAID_CONFIG.theme = "default"
-}
-
-mermaid.initialize(MERMAID_CONFIG || {})
-if (typeof(window['Reveal']) !== 'undefined') {
-  function mermaidRevealHelper(event) {
-    var currentSlide = event.currentSlide
-    var diagrams = currentSlide.querySelectorAll('.mermaid')
-    for (var i = 0; i < diagrams.length; i++) {
-      var diagram = diagrams[i]
-      if (!diagram.hasAttribute('data-processed')) {
-        mermaid.init(null, diagram, ()=> {
-          Reveal.slide(event.indexh, event.indexv)
-        })
-      }
-    }
-  }
-  Reveal.addEventListener('slidetransitionend', mermaidRevealHelper)
-  Reveal.addEventListener('ready', mermaidRevealHelper)
-  await mermaid.run({
-    nodes: document.querySelectorAll('.mermaid')
-  })
-} else {
-  await mermaid.run({
-    nodes: document.querySelectorAll('.mermaid')
-  })
-}
-</script>
+    
     
     
     
