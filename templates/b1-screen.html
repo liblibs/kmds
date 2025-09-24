@@ -48,15 +48,15 @@
         </span> 
       </h3>
       
-  <pre><code>
-    <span class="sql-keyword">SELECT</span> 
-        ID, Name,  
-        '(' + <span class="sql-function">SUBSTRING</span>(Phone1, 1, 3) + ') ' + <span class="sql-function">SUBSTRING</span>(Phone1, 4, 3) + '-' + <span class="sql-function">SUBSTRING</span>(Phone1, 7, 4) AS Phone, 
-        <span class="sql-function">LTRIM</span>(<span class="sql-function">RTRIM</span>(Address1)) + ', ' + <span class="sql-function">LTRIM</span>(<span class="sql-function">RTRIM</span>(City)) + ', ' + <span class="sql-function">LTRIM</span>(<span class="sql-function">RTRIM</span>(St)) + ' ' + <span class="sql-function">LTRIM</span>(<span class="sql-function">RTRIM</span>(Zip)) AS googleAdd 
-    <span class="sql-keyword">FROM</span> Club 
-    <span class="sql-keyword">WHERE</span> NonLiquor = 0 
-    <span class="sql-keyword">ORDER BY</span> Name;
-  </code></pre>
+<pre><code>
+<span class="sql-keyword">SELECT</span> 
+    ID, Name,  
+    '(' + <span class="sql-function">SUBSTRING</span>(Phone1, 1, 3) + ') ' + <span class="sql-function">SUBSTRING</span>(Phone1, 4, 3) + '-' + <span class="sql-function">SUBSTRING</span>(Phone1, 7, 4) AS Phone, 
+    <span class="sql-function">LTRIM</span>(<span class="sql-function">RTRIM</span>(Address1)) + ', ' + <span class="sql-function">LTRIM</span>(<span class="sql-function">RTRIM</span>(City)) + ', ' + <span class="sql-function">LTRIM</span>(<span class="sql-function">RTRIM</span>(St)) + ' ' + <span class="sql-function">LTRIM</span>(<span class="sql-function">RTRIM</span>(Zip)) AS googleAdd 
+<span class="sql-keyword">FROM</span> Club 
+<span class="sql-keyword">WHERE</span> NonLiquor = 0 
+<span class="sql-keyword">ORDER BY</span> Name;
+</code></pre>
 
     </div> 
 

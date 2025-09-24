@@ -40,14 +40,14 @@ p {
 /* Styling for the <pre> block */
 pre {
     background-color: #f4f4f4; /* Light gray background */
-    padding: 0 20px 0 0;  /* Add some padding to make the code block look neat */
+    padding: 0 20px 20px 20px;  /* Add some padding to make the code block look neat */
+    margin: 0 0 0 20px;
     border-radius: 15px;  /* Slightly rounded corners */
     font-family: Consolas, monospace;  /* Monospace font for code */ 
     word-wrap: break-word;  /* Prevent horizontal scrolling */
     font-size: 15px;  /* Set the font size */
     overflow-x: auto;  /* Enable horizontal scrolling if needed */ 
-    text-align: left;
-    margin: 0;
+    text-align: left; 
     display: block;
 }
 
