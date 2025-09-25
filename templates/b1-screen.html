@@ -35,19 +35,15 @@
   </map>
   
   <div id="list-box">
-    <h2>I. List Boxes <br> 
-      <span style="font-size: 0.8em; margin-left: 20px; font-weight: normal;">
-        (Click a list box in the image above to go to the section that explains the command button)
-      </span>
-    </h2> 
-    <br>
+    <h2>I. List Boxes</h2> 
     <div id="list-box-1">
       <h3>1. Licensee Name 🪪<br> 
         <span style="font-size: 0.8em; margin-left: 20px; font-weight: normal;">
-          (Yellow Listbox)
+          (Yellow Listbox Datasource: SQL Query Below)
         </span> 
       </h3>
-      
+
+<!-- SQL Code -->
 <pre><code>
 <span class="sql-keyword">SELECT</span> 
     ID, Name,  
@@ -57,15 +53,73 @@
 <span class="sql-keyword">WHERE</span> NonLiquor = 0 
 <span class="sql-keyword">ORDER BY</span> Name;
 </code></pre>
+<!-- SQL Code -->
 
     </div> 
 
         <div id="list-box-2">
             <h3>2. Order Details 📜<br> 
                 <span style="font-size: 0.8em; margin-left: 20px; font-weight: normal;">
-                    (Blue Listbox)
+                    (Blue Listbox Datasource: SQL Query Below)  
                 </span>
             </h3>
+
+<!-- SQL Code -->
+<pre><code>
+<span class="sql-keyword">WITH</span> qryClubOrderLineTotals_A <span class="sql-keyword">AS</span> (
+    <span class="sql-keyword">SELECT</span>  
+        ol.OrdheadID,         
+        <span class="sql-function">SUM</span>(<span class="sql-keyword">CASE WHEN</span> sd.ID = 1 <span class="sql-keyword">THEN</span> ol.Price * QuantityShipped <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END</span>) AS LiquorExtPrice,
+        <span class="sql-function">SUM</span>(<span class="sql-keyword">CASE WHEN</span> sd.ID &lt;&gt; 1 <span class="sql-keyword">THEN</span> (ol.Price - ol.BuyDown) * ol.QuantityShipped <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END</span>) AS NonLiquorExtPrice,
+        <span class="sql-keyword">CASE WHEN</span> c.ApplyDiscount = 1 <span class="sql-keyword">THEN</span> s.ClubDiscRate <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END</span> AS LiquorDiscountRate,
+        <span class="sql-function">SUM</span>(<span class="sql-keyword">CASE WHEN</span> sd.ID &lt;&gt; 1 <span class="sql-keyword">THEN CASE WHEN</span> sd.AllowClubDiscounts = 1 <span class="sql-keyword">THEN</span> (ol.Price - ol.BuyDown) * ol.QuantityShipped <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END ELSE</span> 0 <span class="sql-keyword">END</span>) AS NonLiquorExtPriceDiscountable,
+        <span class="sql-keyword">CASE WHEN</span> c.ApplyDiscount = 1 <span class="sql-keyword">THEN</span> s.NonClubDiscRate <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END</span> AS NonLiquorDiscountRate
+    <span class="sql-keyword">FROM</span> Sysfile s
+    <span class="sql-keyword">CROSS JOIN</span> Club c
+    <span class="sql-keyword">INNER JOIN</span> OrdHead oh <span class="sql-keyword">ON</span> c.ID = oh.ClubID 
+    <span class="sql-keyword">INNER JOIN</span> OrderLine ol <span class="sql-keyword">ON</span> oh.ID = ol.OrdheadID 
+    <span class="sql-keyword">INNER JOIN</span> Item i <span class="sql-keyword">ON</span> ol.ItemID = i.ID 
+    <span class="sql-keyword">INNER JOIN</span> SalesDepartment sd <span class="sql-keyword">ON</span> i.SalesDepartmentID = sd.ID 
+    <span class="sql-keyword">GROUP BY</span> 
+        ol.OrdheadID, 
+        <span class="sql-keyword">CASE WHEN</span> c.ApplyDiscount = 1 <span class="sql-keyword">THEN</span> s.ClubDiscRate <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END</span>, 
+        c.NonLiquor, 
+        <span class="sql-keyword">CASE WHEN</span> c.ApplyDiscount = 1 <span class="sql-keyword">THEN</span> s.NonClubDiscRate <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END</span>
+), qryClubOrderLineTotals_B <span class="sql-keyword">AS</span> (
+    <span class="sql-keyword">SELECT</span> 
+        OrdheadID,
+        LiquorExtPrice,
+        NonLiquorExtPrice,
+        (<span class="sql-function">FLOOR</span>(LiquorExtPrice * LiquorDiscountRate) / 100.0) AS LiquorDiscount, 
+        (<span class="sql-function">FLOOR</span>(NonLiquorExtPriceDiscountable * NonLiquorDiscountRate) / 100.0) AS NonLiquorDiscount
+    <span class="sql-keyword">FROM</span> qryClubOrderLineTotals_A
+), qryClubOrderLineTotals <span class="sql-keyword">AS</span> (
+    <span class="sql-keyword">SELECT</span> 
+        OrdheadID,
+        [LiquorExtPrice] + [NonLiquorExtPrice] AS ExtPrice,  
+        [LiquorDiscount] + [NonLiquorDiscount] AS ExtDiscount 
+    <span class="sql-keyword">FROM</span> qryClubOrderLineTotals_B
+)       
+<span class="sql-keyword">SELECT</span>  
+    oh.ID,
+    <span class="sql-keyword">CASE WHEN</span> (q.ExtPrice - q.ExtDiscount) = OrdDollars <span class="sql-keyword">THEN</span> c.Name <span class="sql-keyword">ELSE</span> '**** REPRINT **** ' + c.Name <span class="sql-keyword">END</span> AS ClubName,
+    <span class="sql-function">RIGHT</span>('0' + <span class="sql-function">CAST</span>(<span class="sql-function">MONTH</span>(InvDate) AS VARCHAR), 2) + '/' + 
+    <span class="sql-function">RIGHT</span>('0' + <span class="sql-function">CAST</span>(<span class="sql-function">DAY</span>(InvDate) AS VARCHAR), 2) AS [Date],
+    oh.InvoiceNo AS [Invoice #], 
+    q.ExtPrice - q.ExtDiscount AS Amount, 
+    oh.PaidFlag, 
+    c.ID 
+<span class="sql-keyword">FROM</span> Club c
+<span class="sql-keyword">INNER JOIN</span> OrdHead oh <span class="sql-keyword">ON</span> c.ID = oh.ClubID 
+<span class="sql-keyword">INNER JOIN</span> qryClubOrderLineTotals q <span class="sql-keyword">ON</span> oh.ID = q.OrdheadID 
+<span class="sql-keyword">ORDER BY</span> 
+    <span class="sql-keyword">CASE WHEN</span> (q.ExtPrice - q.ExtDiscount) = OrdDollars <span class="sql-keyword">THEN</span> c.Name <span class="sql-keyword">ELSE</span> '**** REPRINT **** ' + c.Name <span class="sql-keyword">END</span>,
+    <span class="sql-function">RIGHT</span>('0' + <span class="sql-function">CAST</span>(<span class="sql-function">MONTH</span>(InvDate) AS VARCHAR), 2) + '/' + 
+    <span class="sql-function">RIGHT</span>('0' + <span class="sql-function">CAST</span>(<span class="sql-function">DAY</span>(InvDate) AS VARCHAR), 2) + '/' + 
+    <span class="sql-function">RIGHT</span>(<span class="sql-function">CAST</span>(<span class="sql-function">YEAR</span>(InvDate) AS VARCHAR), 2)
+</code></pre>
+<!-- SQL Code -->
+ 
         </div> 
     </div>
 
@@ -130,5 +184,7 @@
             <p>Description and details for the "Close Form" button...</p>
         </div>
     </div>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

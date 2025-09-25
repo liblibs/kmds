@@ -34,11 +34,13 @@ pre {
     background-color: #f4f4f4; /* Light gray background */
     padding: 0 20px 20px 20px;  /* Add some padding to make the code block look neat */
     margin: 0 0 0 20px;
-    border-radius: 15px;  /* Slightly rounded corners */
+    border-radius: 10px;  /* Slightly rounded corners */
     font-family: Consolas, monospace;  /* Monospace font for code */ 
     word-wrap: break-word;  /* Prevent horizontal scrolling */
     font-size: 15px;  /* Set the font size */
-    overflow-x: auto;  /* Enable horizontal scrolling if needed */ 
+    overflow-x: auto;  /* Enable horizontal scrolling if needed */
+    overflow-y: auto;  /* Enable vertical scrolling if needed */ 
+    max-height: 250px;
     text-align: left; 
     display: block;
 }
@@ -50,7 +52,7 @@ code {
 
 /* SQL Keyword Coloring */
 pre code .sql-keyword {
-    color: #0011fd;  /* Blue for SQL keywords (SELECT, FROM, etc.) */
+    color: #0d1bdb;  /* Blue for SQL keywords (SELECT, FROM, etc.) */
     font-weight: normal;  /* Make keywords bold */
 }
 
@@ -71,6 +73,14 @@ pre code .comment {
     font-style: italic;  /* Italicize comments */
 }
 
+/* Copy Button */
+#copyBtn {
+  margin-bottom: 0px;
+  padding: 3px 3px;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: right;
+}
 
 
 

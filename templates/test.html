@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SQL Preview Test</title>
+</head>
+<body>
+
+    <button id="toggleBtn">Show Full SQL</button>
+    <pre id="sqlPreview" style="background:#f4f4f4; padding:15px; font-family: Consolas, monospace; font-size:15px; overflow-x:auto;"></pre>
+
+<script>
+  const fullSql = `
+            WITH qryClubOrderLineTotals_A AS (
+                SELECT 
+                    ol.OrdheadID,         
+                    SUM(CASE WHEN sd.ID = 1 THEN ol.Price * QuantityShipped ELSE 0 END) AS LiquorExtPrice,
+                    SUM(CASE WHEN sd.ID <> 1 THEN (ol.Price - ol.BuyDown) * ol.QuantityShipped ELSE 0 END) AS NonLiquorExtPrice,
+                    CASE WHEN c.ApplyDiscount = 1 THEN s.ClubDiscRate ELSE 0 END AS LiquorDiscountRate,
+                    SUM(CASE WHEN sd.ID <> 1 THEN CASE WHEN sd.AllowClubDiscounts = 1 THEN (ol.Price - ol.BuyDown) * ol.QuantityShipped ELSE 0 END ELSE 0 END) AS NonLiquorExtPriceDiscountable,
+                    CASE WHEN c.ApplyDiscount = 1 THEN s.NonClubDiscRate ELSE 0 END AS NonLiquorDiscountRate
+                FROM Sysfile s
+                CROSS JOIN Club c
+                INNER JOIN OrdHead oh ON c.ID = oh.ClubID 
+                INNER JOIN OrderLine ol ON oh.ID = ol.OrdheadID 
+                INNER JOIN Item i ON ol.ItemID = i.ID 
+                INNER JOIN SalesDepartment sd ON i.SalesDepartmentID = sd.ID 
+                GROUP BY 
+                    ol.OrdheadID, 
+                    CASE WHEN c.ApplyDiscount = 1 THEN s.ClubDiscRate ELSE 0 END, 
+                    c.NonLiquor, 
+                    CASE WHEN c.ApplyDiscount = 1 THEN s.NonClubDiscRate ELSE 0 END
+            ), qryClubOrderLineTotals_B AS (
+                SELECT
+                    OrdheadID,
+                    LiquorExtPrice,
+                    NonLiquorExtPrice,
+                    (FLOOR(LiquorExtPrice * LiquorDiscountRate) / 100.0) AS LiquorDiscount, 
+                    (FLOOR(NonLiquorExtPriceDiscountable * NonLiquorDiscountRate) / 100.0) AS NonLiquorDiscount
+                FROM qryClubOrderLineTotals_A
+            ), qryClubOrderLineTotals AS (
+                SELECT
+                    OrdheadID,
+                    [LiquorExtPrice]+[NonLiquorExtPrice] AS ExtPrice,  
+                    [LiquorDiscount]+[NonLiquorDiscount] AS ExtDiscount 
+                FROM qryClubOrderLineTotals_B
+            )       
+            SELECT 
+                oh.ID,
+                CASE WHEN (q.ExtPrice - q.ExtDiscount) = OrdDollars THEN c.Name ELSE '**** REPRINT **** ' + c.Name END AS ClubName,
+                RIGHT('0' + CAST(MONTH(InvDate) AS VARCHAR), 2) + '/' + RIGHT('0' + CAST(DAY(InvDate) AS VARCHAR), 2) AS [Date],
+                oh.InvoiceNo AS [Invoice #], 
+                q.ExtPrice - q.ExtDiscount AS Amount, 
+                oh.PaidFlag, 
+                c.ID 
+            FROM Club c
+            INNER JOIN OrdHead oh ON c.ID=oh.ClubID 
+            INNER JOIN qryClubOrderLineTotals q ON oh.ID=q.OrdheadID 
+            ORDER BY CASE WHEN (q.ExtPrice - q.ExtDiscount) = OrdDollars THEN c.Name ELSE '**** REPRINT **** ' + c.Name END, RIGHT('0' + CAST(MONTH(InvDate) AS VARCHAR), 2) + '/' + RIGHT('0' + CAST(DAY(InvDate) AS VARCHAR), 2) + '/' + RIGHT(CAST(YEAR(InvDate) AS VARCHAR), 2)
+            `;
+</script>
+
+    <script src="../assets/js/script.js"></script>
+
+</body>
+</html>
