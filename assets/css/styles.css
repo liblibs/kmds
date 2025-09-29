@@ -29,8 +29,9 @@ p {
     font-weight: normal; 
 }
 
+/*************************************************** SQL Formatter ***************************************************/
 /* Styling for the <pre> block */
-pre {
+preX {
     background-color: #f4f4f4; /* Light gray background */
     padding: 0 20px 20px 20px;  /* Add some padding to make the code block look neat */
     margin: 0 0 0 20px;
@@ -46,32 +47,33 @@ pre {
 }
 
 /* Default styling for the <code> block */
-code {
+codeX {
     color: #2a2a2a;  /* Default text color */ 
 }
 
 /* SQL Keyword Coloring */
-pre code .sql-keyword {
+preX codeX .sql-keywordX {
     color: #0d1bdb;  /* Blue for SQL keywords (SELECT, FROM, etc.) */
     font-weight: normal;  /* Make keywords bold */
 }
 
 /* SQL Keyword Coloring */
-pre code .sql-function {
+preX codeX .sql-functionX {
     color: #d900bc;  /* Blue for SQL keywords (SELECT, FROM, etc.) */
     font-weight: normal;  /* Make keywords bold */
 }
 
 /* SQL String Coloring */
-pre code .string {
+preX codeX .stringX {
     color: #d9534f;  /* Red for strings (e.g., 'address') */
 }
 
 /* SQL Comment Coloring */
-pre code .comment {
+preX codeX .commentX {
     color: #00ff00;  /* Gray for comments */
     font-style: italic;  /* Italicize comments */
 }
+/*************************************************** SQL Formatter ***************************************************/
 
 /* Copy Button */
 #copyBtn {
@@ -186,3 +188,47 @@ pre code .comment {
 .mermaid {
     text-align: center;
 }
+
+
+/*************************** SQL Formatter ***************************/
+/* Container style */
+pre.sql {
+    background-color: #f4f4f4; /* Light gray background */
+    color: #000000;
+    padding: 0 20px 0 20px;  /* Add some padding to make the code block look neat */
+    margin: 0 0 0 20px;
+    border-radius: 10px;  /* Slightly rounded corners */
+    font-family: Consolas, monospace;  /* Monospace font for code */ 
+    word-wrap: break-word;  /* Prevent horizontal scrolling */
+    font-size: 15px;  /* Set the font size */
+    overflow-x: auto;  /* Enable horizontal scrolling if needed */
+    overflow-y: auto;  /* Enable vertical scrolling if needed */ 
+    max-height: 250px;
+    text-align: left; 
+    display: block;
+}
+
+/* Ensure selection is allowed even if a global style disables it */
+pre.sql, pre.sql * {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+/* Tokens */
+.sql-keyword    { color: #0d1bdb; font-weight: normal; }
+.sql-function   { color: #d900bc; font-weight: normal; }
+.sql-string     { color: #fa0e06; }
+.sql-number     { color: #000000; }
+.sql-identifier { color: #000000; }
+.sql-comment    { color: #069b06; font-style: italic; }
+.sql-operator   { color: #000000; }
+
+/* Optional: make punctuation slightly dimmer */
+.sql-operator, .sql-punc { opacity: 0.9; }
+
+/* Selection */
+pre.sql ::selection {
+  background: #2b6de7;
+  color: white;
+}
+/*************************** SQL Formatter ***************************/

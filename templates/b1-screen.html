@@ -1,62 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Licensee Order</title>
-
-  <link rel="stylesheet" href="assets/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licensee Order</title> 
 </head>
 <body> 
-  <h1>Licensee Order Documentation <strong><code>(B1)</code></strong> <br>
-    <span style="font-size: 0.6em; margin-left: 0px; font-weight: normal;">
-        (Click a number or list box in the image below to go to the section that explains the command button or list box)
-    </span>
-</h1>
+    <h1>Licensee Order Documentation <strong><code>(B1)</code></strong> <br>
+        <span style="font-size: 0.6em; margin-left: 0px; font-weight: normal;">
+            (Click a number or list box in the image below to go to the section that explains the command button or list box)
+        </span>
+    </h1>
     
-  <!-- Insert your screenshot -->
-  <img src="assets/images/b1-screen-Licensee-Order.png" usemap="#image-map" alt="Licensee Order Screen" style="width: 800px; height: auto;"> 
+    <!-- Insert your screenshot -->
+    <img src="assets/images/b1-screen-Licensee-Order.png" usemap="#image-map" alt="Licensee Order Screen" style="width: 800px; height: auto;"> 
 
-  <!-- Define image map with clickable areas -->
-  <map name="image-map">
-    <area shape="rect" coords="30,100,330,350" alt="Licensee Name" href="#list-box-1" title="Licensee Name">
-    <area shape="rect" coords="335,100,780,350" alt="Order Details" href="#list-box-2" title="Order Details">
-    <area shape="rect" coords="467,27,520,67" alt="Process e-Mails" href="#command-button-1" title="Process e-Mails">
-    <area shape="rect" coords="0,360,40,400" alt="Use Order Guide" href="#command-button-2" title="Use Order Guide">
-    <area shape="rect" coords="0,420,40,460" alt="Do NOT Use Order Guide (Blank)" href="#command-button-3" title="Do NOT Use Order Guide (Blank)">
-    <area shape="rect" coords="40,460,80,500" alt="Google Map Link" href="#command-button-4" title="Google Map Link">
-    <area shape="rect" coords="240,360,280,400" alt="Clone Order Guide" href="#command-button-5" title="Clone Order Guide">
-    <area shape="rect" coords="320,360,360,400" alt="Edit this order" href="#command-button-6" title="Edit this order">
-    <area shape="rect" coords="320,420,360,460" alt="Print Guide For #" href="#command-button-7" title="Print Guide For #">
-    <area shape="rect" coords="600,360,640,400" alt="Create Order from Sales History" href="#command-button-8" title="Create Order from Sales History">
-    <area shape="rect" coords="600,420,640,460" alt="Purchase History Report" href="#command-button-9" title="Purchase History Report">
-    <area shape="rect" coords="690,360,730,400" alt="Compare Licensee Orders" href="#command-button-10" title="Compare Licensee Orders">
-    <area shape="rect" coords="750,420,790,460" alt="Close Form" href="#command-button-11" title="Close Form">
-  </map>
+    <!-- Define image map with clickable areas -->
+    <map name="image-map">
+        <area shape="rect" coords="30,100,330,350" alt="Licensee Name" href="#list-box-1" title="Licensee Name">
+        <area shape="rect" coords="335,100,780,350" alt="Order Details" href="#list-box-2" title="Order Details">
+        <area shape="rect" coords="467,27,520,67" alt="Process e-Mails" href="#command-button-1" title="Process e-Mails">
+        <area shape="rect" coords="0,360,40,400" alt="Use Order Guide" href="#command-button-2" title="Use Order Guide">
+        <area shape="rect" coords="0,420,40,460" alt="Do NOT Use Order Guide (Blank)" href="#command-button-3" title="Do NOT Use Order Guide (Blank)">
+        <area shape="rect" coords="40,460,80,500" alt="Google Map Link" href="#command-button-4" title="Google Map Link">
+        <area shape="rect" coords="240,360,280,400" alt="Clone Order Guide" href="#command-button-5" title="Clone Order Guide">
+        <area shape="rect" coords="320,360,360,400" alt="Edit this order" href="#command-button-6" title="Edit this order">
+        <area shape="rect" coords="320,420,360,460" alt="Print Guide For #" href="#command-button-7" title="Print Guide For #">
+        <area shape="rect" coords="600,360,640,400" alt="Create Order from Sales History" href="#command-button-8" title="Create Order from Sales History">
+        <area shape="rect" coords="600,420,640,460" alt="Purchase History Report" href="#command-button-9" title="Purchase History Report">
+        <area shape="rect" coords="690,360,730,400" alt="Compare Licensee Orders" href="#command-button-10" title="Compare Licensee Orders">
+        <area shape="rect" coords="750,420,790,460" alt="Close Form" href="#command-button-11" title="Close Form">
+    </map>
   
-  <div id="list-box">
-    <h2>I. List Boxes</h2> 
-    <div id="list-box-1">
-      <h3>1. Licensee Name 🪪<br> 
-        <span style="font-size: 0.8em; margin-left: 20px; font-weight: normal;">
-          (Yellow Listbox Datasource: SQL Query Below)
-        </span> 
-      </h3>
+    <div id="list-box">
+        <h2>I. List Boxes</h2> 
+        <div id="list-box-1">
+            <h3>1. Licensee Name 🪪<br> 
+                <span style="font-size: 0.8em; margin-left: 20px; font-weight: normal;">
+                    (Yellow Listbox Datasource: SQL Query Below)
+                </span> 
+            </h3>
 
-<!-- SQL Code -->
-<pre><code>
-<span class="sql-keyword">SELECT</span> 
-    ID, Name,  
-    '(' + <span class="sql-function">SUBSTRING</span>(Phone1, 1, 3) + ') ' + <span class="sql-function">SUBSTRING</span>(Phone1, 4, 3) + '-' + <span class="sql-function">SUBSTRING</span>(Phone1, 7, 4) AS Phone, 
-    <span class="sql-function">LTRIM</span>(<span class="sql-function">RTRIM</span>(Address1)) + ', ' + <span class="sql-function">LTRIM</span>(<span class="sql-function">RTRIM</span>(City)) + ', ' + <span class="sql-function">LTRIM</span>(<span class="sql-function">RTRIM</span>(St)) + ' ' + <span class="sql-function">LTRIM</span>(<span class="sql-function">RTRIM</span>(Zip)) AS googleAdd 
-<span class="sql-keyword">FROM</span> Club 
-<span class="sql-keyword">WHERE</span> NonLiquor = 0 
-<span class="sql-keyword">ORDER BY</span> Name;
-</code></pre>
-<!-- SQL Code -->
-
-    </div> 
-
+            <!-- SQL Code -->
+            <pre class="sql"><code class="language-sql">
+SELECT 
+    ID, 
+    Name,  
+    '(' + SUBSTRING(Phone1, 1, 3) + ') ' + SUBSTRING(Phone1, 4, 3) + '-' + SUBSTRING(Phone1, 7, 4) AS Phone, 
+    LTRIM(RTRIM(Address1)) + ', ' + LTRIM(RTRIM(City)) + ', ' + LTRIM(RTRIM(St)) + ' ' + LTRIM(RTRIM(Zip)) AS googleAdd 
+FROM Club 
+WHERE NonLiquor = 0 
+ORDER BY Name;
+            </code></pre>
+            <!-- SQL Code -->
+        </div> 
         <div id="list-box-2">
             <h3>2. Order Details 📜<br> 
                 <span style="font-size: 0.8em; margin-left: 20px; font-weight: normal;">
@@ -64,63 +61,54 @@
                 </span>
             </h3>
 
-<!-- SQL Code -->
-<pre><code>
-<span class="sql-keyword">WITH</span> qryClubOrderLineTotals_A <span class="sql-keyword">AS</span> (
-    <span class="sql-keyword">SELECT</span>  
+            <!-- SQL Code -->
+            <pre class="sql"><code class="language-sql">
+WITH qryClubOrderLineTotals_A AS (
+    SELECT  
         ol.OrdheadID,         
-        <span class="sql-function">SUM</span>(<span class="sql-keyword">CASE WHEN</span> sd.ID = 1 <span class="sql-keyword">THEN</span> ol.Price * QuantityShipped <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END</span>) AS LiquorExtPrice,
-        <span class="sql-function">SUM</span>(<span class="sql-keyword">CASE WHEN</span> sd.ID &lt;&gt; 1 <span class="sql-keyword">THEN</span> (ol.Price - ol.BuyDown) * ol.QuantityShipped <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END</span>) AS NonLiquorExtPrice,
-        <span class="sql-keyword">CASE WHEN</span> c.ApplyDiscount = 1 <span class="sql-keyword">THEN</span> s.ClubDiscRate <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END</span> AS LiquorDiscountRate,
-        <span class="sql-function">SUM</span>(<span class="sql-keyword">CASE WHEN</span> sd.ID &lt;&gt; 1 <span class="sql-keyword">THEN CASE WHEN</span> sd.AllowClubDiscounts = 1 <span class="sql-keyword">THEN</span> (ol.Price - ol.BuyDown) * ol.QuantityShipped <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END ELSE</span> 0 <span class="sql-keyword">END</span>) AS NonLiquorExtPriceDiscountable,
-        <span class="sql-keyword">CASE WHEN</span> c.ApplyDiscount = 1 <span class="sql-keyword">THEN</span> s.NonClubDiscRate <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END</span> AS NonLiquorDiscountRate
-    <span class="sql-keyword">FROM</span> Sysfile s
-    <span class="sql-keyword">CROSS JOIN</span> Club c
-    <span class="sql-keyword">INNER JOIN</span> OrdHead oh <span class="sql-keyword">ON</span> c.ID = oh.ClubID 
-    <span class="sql-keyword">INNER JOIN</span> OrderLine ol <span class="sql-keyword">ON</span> oh.ID = ol.OrdheadID 
-    <span class="sql-keyword">INNER JOIN</span> Item i <span class="sql-keyword">ON</span> ol.ItemID = i.ID 
-    <span class="sql-keyword">INNER JOIN</span> SalesDepartment sd <span class="sql-keyword">ON</span> i.SalesDepartmentID = sd.ID 
-    <span class="sql-keyword">GROUP BY</span> 
-        ol.OrdheadID, 
-        <span class="sql-keyword">CASE WHEN</span> c.ApplyDiscount = 1 <span class="sql-keyword">THEN</span> s.ClubDiscRate <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END</span>, 
-        c.NonLiquor, 
-        <span class="sql-keyword">CASE WHEN</span> c.ApplyDiscount = 1 <span class="sql-keyword">THEN</span> s.NonClubDiscRate <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END</span>
-), qryClubOrderLineTotals_B <span class="sql-keyword">AS</span> (
-    <span class="sql-keyword">SELECT</span> 
+        SUM(CASE WHEN sd.ID = 1 THEN ol.Price * QuantityShipped ELSE 0 END) AS LiquorExtPrice,
+        SUM(CASE WHEN sd.ID <> 1 THEN (ol.Price - ol.BuyDown) * ol.QuantityShipped ELSE 0 END) AS NonLiquorExtPrice,
+        CASE WHEN c.ApplyDiscount = 1 THEN s.ClubDiscRate ELSE 0 END AS LiquorDiscountRate,
+        SUM(CASE WHEN sd.ID <> 1 THEN CASE WHEN sd.AllowClubDiscounts = 1 THEN (ol.Price - ol.BuyDown) * ol.QuantityShipped ELSE 0 END ELSE 0 END) AS NonLiquorExtPriceDiscountable,
+        CASE WHEN c.ApplyDiscount = 1 THEN s.NonClubDiscRate ELSE 0 END AS NonLiquorDiscountRate
+    FROM Sysfile s
+    CROSS JOIN Club c
+    INNER JOIN OrdHead oh ON c.ID = oh.ClubID 
+    INNER JOIN OrderLine ol ON oh.ID = ol.OrdheadID 
+    INNER JOIN Item i ON ol.ItemID = i.ID 
+    INNER JOIN SalesDepartment sd ON i.SalesDepartmentID = sd.ID 
+    GROUP BY ol.OrdheadID, CASE WHEN c.ApplyDiscount = 1 THEN s.ClubDiscRate ELSE 0 END, c.NonLiquor, CASE WHEN c.ApplyDiscount = 1 THEN s.NonClubDiscRate ELSE 0 END
+), qryClubOrderLineTotals_B AS (
+    SELECT 
         OrdheadID,
         LiquorExtPrice,
         NonLiquorExtPrice,
-        (<span class="sql-function">FLOOR</span>(LiquorExtPrice * LiquorDiscountRate) / 100.0) AS LiquorDiscount, 
-        (<span class="sql-function">FLOOR</span>(NonLiquorExtPriceDiscountable * NonLiquorDiscountRate) / 100.0) AS NonLiquorDiscount
-    <span class="sql-keyword">FROM</span> qryClubOrderLineTotals_A
-), qryClubOrderLineTotals <span class="sql-keyword">AS</span> (
-    <span class="sql-keyword">SELECT</span> 
+        (FLOOR(LiquorExtPrice * LiquorDiscountRate) / 100.0) AS LiquorDiscount, 
+        (FLOOR(NonLiquorExtPriceDiscountable * NonLiquorDiscountRate) / 100.0) AS NonLiquorDiscount
+    FROM qryClubOrderLineTotals_A
+), qryClubOrderLineTotals AS (
+    SELECT 
         OrdheadID,
         [LiquorExtPrice] + [NonLiquorExtPrice] AS ExtPrice,  
         [LiquorDiscount] + [NonLiquorDiscount] AS ExtDiscount 
-    <span class="sql-keyword">FROM</span> qryClubOrderLineTotals_B
+    FROM qryClubOrderLineTotals_B
 )       
-<span class="sql-keyword">SELECT</span>  
+SELECT  
     oh.ID,
-    <span class="sql-keyword">CASE WHEN</span> (q.ExtPrice - q.ExtDiscount) = OrdDollars <span class="sql-keyword">THEN</span> c.Name <span class="sql-keyword">ELSE</span> '**** REPRINT **** ' + c.Name <span class="sql-keyword">END</span> AS ClubName,
-    <span class="sql-function">RIGHT</span>('0' + <span class="sql-function">CAST</span>(<span class="sql-function">MONTH</span>(InvDate) AS VARCHAR), 2) + '/' + 
-    <span class="sql-function">RIGHT</span>('0' + <span class="sql-function">CAST</span>(<span class="sql-function">DAY</span>(InvDate) AS VARCHAR), 2) AS [Date],
+    CASE WHEN (q.ExtPrice - q.ExtDiscount) = OrdDollars THEN c.Name ELSE '**** REPRINT **** ' + c.Name END AS ClubName,
+    RIGHT('0' + CAST(MONTH(InvDate) AS VARCHAR), 2) + '/' + 
+    RIGHT('0' + CAST(DAY(InvDate) AS VARCHAR), 2) AS [Date],
     oh.InvoiceNo AS [Invoice #], 
     q.ExtPrice - q.ExtDiscount AS Amount, 
     oh.PaidFlag, 
     c.ID 
-<span class="sql-keyword">FROM</span> Club c
-<span class="sql-keyword">INNER JOIN</span> OrdHead oh <span class="sql-keyword">ON</span> c.ID = oh.ClubID 
-<span class="sql-keyword">INNER JOIN</span> qryClubOrderLineTotals q <span class="sql-keyword">ON</span> oh.ID = q.OrdheadID 
-<span class="sql-keyword">ORDER BY</span> 
-    <span class="sql-keyword">CASE WHEN</span> (q.ExtPrice - q.ExtDiscount) = OrdDollars <span class="sql-keyword">THEN</span> c.Name <span class="sql-keyword">ELSE</span> '**** REPRINT **** ' + c.Name <span class="sql-keyword">END</span>,
-    <span class="sql-function">RIGHT</span>('0' + <span class="sql-function">CAST</span>(<span class="sql-function">MONTH</span>(InvDate) AS VARCHAR), 2) + '/' + 
-    <span class="sql-function">RIGHT</span>('0' + <span class="sql-function">CAST</span>(<span class="sql-function">DAY</span>(InvDate) AS VARCHAR), 2) + '/' + 
-    <span class="sql-function">RIGHT</span>(<span class="sql-function">CAST</span>(<span class="sql-function">YEAR</span>(InvDate) AS VARCHAR), 2)
-</code></pre>
-<!-- SQL Code -->
- 
-        </div> 
+FROM Club c
+INNER JOIN OrdHead oh ON c.ID = oh.ClubID 
+INNER JOIN qryClubOrderLineTotals q ON oh.ID = q.OrdheadID 
+ORDER BY CASE WHEN (q.ExtPrice - q.ExtDiscount) = OrdDollars THEN c.Name ELSE '**** REPRINT **** ' + c.Name END, RIGHT('0' + CAST(MONTH(InvDate) AS VARCHAR), 2) + '/' + RIGHT('0' + CAST(DAY(InvDate) AS VARCHAR), 2) + '/' + RIGHT(CAST(YEAR(InvDate) AS VARCHAR), 2)
+            </code></pre>
+            <!-- SQL Code -->
+        </div>
     </div>
 
     <br>
@@ -185,6 +173,6 @@
         </div>
     </div>
 
-    <script src="assets/js/script.js"></script>
+    
 </body>
 </html>

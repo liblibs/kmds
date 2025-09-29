@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Order</title>
+
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script src="../assets/js/sql-highlighter.js"></script>
+</head>
+
+<body>
+ 
+
+    <pre class="sql"><code class="language-sql">
+  SELECT 
+      ID, 
+      Name,  
+      '(' + SUBSTRING(Phone1, 1, 3) + ') ' + SUBSTRING(Phone1, 4, 3) + '-' + SUBSTRING(Phone1, 7, 4) AS Phone, 
+      LTRIM(RTRIM(Address1)) + ', ' + LTRIM(RTRIM(City)) + ', ' + LTRIM(RTRIM(St)) + ' ' + LTRIM(RTRIM(Zip)) AS googleAdd 
+  FROM Club 
+  WHERE NonLiquor = 0 -- Test comment
+  ORDER BY Name;
+    </code></pre>
+ 
+
+ 
+
+</body>
+</html>
