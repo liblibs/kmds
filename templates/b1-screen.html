@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Licensee Order</title> 
+
+    <!-- Remove these assets before deploying to prod -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script src="../assets/js/sql-highlighter.js"></script>
+    <script src="../assets/js/script.js"></script>
 </head>
 <body> 
-    <h1>Licensee Order Documentation <strong><code>(B1)</code></strong> <br>
-        <span style="font-size: 0.6em; margin-left: 0px; font-weight: normal;">
+    <h1>Licensee Order Documentation <strong><code>(B1 Screen)</code></strong> <br>
+        <span style="font-size: 13px; font-weight: normal;">
             (Click a number or list box in the image below to go to the section that explains the command button or list box)
         </span>
     </h1>
     
-    <!-- Insert your screenshot -->
-    <img src="assets/images/b1-screen-Licensee-Order.png" usemap="#image-map" alt="Licensee Order Screen" style="width: 800px; height: auto;"> 
-
-    <!-- Define image map with clickable areas -->
+    <!-- Image and clickable buttons -->
+    <img src="../assets/images/b1-screen-Licensee-Order.png" usemap="#image-map" alt="Licensee Order Screen" style="width: 800px; height: auto; margin-top: 4px;"> 
     <map name="image-map">
         <area shape="rect" coords="30,100,330,350" alt="Licensee Name" href="#list-box-1" title="Licensee Name">
         <area shape="rect" coords="335,100,780,350" alt="Order Details" href="#list-box-2" title="Order Details">
@@ -35,10 +38,9 @@
     <div id="list-box">
         <h2>I. List Boxes</h2> 
         <div id="list-box-1">
-            <h3>1. Licensee Name 🪪<br> 
-                <span style="font-size: 0.8em; margin-left: 20px; font-weight: normal;">
-                    (Yellow Listbox Datasource: SQL Query Below)
-                </span> 
+            <h3>1. Licensee Name / Club📜
+                <span style="font-size: 13px; font-weight: normal;">(Yellow Listbox)</span> <br>
+                <span style="font-size: 13px; margin-left: 20px; font-weight: normal;">Execute the SQL script below in SSMS to see the exact data displayed in the Yellow Listbox.</span>
             </h3>
 
             <!-- SQL Code -->
@@ -55,10 +57,10 @@ ORDER BY Name;
             <!-- SQL Code -->
         </div> 
         <div id="list-box-2">
-            <h3>2. Order Details 📜<br> 
-                <span style="font-size: 0.8em; margin-left: 20px; font-weight: normal;">
-                    (Blue Listbox Datasource: SQL Query Below)  
-                </span>
+            <h3>2. Order / Invoice 📘
+                <span style="font-size: 13px; font-weight: normal;">(Blue Listbox)</span> <br>
+                <span style="font-size: 13px; margin-left: 20px; font-weight: normal;">Execute the SQL script below in SSMS to see the exact data displayed in the Blue Listbox.</span> <br>
+                <span style="font-size: 13px; margin-left: 20px; font-weight: normal;">The original data source, which was an Access query, has been converted to run in SSMS.</span>
             </h3>
 
             <!-- SQL Code -->
@@ -83,8 +85,8 @@ WITH qryClubOrderLineTotals_A AS (
         OrdheadID,
         LiquorExtPrice,
         NonLiquorExtPrice,
-        (FLOOR(LiquorExtPrice * LiquorDiscountRate) / 100.0) AS LiquorDiscount, 
-        (FLOOR(NonLiquorExtPriceDiscountable * NonLiquorDiscountRate) / 100.0) AS NonLiquorDiscount
+        CASE WHEN (LiquorExtPrice * LiquorDiscountRate) - FLOOR(LiquorExtPrice * LiquorDiscountRate) > 0.5 THEN CEILING(LiquorExtPrice * LiquorDiscountRate) ELSE FLOOR(LiquorExtPrice * LiquorDiscountRate) END / 100.0 AS LiquorDiscount,
+        CASE WHEN (NonLiquorExtPriceDiscountable * NonLiquorDiscountRate) - FLOOR(NonLiquorExtPriceDiscountable * NonLiquorDiscountRate) > 0.5 THEN CEILING(NonLiquorExtPriceDiscountable * NonLiquorDiscountRate) ELSE FLOOR(NonLiquorExtPriceDiscountable * NonLiquorDiscountRate) END / 100.0 AS NonLiquorDiscount
     FROM qryClubOrderLineTotals_A
 ), qryClubOrderLineTotals AS (
     SELECT 
@@ -96,8 +98,7 @@ WITH qryClubOrderLineTotals_A AS (
 SELECT  
     oh.ID,
     CASE WHEN (q.ExtPrice - q.ExtDiscount) = OrdDollars THEN c.Name ELSE '**** REPRINT **** ' + c.Name END AS ClubName,
-    RIGHT('0' + CAST(MONTH(InvDate) AS VARCHAR), 2) + '/' + 
-    RIGHT('0' + CAST(DAY(InvDate) AS VARCHAR), 2) AS [Date],
+    RIGHT('0' + CAST(MONTH(InvDate) AS VARCHAR), 2) + '/' + RIGHT('0' + CAST(DAY(InvDate) AS VARCHAR), 2) AS [Date],
     oh.InvoiceNo AS [Invoice #], 
     q.ExtPrice - q.ExtDiscount AS Amount, 
     oh.PaidFlag, 
@@ -115,11 +116,12 @@ ORDER BY CASE WHEN (q.ExtPrice - q.ExtDiscount) = OrdDollars THEN c.Name ELSE '*
 
     <div id="command-button">
         <h2>II. Command Buttons</h2>
-        <p>Command buttons description...</p>
         
         <div id="command-button-1">
             <h3>1. Process e-Mails 📩</h3>
-            <p>Description and details for the "Process e-Mails" button...</p>
+            <p>This will open the <span id="code-block">ClubOrderXLImport</span> form.</p>
+            <img src="../assets/images/b1-screen-ClubOrderXLImport.png" style="width: 500px; height: auto; margin: 4px 0 0 20px;">
+            <p>Clicking the <span id="code-block">Create dispensers order</span> button will ...</p>
         </div>
 
         <div id="command-button-2">
