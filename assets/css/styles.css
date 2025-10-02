@@ -32,55 +32,9 @@ p {
 p #code-block {
     font-family: Consolas, monospace;
     padding: 0;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold; 
 }
-
-/*************************************************** SQL Formatter ***************************************************/
-/* Styling for the <pre> block */
-preX {
-    background-color: #f4f4f4; /* Light gray background */
-    padding: 0 20px 20px 20px;  /* Add some padding to make the code block look neat */
-    margin: 0 0 0 20px;
-    border-radius: 10px;  /* Slightly rounded corners */
-    font-family: Consolas, monospace;  /* Monospace font for code */ 
-    word-wrap: break-word;  /* Prevent horizontal scrolling */
-    font-size: 15px;  /* Set the font size */
-    overflow-x: auto;  /* Enable horizontal scrolling if needed */
-    overflow-y: auto;  /* Enable vertical scrolling if needed */ 
-    max-height: 250px;
-    text-align: left; 
-    display: block;
-}
-
-/* Default styling for the <code> block */
-codeX {
-    color: #2a2a2a;  /* Default text color */ 
-}
-
-/* SQL Keyword Coloring */
-preX codeX .sql-keywordX {
-    color: #0d1bdb;  /* Blue for SQL keywords (SELECT, FROM, etc.) */
-    font-weight: normal;  /* Make keywords bold */
-}
-
-/* SQL Keyword Coloring */
-preX codeX .sql-functionX {
-    color: #d900bc;  /* Blue for SQL keywords (SELECT, FROM, etc.) */
-    font-weight: normal;  /* Make keywords bold */
-}
-
-/* SQL String Coloring */
-preX codeX .stringX {
-    color: #d9534f;  /* Red for strings (e.g., 'address') */
-}
-
-/* SQL Comment Coloring */
-preX codeX .commentX {
-    color: #00ff00;  /* Gray for comments */
-    font-style: italic;  /* Italicize comments */
-}
-/*************************************************** SQL Formatter ***************************************************/
 
 /* Copy Button */
 #copyBtn {
@@ -197,13 +151,13 @@ preX codeX .commentX {
 }
 
 
-/*************************** SQL Formatter ***************************/
+/******************************** SQL Formatter ********************************/
 /* Container style */
 pre.sql {
     background-color: #f4f4f4; /* Light gray background */
     color: #000000;
     padding: 0 20px 0 20px;  /* Add some padding to make the code block look neat */
-    margin: 0 0 0 20px;
+    margin: 4px 0 0 20px;
     border-radius: 10px;  /* Slightly rounded corners */
     font-family: Consolas, monospace;  /* Monospace font for code */ 
     word-wrap: break-word;  /* Prevent horizontal scrolling */
@@ -238,4 +192,4 @@ pre.sql ::selection {
   background: #2b6de7;
   color: white;
 }
-/*************************** SQL Formatter ***************************/
+/******************************** SQL Formatter ********************************/

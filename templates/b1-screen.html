@@ -6,9 +6,9 @@
     <title>Licensee Order</title> 
 
     <!-- Remove these assets before deploying to prod -->
-    <link rel="stylesheet" href="../assets/css/styles.css">
-    <script src="../assets/js/sql-highlighter.js"></script>
-    <script src="../assets/js/script.js"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/sql-highlighter.js"></script>
+    <script src="assets/js/script.js"></script>
 </head>
 <body> 
     <h1>Licensee Order Documentation <strong><code>(B1 Screen)</code></strong> <br>
@@ -18,7 +18,7 @@
     </h1>
     
     <!-- Image and clickable buttons -->
-    <img src="../assets/images/b1-screen-Licensee-Order.png" usemap="#image-map" alt="Licensee Order Screen" style="width: 800px; height: auto; margin-top: 4px;"> 
+    <img src="assets/images/b1-screen-Licensee-Order.png" usemap="#image-map" alt="Licensee Order Screen" style="width: 800px; height: auto; margin-top: 4px;"> 
     <map name="image-map">
         <area shape="rect" coords="30,100,330,350" alt="Licensee Name" href="#list-box-1" title="Licensee Name">
         <area shape="rect" coords="335,100,780,350" alt="Order Details" href="#list-box-2" title="Order Details">
@@ -114,14 +114,31 @@ ORDER BY CASE WHEN (q.ExtPrice - q.ExtDiscount) = OrdDollars THEN c.Name ELSE '*
 
     <br>
 
-    <div id="command-button">
+    <div id="command-button">4
         <h2>II. Command Buttons</h2>
         
         <div id="command-button-1">
             <h3>1. Process e-Mails 📩</h3>
             <p>This will open the <span id="code-block">ClubOrderXLImport</span> form.</p>
-            <img src="../assets/images/b1-screen-ClubOrderXLImport.png" style="width: 500px; height: auto; margin: 4px 0 0 20px;">
+            <img src="assets/images/b1-screen-ClubOrderXLImport.png" style="width: 500px; height: auto; margin: 4px 0 0 20px;">
+            <p>Execute the SQL script below in Access Query Window to see the exact data displayed in the form.</p>
+            <p>The SQL script can't be executed in SSMS because the <span id="code-block">ClubOrderXL</span> table is a local Access table.</p>
             <p>Clicking the <span id="code-block">Create dispensers order</span> button will ...</p>
+            <!-- SQL Code -->
+            <pre class="sql"><code class="language-sql">
+SELECT 
+    ClubOrderXL.line AS LineID, 
+    ClubOrderXL.ItemID, 
+    IIf(IsNumeric([Qty]),[Qty],0) AS QuantityOrdered, 
+    IIf(IsNumeric([Qty]),[Qty],0) AS QuantityShipped, 
+    Item.Price, Item.Cost, 
+    ClubOrderXL.ClubID, 
+    ClubOrderXL.ClubName, 
+    ClubOrderXL.StoreName
+FROM ClubOrderXL 
+INNER JOIN Item ON ClubOrderXL.ItemID = Item.ID;
+            </code></pre>
+            <!-- SQL Code -->
         </div>
 
         <div id="command-button-2">
