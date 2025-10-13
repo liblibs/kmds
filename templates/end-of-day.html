@@ -1,4 +1,5 @@
-<!DOCTYPE html><html><head>
+<!DOCTYPE html><html>
+    <head>
       <title>end-of-day</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +25,8 @@
         import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
         mermaid.initialize({ startOnLoad: true });
     </script>
-</head><body for="html-export">
+</head>
+<body for="html-export">
     
     
       <div class="crossnote markdown-preview  ">
@@ -33,44 +35,25 @@
 <p>🖥️ <strong><code>KMDS Menu: Cash Register Functions &gt; End of Day (A2)</code></strong></p>
 <p>This document outlines the steps taken by the system at the end of each business day to ensure inventory levels are accurate, replenishment is triggered when necessary, automates all daily closing operations, ensuring backups, data integrity, reporting, and notifications are handled consistently and reliably.</p>
 <p><a name="flowchart" href=""></a></p>
-<hr>
-<div class="mermaid">flowchart LR
-    Start["START &lt;br&gt; (A2)"] --&gt; CheckCondition 
-    CheckCondition{Checked out?}  
-        CheckCondition -- Yes --&gt; EndOFDayStream["Process EOD &lt;br&gt; (EndOFDayStream)"]
-        click EndOFDayStream "#EndOFDayStream" "Go to EndOFDayStream"
-            EndOFDayStream --&gt; LogOut[Logout]
-                LogOut --&gt; Quit[Quit KMDS]
-        CheckCondition -- No --&gt; ContinueProcess["Cancel &lt;br&gt; (There are no registers checked out!)"] 
-    style EndOFDayStream fill:#90EE90,stroke:#333,stroke-width:2px;
-</div><div class="mermaid">flowchart LR 
-    subgraph EOD["Process EOD"]
-    direction LR
-        START --&gt; LoggingSetup[Logging and Setup]; click LoggingSetup "#LoggingSetup"
-        LoggingSetup --&gt; LoadDefaults[Load Defaults]; click LoadDefaults "#LoadDefaults"
-        LoadDefaults --&gt; PrepBUDir[Prepare Backup Directory]; click PrepBUDir "#PrepBUDir"
-        PrepBUDir --&gt; A((( ))):::connector
 
-        B((( ))):::connector --&gt; CheckCashReg[Check Cash Register Files]; click CheckCashReg "#CheckCashReg"
-        CheckCashReg --&gt; DatabaseBackup[Database Backup]; click DatabaseBackup "#DatabaseBackup"
-        DatabaseBackup --&gt; CleanupReset[Cleanup/Reset]; click CleanupReset "#CleanupReset"
-        CleanupReset --&gt; C((( ))):::connector
+    <!-- Image and clickable buttons -->
+    <img src="assets/images/end-of-day.png" usemap="#image-map" alt="End of Day" style="width: 1200px; height: auto; margin-top: 4px;"> 
+    <map name="image-map">
+        <area shape="rect" coords="450,260,560,320" alt="Logging and Setup" href="#LoggingSetup" title="Logging and Setup">
+        <area shape="rect" coords="600,260,720,320" alt="Load Defaults" href="#LoadDefaults" title="Load Defaults">
+        <area shape="rect" coords="750,260,870,320" alt="Prepare Backup Directory" href="#PrepBUDir" title="Prepare Backup Directory">
+        <area shape="rect" coords="900,260,1020,320" alt="Check Cash Register Files" href="#CheckCashReg" title="Check Cash Register Files">
+        <area shape="rect" coords="1060,260,1180,320" alt="Database Backup" href="#DatabaseBackup" title="Database Backup">
+        <area shape="rect" coords="1060,360,1180,420" alt="Cleanup/Reset" href="#CleanupReset" title="Cleanup/Reset">
+        <area shape="rect" coords="900,360,1020,420" alt="Process EOD Queries and Reports" href="#ProcEODQryRpt" title="Process EOD Queries and Reports">
+        <area shape="rect" coords="750,360,870,420" alt="Export Fintech Data" href="#ExportFintechData" title="Export Fintech Data">
+        <area shape="rect" coords="600,360,720,420" alt="Creates Daily Transmit Files" href="#DailyTransmit" title="Creates Daily Transmit Files">
+        <area shape="rect" coords="450,360,560,420" alt="Creating Transmit File for Inventory Levels" href="#creating-transmit-file-for-inventory-levels" title="Creating Transmit File for Inventory Levels">
 
-        D((( ))):::connector --&gt; ProcEODQryRpt[Process EOD Queries and Reports]; click ProcEODQryRpt "#ProcEODQryRpt"
-        ProcEODQryRpt --&gt; ExportFintechData[Export Fintech Data]; click ExportFintechData "#ExportFintechData"
-        ExportFintechData --&gt; DailyTransmit[Creates daily transmit files]; click DailyTransmit "#DailyTransmit"
-        DailyTransmit --&gt; E((( ))):::connector
 
-        F((( ))):::connector --&gt; EmailAndNotifications[Email &amp; Notifications]
-        EmailAndNotifications --&gt; AdditionalBackups[Additional Backups]
-        AdditionalBackups --&gt; CloudBackup[Cloud Backup]
-        CloudBackup --&gt; END["FINISH"]
 
-        style START fill:#90EE90,stroke:#333,stroke-width:2px;
-        style END fill:#90EE90,stroke:#333,stroke-width:2px;
-        classDef connector fill:#f9f,stroke:#333,stroke-width:2px;
-    end
-</div><hr>
+    </map>
+
 <h2 id="-kmds-a2-menu-form_endofdayform_open">📚 KMDS A2 Menu (<code>Form_EndOfDay.Form_Open</code>) </h2>
 <ul>
 <li><strong>Initial Setup</strong>
@@ -713,7 +696,7 @@ txtstrTemp<span class="token punctuation">.</span>WriteLine <span class="token p
 </ul>
 <br>
 <a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
-<h3 id="10-creating-transmit-file-for-inventory-levels-">10. Creating Transmit File for Inventory Levels 📑 </h3>
+<h3 id="creating-transmit-file-for-inventory-levels">10. Creating Transmit File for Inventory Levels 📑 </h3>
 <ul>
 <li>
 <pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>EOLog <span class="token string">"Creating transmit file for inventory levels..."</span>   
