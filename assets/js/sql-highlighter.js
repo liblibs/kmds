@@ -24,7 +24,7 @@
     'UPPER','LOWER',
     'DATEADD','DATEDIFF','DATENAME','DATEPART',
     'GETDATE','GETUTCDATE','SYSDATETIME','NEWID',
-    'ROW_NUMBER','COUNT','SUM','AVG','MIN','MAX'
+    'ROW_NUMBER','COUNT','SUM','AVG','MIN','MAX','CLng','CInt','CDbl','CStr'
   ];
 
   const CLAUSES = [
@@ -214,7 +214,8 @@
       '(?<number>\\b\\d+(?:\\.\\d+)?\\b)',
       `(?<function>\\b(?:${fnAlt})\\b)(?=\\s*\\()`,
       `(?<keyword>\\b(?:${kwAlt})\\b)`,
-      '(?<operator>\\*|[=<>!]+|[()+\\-/%.,;])'
+      '(?<operator>\\*|[=<>!]+|[()+\\-/%.,;])',
+      '(?<boolean>\\bTRUE\\b|\\bFALSE\\b)'
     ].join('|'), 'gim');
 
     return function highlightSql(sql) {
@@ -233,6 +234,7 @@
         else if (g.function) out += `<span class="sql-function">${esc}</span>`;
         else if (g.keyword) out += `<span class="sql-keyword">${esc.toUpperCase()}</span>`;
         else if (g.operator) out += `<span class="sql-operator">${esc}</span>`;
+        else if (g.boolean) out += `<span class="sql-boolean">${esc}</span>`;
         else out += esc;
         last = i + txt.length;
       }

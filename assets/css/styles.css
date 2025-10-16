@@ -25,7 +25,7 @@ p {
     font-family: Verdana, sans-serif; 
     margin: 4px 0 0 20px;
     padding: 0;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: normal; 
 }
 
@@ -180,9 +180,10 @@ pre.sql, pre.sql * {
 .sql-function   { color: #d900bc; font-weight: normal; }
 .sql-string     { color: #fa0e06; }
 .sql-number     { color: #000000; }
-.sql-identifier { color: #000000; }
+.sql-identifier { color: #fa0e06; }
 .sql-comment    { color: #069b06; font-style: italic; }
-.sql-operator   { color: #000000; }
+.sql-operator   { color: #7a3434; }
+.sql-boolean    { color: #145385; }
 
 /* Optional: make punctuation slightly dimmer */
 .sql-operator, .sql-punc { opacity: 0.9; }
