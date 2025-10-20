@@ -37,18 +37,35 @@
 <p><a name="flowchart" href=""></a></p>
 
     <!-- Image and clickable buttons -->
-    <img src="assets/images/end-of-day.png" usemap="#image-map" alt="End of Day" style="width: 1200px; height: auto; margin-top: 4px;"> 
+    <img src="assets/images/end-of-day.png" usemap="#image-map" alt="End of Day" style="width: 1400px; height: auto; margin-top: 4px;"> 
     <map name="image-map">
-        <area shape="rect" coords="450,260,560,320" alt="Logging and Setup" href="#LoggingSetup" title="Logging and Setup">
-        <area shape="rect" coords="600,260,720,320" alt="Load Defaults" href="#LoadDefaults" title="Load Defaults">
-        <area shape="rect" coords="750,260,870,320" alt="Prepare Backup Directory" href="#PrepBUDir" title="Prepare Backup Directory">
-        <area shape="rect" coords="900,260,1020,320" alt="Check Cash Register Files" href="#CheckCashReg" title="Check Cash Register Files">
-        <area shape="rect" coords="1060,260,1180,320" alt="Database Backup" href="#DatabaseBackup" title="Database Backup">
-        <area shape="rect" coords="1060,360,1180,420" alt="Cleanup/Reset" href="#CleanupReset" title="Cleanup/Reset">
-        <area shape="rect" coords="900,360,1020,420" alt="Process EOD Queries and Reports" href="#ProcEODQryRpt" title="Process EOD Queries and Reports">
-        <area shape="rect" coords="750,360,870,420" alt="Export Fintech Data" href="#ExportFintechData" title="Export Fintech Data">
-        <area shape="rect" coords="600,360,720,420" alt="Creates Daily Transmit Files" href="#DailyTransmit" title="Creates Daily Transmit Files">
-        <area shape="rect" coords="450,360,560,420" alt="Creating Transmit File for Inventory Levels" href="#creating-transmit-file-for-inventory-levels" title="Creating Transmit File for Inventory Levels">
+        <area shape="rect" coords="380,260,510,320" alt="Logging and Setup" href="#LoggingSetup" title="Logging and Setup">
+        <area shape="rect" coords="560,260,690,320" alt="Load Defaults" href="#LoadDefaults" title="Load Defaults">
+        <area shape="rect" coords="740,260,870,320" alt="Prepare Backup Directory" href="#PrepBUDir" title="Prepare Backup Directory">
+        <area shape="rect" coords="910,260,1040,320" alt="Check Cash Register Files" href="#CheckCashReg" title="Check Cash Register Files">
+        <area shape="rect" coords="1090,260,1220,320" alt="Database Backup" href="#DatabaseBackup" title="Database Backup">
+
+        <area shape="rect" coords="1090,350,1220,410" alt="Cleanup/Reset" href="#CleanupReset" title="Cleanup/Reset">
+        <area shape="rect" coords="910,350,1040,410" alt="Process EOD Queries and Reports" href="#ProcEODQryRpt" title="Process EOD Queries and Reports">
+        <area shape="rect" coords="740,350,870,410" alt="Export Fintech Data" href="#ExportFintechData" title="Export Fintech Data">
+        <area shape="rect" coords="560,350,690,410" alt="Creates Daily Transmit Files" href="#DailyTransmit" title="Creates Daily Transmit Files">
+        <area shape="rect" coords="380,350,510,410" alt="Creating Transmit File for Inventory Levels" href="#creating-transmit-file-for-inventory-levels" title="Creating Transmit File for Inventory Levels">
+        <area shape="rect" coords="200,350,330,410" alt="Transfers Cartons to Packs" href="#transfers-cartons-to-packs" title="Transfers Cartons to Packs">
+
+        <area shape="rect" coords="200,440,330,500" alt="Rentrak Export" href="#rentrak-export" title="Rentrak Export">
+        <area shape="rect" coords="380,440,510,500" alt="Append Lottery Tickets Recon Info" href="#append-lottery-tickets-recon-info" title="Append Lottery Tickets Recon Info">
+        <area shape="rect" coords="560,440,690,500" alt="Reindex Tables" href="#reindex-tables" title="Reindex Tables">
+        <area shape="rect" coords="740,440,870,500" alt="Updates Item Movement" href="#updates-item-movement" title="Updates Item Movement">
+        <area shape="rect" coords="910,440,1040,500" alt="Update Sales and Assigns Supply Group IDs" href="#update-sales-and-assigns-supply-group-ids" title="Update Sales and Assigns Supply Group IDs">
+        <area shape="rect" coords="1090,440,1220,500" alt="Transmit Files" href="#transmit-files" title="Transmit Files">
+
+        <area shape="rect" coords="1090,530,1220,590" alt="Additional Backups" href="#additional-backups" title="Additional Backups">
+        <area shape="rect" coords="910,530,1040,590" alt="Email & Notifications" href="#email-notifications" title="Email & Notifications">
+        <area shape="rect" coords="740,530,870,590" alt="Make Online Backup Batch File" href="#make-online-backup-batch-file" title="Make Online Backup Batch File">
+        <area shape="rect" coords="560,530,690,590" alt="Append UPCItems With ItemID" href="#append-upcitems-with-itemid" title="Append UPCItems With ItemID">
+        <area shape="rect" coords="380,530,510,590" alt="Cloud Backup" href="#cloud-backup" title="Cloud Backup">
+        <area shape="rect" coords="200,530,330,590" alt="OLCC ICE Item Files" href="#olcc-ice-item-files" title="OLCC ICE Item Files">
+        <area shape="rect" coords="30,530,160,590" alt="Finish Logging / Error Handling" href="#finish-logging-error-handling" title="Finish Logging / Error Handling">
     </map>
 
 <h2 id="-kmds-a2-menu-form_endofdayform_open">📚 KMDS A2 Menu (<code>Form_EndOfDay.Form_Open</code>) </h2>
@@ -710,174 +727,88 @@ OLCCInventFile CLng(glnAgentNumber), True
     
 
 
+<!-- 11. Transfers Cartons to Packs -->
+<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
+<h3 id="transfers-cartons-to-packs">11. Transfers Cartons to Packs ➡️ </h3>
 
+<!-- 12. Rentrak Export -->
 <p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="11-transfers-cartons-to-packs-️">11. Transfers Cartons to Packs ➡️ </h3>
+<h3 id="rentrak-export">12. Rentrak Export ⬆️ </h3>
+
+<!-- 13. Append Lottery Tickets Recon Info -->
 <p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="12-rentrak-export-️">12. Rentrak Export ⬆️ </h3>
+<h3 id="append-lottery-tickets-recon-info">13. Append Lottery Tickets Recon Info 🎟️ </h3>
+
+<!-- 14. Reindex Tables -->
 <p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="13-append-lottery-tickets-recon-info-️">13. Append Lottery Tickets Recon Info 🎟️ </h3>
+<h3 id="reindex-tables">14. Reindex Tables 📇 </h3>
+
+<!-- 15. Updates Item Movement -->
 <p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="14-reindex-tables-">14. Reindex Tables 📇 </h3>
+<h3 id="updates-item-movement">15. Updates Item Movement 🚇 </h3>
+
+<!-- 16. Update Sales and Assigns Supply Group IDs -->
 <p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="15-updates-item-movement-">15. Updates Item Movement 🚇 </h3>
+<h3 id="update-sales-and-assigns-supply-group-ids">16. Update Sales and Assigns Supply Group IDs 🪪 </h3>
+
+<!-- 17. Transmit Files -->
 <p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="16-update-sales-and-assigns-supply-group-ids-">16. Update Sales and Assigns Supply Group IDs 🪪 </h3>
-<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="17-transmit-files-">17. Transmit Files 📤 </h3>
+<h3 id="transmit-files">17. Transmit Files 📤 </h3>
 <ul>
 <li>Sends daily transmit files to OLCC or KMDS, depending on customer status and settings.</li>
 </ul>
+
+<!-- 18. Additional Backups -->
 <p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="18-additional-backups-">18. Additional Backups 🔁 </h3>
+<h3 id="additional-backups">18. Additional Backups 🔁 </h3>
 <pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>MailSQLBackup
-</code></pre><p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="19-email--notifications-">19. Email &amp; Notifications 📧 </h3>
+</code></pre>
+
+<!-- 19. Email &amp; Notifications -->
+<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
+<h3 id="email-notifications">19. Email &amp; Notifications 📧 </h3>
 <ul>
 <li>Sends EOD text message.</li>
 <li>Emails files listed in the transmit list.</li>
 </ul>
+
+<!-- 20. Make Online Backup Batch File -->
 <p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="20-make-online-backup-batch-file-️">20. Make Online Backup Batch File ☁️ </h3>
+<h3 id="make-online-backup-batch-file">20. Make Online Backup Batch File ☁️ </h3>
 <ul>
 <li></li>
 </ul>
+
+<!-- 21. Append UPCItems With ItemID -->
 <p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="21-append-upcitems-with-itemid-">21. Append UPCItems With ItemID ➕ </h3>
+<h3 id="append-upcitems-with-itemid">21. Append UPCItems With ItemID ➕ </h3>
 <pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>AppendUPCItemsWithItemID
-</code></pre><h3 id="22-cloud-backup-️">22. Cloud Backup ☁️ </h3>
+</code></pre>
+
+<!-- 22. Cloud Backup -->
+<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
+<h3 id="cloud-backup">22. Cloud Backup ☁️ </h3>
 <ul>
 <li>If Dropbox is installed, copies backup ZIP to Dropbox folder.</li>
 </ul>
-<h3 id="13-olcc-ice-item-files-">13. OLCC ICE Item Files 📦 </h3>
+
+<!-- 13. OLCC ICE Item Files -->
+ <p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
+<h3 id="olcc-ice-item-files">13. OLCC ICE Item Files 📦 </h3>
 <ul>
 <li>Gets OLCC ICE item files if enabled.</li>
 </ul>
-<h3 id="14-finish-logging-">14. Finish Logging ✅ </h3>
+
+<!-- 14. Finish Logging / Error handling -->
+<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
+<h3 id="finish-logging-error-handling">14. Finish Logging / Error handling ✅📋 </h3>
 <ul>
-<li>Logs completion and success.</li>
+<li>Logs completion and success</li>
+<li>Error Handling</li>
 </ul>
-<h3 id="15-error-handling-">15. Error Handling 🚨 </h3>
-<ul>
-<li>If errors occurred, logs and emails support with the log file.</li>
-</ul>
-<div class="mermaid">flowchart TD
-    Start["Start &lt;br&gt; (modEOD.EndOFDayStream)"] --&gt; LoadDefaults
-
-    subgraph LoadDefaults[modEOD.LoadDefaults]
-        direction LR
-        SysFile --&gt; gstrMailDir[gstrMailDir = !NetworkMailDir]
-        SysFile --&gt; gstrNetworkDatabase[gstrNetworkDatabase = !NetworkDatabase] 
-    end
-
-    Start --&gt; EOLog
-    subgraph EOLog[modEOD.EOLog]
-        direction LR
-        CheckFolder{Folder Created?}
-            CheckFolder -- NO --&gt; CreateFolder[Create Folder]
-            CreateFolder --&gt; CheckFile
-            CheckFolder -- YES --&gt; CheckFile{File Created?}
-                CheckFile -- NO --&gt; CreateFile[Create File]
-                CheckFile -- YES --&gt; UpdateFile[Update File]
-                CreateFile --&gt; UpdateFile
-    end
-
-    Start --&gt; CreateBackup[Create SQL Backup]
-    CreateBackup --&gt; MakeSQLBackup
-    subgraph MakeSQLBackup[modEOD.MakeSQLBackup]
-        direction LR
-        A --&gt; B[gstrMailDir = !NetworkMailDir]
-        B --&gt; C[gstrNetworkDatabase = !NetworkDatabase] 
-    end
-
-    CreateBackup --&gt; DeleteFiles
-
-    DeleteFiles --&gt; G
-
-    G --&gt; F
-
-</div><hr>
-<h1 id="below-are-sample-layout">Below are sample layout </h1>
-<div class="mermaid">flowchart TD
-    A[Start of Day-End Process] --&gt; B{Is inventory below threshold?}
-    B -- Yes --&gt; C[Reorder stock]
-    B -- No --&gt; D[Skip reorder]
-    C --&gt; E[Notify supplier]
-    D --&gt; E
-    E --&gt; F[Log action]
-</div><div class="mermaid">sequenceDiagram
-    participant User
-    participant Access
-    User-&gt;&gt;Access: Click EndOfDay 
-</div><div class="mermaid">flowchart TD
-    A[Start] --&gt; B{Is it raining?}
-    B -- Yes --&gt; C[Take an umbrella]
-    B -- No --&gt; D[Go outside]
-    C --&gt; E[Continue day]
-    D --&gt; E
-
-    %% Simulated note
-    Note1["Note: Check weather app before deciding"]
-    B --&gt; Note1
-    style Note1 fill:#f9f,stroke:#333,stroke-width:1px
-</div><div class="mermaid">sequenceDiagram
-    participant User
-    participant System
-
-    User-&gt;&gt;System: Request data
-    Note right of System: If data is valid
-    System--&gt;&gt;User: Return result
-
-    Note right of System: Else show error
-    System--&gt;&gt;User: Display error message
-
-</div><script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-<script>mermaid.initialize({ startOnLoad: true });</script>
-
-      </div>
-      
-      
-    
-    
-    <script type="module">
-// TODO: If ZenUML gets integrated into mermaid in the future,
-//      we can remove the following lines.
-
-
-var MERMAID_CONFIG = ({"startOnLoad":false});
-if (typeof MERMAID_CONFIG !== 'undefined') {
-  MERMAID_CONFIG.startOnLoad = false
-  MERMAID_CONFIG.cloneCssStyles = false
-  MERMAID_CONFIG.theme = "default"
-}
-
-mermaid.initialize(MERMAID_CONFIG || {})
-if (typeof(window['Reveal']) !== 'undefined') {
-  function mermaidRevealHelper(event) {
-    var currentSlide = event.currentSlide
-    var diagrams = currentSlide.querySelectorAll('.mermaid')
-    for (var i = 0; i < diagrams.length; i++) {
-      var diagram = diagrams[i]
-      if (!diagram.hasAttribute('data-processed')) {
-        mermaid.init(null, diagram, ()=> {
-          Reveal.slide(event.indexh, event.indexv)
-        })
-      }
-    }
-  }
-  Reveal.addEventListener('slidetransitionend', mermaidRevealHelper)
-  Reveal.addEventListener('ready', mermaidRevealHelper)
-  await mermaid.run({
-    nodes: document.querySelectorAll('.mermaid')
-  })
-} else {
-  await mermaid.run({
-    nodes: document.querySelectorAll('.mermaid')
-  })
-}
-</script>
-    
+ 
     
     
   
-    </body></html>
+</body>
+</html>
