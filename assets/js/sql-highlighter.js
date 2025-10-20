@@ -1,4 +1,3 @@
-// js/sql-highlighter.js
 (() => {
   'use strict';
 

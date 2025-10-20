@@ -139,6 +139,49 @@ p #code-block {
     text-align: center;
 }
 
+/******************************** VBA Formatter ********************************/
+/* Container style */
+pre.vba {
+    background-color: #f4f4f4; /* Light gray background e5f8e8*/
+    color: #000000;
+    padding: 0 20px 0 20px;  /* Add some padding to make the code block look neat */
+    margin: 4px 0 0 20px;
+    border-radius: 10px;  /* Slightly rounded corners */
+    font-family: Consolas, monospace;  /* Monospace font for code */ 
+    word-wrap: break-word;  /* Prevent horizontal scrolling */
+    font-size: 14px;  /* Set the font size */
+    overflow-x: auto;  /* Enable horizontal scrolling if needed */
+    overflow-y: auto;  /* Enable vertical scrolling if needed */ 
+    max-height: 200px;
+    text-align: left; 
+    display: block;
+}
+
+/* Ensure selection is allowed even if a global style disables it */
+pre.vba, pre.vba * {
+  user-select: text;
+  -webkit-user-select: text;
+}
+ 
+/* VBA Highlighter Styles */
+.vba-keyword    { color: #2600ff; font-weight: normal; }
+.vba-function   { color: #ff00c8; }
+.vba-comment    { color: #069b06; font-style: italic; }
+.vba-string     { color: #FF4136; }
+.vba-number     { color: #B10DC9; }
+.vba-operator   { color: #FF851B; }
+.vba-boolean    { color: #830140; font-weight: normal; }
+
+/* Optional: make punctuation slightly dimmer */
+.vba-operator, .vba-punc { opacity: 0.9; }
+
+/* Selection */
+pre.vba ::selection {
+  background: #2b6de7;
+  color: white;
+}
+/******************************** VBA Formatter ********************************/
+
 /******************************** SQL Formatter ********************************/
 /* Container style */
 pre.sql {
@@ -163,7 +206,7 @@ pre.sql, pre.sql * {
   -webkit-user-select: text;
 }
 
-/* Tokens */
+/* SQL Highlighter Styles */
 .sql-keyword    { color: #0d1bdb; font-weight: normal; }
 .sql-function   { color: #d900bc; font-weight: normal; }
 .sql-string     { color: #fa0e06; }
@@ -182,3 +225,6 @@ pre.sql ::selection {
   color: white;
 }
 /******************************** SQL Formatter ********************************/
+
+
+

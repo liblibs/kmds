@@ -6,61 +6,214 @@
 </head>
 <body>
 
-    <button id="toggleBtn">Show Full SQL</button>
-    <pre id="sqlPreview" style="background:#f4f4f4; padding:15px; font-family: Consolas, monospace; font-size:15px; overflow-x:auto;"></pre>
+     <link rel="stylesheet" href="..//assets/css/styles.css"> 
+    <script src="..//assets/js/vba-highlighter.js"></script> 
 
-<script>
-  const fullSql = `
-            WITH qryClubOrderLineTotals_A AS (
-                SELECT 
-                    ol.OrdheadID,         
-                    SUM(CASE WHEN sd.ID = 1 THEN ol.Price * QuantityShipped ELSE 0 END) AS LiquorExtPrice,
-                    SUM(CASE WHEN sd.ID <> 1 THEN (ol.Price - ol.BuyDown) * ol.QuantityShipped ELSE 0 END) AS NonLiquorExtPrice,
-                    CASE WHEN c.ApplyDiscount = 1 THEN s.ClubDiscRate ELSE 0 END AS LiquorDiscountRate,
-                    SUM(CASE WHEN sd.ID <> 1 THEN CASE WHEN sd.AllowClubDiscounts = 1 THEN (ol.Price - ol.BuyDown) * ol.QuantityShipped ELSE 0 END ELSE 0 END) AS NonLiquorExtPriceDiscountable,
-                    CASE WHEN c.ApplyDiscount = 1 THEN s.NonClubDiscRate ELSE 0 END AS NonLiquorDiscountRate
-                FROM Sysfile s
-                CROSS JOIN Club c
-                INNER JOIN OrdHead oh ON c.ID = oh.ClubID 
-                INNER JOIN OrderLine ol ON oh.ID = ol.OrdheadID 
-                INNER JOIN Item i ON ol.ItemID = i.ID 
-                INNER JOIN SalesDepartment sd ON i.SalesDepartmentID = sd.ID 
-                GROUP BY 
-                    ol.OrdheadID, 
-                    CASE WHEN c.ApplyDiscount = 1 THEN s.ClubDiscRate ELSE 0 END, 
-                    c.NonLiquor, 
-                    CASE WHEN c.ApplyDiscount = 1 THEN s.NonClubDiscRate ELSE 0 END
-            ), qryClubOrderLineTotals_B AS (
-                SELECT
-                    OrdheadID,
-                    LiquorExtPrice,
-                    NonLiquorExtPrice,
-                    (FLOOR(LiquorExtPrice * LiquorDiscountRate) / 100.0) AS LiquorDiscount, 
-                    (FLOOR(NonLiquorExtPriceDiscountable * NonLiquorDiscountRate) / 100.0) AS NonLiquorDiscount
-                FROM qryClubOrderLineTotals_A
-            ), qryClubOrderLineTotals AS (
-                SELECT
-                    OrdheadID,
-                    [LiquorExtPrice]+[NonLiquorExtPrice] AS ExtPrice,  
-                    [LiquorDiscount]+[NonLiquorDiscount] AS ExtDiscount 
-                FROM qryClubOrderLineTotals_B
-            )       
-            SELECT 
-                oh.ID,
-                CASE WHEN (q.ExtPrice - q.ExtDiscount) = OrdDollars THEN c.Name ELSE '**** REPRINT **** ' + c.Name END AS ClubName,
-                RIGHT('0' + CAST(MONTH(InvDate) AS VARCHAR), 2) + '/' + RIGHT('0' + CAST(DAY(InvDate) AS VARCHAR), 2) AS [Date],
-                oh.InvoiceNo AS [Invoice #], 
-                q.ExtPrice - q.ExtDiscount AS Amount, 
-                oh.PaidFlag, 
-                c.ID 
-            FROM Club c
-            INNER JOIN OrdHead oh ON c.ID=oh.ClubID 
-            INNER JOIN qryClubOrderLineTotals q ON oh.ID=q.OrdheadID 
-            ORDER BY CASE WHEN (q.ExtPrice - q.ExtDiscount) = OrdDollars THEN c.Name ELSE '**** REPRINT **** ' + c.Name END, RIGHT('0' + CAST(MONTH(InvDate) AS VARCHAR), 2) + '/' + RIGHT('0' + CAST(DAY(InvDate) AS VARCHAR), 2) + '/' + RIGHT(CAST(YEAR(InvDate) AS VARCHAR), 2)
-            `;
-</script>
+</head>
+<body for="html-export">
 
-    <script src="../assets/js/script.js"></script>
+<!-- VBA TEST -->
+  <pre class="vba"><code>
+Public Sub EOLog(Optional LogEntry As String)
+    Dim fso As FileSystemObject
+    Dim f As Folder
+    Dim ts As Object
+    '*********************************************************************************************************************
+
+    If EOProcess("qryEOD", "DayEnd") = True Then
+        EOLog "Moving :" & gstrMailDir & "Mail\CR1.MDB to " & strTargetPath
+        fso.MoveFile gstrMailDir & "Mail\CR1.MDB", strTargetPath & "CR1" & Format(Now, "yyyy-mm-dd hh-nn-ss") & ".mdb"
+        EOLog "Moving :" & gstrMailDir & "Mail\CR2.MDB to " & strTargetPath
+        fso.MoveFile gstrMailDir & "Mail\CR2.MDB", strTargetPath & "CR2" & Format(Now, "yyyy-mm-dd hh-nn-ss") & ".mdb"
+        EOLog "Moving :" & gstrMailDir & "Mail\CR3.MDB to " & strTargetPath
+        fso.MoveFile gstrMailDir & "Mail\CR3.MDB", strTargetPath & "CR3" & Format(Now, "yyyy-mm-dd hh-nn-ss") & ".mdb"
+        EOLog "Moving :" & gstrMailDir & "Mail\CR4.MDB to " & strTargetPath
+        fso.MoveFile gstrMailDir & "Mail\CR4.MDB", strTargetPath & "CR4" & Format(Now, "yyyy-mm-dd hh-nn-ss") & ".mdb"
+        EOLog "Moving :" & gstrMailDir & "Mail\CR5.MDB to " & strTargetPath
+        fso.MoveFile gstrMailDir & "Mail\CR5.MDB", strTargetPath & "CR5" & Format(Now, "yyyy-mm-dd hh-nn-ss") & ".mdb"
+    End If
+
+    'moved from bottom of routine to here as per EFitz request.
+
+    If GetKMDSSettings("Fintech.Active", "False") = "True" Then
+        EOLog "Fintech.Active = True"
+        FinTechExport
+        EOLog "Fintech.Active Finished"
+
+    Else
+        EOLog "Fintech = False"
+
+    End If
+
+    'added 2007-01-21
+    EOLog "Create Daily Transmit files"
+    'If gbOLCCFTPEndOfDaySend Then
+    OLCCCreateDailyTransmitFiles
+
+    EOLog "Creating transmit file for inventory levels..."
+
+    OLCCInventFile CLng(glnAgentNumber), True
+
+    'added 05/14/2005
+    If gbTransferCartonsToPacks Then
+        EOLog "Transfer Cartons To Packs Begin"
+        TransferCartonsToPacks
+        EOLog "Transfer Cartons To Packs End"
+    End If
+
+    'added 05/14/2005
+    If gbRentrakInstalled Then
+        EOLog "Rentrak Export Begin"
+        RentrakExport
+        EOLog "RentrakExport End"
+    End If
+
+'    'added 08/30/2005
+'
+'    EOLog "Append Time Clock Punches Begin"
+'    TimeClockPunchAppend
+'    EOLog "Append Time Clock Punches End"
+'
+
+    EOLog "Append Lottery Tickets Recon Info Begin"
+    SQLPassThru "sp_LotteryScratch"
+    'LotteryTicketsAppend
+    EOLog "Append Lottery Tickets Recon Info End"
+
+    'ADDED 2005-12-04
+    EOLog "Reindex Tables Begin"
+    ReindexTables
+    EOLog "Reindex Tables End"
+
+    EOLog "Updating ItemMovement"
+    SQLPassThru "sp_UpdateItemMovement"
+    'added 2008-01-12
+    EOLog "Updating ItemCost"
+    SQLPassThru "sp_UpdateItemCost"
+
+
+    'UpdateMovement False
+    EOLog "Updating Average Daily Sales and Assign DaysSupplyGroupIDs to Item Table..."
+    AssignDaysSupplyGroupIDs
+
+
+    'End If
+'   'removed 2009-05-19
+'    'added 2006-12-06
+'    EOLog "Purge pcCharge"
+'    EOLog " Shell('\\' & gstrCashsysInsLoc & '\KMDS\pcP.exe', 1)"
+'    Call Shell("\\" & gstrCashsysInsLoc & "\KMDS\pcP.exe", 1)
+
+    'Added to 31415
+    If VerifyCurrentKMDSCustomer Then
+        EOLog "Sending OLCC Daily Transmit Files"
+        'OLCCDailyTransmit
+        If gbOLCCFTPEndOfDaySend Then
+            OLCCDailyTransmit
+            EOLog "...Complete Sending OLCC Daily Transmit Files"
+        Else
+            EOLog "Sending KMDS Daily Transmit Files (Send to OLCC not checked in G-5)"
+            WinSCPFTPTransmitKMDS
+            EOLog "... Complete"
+        End If
+    Else
+        EOLog "... NOT SENT: Please contact KMDS Support to update your KMDS Subscription"
+        EOLog "Sending KMDS Daily Transmit Files (not current customer)"
+        WinSCPFTPTransmitKMDS
+
+    End If
+
+    EOLog "MailSQLBackup"
+    MailSQLBackup
+
+    EOLog "EODTextMessage"
+    EODTextMessage
+
+    EOLog "EODeMailReports"
+
+    If fso.FileExists("C:\kmds\EOD File Transmit List.txt") Then
+        Set ts = fso.OpenTextFile("C:\kmds\EOD File Transmit List.txt", ForReading, False)
+        Do While Not ts.AtEndOfStream
+            strMsg = ts.ReadLine
+            If fso.FileExists(strMsg) Then
+                EODeMailFiles.Add strMsg
+                EOLog "  " & strMsg
+            End If
+        Loop
+        ts.Close
+        Set ts = Nothing
+        If EODeMailFiles.Count > 0 Then
+            KMDSeMail GetKMDSSettings("KMDSMail EODeMail", "info@kmds.us"), EODeMailFiles, "EOD - " & gstrStoreName
+        End If
+    End If
+
+    EOLog "Make Online Backup Batch File"
+    MakeOnlineBackupBatchFile
+
+    EOLog "Append UPCItems With ItemID"
+    AppendUPCItemsWithItemID
+
+
+    'added 11/5/2013
+    If GetKMDSSettings("DropBoxInstalled", "False") = "True" Then
+        EOLog "DropBoxInstalled = True"
+        strSourceFileName = "c:\kmds\backup\KMDSBACK.zip"
+        strTargetPath = GetKMDSSettings("DropBoxFolder", "N/A")
+        EOLog "DropBoxFolder = " & strTargetPath
+        If Not (fso.FolderExists(strTargetPath)) Then
+            EOLog strTargetPath & " does not exist"
+        Else
+            EOLog "Copying " & strSourceFileName & " to " & strTargetPath & "\KMDSSQL.ZIP"
+            FileCopy strSourceFileName, strTargetPath & "\KMDSSQL.ZIP"
+        End If
+    Else
+        EOLog "DropBoxInstalled = False"
+
+    End If
+
+    EOLog "Getting OLCC ICE Item Files"
+    If GetKMDSSettings("GetItemICEatEOD", "True") = "True" Then
+        GetOLCCItemFiles
+    End If
+    EOLog ".... complete!"
+    EOLog "========================================================="
+    EOLog "End of Day = Finished Success"
+    EOLog "========================================================="
+
+ExitSub:
+    If gbEOProcessError Then
+        strMsg = gstrMailDir & "Log\"
+        strMsg = strMsg & Format(Now, "yyyy") & "\"
+        strMsg = strMsg & Format(Now, "mm") & "\"
+        strMsg = strMsg & Format(Now, "dd") & "\"
+        strMsg = strMsg & "EOLog.Txt"
+        StartDoc strMsg
+        'added
+
+        If InStr(GetKMDSSettings("KMDSMail supportemail", "info@kmds.us"), "@") <> 0 Then 'suppress sending support email by taking out the @ sign in
+            colFiles.Add strMsg
+            'added 2009.05.07
+'            If WhatIsMyIp Then
+'                colFiles.Add "c:\kmds\kmdsgetweb.txt"
+'            End If
+            KMDSeMail GetKMDSSettings("KMDSMail supportemail", "info@kmds.us"), colFiles, "EOD Support " & gstrStoreName
+        End If
+    Else
+        'MsgBox "End of Day Finished Successfully"
+    End If
+    Exit Function
+
+ErrLog:
+    gbEOProcessError = True
+    EOLog "Error #" & Err.Number & " " & Err.Description & " End of Day"
+    MsgBox "Error #" & Err.Number & " " & Err.Description, vbCritical, "EndOfDay"
+    EOLog "========================================================="
+    EOLog "End of Day = Finished with Errors"
+    EOLog "========================================================="
+    Resume ExitSub
+End Function
+End Sub
+</code></pre>
 
 </body>
 </html>

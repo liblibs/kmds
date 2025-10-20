@@ -25,9 +25,15 @@
         import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
         mermaid.initialize({ startOnLoad: true });
     </script>
+
+    <!-- Remove these assets before deploying to prod -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/vba-highlighter.js"></script>
+    <script src="assets/js/sql-highlighter.js"></script>
+    <script src="assets/js/script.js"></script>
+
 </head>
-<body for="html-export">
-    
+<body for="html-export"> 
     
       <div class="crossnote markdown-preview  ">
       
@@ -723,92 +729,280 @@ OLCCInventFile CLng(glnAgentNumber), True
         <!-- SQL Code -->
     </div>
 
+    <!-- 11. Transfers Cartons to Packs --> 
+    <div id="transfers-cartons-to-packs">
+        <a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+        <h3>11. Transfers Cartons to Packs ➡️ </h3>
+        <!-- SQL Code -->
+        <pre class="sql"><code class="language-sql">
+If gbTransferCartonsToPacks Then
+    EOLog "Transfer Cartons To Packs Begin"
+    TransferCartonsToPacks
+    EOLog "Transfer Cartons To Packs End"
+End If
+        </code></pre>
+        <!-- SQL Code -->
+    </div>
 
+    <!-- 12. Rentrak Export --> 
+    <div id="rentrak-export">
+        <a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+        <h3>12. Rentrak Export ⬆️ </h3>
+        <!-- SQL Code -->
+        <pre class="sql"><code class="language-sql">
+If gbRentrakInstalled Then
+    EOLog "Rentrak Export Begin"
+    RentrakExport
+    EOLog "RentrakExport End"
+End If
+        </code></pre>
+        <!-- SQL Code -->
+    </div>
+
+    <!-- 13. Append Lottery Tickets Recon Info --> 
+    <div id="append-lottery-tickets-recon-info">
+        <a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+        <h3>13. Append Lottery Tickets Recon Info 🎟️</h3>
+        <!-- SQL Code -->
+        <pre class="sql"><code class="language-sql">
+EOLog "Append Lottery Tickets Recon Info Begin"
+SQLPassThru "sp_LotteryScratch" 
+EOLog "Append Lottery Tickets Recon Info End"
+        </code></pre>
+        <!-- SQL Code -->
+    </div>
+
+    <!-- 14. Reindex Tables -->     
+    <div id="reindex-tables">
+        <a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+        <h3>14. Reindex Tables 📇</h3>
+        <!-- SQL Code -->
+        <pre class="sql"><code class="language-sql">
+EOLog "Reindex Tables Begin"
+ReindexTables
+EOLog "Reindex Tables End"
+        </code></pre>
+        <!-- SQL Code -->
+    </div>
+
+    <!-- 15. Updates Item Movement --> 
+    <div id="updates-item-movement">
+        <a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+        <h3>15. Updates Item Movement 🚇</h3>
+        <!-- SQL Code -->
+        <pre class="sql"><code class="language-sql">
+EOLog "Updating ItemMovement"
+SQLPassThru "sp_UpdateItemMovement" 
+EOLog "Updating ItemCost"
+SQLPassThru "sp_UpdateItemCost"
+        </code></pre>
+        <!-- SQL Code -->
+    </div>
+
+    <!-- 16. Updating Average Daily Sales and Assign DaysSupplyGroupIDs to Item Table --> 
+    <div id="update-sales-and-assigns-supply-group-ids">
+        <a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+        <h3>16. Updating Average Daily Sales and Assign DaysSupplyGroupIDs to Item Table 🪪</h3>
+        <!-- SQL Code -->
+        <pre class="sql"><code class="language-sql">
+EOLog "Updating Average Daily Sales and Assign DaysSupplyGroupIDs to Item Table..."
+AssignDaysSupplyGroupIDs
+        </code></pre>
+        <!-- SQL Code -->
+    </div>
+
+    <!-- 17. Transmit Files --> 
+    <div id="transmit-files">
+        <a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+        <h3>17. Transmit Files 📤</h3>
+        <p>Sends daily transmit files to OLCC or KMDS, depending on customer status and settings.</p>
+        <!-- SQL Code -->
+        <pre class="sql"><code class="language-sql">
+If VerifyCurrentKMDSCustomer Then
+    EOLog "Sending OLCC Daily Transmit Files"
+    'OLCCDailyTransmit
+    If gbOLCCFTPEndOfDaySend Then
+        OLCCDailyTransmit
+        EOLog "...Complete Sending OLCC Daily Transmit Files"
+    Else
+        EOLog "Sending KMDS Daily Transmit Files (Send to OLCC not checked in G-5)"
+        WinSCPFTPTransmitKMDS
+        EOLog "... Complete"
+    End If
+Else
+    EOLog "... NOT SENT: Please contact KMDS Support to update your KMDS Subscription"
+    EOLog "Sending KMDS Daily Transmit Files (not current customer)"
+    WinSCPFTPTransmitKMDS
+End If
+        </code></pre>
+        <!-- SQL Code -->
+    </div>
+
+    <!-- 18. Additional Backups --> 
+    <div id="additional-backups">
+        <a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+        <h3>18. Additional Backups 🔁</h3>
+        <!-- SQL Code -->
+        <pre class="sql"><code class="language-sql">
+EOLog "MailSQLBackup"
+MailSQLBackup
+        </code></pre>
+        <!-- SQL Code -->
+    </div>
+
+    <!-- 19. Email & Notifications --> 
+    <div id="email-notifications">
+        <a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+        <h3>19. Email & Notifications 📧</h3>
+        <ul>
+            <li>Sends EOD text message.</li>
+            <li>Emails files listed in the transmit list.</li>
+        </ul>
+        <!-- SQL Code -->
+        <pre class="sql"><code class="language-sql">
+EOLog "EODTextMessage"
+EODTextMessage
+
+EOLog "EODeMailReports"
+
+If fso.FileExists("C:\kmds\EOD File Transmit List.txt") Then
+    Set ts = fso.OpenTextFile("C:\kmds\EOD File Transmit List.txt", ForReading, False)
+    Do While Not ts.AtEndOfStream
+        strMsg = ts.ReadLine
+        If fso.FileExists(strMsg) Then
+            EODeMailFiles.Add strMsg
+            EOLog "  " & strMsg
+        End If
+    Loop
+    ts.Close
+    Set ts = Nothing
+    If EODeMailFiles.Count > 0 Then
+        KMDSeMail GetKMDSSettings("KMDSMail EODeMail", "info@kmds.us"), EODeMailFiles, "EOD - " & gstrStoreName
+    End If
+End If
+        </code></pre>
+        <!-- SQL Code -->
+    </div>
+
+    <!-- 20. Make Online Backup Batch File --> 
+    <div id="make-online-backup-batch-file">
+        <a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+        <h3>20. Make Online Backup Batch File ☁️</h3>
+        <!-- SQL Code -->
+        <pre class="sql"><code class="language-sql">
+EOLog "Make Online Backup Batch File"
+MakeOnlineBackupBatchFile
+        </code></pre>
+        <!-- SQL Code -->
+    </div>
+
+    <!-- 21. Append UPCItems With ItemID --> 
+    <div id="append-upcitems-with-itemid">
+        <a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+        <h3>21. Append UPCItems With ItemID ➕</h3>
+        <!-- SQL Code -->
+        <pre class="sql"><code class="language-sql">
+EOLog "Append UPCItems With ItemID"
+AppendUPCItemsWithItemID
+        </code></pre>
+        <!-- SQL Code -->
+    </div>
+
+    <!-- 22. Cloud Backup --> 
+    <div id="cloud-backup">
+        <a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+        <h3>22. Cloud Backup ☁️</h3>
+        <ul>
+            <li>If Dropbox is installed, copies backup ZIP to Dropbox folder.</li>
+        </ul>
+        <!-- SQL Code -->
+        <pre class="sql"><code class="language-sql">
+If GetKMDSSettings("DropBoxInstalled", "False") = "True" Then
+    EOLog "DropBoxInstalled = True"
+    strSourceFileName = "c:\kmds\backup\KMDSBACK.zip"
+    strTargetPath = GetKMDSSettings("DropBoxFolder", "N/A")
+    EOLog "DropBoxFolder = " & strTargetPath
+    If Not (fso.FolderExists(strTargetPath)) Then
+        EOLog strTargetPath & " does not exist"
+    Else
+        EOLog "Copying " & strSourceFileName & " to " & strTargetPath & "\KMDSSQL.ZIP"
+        FileCopy strSourceFileName, strTargetPath & "\KMDSSQL.ZIP"
+    End If
+Else
+    EOLog "DropBoxInstalled = False"
+End If
+        </code></pre>
+        <!-- SQL Code -->
+    </div>
+
+    <!-- 23. OLCC ICE Item Files --> 
+    <div id="olcc-ice-item-files">
+        <a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+        <h3>23. OLCC ICE Item Files 📦</h3>
+        <!-- SQL Code -->
+        <pre class="sql"><code class="language-sql">
+EOLog "Getting OLCC ICE Item Files"
+If GetKMDSSettings("GetItemICEatEOD", "True") = "True" Then
+    GetOLCCItemFiles
+End If
+        </code></pre>
+        <!-- SQL Code -->
+    </div>
+
+    <!-- 24. Finish Logging / Error handling --> 
+    <div id="finish-logging-error-handling">
+        <a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
+        <h3>24. Finish Logging / Error handling ✅📋</h3>
+        <ul>
+            <li>Logs completion and success</li>
+            <!-- SQL Code -->
+            <pre class="vba"><code class="language-vba">
+EOLog ".... complete!"
+EOLog "========================================================="
+EOLog "End of Day = Finished Success"
+EOLog "=
+            </code></pre>
+            <!-- SQL Code -->
+            <li>Error Handling</li>
+            <!-- SQL Code -->
+            <pre class="vba"><code class="language-vba">
+ExitSub:
+    If gbEOProcessError Then
+        strMsg = gstrMailDir & "Log\"
+        strMsg = strMsg & Format(Now, "yyyy") & "\"
+        strMsg = strMsg & Format(Now, "mm") & "\"
+        strMsg = strMsg & Format(Now, "dd") & "\"
+        strMsg = strMsg & "EOLog.Txt"
+        StartDoc strMsg
+        'added
+
+        If InStr(GetKMDSSettings("KMDSMail supportemail", "info@kmds.us"), "@") <> 0 Then 'suppress sending support email by taking out the @ sign in
+            colFiles.Add strMsg
+            'added 2009.05.07
+'            If WhatIsMyIp Then
+'                colFiles.Add "c:\kmds\kmdsgetweb.txt"
+'            End If
+            KMDSeMail GetKMDSSettings("KMDSMail supportemail", "info@kmds.us"), colFiles, "EOD Support " & gstrStoreName
+        End If
+    Else
+        'MsgBox "End of Day Finished Successfully"
+    End If
+    Exit Function
+
+ErrLog:
+    gbEOProcessError = True
+    EOLog "Error #" & Err.Number & " " & Err.Description & " End of Day"
+    MsgBox "Error #" & Err.Number & " " & Err.Description, vbCritical, "EndOfDay"
+    EOLog "========================================================="
+    EOLog "End of Day = Finished with Errors"
+    EOLog "========================================================="
+    Resume ExitSub
+            </code></pre>
+            <!-- SQL Code -->
+        </ul>
+    </div>
     
 
 
-<!-- 11. Transfers Cartons to Packs -->
-<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="transfers-cartons-to-packs">11. Transfers Cartons to Packs ➡️ </h3>
-
-<!-- 12. Rentrak Export -->
-<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="rentrak-export">12. Rentrak Export ⬆️ </h3>
-
-<!-- 13. Append Lottery Tickets Recon Info -->
-<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="append-lottery-tickets-recon-info">13. Append Lottery Tickets Recon Info 🎟️ </h3>
-
-<!-- 14. Reindex Tables -->
-<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="reindex-tables">14. Reindex Tables 📇 </h3>
-
-<!-- 15. Updates Item Movement -->
-<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="updates-item-movement">15. Updates Item Movement 🚇 </h3>
-
-<!-- 16. Update Sales and Assigns Supply Group IDs -->
-<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="update-sales-and-assigns-supply-group-ids">16. Update Sales and Assigns Supply Group IDs 🪪 </h3>
-
-<!-- 17. Transmit Files -->
-<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="transmit-files">17. Transmit Files 📤 </h3>
-<ul>
-<li>Sends daily transmit files to OLCC or KMDS, depending on customer status and settings.</li>
-</ul>
-
-<!-- 18. Additional Backups -->
-<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="additional-backups">18. Additional Backups 🔁 </h3>
-<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>MailSQLBackup
-</code></pre>
-
-<!-- 19. Email &amp; Notifications -->
-<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="email-notifications">19. Email &amp; Notifications 📧 </h3>
-<ul>
-<li>Sends EOD text message.</li>
-<li>Emails files listed in the transmit list.</li>
-</ul>
-
-<!-- 20. Make Online Backup Batch File -->
-<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="make-online-backup-batch-file">20. Make Online Backup Batch File ☁️ </h3>
-<ul>
-<li></li>
-</ul>
-
-<!-- 21. Append UPCItems With ItemID -->
-<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="append-upcitems-with-itemid">21. Append UPCItems With ItemID ➕ </h3>
-<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>AppendUPCItemsWithItemID
-</code></pre>
-
-<!-- 22. Cloud Backup -->
-<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="cloud-backup">22. Cloud Backup ☁️ </h3>
-<ul>
-<li>If Dropbox is installed, copies backup ZIP to Dropbox folder.</li>
-</ul>
-
-<!-- 13. OLCC ICE Item Files -->
- <p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="olcc-ice-item-files">13. OLCC ICE Item Files 📦 </h3>
-<ul>
-<li>Gets OLCC ICE item files if enabled.</li>
-</ul>
-
-<!-- 14. Finish Logging / Error handling -->
-<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="finish-logging-error-handling">14. Finish Logging / Error handling ✅📋 </h3>
-<ul>
-<li>Logs completion and success</li>
-<li>Error Handling</li>
-</ul>
- 
-    
-    
-  
 </body>
 </html>
