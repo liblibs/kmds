@@ -28,10 +28,10 @@
 
     <!-- Remove these assets before deploying to prod -->
     <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/script.js"></script>
     <script src="assets/js/vba-highlighter.js"></script>
     <script src="assets/js/sql-highlighter.js"></script>
-    <script src="assets/js/script.js"></script>
-
+    
 </head>
 <body for="html-export"> 
     
@@ -74,351 +74,529 @@
         <area shape="rect" coords="30,530,160,590" alt="Finish Logging / Error Handling" href="#finish-logging-error-handling" title="Finish Logging / Error Handling">
     </map>
 
+<!-------------------------------------------- KMDS A2 Menu -------------------------------------------->
+<!------------------------------------------------------------------------------------------------------>
 <h2 id="-kmds-a2-menu-form_endofdayform_open">📚 KMDS A2 Menu (<code>Form_EndOfDay.Form_Open</code>) </h2>
-<ul>
-<li><strong>Initial Setup</strong>
-<ul>
-<li>Creates an ADODB recordset to read from the <code>qryCashRegisters</code> query.<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-SELECT">SELECT</span> CashSys<span class="token punctuation">.</span>ID<span class="token punctuation">,</span> CashSys<span class="token punctuation">.</span>ComputerName<span class="token punctuation">,</span> CashSys<span class="token punctuation">.</span>Description<span class="token punctuation">,</span> Sysfile<span class="token punctuation">.</span>Cr1Installed<span class="token punctuation">,</span> Sysfile<span class="token punctuation">.</span>Cr2Installed<span class="token punctuation">,</span> Sysfile<span class="token punctuation">.</span>Cr3Installed<span class="token punctuation">,</span> Sysfile<span class="token punctuation">.</span>Cr4Installed<span class="token punctuation">,</span> Sysfile<span class="token punctuation">.</span>Cr5Installed<span class="token punctuation">,</span> Sysfile<span class="token punctuation">.</span>Cr1CheckOut<span class="token punctuation">,</span> Sysfile<span class="token punctuation">.</span>Cr2CheckOut<span class="token punctuation">,</span> Sysfile<span class="token punctuation">.</span>Cr3CheckOut<span class="token punctuation">,</span> Sysfile<span class="token punctuation">.</span>Cr4CheckOut<span class="token punctuation">,</span> Sysfile<span class="token punctuation">.</span>Cr5CheckOut
-<span class="token keyword keyword-FROM">FROM</span> CashSys<span class="token punctuation">,</span> Sysfile
-<span class="token keyword keyword-ORDER">ORDER</span> <span class="token keyword keyword-BY">BY</span> CashSys<span class="token punctuation">.</span>ID<span class="token punctuation">;</span>
-</code></pre></li>
-</ul>
-</li>
+<ul><li><strong>Initial Setup</strong><ul>
+<li>Creates an ADODB recordset to read from the <code>qryCashRegisters</code> query.
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+SELECT 
+    CashSys.ID, CashSys.ComputerName, CashSys.Description, Sysfile.Cr1Installed, Sysfile.Cr2Installed, Sysfile.Cr3Installed, Sysfile.Cr4Installed, 
+    Sysfile.Cr5Installed, Sysfile.Cr1CheckOut, Sysfile.Cr2CheckOut, Sysfile.Cr3CheckOut, Sysfile.Cr4CheckOut, Sysfile.Cr5CheckOut
+FROM CashSys, Sysfile
+ORDER BY CashSys.ID;
+    </code></pre>
+    <!-- SQL Code -->
+</li></ul></li>
 <li><strong>Register Check</strong>
 <ul>
 <li>Loops through registers 1 to 5.</li>
 <li>Checks if any register is checked out (Cr1CheckOut, Cr2CheckOut, etc.).</li>
-<li>Sets <code>bAtLeastOneRegisterCheckedOut</code> to True if any are checked out.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-Select">Select</span> <span class="token keyword keyword-Case">Case</span> <span class="token operator">!</span>ID
-    <span class="token keyword keyword-Case">Case</span> <span class="token number">1</span>
-    <span class="token keyword keyword-If">If</span> <span class="token operator">!</span>Cr1CheckOut <span class="token operator">=</span> <span class="token boolean">True</span> <span class="token keyword keyword-Then">Then</span> bAtLeastOneRegisterCheckedOut <span class="token operator">=</span> <span class="token boolean">True</span>
-</code></pre></li>
-</ul>
-</li>
+<li>Sets <code>bAtLeastOneRegisterCheckedOut</code> to True if any are checked out.
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+Select Case !ID
+    Case 1
+    If !Cr1CheckOut = True Then bAtLeastOneRegisterCheckedOut = True
+    </code></pre>
+    <!-- SQL Code -->
+</li></ul></li>
 <li><strong>End of Day Trigger</strong>
 <ul>
-<li>If at least one register is checked out:<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-If">If</span> bAtLeastOneRegisterCheckedOut <span class="token keyword keyword-Then">Then</span>
-</code></pre><ul>
+<li>If at least one register is checked out:
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+If bAtLeastOneRegisterCheckedOut Then
+    </code></pre>
+    <!-- SQL Code -->
+<ul>
 <li>Calls <strong><code>EndOFDayStream</code></strong> (starts the end of day process).</li>
-<li>Runs a logout batch file (<code>kmdslogout.bat</code>).<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>Shell <span class="token string">"c:\kmds\kmdslogout.bat"</span><span class="token punctuation">,</span> vbNormalFocus
-</code></pre></li>
+<li>Runs a logout batch file (<code>kmdslogout.bat</code>). 
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+Shell "c:\kmds\kmdslogout.bat", vbNormalFocus
+    </code></pre>
+    <!-- SQL Code -->
+</li>
 <li>Quits Access (<code>DoCmd.Quit</code>).</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+</ul></li></ul></li></ul>
+
+<!------------------------------------------- EndOFDayStream ------------------------------------------->
+<!------------------------------------------------------------------------------------------------------>
 <hr>
 <h2 id="EndOFDayStream">🌉 EndOFDayStream (<code>modEOD.EndOFDayStream</code>) </h2>
-<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-Public">Public</span> <span class="token keyword keyword-Function">Function</span> EndOFDayStream<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+Public Function EndOFDayStream()
+    </code></pre>
+    <!-- SQL Code -->
+
+<!-- 1. Logging and Setup (modEOD.EOLog) -->
 </code></pre><p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
 <h4 id="LoggingSetup">1. Logging and Setup (<code>modEOD.EOLog</code>) 📝 </h4>
 <ul>
-<li>Builds a folder path for the log file using <code>gstrMailDir</code> and the current date (year/month/day).<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-If">If</span> gstrMailDir <span class="token operator">=</span> <span class="token string">""</span> <span class="token keyword keyword-Then">Then</span> LoadDefaults
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-modKMDS<span class="token punctuation">.</span>LoadDefaults
-rstemp<span class="token punctuation">.</span>Open <span class="token string">"SysFile"</span><span class="token punctuation">,</span> CurrentProject<span class="token punctuation">.</span>Connection<span class="token punctuation">,</span> adOpenKeyset<span class="token punctuation">,</span> adLockOptimistic
-gstrMailDir <span class="token operator">=</span> <span class="token operator">!</span>NetworkMailDir   <span class="token comment">'\\FS1\KMDS\</span>
-</code></pre></li>
-<li>Opens (or creates) the log file <code>EOLog.Txt</code> in append mode.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token operator">\</span><span class="token operator">\</span>FS1<span class="token operator">\</span>KMDS<span class="token operator">\</span>Log<span class="token operator">\</span><span class="token number">2025</span><span class="token operator">\</span><span class="token number">08</span><span class="token operator">\</span><span class="token number">01</span><span class="token operator">\</span>EOLog<span class="token punctuation">.</span>Txt
-</code></pre></li>
-<li>Logs the start of the process.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>EOLog <span class="token string">"========================================================="</span>
-EOLog <span class="token string">"End of Day - Start"</span>
-EOLog <span class="token string">"========================================================="</span>
-</code></pre></li>
+<li>Builds a folder path for the log file using <code>gstrMailDir</code> and the current date (year/month/day). 
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+If gstrMailDir = "" Then LoadDefaults
+...
+modKMDS.LoadDefaults
+rstemp.Open "SysFile", CurrentProject.Connection, adOpenKeyset, adLockOptimistic
+gstrMailDir = !NetworkMailDir   --\\FS1\KMDS\
+    </code></pre>
+    <!-- SQL Code -->
+</li>
+<li>Opens (or creates) the log file <code>EOLog.Txt</code> in append mode. 
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+\\FS1\KMDS\Log\2025\08\01\EOLog.Txt
+    </code></pre>
+    <!-- SQL Code -->
+</li>
+<li>Logs the start of the process.
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+EOLog "========================================================="
+EOLog "End of Day - Start"
+EOLog "========================================================="
+    </code></pre>
+    <!-- SQL Code -->
+</li>
 </ul>
+
+<!-- 2. Load Defaults -->
 <p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
 <h3 id="LoadDefaults">2. Load Defaults ⚙️ </h3>
 <ul>
 <li>Ensures key global variables (<code>gstrMailDir</code>, <code>gstrNetworkDatabase</code>) are set, loading defaults if needed.<br>
-The <strong><code>modKMDS.LoadDefaults</code></strong> function initializes global variables and system settings for the application.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>rstemp<span class="token punctuation">.</span>Open <span class="token string">"SysFile"</span><span class="token punctuation">,</span> CurrentProject<span class="token punctuation">.</span>Connection<span class="token punctuation">,</span> adOpenKeyset<span class="token punctuation">,</span> adLockOptimistic 
-gstrMailDir <span class="token operator">=</span> <span class="token operator">!</span>NetworkMailDir
-gstrNetworkDatabase <span class="token operator">=</span> <span class="token operator">!</span>NetworkDatabase
-</code></pre></li>
-<li>Logs the mail directory and network database paths.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>EOLog <span class="token string">"gstrMailDir = "</span> <span class="token operator">&amp;</span> gstrMailDir    <span class="token comment">'\\FS1\KMDS\</span>
-EOLog <span class="token string">"gstrNetworkDatabase = "</span> <span class="token operator">&amp;</span> gstrNetworkDatabase    <span class="token comment">'C:\KMDS\KMDS2007.ACCDR</span>
-</code></pre></li>
+The <strong><code>modKMDS.LoadDefaults</code></strong> function initializes global variables and system settings for the application.
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+rstemp.Open "SysFile", CurrentProject.Connection, adOpenKeyset, adLockOptimistic 
+gstrMailDir = !NetworkMailDir
+gstrNetworkDatabase = !NetworkDatabase
+    </code></pre>
+    <!-- SQL Code -->
+</li>
+<li>Logs the mail directory and network database paths.
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+EOLog "gstrMailDir = " & gstrMailDir                    --\\FS1\KMDS\
+EOLog "gstrNetworkDatabase = " & gstrNetworkDatabase    --C:\KMDS\KMDS2007.ACCDR
+    </code></pre>
+    <!-- SQL Code -->
+</li>
 </ul>
+
+<!-- 3. Prepare Backup Directory -->
 <p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
 <h3 id="PrepBUDir">3. Prepare Backup Directory 📁 </h3>
 <ul>
-<li>Builds a backup folder path for today (year/month/day).<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>strTargetPath <span class="token operator">=</span> gstrMailDir <span class="token operator">&amp;</span> <span class="token string">"Backup\"</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-EOLog <span class="token string">"Creating Folder : "</span> <span class="token operator">&amp;</span> strTargetPath  <span class="token comment">'\\FS1\KMDS\Backup\2025\08\01</span>
-</code></pre></li>
+<li>Builds a backup folder path for today (year/month/day).
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+strTargetPath = gstrMailDir & "Backup\"
+...
+EOLog "Creating Folder : " & strTargetPath      --\\FS1\KMDS\Backup\2025\08\01
+    </code></pre>
+    <!-- SQL Code -->
+</li>
+
+<!-- 4. Check Cash Register Files -->
 </ul>
-<p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
-<h3 id="CheckCashReg">4. Check Cash Register Files 🧾 </h3>
+    <p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
+    <h3 id="CheckCashReg">4. Check Cash Register Files 🧾 </h3>
 <ul>
 <li>Verifies that all required cash register files (<code>CR1.MDB</code> to <code>CR5.MDB</code>) exist.</li>
-<li>Logs and shows errors if any are missing, then exits.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-If">If</span> <span class="token keyword keyword-Not">Not</span> fso<span class="token punctuation">.</span>FileExists<span class="token punctuation">(</span>gstrMailDir <span class="token operator">&amp;</span> <span class="token string">"Mail\CR1.MDB"</span><span class="token punctuation">)</span> <span class="token keyword keyword-Then">Then</span>
-    EOLog <span class="token string">"ERROR "</span> <span class="token operator">&amp;</span> gstrMailDir <span class="token operator">&amp;</span> <span class="token string">"Mail\CR1.MDB not found"</span>
-    MsgBox gstrMailDir <span class="token operator">&amp;</span> <span class="token string">"Mail\CR1.MDB not found"</span><span class="token punctuation">,</span> vbCritical<span class="token punctuation">,</span> <span class="token string">"EndOfDay"</span>
-    gbEOProcessError <span class="token operator">=</span> <span class="token boolean">True</span>
-    <span class="token keyword keyword-GoTo">GoTo</span> ExitSub
-<span class="token keyword keyword-End">End</span> <span class="token keyword keyword-If">If</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token keyword keyword-If">If</span> <span class="token keyword keyword-Not">Not</span> fso<span class="token punctuation">.</span>FileExists<span class="token punctuation">(</span>gstrMailDir <span class="token operator">&amp;</span> <span class="token string">"Mail\CR5.MDB"</span><span class="token punctuation">)</span> <span class="token keyword keyword-Then">Then</span>
-    EOLog <span class="token string">"ERROR "</span> <span class="token operator">&amp;</span> gstrMailDir <span class="token operator">&amp;</span> <span class="token string">"Mail\CR5.MDB not found"</span>
-    MsgBox gstrMailDir <span class="token operator">&amp;</span> <span class="token string">"Mail\CR4.MDB not found"</span><span class="token punctuation">,</span> vbCritical<span class="token punctuation">,</span> <span class="token string">"EndOfDay"</span>
-    gbEOProcessError <span class="token operator">=</span> <span class="token boolean">True</span>
-    <span class="token keyword keyword-GoTo">GoTo</span> ExitSub
-<span class="token keyword keyword-End">End</span> <span class="token keyword keyword-If">If</span>
-</code></pre></li>
+<li>Logs and shows errors if any are missing, then exits.
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+If Not fso.FileExists(gstrMailDir & "Mail\CR1.MDB") Then        --\\FS1\KMDS\Mail\CR1.MDB
+    EOLog "ERROR " & gstrMailDir & "Mail\CR1.MDB not found"
+    MsgBox gstrMailDir & "Mail\CR1.MDB not found", vbCritical, "EndOfDay"
+    gbEOProcessError = True
+    GoTo ExitSub
+End If
+...
+If Not fso.FileExists(gstrMailDir & "Mail\CR5.MDB") Then        --\\FS1\KMDS\Mail\CR5.MDB
+    EOLog "ERROR " & gstrMailDir & "Mail\CR5.MDB not found"
+    MsgBox gstrMailDir & "Mail\CR4.MDB not found", vbCritical, "EndOfDay"
+    gbEOProcessError = True
+    GoTo ExitSub
+End If
+    </code></pre>
+    <!-- SQL Code -->
+</li>
+
+
+<!-- 5. Database Backup -->
 </ul>
 <p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
 <h3 id="DatabaseBackup">5. Database Backup 🗃️ </h3>
 <ul>
-<li>Calls <strong><code>modDumpTable.MakeSQLBackup</code></strong> to back up SQL tables.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>EOLog <span class="token string">"Dumping SQL Tables"</span>
-<span class="token comment">'DumpSQLTables --&gt;&gt; this is commented out</span>
-<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
-EOLog <span class="token string">"MakeSQLBackup"</span>
+<li>Calls <strong><code>modDumpTable.MakeSQLBackup</code></strong> to back up SQL tables.
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+EOLog "Dumping SQL Tables" 
+...
+EOLog "MakeSQLBackup"
 MakeSQLBackup
-</code></pre><pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>modDumpTable<span class="token punctuation">.</span>MakeSQLBackup
-<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
-<span class="token punctuation">.</span>CommandText <span class="token operator">=</span> <span class="token string">"Select CashsysInsLoc from Sysfile"</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-strPassString <span class="token operator">=</span> <span class="token string">"c:\kmds\kmdsDUMP.bat "</span> <span class="token operator">&amp;</span> rstemp<span class="token operator">!</span>CashsysInsLoc <span class="token operator">&amp;</span> <span class="token string">" "</span> <span class="token operator">&amp;</span> Format<span class="token punctuation">(</span>Now<span class="token punctuation">,</span> <span class="token string">"yyyy-dd-mm$hh-nn"</span><span class="token punctuation">)</span>
-</code></pre></li>
-<li>Runs a batch file (<code>kmdsDUMP.bat</code>) to create a backup of the SQL database, passing the cash register installation location and a timestamp as parameters.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>C<span class="token punctuation">:</span><span class="token operator">\</span>KMDS<span class="token operator">\</span>kmdsDUMP<span class="token punctuation">.</span>bat
-<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> DOCUMENT THE SCRIPT HERE <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span>
-</code></pre></li>
-</ul>
+    </code></pre>
+    <pre class="sql"><code class="language-sql">
+modDumpTable.MakeSQLBackup
+-----------------------------
+.CommandText = "Select CashsysInsLoc from Sysfile"
+...
+strPassString = "c:\kmds\kmdsDUMP.bat " & rstemp!CashsysInsLoc & " " & Format(Now, "yyyy-dd-mm$hh-nn")
+    </code></pre>
+    <!-- SQL Code -->
+</li>
+<li>Runs a batch file (<code>kmdsDUMP.bat</code>) to create a backup of the SQL database, passing the cash register installation location (<code>CashsysInsLoc.CashsysInsLoc</code>) and a timestamp as parameters.
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+C:\KMDS\kmdsDUMP.bat
+-----------------------------
+rem @echo off
+cls
+@echo ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+@echo ³Creating backup directories  ³
+@echo ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+@ECHO %1 is the server
+@ECHO %2.zip is the zip file name
+c:
+cd \kmds
+if not exist "C:\KMDS\Backup" md backup 
+cd backup
+if not exist "C:\KMDS\Backup\SQLZip" md sqlzip
+@echo ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+@echo ³ Dumping SQL Tables to \\%1\c\kmds\backup\sql\kmdsdump.bak ³
+@echo ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+osql -S%1 -E -i"\\%1\kmds\backup\kmdsdump.sql" -o"\\%1\kmds\backup\kmdsdump.log"
+copy "\\%1\kmds\backup\sql\KMDSSQL.bak" "c:\kmds\backup\KMDSSQLB4.bak"
+CD \KMDS
+    </code></pre>
+    <!-- SQL Code -->
+</li></ul>
+
+<!-- 6. Cleanup/Reset -->
 <p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
 <h3 id="CleanupReset">6. Cleanup/Reset 🧹 </h3>
 <ul>
-<li>
-<p>Deletes old transmit list and LastNiteFiles batch file.</p>
-<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>EOLog <span class="token string">"Delete : C:\kmds\EOD File Transmit List.txt"</span>
-fso<span class="token punctuation">.</span>DeleteFile <span class="token string">"C:\kmds\EOD File Transmit List.txt"</span><span class="token punctuation">,</span> <span class="token boolean">True</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-EOLog <span class="token string">"Delete : K:LastNiteFiles.BAT"</span>
-fso<span class="token punctuation">.</span>DeleteFile <span class="token string">"K:LastNiteFiles.BAT"</span><span class="token punctuation">,</span> <span class="token boolean">True</span>
-</code></pre><pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>K<span class="token punctuation">:</span>LastNiteFiles<span class="token punctuation">.</span>BAT
-<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> DOCUMENT THE SCRIPT HERE <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span>
-</code></pre></li>
+<li> Deletes old transmit list and LastNiteFiles batch file. 
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+EOLog "Delete : C:\kmds\EOD File Transmit List.txt"
+fso.DeleteFile "C:\kmds\EOD File Transmit List.txt", True
+...
+EOLog "Delete : K:LastNiteFiles.BAT"
+fso.DeleteFile "K:LastNiteFiles.BAT", True
+    </code></pre>
+    <!-- SQL Code -->
+</li>
 <li>
 <p>Retrieve DaysToRetain in Settings and add if missing.<br>
-<em>KMDS2007 uses table <code>Settings</code> to store matched pairs in a Key/Value schema. If the keyname cannot be found then a new Key/Value is setup. The table can be accessed through the g-5 screen under <code>Settings</code> tab.</em></p>
-<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>GetKMDSSettings <span class="token string">"DaysToRetain"</span><span class="token punctuation">,</span> <span class="token string">"500"</span>
-</code></pre><pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>modAcc2007<span class="token punctuation">.</span>GetKMDSSettings
-<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
-<span class="token keyword keyword-With">With</span> rstemp
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">.</span>Open <span class="token string">"Settings"</span><span class="token punctuation">,</span> CurrentProject<span class="token punctuation">.</span>Connection<span class="token punctuation">,</span> <span class="token punctuation">,</span> <span class="token punctuation">,</span> adCmdTable
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token keyword keyword-If">If</span> <span class="token punctuation">.</span>EOF <span class="token keyword keyword-Then">Then</span>
-    <span class="token punctuation">.</span>AddNew
-    <span class="token operator">!</span>KeyName <span class="token operator">=</span> KeyName
-    <span class="token operator">!</span>Value <span class="token operator">=</span> DefaultValue
-    <span class="token punctuation">.</span>Update
-    GetKMDSSettings <span class="token operator">=</span> DefaultValue
-<span class="token keyword keyword-Else">Else</span>
-    <span class="token keyword keyword-If">If</span> <span class="token keyword keyword-Not">Not</span> IsNull<span class="token punctuation">(</span><span class="token operator">!</span>Value<span class="token punctuation">)</span> <span class="token keyword keyword-Then">Then</span> GetKMDSSettings <span class="token operator">=</span> <span class="token operator">!</span>Value
-</code></pre></li>
+    KMDS2007 uses table <code>Settings</code> to store matched pairs in a Key/Value schema. If the keyname cannot be found then a new Key/Value is setup. 
+    The table can be accessed through the g-5 screen under <code>Settings</code> tab.
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+GetKMDSSettings "DaysToRetain", "500"
+    </code></pre>
+    <pre class="sql"><code class="language-sql">
+modAcc2007.GetKMDSSettings
+-----------------------------
+With rstemp
+...
+.Open "Settings", CurrentProject.Connection, , , adCmdTable
+...
+If .EOF Then
+    .AddNew
+    !KeyName = KeyName
+    !Value = DefaultValue
+    .Update
+    GetKMDSSettings = DefaultValue
+Else
+    If Not IsNull(!Value) Then GetKMDSSettings = !Value
+    </code></pre>
+    <!-- SQL Code -->
+</li>
 </ul>
+
+<!-- 7. Process End-of-Day Queries and Reports -->
 <p><a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a></p>
 <h3 id="ProcEODQryRpt">7. Process End-of-Day Queries and Reports 📊 </h3>
 <ul>
-<li>Runs queries and reports defined for day-end using <code>modEOD.EOProcess</code>.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-If">If</span> EOProcess<span class="token punctuation">(</span><span class="token string">"qryEOD"</span><span class="token punctuation">,</span> <span class="token string">"DayEnd"</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token boolean">True</span> <span class="token keyword keyword-Then">Then</span>
-</code></pre><ul>
-<li>Build Query List - <em>Constructs a SQL statement to select all objects from <code>MSysObjects</code> whose names start with the given <code>QuerySequencePrefix</code> (e.g., <code>qryEOD</code>). Orders them by name.</em><pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>modEOD<span class="token punctuation">.</span>EOProcess
-<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
-<span class="token keyword keyword-Public">Public</span> <span class="token keyword keyword-Function">Function</span> EOProcess<span class="token punctuation">(</span>QuerySequencePrefix <span class="token keyword keyword-As">As</span> <span class="token keyword keyword-String">String</span><span class="token punctuation">,</span> ShareName <span class="token keyword keyword-As">As</span> <span class="token keyword keyword-String">String</span><span class="token punctuation">)</span> <span class="token keyword keyword-As">As</span> <span class="token keyword keyword-Boolean">Boolean</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-strSQL <span class="token operator">=</span> <span class="token string">"SELECT MSysObjects.Name, "</span>
-strSQL <span class="token operator">=</span> strSQL <span class="token operator">&amp;</span> <span class="token string">"MSysObjects.Type "</span>
-strSQL <span class="token operator">=</span> strSQL <span class="token operator">&amp;</span> <span class="token string">"FROM MSysObjects "</span>
-strSQL <span class="token operator">=</span> strSQL <span class="token operator">&amp;</span> <span class="token string">"WHERE (((MSysObjects.Name) Like '"</span> <span class="token operator">&amp;</span> QuerySequencePrefix <span class="token operator">&amp;</span> <span class="token string">"%')) "</span>
-strSQL <span class="token operator">=</span> strSQL <span class="token operator">&amp;</span> <span class="token string">"ORDER BY MSysObjects.Name"</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">.</span>CommandText <span class="token operator">=</span> strSQL   <span class="token comment">'SELECT Name, Type FROM MSysObjects WHERE Name Like 'qryEOD*' ORDER BY Type, Name</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token keyword keyword-Set">Set</span> rstemp <span class="token operator">=</span> comQDF<span class="token punctuation">.</span>Execute
-</code></pre>Extracted queries and reports from <code>MSysObjects</code> ordered by name. This is the order in <code>EOLog.txt</code> file.<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> R <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD001InventoryValueBegin
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD010DeleteInvoHead5<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD011DeleteInvoLine5<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD021AppendCR1InvoLine<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD023AppendCR2InvoLine<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD025AppendCR3InvoLine<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD027AppendCR4InvoLine<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD027AppendCR5InvoLine<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD028UpdateInvo5LineCost<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD029UpdateInvo5LineCostByDptGP<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD029UpdateInvo5LineCostLiquorClub<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD029UpdateInvo5LineCostLiquorClubDiscount<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD029UpdateInvo5LineCostLiquorCounter<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD029UpdateInvo5LineCostTransfersToZero<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD030CashierAutodropCharges<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD030CashierAutodropChargesReverse<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD031CashierAutodropChecks<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD031CashierAutodropChecksReverse<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD033BottleDepositQtyAdjAtEOD<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> R <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD040SalesByDepartment
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> R <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD040SalesByTenderByRegister
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> R <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD041ChecksTenderedByCashier
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> R <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD042ChargesTenderedByCashier
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> R <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD043CashDropsAndLoans
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> R <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD050SalesByAllCashiersByDepartment
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> R <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD051CashiersProductivity
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> R <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD052SalesReturnsByCashier
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> R <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD053CancelledSalesByCashier
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> R <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD054ReturnsCancelledSalesByCashier
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> R <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD060ClubInvoices
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD065ClubInvoicesDelete<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD100DeleteItemsSold<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD101AppendItemsSold<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD102UpdateItemsOnhand<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD103AppendShifts<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD104AppendInvo5Line<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> R <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD120RItemsSoldToday
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> R <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD121RItemsSetupToday
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> R <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD122RItemsWithNegativeOnhands
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> R <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD123ROnhandChangesToday
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> R <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD124ROpenAccounts
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> R <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD125SalesByDepartmentByTender
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> R <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD126ItemRestockList
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> R <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD126ItemRestockListNOSubtotals
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> R <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD127RFintech
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> R <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD128RLiquorItemsNotScanned
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> R <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD129RInvoicesWithCoupons
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> R <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD200InventoryValueEnd
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD900ItemZeroSoldToday<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD901SetSysfileCheckFlagTo0<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD902DeleteItemsSold<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD910CashierDropCountReset<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD921PurgeInvoline_1_Mark_With_Z<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD921PurgeInvoline_2_Delete_With_Z<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD921PurgeKMDSLog500Days<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> Q <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> qryEOD922SetItemSubCategoryIDTo0<span class="token punctuation">.</span><span class="token keyword keyword-sql">sql</span>
-</code></pre></li>
-<li>Execute Each Object - <em>Loops through each object found.</em><pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-With">With</span> rstemp
-    <span class="token keyword keyword-Do">Do</span> <span class="token keyword keyword-While">While</span> <span class="token keyword keyword-Not">Not</span> <span class="token punctuation">.</span>EOF
-</code></pre><ul>
-<li>Logs the object name and type.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>EOLog <span class="token operator">!</span>Name <span class="token operator">&amp;</span> <span class="token string">" "</span> <span class="token operator">&amp;</span> <span class="token operator">!</span><span class="token keyword keyword-Type">Type</span>
-</code></pre></li>
-<li>If the object type is 5 (query), calls <code>QueryExecute</code> to run it.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-Select">Select</span> <span class="token keyword keyword-Case">Case</span> <span class="token operator">!</span><span class="token keyword keyword-Type">Type</span>
-<span class="token keyword keyword-Case">Case</span> <span class="token number">5</span> 
-    QueryExecute <span class="token operator">!</span>Name
-</code></pre><pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>modEOD<span class="token punctuation">.</span>QueryExecute
-<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
-<span class="token keyword keyword-Public">Public</span> <span class="token keyword keyword-Sub">Sub</span> QueryExecute<span class="token punctuation">(</span>QueryName <span class="token keyword keyword-As">As</span> <span class="token keyword keyword-String">String</span><span class="token punctuation">)</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token keyword keyword-With">With</span> comQDF
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    <span class="token punctuation">.</span>CommandText <span class="token operator">=</span> QueryName
-    <span class="token punctuation">.</span>Execute
-</code></pre></li>
-<li>If the object type is -32764 (report), calls <code>ReportExecute</code> to run and process the report.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-Case">Case</span> <span class="token operator">-</span><span class="token number">32764</span>
-    ReportExecute <span class="token operator">!</span>Name<span class="token punctuation">,</span> ShareName
-</code></pre><ul>
-<li>Opens the <code>EOReport</code> table to find the record for the given <code>ReportName</code>.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>modEOD<span class="token punctuation">.</span>ReportExecute
-<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
-<span class="token keyword keyword-Public">Public</span> <span class="token keyword keyword-Sub">Sub</span> ReportExecute<span class="token punctuation">(</span>ReportName <span class="token keyword keyword-As">As</span> <span class="token keyword keyword-String">String</span><span class="token punctuation">,</span> ShareName <span class="token keyword keyword-As">As</span> <span class="token keyword keyword-String">String</span><span class="token punctuation">)</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token keyword keyword-With">With</span> rstemp
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    <span class="token punctuation">.</span>Open <span class="token string">"EOReport"</span><span class="token punctuation">,</span> CurrentProject<span class="token punctuation">.</span>Connection<span class="token punctuation">,</span> <span class="token punctuation">,</span> <span class="token punctuation">,</span> adCmdTable
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-rstemp<span class="token punctuation">.</span>Find <span class="token string">"ReportName='"</span> <span class="token operator">&amp;</span> ReportName <span class="token operator">&amp;</span> <span class="token string">"'"</span>
-</code></pre></li>
+<li>Runs queries and reports defined for day-end using <code>modEOD.EOProcess</code>.
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+If EOProcess("qryEOD", "DayEnd") = True Then
+    </code></pre>
+    <!-- SQL Code -->
+<ul>
+<li>Build Query List - Constructs a SQL statement to select all objects from <code>MSysObjects</code> whose names start with the given <code>QuerySequencePrefix</code> 
+    (e.g., <code>qryEOD</code>). Orders them by name.
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+modEOD.EOProcess
+-----------------------------
+Public Function EOProcess(QuerySequencePrefix As String, ShareName As String) As Boolean
+...
+strSQL = "SELECT MSysObjects.Name, "
+strSQL = strSQL & "MSysObjects.Type "
+strSQL = strSQL & "FROM MSysObjects "
+strSQL = strSQL & "WHERE (((MSysObjects.Name) Like '" & QuerySequencePrefix & "%')) "
+strSQL = strSQL & "ORDER BY MSysObjects.Name"
+...
+.CommandText = strSQL   'SELECT Name, Type FROM MSysObjects WHERE Name Like 'qryEOD*' ORDER BY Type, Name
+...
+Set rstemp = comQDF.Execute
+    </code></pre>
+    <!-- SQL Code -->
+<li>Extracted queries and reports from <code>MSysObjects</code> ordered by name. This is the order in <code>EOLog.txt</code> file.
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+qryEOD001InventoryValueBegin                          -- Report
+qryEOD010DeleteInvoHead5.sql                          -- Query
+qryEOD011DeleteInvoLine5.sql                          -- Query
+qryEOD021AppendCR1InvoLine.sql                        -- Query
+qryEOD023AppendCR2InvoLine.sql                        -- Query
+qryEOD025AppendCR3InvoLine.sql                        -- Query
+qryEOD027AppendCR4InvoLine.sql                        -- Query
+qryEOD027AppendCR5InvoLine.sql                        -- Query
+qryEOD028UpdateInvo5LineCost.sql                      -- Query
+qryEOD029UpdateInvo5LineCostByDptGP.sql               -- Query
+qryEOD029UpdateInvo5LineCostLiquorClub.sql            -- Query
+qryEOD029UpdateInvo5LineCostLiquorClubDiscount.sql    -- Query
+qryEOD029UpdateInvo5LineCostLiquorCounter.sql         -- Query
+qryEOD029UpdateInvo5LineCostTransfersToZero.sql       -- Query
+qryEOD030CashierAutodropCharges.sql                   -- Query
+qryEOD030CashierAutodropChargesReverse.sql            -- Query
+qryEOD031CashierAutodropChecks.sql                    -- Query
+qryEOD031CashierAutodropChecksReverse.sql             -- Query
+qryEOD033BottleDepositQtyAdjAtEOD.sql                 -- Query
+qryEOD040SalesByDepartment                            -- Report
+qryEOD040SalesByTenderByRegister                      -- Report
+qryEOD041ChecksTenderedByCashier                      -- Report
+qryEOD042ChargesTenderedByCashier                     -- Report
+qryEOD043CashDropsAndLoans                            -- Report
+qryEOD050SalesByAllCashiersByDepartment               -- Report
+qryEOD051CashiersProductivity                         -- Report
+qryEOD052SalesReturnsByCashier                        -- Report
+qryEOD053CancelledSalesByCashier                      -- Report
+qryEOD054ReturnsCancelledSalesByCashier               -- Report
+qryEOD060ClubInvoices                                 -- Report
+qryEOD065ClubInvoicesDelete.sql                       -- Query
+qryEOD100DeleteItemsSold.sql                          -- Query
+qryEOD101AppendItemsSold.sql                          -- Query
+qryEOD102UpdateItemsOnhand.sql                        -- Query
+qryEOD103AppendShifts.sql                             -- Query
+qryEOD104AppendInvo5Line.sql                          -- Query
+qryEOD120RItemsSoldToday                              -- Report
+qryEOD121RItemsSetupToday                             -- Report
+qryEOD122RItemsWithNegativeOnhands                    -- Report
+qryEOD123ROnhandChangesToday                          -- Report
+qryEOD124ROpenAccounts                                -- Report
+qryEOD125SalesByDepartmentByTender                    -- Report
+qryEOD126ItemRestockList                              -- Report
+qryEOD126ItemRestockListNOSubtotals                   -- Report
+qryEOD127RFintech                                     -- Report
+qryEOD128RLiquorItemsNotScanned                       -- Report
+qryEOD129RInvoicesWithCoupons                         -- Report
+qryEOD200InventoryValueEnd                            -- Report
+qryEOD900ItemZeroSoldToday.sql                        -- Query
+qryEOD901SetSysfileCheckFlagTo0.sql                   -- Query
+qryEOD902DeleteItemsSold.sql                          -- Query
+qryEOD910CashierDropCountReset.sql                    -- Query
+qryEOD921PurgeInvoline_1_Mark_With_Z.sql              -- Query
+qryEOD921PurgeInvoline_2_Delete_With_Z.sql            -- Query
+qryEOD921PurgeKMDSLog500Days.sql                      -- Query
+qryEOD922SetItemSubCategoryIDTo0.sql                  -- Query
+    </code></pre>
+    <!-- SQL Code -->
+</li></li>
+<li>Execute Each Object - Loops through each object found and logs the object name and type.
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+With rstemp
+    Do While Not .EOF
+    EOLog !Name & " " & !Type
+    </code></pre>
+    <!-- SQL Code -->
+<ul>
+<li>If the object type is 5 (query), calls <code>QueryExecute</code> to run it.
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+Select Case !Type
+Case 5 
+    QueryExecute !Name
+    </code></pre>
+    <pre class="sql"><code class="language-sql">
+modEOD.QueryExecute
+------------------------------
+Public Sub QueryExecute(QueryName As String)
+...
+With comQDF
+...
+    .CommandText = QueryName
+    .Execute
+    </code></pre>
+    <!-- SQL Code -->
+</li>
+<li>If the object type is -32764 (report), calls <code>ReportExecute</code> to run and process the report.
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+Case -32764
+    ReportExecute !Name, ShareName
+    </code></pre>
+    <!-- SQL Code -->
+<ul>
+<li>Opens the <code>EOReport</code> table to find the record for the given <code>ReportName</code>.
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+modEOD.ReportExecute
+------------------------------
+Public Sub ReportExecute(ReportName As String, ShareName As String)
+...
+With rstemp
+...
+    .Open "EOReport", CurrentProject.Connection, , , adCmdTable
+...
+rstemp.Find "ReportName='" & ReportName & "'"
+    </code></pre>
+    <!-- SQL Code -->
+</li>
 <li>If the report is not found:
 <ul>
 <li>Logs the setup of a new report name.</li>
 <li>Adds a new record with <code>NumberOfCopies</code> set to 0.</li>
 </ul>
 </li>
-<li>Retrieves <code>NumberOfCopies</code> and <code>EMail</code> flag for the report.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-If">If</span> rstemp<span class="token punctuation">.</span>EOF <span class="token keyword keyword-Then">Then</span>
-    EOLog <span class="token string">"Setting up new reportname : "</span> <span class="token operator">&amp;</span> ReportName
-    rstemp<span class="token punctuation">.</span>AddNew
-    rstemp<span class="token operator">!</span>ReportName <span class="token operator">=</span> ReportName 
-    rstemp<span class="token operator">!</span>NumberOfCopies <span class="token operator">=</span> <span class="token number">0</span>
-    rstemp<span class="token punctuation">.</span>Update
-    nNumberOfCopies <span class="token operator">=</span> <span class="token number">0</span>
-<span class="token keyword keyword-Else">Else</span>
-    nNumberOfCopies <span class="token operator">=</span> rstemp<span class="token operator">!</span>NumberOfCopies
-<span class="token keyword keyword-End">End</span> <span class="token keyword keyword-If">If</span>
-beMail <span class="token operator">=</span> rstemp<span class="token operator">!</span>EMail
-</code></pre></li>
-<li>Opens the report in preview mode (<code>acViewPreview</code>).<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>DoCmd<span class="token punctuation">.</span>OpenReport ReportName<span class="token punctuation">,</span> acViewPreview
-</code></pre></li>
-<li>Calls <code>ArchiveReportShare</code> to output the report (<code>.pdf</code> or <code>.snp</code>) and assign the filename to <code>strEmailFileName</code>.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>strEmailFileName <span class="token operator">=</span> ArchiveReportShare<span class="token punctuation">(</span>ReportName<span class="token punctuation">,</span> ShareName<span class="token punctuation">)</span>
-</code></pre><pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>modKMDS<span class="token punctuation">.</span>ArchiveReportShare
-<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
-<span class="token keyword keyword-Public">Public</span> <span class="token keyword keyword-Function">Function</span> ArchiveReportShare<span class="token punctuation">(</span>ReportName <span class="token keyword keyword-As">As</span> <span class="token keyword keyword-String">String</span><span class="token punctuation">,</span> <span class="token keyword keyword-Optional">Optional</span> ReportDescription <span class="token keyword keyword-As">As</span> <span class="token keyword keyword-String">String</span><span class="token punctuation">)</span> <span class="token keyword keyword-As">As</span> <span class="token keyword keyword-String">String</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token comment">'Create the directory for today e.g. "'\\FS1\KMDS\EndOfDay\2025\08\01"</span>
-fldr <span class="token operator">=</span> gstrReportsDir   <span class="token comment">'global variable set in modKMDS.LoadDefaults</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-fldr <span class="token operator">=</span> fldr <span class="token operator">&amp;</span> <span class="token string">"EndOfDay"</span> <span class="token operator">&amp;</span> <span class="token string">"\"</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token keyword keyword-If">If</span> gbSaveReportsAsPDF <span class="token keyword keyword-Then">Then</span>
-    fldr <span class="token operator">=</span> fldr <span class="token operator">&amp;</span> <span class="token string">".pdf"</span>
-    ArchiveReportShare <span class="token operator">=</span> fldr
-    DoCmd<span class="token punctuation">.</span>OutputTo acOutputReport<span class="token punctuation">,</span> ReportName<span class="token punctuation">,</span> acFormatPDF<span class="token punctuation">,</span> fldr
-<span class="token keyword keyword-Else">Else</span>
-    fldr <span class="token operator">=</span> fldr <span class="token operator">&amp;</span> <span class="token string">".snp"</span>
-    ArchiveReportShare <span class="token operator">=</span> fldr
-    DoCmd<span class="token punctuation">.</span>OutputTo acOutputReport<span class="token punctuation">,</span> ReportName<span class="token punctuation">,</span> acFormatSNP<span class="token punctuation">,</span> fldr
-<span class="token keyword keyword-End">End</span> <span class="token keyword keyword-If">If</span>
-</code></pre></li>
+<li>Retrieves <code>NumberOfCopies</code> and <code>EMail</code> flag for the report.
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+If rstemp.EOF Then
+    EOLog "Setting up new reportname : " & ReportName
+    rstemp.AddNew
+    rstemp!ReportName = ReportName 
+    rstemp!NumberOfCopies = 0
+    rstemp.Update
+    nNumberOfCopies = 0
+Else
+    nNumberOfCopies = rstemp!NumberOfCopies
+End If
+beMail = rstemp!EMail
+    </code></pre>
+    <!-- SQL Code -->
+</li>
+<li>Opens the report in preview mode (<code>acViewPreview</code>). <br>
+    Calls <code>ArchiveReportShare</code> to output the report (<code>.pdf</code> or <code>.snp</code>) and assign the filename to <code>strEmailFileName</code>.
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+DoCmd.OpenReport ReportName, acViewPreview
+strEmailFileName = ArchiveReportShare(ReportName, ShareName)
+    </code></pre>
+    <pre class="sql"><code class="language-sql">
+modKMDS.ArchiveReportShare
+--------------------------------
+Public Function ArchiveReportShare(ReportName As String, Optional ReportDescription As String) As String
+...
+--Create the directory for today e.g. "'\\FS1\KMDS\EndOfDay\2025\08\01"
+fldr = gstrReportsDir   --global variable set in modKMDS.LoadDefaults
+...
+fldr = fldr & "EndOfDay" & "\"
+...
+If gbSaveReportsAsPDF Then
+    fldr = fldr & ".pdf"
+    ArchiveReportShare = fldr
+    DoCmd.OutputTo acOutputReport, ReportName, acFormatPDF, fldr
+Else
+    fldr = fldr & ".snp"
+    ArchiveReportShare = fldr
+    DoCmd.OutputTo acOutputReport, ReportName, acFormatSNP, fldr
+End If
+    </code></pre>
+    <!-- SQL Code -->
+</li>
 <li>If <code>NumberOfCopies</code> &gt; 0, prints the specified number of copies.</li>
-<li>If <code>ShareName</code> is "DayEnd", appends the archived filename to <code>K:LastNiteFiles.Bat</code> for batch processing.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-If">If</span> nNumberOfCopies <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token keyword keyword-Then">Then</span>
-    DoCmd<span class="token punctuation">.</span>PrintOut acPrintAll<span class="token punctuation">,</span> <span class="token punctuation">,</span> <span class="token punctuation">,</span> <span class="token punctuation">,</span> nNumberOfCopies
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    <span class="token keyword keyword-If">If</span> ShareName <span class="token operator">=</span> <span class="token string">"DayEnd"</span> <span class="token keyword keyword-Then">Then</span>
-        <span class="token keyword keyword-Set">Set</span> ts <span class="token operator">=</span> fsoTemp<span class="token punctuation">.</span>OpenTextFile<span class="token punctuation">(</span><span class="token string">"K:LastNiteFiles.Bat"</span><span class="token punctuation">,</span> ForAppending<span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> TristateMixed<span class="token punctuation">)</span>
-        ts<span class="token punctuation">.</span>WriteLine Chr<span class="token punctuation">(</span><span class="token number">34</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> strEmailFileName <span class="token operator">&amp;</span> Chr<span class="token punctuation">(</span><span class="token number">34</span><span class="token punctuation">)</span>
-</code></pre></li>
+<li>If <code>ShareName</code> is "DayEnd", appends the archived filename to <code>K:LastNiteFiles.Bat</code> for batch processing.
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+If nNumberOfCopies > 0 Then
+    DoCmd.PrintOut acPrintAll, , , , nNumberOfCopies
+    ...
+    If ShareName = "DayEnd" Then
+        Set ts = fsoTemp.OpenTextFile("K:LastNiteFiles.Bat", ForAppending, True, TristateMixed)
+        ts.WriteLine Chr(34) & strEmailFileName & Chr(34)
+    </code></pre>
+    <!-- SQL Code -->
+</li>
 <li>Closes the report after printing.</li>
-<li>If the <code>beMail</code> flag is set, appends the archived filename to <code>C:\kmds\EOD File Transmit List.txt</code> for later email transmission.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-If">If</span> beMail <span class="token keyword keyword-Then">Then</span>
-    <span class="token keyword keyword-Set">Set</span> ts <span class="token operator">=</span> fsoTemp<span class="token punctuation">.</span>OpenTextFile<span class="token punctuation">(</span><span class="token string">"C:\kmds\EOD File Transmit List.txt"</span><span class="token punctuation">,</span> ForAppending<span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> TristateMixed<span class="token punctuation">)</span>
-    ts<span class="token punctuation">.</span>WriteLine strEmailFileName
-</code></pre></li>
-<li>If FTP is active (<code>gbKMDSFTPActive</code>) and the report is <code>qryEOD040SalesByDepartment</code>, copies the archived file to a specific FTP output directory, choosing .pdf or .snp extension based on settings.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-If">If</span> gbKMDSFTPActive <span class="token keyword keyword-Then">Then</span> <span class="token comment">'send files to ftp.kmds.us</span>
-    <span class="token keyword keyword-If">If</span> ReportName <span class="token operator">=</span> <span class="token string">"qryEOD040SalesByDepartment"</span> <span class="token keyword keyword-Then">Then</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    strt <span class="token operator">=</span> <span class="token string">"K:\Mail\KMDSFTP\OUT\ADS "</span> <span class="token operator">&amp;</span> glnAgentNumber <span class="token operator">&amp;</span> <span class="token string">" "</span> <span class="token operator">&amp;</span> Format<span class="token punctuation">(</span>Now<span class="token punctuation">,</span> <span class="token string">"yyyy-mm-dd hh-nn-ss"</span><span class="token punctuation">)</span>
-    <span class="token keyword keyword-If">If</span> gbSaveReportsAsPDF <span class="token keyword keyword-Then">Then</span>
-        strt <span class="token operator">=</span> strt <span class="token operator">&amp;</span> <span class="token string">".pdf"</span>
-    <span class="token keyword keyword-Else">Else</span>
-        strt <span class="token operator">=</span> strt <span class="token operator">&amp;</span> <span class="token string">".snp"</span>
-    <span class="token keyword keyword-End">End</span> <span class="token keyword keyword-If">If</span>
-    fsoTemp<span class="token punctuation">.</span>CopyFile strEmailFileName<span class="token punctuation">,</span> strt<span class="token punctuation">,</span> <span class="token boolean">True</span>
-</code></pre></li>
-<li>Handles errors gracefully<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-Select">Select</span> <span class="token keyword keyword-Case">Case</span> Err<span class="token punctuation">.</span>Number
-<span class="token keyword keyword-Case">Case</span> <span class="token number">2501</span> <span class="token comment">' cancel error (No data)</span>
-    EOLog <span class="token string">"  NO DATA TO REPORT!"</span>
-<span class="token keyword keyword-Case">Case</span> <span class="token keyword keyword-Else">Else</span>
-    EOLog <span class="token string">"Error #"</span> <span class="token operator">&amp;</span> Err<span class="token punctuation">.</span>Number <span class="token operator">&amp;</span> <span class="token string">" "</span> <span class="token operator">&amp;</span> Err<span class="token punctuation">.</span>Description <span class="token operator">&amp;</span> <span class="token string">" : ReportExecute : "</span> <span class="token operator">&amp;</span> ReportName
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-</code></pre></li>
-</ul>
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+If beMail Then
+    Set ts = fsoTemp.OpenTextFile("C:\kmds\EOD File Transmit List.txt", ForAppending, True, TristateMixed)
+    ts.WriteLine strEmailFileName
+    </code></pre>
+    <!-- SQL Code -->
 </li>
-<li>If the object is not a query or report, logs an error and sets the error flag.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>MsgBox <span class="token string">"Unknown qryEOD type: "</span> <span class="token operator">&amp;</span> <span class="token operator">!</span><span class="token keyword keyword-Type">Type</span> <span class="token operator">&amp;</span> <span class="token string">" for "</span> <span class="token operator">&amp;</span> <span class="token operator">!</span>Name
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-ErrLog<span class="token punctuation">:</span>
-    EOProcess <span class="token operator">=</span> <span class="token boolean">False</span>
-    EOLog strSQL <span class="token operator">&amp;</span> vbCrLf <span class="token operator">&amp;</span> <span class="token string">"Error #"</span> <span class="token operator">&amp;</span> Err<span class="token punctuation">.</span>Number <span class="token operator">&amp;</span> <span class="token string">" "</span> <span class="token operator">&amp;</span> Err<span class="token punctuation">.</span>Description <span class="token operator">&amp;</span> <span class="token string">" : EOProcess"</span>
-</code></pre></li>
-</ul>
+<li>If FTP is active (<code>gbKMDSFTPActive</code>) and the report is <code>qryEOD040SalesByDepartment</code>, 
+    copies the archived file to a specific FTP output directory, choosing .pdf or .snp extension based on settings.
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+If gbKMDSFTPActive Then 'send files to ftp.kmds.us
+    If ReportName = "qryEOD040SalesByDepartment" Then
+    ...
+    strt = "K:\Mail\KMDSFTP\OUT\ADS " & glnAgentNumber & " " & Format(Now, "yyyy-mm-dd hh-nn-ss")
+    If gbSaveReportsAsPDF Then
+        strt = strt & ".pdf"
+    Else
+        strt = strt & ".snp"
+    End If
+    fsoTemp.CopyFile strEmailFileName, strt, True
+    </code></pre>
+    <!-- SQL Code -->
 </li>
-</ul>
-</li>
-<li>If <code>modEOD.EOProcess</code> is successful, move cash register files to the backup folder with a timestamp (<code>CR1.MDB</code> to <code>CR5.MDB</code>).<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-If">If</span> EOProcess<span class="token punctuation">(</span><span class="token string">"qryEOD"</span><span class="token punctuation">,</span> <span class="token string">"DayEnd"</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token boolean">True</span> <span class="token keyword keyword-Then">Then</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token comment">'strTargetPath is the backup folder created in step 3</span>
-<span class="token comment">'\\FS1\KMDS\Backup\2025\08\01</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-EOLog <span class="token string">"Moving :"</span> <span class="token operator">&amp;</span> gstrMailDir <span class="token operator">&amp;</span> <span class="token string">"Mail\CR1.MDB to "</span> <span class="token operator">&amp;</span> strTargetPath
-fso<span class="token punctuation">.</span>MoveFile gstrMailDir <span class="token operator">&amp;</span> <span class="token string">"Mail\CR1.MDB"</span><span class="token punctuation">,</span> strTargetPath <span class="token operator">&amp;</span> <span class="token string">"CR1"</span> <span class="token operator">&amp;</span> Format<span class="token punctuation">(</span>Now<span class="token punctuation">,</span> <span class="token string">"yyyy-mm-dd hh-nn-ss"</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token string">".mdb"</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-EOLog <span class="token string">"Moving :"</span> <span class="token operator">&amp;</span> gstrMailDir <span class="token operator">&amp;</span> <span class="token string">"Mail\CR5.MDB to "</span> <span class="token operator">&amp;</span> strTargetPath
-fso<span class="token punctuation">.</span>MoveFile gstrMailDir <span class="token operator">&amp;</span> <span class="token string">"Mail\CR5.MDB"</span><span class="token punctuation">,</span> strTargetPath <span class="token operator">&amp;</span> <span class="token string">"CR5"</span> <span class="token operator">&amp;</span> Format<span class="token punctuation">(</span>Now<span class="token punctuation">,</span> <span class="token string">"yyyy-mm-dd hh-nn-ss"</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token string">".mdb"</span>
-</code></pre></li>
-</ul>
-<br>
+<li>Handles errors gracefully.
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+Select Case Err.Number
+Case 2501 ' cancel error (No data)
+    EOLog "  NO DATA TO REPORT!"
+Case Else
+    EOLog "Error #" & Err.Number & " " & Err.Description & " : ReportExecute : " & ReportName
+    ...
+    </code></pre>
+    <!-- SQL Code -->
+</li></ul></li>
+<li>If the object is not a query or report, logs an error and sets the error flag.
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+MsgBox "Unknown qryEOD type: " & !Type & " for " & !Name
+...
+ErrLog:
+    EOProcess = False
+    EOLog strSQL & vbCrLf & "Error #" & Err.Number & " " & Err.Description & " : EOProcess"
+    </code></pre>
+    <!-- SQL Code -->
+</li></ul></li></ul></li>
+<li>If <code>modEOD.EOProcess</code> is successful, move cash register files to the backup folder with a timestamp (<code>CR1.MDB</code> to <code>CR5.MDB</code>).
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+If EOProcess("qryEOD", "DayEnd") = True Then
+...
+--strTargetPath is the backup folder created in step 3
+--\\FS1\KMDS\Backup\2025\08\01
+...
+EOLog "Moving :" & gstrMailDir & "Mail\CR1.MDB to " & strTargetPath
+fso.MoveFile gstrMailDir & "Mail\CR1.MDB", strTargetPath & "CR1" & Format(Now, "yyyy-mm-dd hh-nn-ss") & ".mdb"
+...
+EOLog "Moving :" & gstrMailDir & "Mail\CR5.MDB to " & strTargetPath
+fso.MoveFile gstrMailDir & "Mail\CR5.MDB", strTargetPath & "CR5" & Format(Now, "yyyy-mm-dd hh-nn-ss") & ".mdb"
+    </code></pre>
+    <!-- SQL Code -->
+</li></ul>
+
+<!-- 8. Export Fintech Data -->
 <a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
 <h3 id="ExportFintechData">8. Export Fintech Data ↗️ </h3>
 <ul>
