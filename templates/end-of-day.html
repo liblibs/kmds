@@ -643,15 +643,31 @@ strFinTechLogon <span class="token operator">=</span> strFinTechLogon <span clas
 <li>An MPUT command to upload files matching FT2*.csv from the output directory, with flags for ASCII/binary and archiving.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token comment">'add MPUT command as 4th line of string (note 1 at the end will move put file to archive directory</span>
 strFinTechLogon <span class="token operator">=</span> strFinTechLogon <span class="token operator">&amp;</span> <span class="token string">"MPUT"</span> <span class="token operator">&amp;</span> vbTab <span class="token operator">&amp;</span> strDirName <span class="token operator">&amp;</span> vbTab <span class="token operator">&amp;</span> <span class="token string">"FT2*.csv"</span> <span class="token operator">&amp;</span> vbTab <span class="token operator">&amp;</span> IIf<span class="token punctuation">(</span>gbOLCCFTPAscii<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> vbTab <span class="token operator">&amp;</span> <span class="token number">1</span>
 </code></pre></li>
-<li>Writes this script to <code>k:\mail\FinTech\Out\FinTechPut.txt</code>.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-Set">Set</span> txtstrTemp <span class="token operator">=</span> fsoTemp<span class="token punctuation">.</span>OpenTextFile<span class="token punctuation">(</span>strDirName <span class="token operator">&amp;</span> <span class="token string">"\FinTechPut.txt"</span><span class="token punctuation">,</span> ForWriting<span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> TristateFalse<span class="token punctuation">)</span>
+<li>Writes this script to <code>k:\mail\FinTech\Out\FinTechPut.txt</code>.
+    <pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-Set">Set</span> txtstrTemp <span class="token operator">=</span> fsoTemp<span class="token punctuation">.</span>OpenTextFile<span class="token punctuation">(</span>strDirName <span class="token operator">&amp;</span> <span class="token string">"\FinTechPut.txt"</span><span class="token punctuation">,</span> ForWriting<span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> TristateFalse<span class="token punctuation">)</span>
 txtstrTemp<span class="token punctuation">.</span>WriteLine strFinTechLogon
-</code></pre></li>
+</code></pre>
+
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+FinTechPut.txt
+---------------------------------------------------------------------------------------------
+ftp.fintech.net
+136711
+VuK15Ee3XXX
+MPUT	k:\mail\FinTech\Out	FT2*.csv	0	1
+    </code></pre>
+    <!-- SQL Code -->
+
+</li>
 <li>FTP Upload - calls <code>WaitForExecCmd</code> to run the FTP utility with the script file, triggering the upload.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>WaitForExecCmd <span class="token string">"\\"</span> <span class="token operator">&amp;</span> gstrCashsysInsLoc <span class="token operator">&amp;</span> <span class="token string">"\kmds\kmdsftp.exe "</span> <span class="token operator">&amp;</span> strDirName <span class="token operator">&amp;</span> <span class="token string">"\FinTechPut.txt"</span> <span class="token comment">', vbNormalFocus</span>
 </code></pre></li>
 </ul>
 </li>
 </ul>
 <br>
+
+<!-- 9. Creates Daily Transmit Files -->
 <a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
 <h3 id="DailyTransmit">9. Creates Daily Transmit Files 📂 </h3>
 <ul>
@@ -675,16 +691,42 @@ OLCCCreateDailyTransmitFiles
 </code></pre></li>
 <li>Create two FTP script files:
 <ul>
-<li>Sales files (<code>FTPSales.txt</code>)<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-Set">Set</span> txtstrTemp <span class="token operator">=</span> fsoTemp<span class="token punctuation">.</span>OpenTextFile<span class="token punctuation">(</span><span class="token string">"\\"</span> <span class="token operator">&amp;</span> gstrCashsysInsLoc <span class="token operator">&amp;</span> <span class="token string">"\KMDS\MAIL\OUT\FTPSales.txt"</span><span class="token punctuation">,</span> ForWriting<span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> TristateFalse<span class="token punctuation">)</span>
-strTemp <span class="token operator">=</span> gstrFTPLogon
-strTemp <span class="token operator">=</span> strTemp <span class="token operator">&amp;</span> <span class="token string">"MPUT"</span> <span class="token operator">&amp;</span> vbTab <span class="token operator">&amp;</span> <span class="token string">"\\"</span> <span class="token operator">&amp;</span> gstrCashsysInsLoc <span class="token operator">&amp;</span> <span class="token string">"\KMDS\MAIL\OUT\"</span> <span class="token operator">&amp;</span> vbTab <span class="token operator">&amp;</span> <span class="token string">"Sales*.txt"</span> <span class="token operator">&amp;</span> vbTab <span class="token operator">&amp;</span> IIf<span class="token punctuation">(</span>gbOLCCFTPAscii<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> vbTab <span class="token operator">&amp;</span> <span class="token number">1</span>
-txtstrTemp<span class="token punctuation">.</span>WriteLine strTemp
-</code></pre></li>
-<li>Daily inventory files (<code>FTPDailyInv.txt</code>)<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-Set">Set</span> txtstrTemp <span class="token operator">=</span> fsoTemp<span class="token punctuation">.</span>OpenTextFile<span class="token punctuation">(</span><span class="token string">"\\"</span> <span class="token operator">&amp;</span> gstrCashsysInsLoc <span class="token operator">&amp;</span> <span class="token string">"\KMDS\MAIL\OUT\FTPDailyInv.txt"</span><span class="token punctuation">,</span> ForWriting<span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> TristateFalse<span class="token punctuation">)</span>
-strTemp <span class="token operator">=</span> gstrFTPLogon
-strTemp <span class="token operator">=</span> strTemp <span class="token operator">&amp;</span> <span class="token string">"MPUT"</span> <span class="token operator">&amp;</span> vbTab <span class="token operator">&amp;</span> <span class="token string">"\\"</span> <span class="token operator">&amp;</span> gstrCashsysInsLoc <span class="token operator">&amp;</span> <span class="token string">"\KMDS\MAIL\OUT\"</span> <span class="token operator">&amp;</span> vbTab <span class="token operator">&amp;</span> <span class="token string">"DailyInv*.txt"</span> <span class="token operator">&amp;</span> vbTab <span class="token operator">&amp;</span> IIf<span class="token punctuation">(</span>gbOLCCFTPAscii<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> vbTab <span class="token operator">&amp;</span> <span class="token number">1</span>
-txtstrTemp<span class="token punctuation">.</span>WriteLine strTemp
-</code></pre></li>
+<li>Sales files (<code>FTPSales.txt</code>)
+    <pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-Set">Set</span> txtstrTemp <span class="token operator">=</span> fsoTemp<span class="token punctuation">.</span>OpenTextFile<span class="token punctuation">(</span><span class="token string">"\\"</span> <span class="token operator">&amp;</span> gstrCashsysInsLoc <span class="token operator">&amp;</span> <span class="token string">"\KMDS\MAIL\OUT\FTPSales.txt"</span><span class="token punctuation">,</span> ForWriting<span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> TristateFalse<span class="token punctuation">)</span>
+    strTemp <span class="token operator">=</span> gstrFTPLogon
+    strTemp <span class="token operator">=</span> strTemp <span class="token operator">&amp;</span> <span class="token string">"MPUT"</span> <span class="token operator">&amp;</span> vbTab <span class="token operator">&amp;</span> <span class="token string">"\\"</span> <span class="token operator">&amp;</span> gstrCashsysInsLoc <span class="token operator">&amp;</span> <span class="token string">"\KMDS\MAIL\OUT\"</span> <span class="token operator">&amp;</span> vbTab <span class="token operator">&amp;</span> <span class="token string">"Sales*.txt"</span> <span class="token operator">&amp;</span> vbTab <span class="token operator">&amp;</span> IIf<span class="token punctuation">(</span>gbOLCCFTPAscii<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> vbTab <span class="token operator">&amp;</span> <span class="token number">1</span>
+    txtstrTemp<span class="token punctuation">.</span>WriteLine strTemp
+    </code></pre>
+
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+FTPSales.txt
+---------------------------------------------------------------------------------------------
+ftp.olcc.state.orx.usb
+Agent1264X
+Agent1264
+MPUT	\\FS1\KMDS\MAIL\OUT\	Sales*.txt	0	1
+    </code></pre>
+    <!-- SQL Code -->
+</li>
+<li>Daily inventory files (<code>FTPDailyInv.txt</code>)
+    <pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code><span class="token keyword keyword-Set">Set</span> txtstrTemp <span class="token operator">=</span> fsoTemp<span class="token punctuation">.</span>OpenTextFile<span class="token punctuation">(</span><span class="token string">"\\"</span> <span class="token operator">&amp;</span> gstrCashsysInsLoc <span class="token operator">&amp;</span> <span class="token string">"\KMDS\MAIL\OUT\FTPDailyInv.txt"</span><span class="token punctuation">,</span> ForWriting<span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> TristateFalse<span class="token punctuation">)</span>
+    strTemp <span class="token operator">=</span> gstrFTPLogon
+    strTemp <span class="token operator">=</span> strTemp <span class="token operator">&amp;</span> <span class="token string">"MPUT"</span> <span class="token operator">&amp;</span> vbTab <span class="token operator">&amp;</span> <span class="token string">"\\"</span> <span class="token operator">&amp;</span> gstrCashsysInsLoc <span class="token operator">&amp;</span> <span class="token string">"\KMDS\MAIL\OUT\"</span> <span class="token operator">&amp;</span> vbTab <span class="token operator">&amp;</span> <span class="token string">"DailyInv*.txt"</span> <span class="token operator">&amp;</span> vbTab <span class="token operator">&amp;</span> IIf<span class="token punctuation">(</span>gbOLCCFTPAscii<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> vbTab <span class="token operator">&amp;</span> <span class="token number">1</span>
+    txtstrTemp<span class="token punctuation">.</span>WriteLine strTemp
+    </code></pre>
+
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+FTPDailyInv.txt
+---------------------------------------------------------------------------------------------
+ftp.olcc.state.orx.usb
+Agent1264X
+Agent1264
+MPUT	\\FS1\KMDS\MAIL\OUT\	DailyInv*.txt	0	1
+    </code></pre>
+    <!-- SQL Code -->
+</li>
 <li>Each script contains:
 <ul>
 <li>FTP logon information (<code>gstrFTPLogon</code>)</li>
@@ -713,11 +755,34 @@ modWinSCP<span class="token punctuation">.</span>CreateWinSCPtoKMDSFTPScriptFile
     <span class="token operator">\</span><span class="token operator">\</span>gstrCashsysInsLoc<span class="token operator">\</span>KMDS<span class="token operator">\</span>MAIL<span class="token operator">\</span>KMDSFTP<span class="token operator">\</span><span class="token keyword keyword-OUT">OUT</span><span class="token operator">\</span>Archive
     <span class="token operator">\</span><span class="token operator">\</span>gstrCashsysInsLoc<span class="token operator">\</span>KMDS<span class="token operator">\</span>MAIL<span class="token operator">\</span>KMDSFTP<span class="token operator">\</span><span class="token keyword keyword-OUT">OUT</span><span class="token operator">\</span>Log
 </code></pre></li>
-<li>Create WinSCP script file.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>strTargetFile <span class="token operator">=</span> <span class="token string">"k:\MAIL\KMDSFTP\OUT\WinSCPFTPTransmitKMDS.TXT"</span>
-<span class="token keyword keyword-Set">Set</span> txtstrTemp <span class="token operator">=</span> fsoTemp<span class="token punctuation">.</span>OpenTextFile<span class="token punctuation">(</span>strTargetFile<span class="token punctuation">,</span> ForWriting<span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> TristateFalse<span class="token punctuation">)</span>
-<span class="token keyword keyword-With">With</span> txtstrTemp
-    <span class="token punctuation">.</span>WriteLine <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-</code></pre></li>
+<li>Create WinSCP script file.
+    <pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>strTargetFile <span class="token operator">=</span> <span class="token string">"k:\MAIL\KMDSFTP\OUT\WinSCPFTPTransmitKMDS.TXT"</span>
+    <span class="token keyword keyword-Set">Set</span> txtstrTemp <span class="token operator">=</span> fsoTemp<span class="token punctuation">.</span>OpenTextFile<span class="token punctuation">(</span>strTargetFile<span class="token punctuation">,</span> ForWriting<span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> TristateFalse<span class="token punctuation">)</span>
+    <span class="token keyword keyword-With">With</span> txtstrTemp
+        <span class="token punctuation">.</span>WriteLine <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    </code></pre>
+
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+WinSCPFTPTransmitKMDS.TXT
+---------------------------------------------------------------------------------------------
+open ftp://Agents:Ag3nt%24@ftp.kmds.us/ -rawsettings ProxyPort=0
+lcd K:\Mail\KMDSFTP\OUT
+cd /agent1264/DailyInventory
+put "DailyInventory*"
+cd /agent1264/DailySales
+put "DailySales*"
+cd /agent1264/MonthlyInventory
+put "MonthlyInvent*"
+put "Invent*"
+cd /agent1264/PurchaseOrder
+put "Order*"
+cd /AgentDailySales
+put "ADS*"
+exit
+    </code></pre>
+    <!-- SQL Code -->
+</li>
 <li>Create <code>c:\npos\WinSCPKS.TXT</code> and <code>c:\npos\WinSCPKS.bat</code> to download a file (<code>KMDSSW.txt</code>) from the FTP server for subscription verification.<pre data-role="codeBlock" data-info="vb" class="language-vb vb"><code>strTargetFile <span class="token operator">=</span> <span class="token string">"c:\npos\WinSCPKS.TXT"</span>
 <span class="token keyword keyword-Set">Set</span> txtstrTemp <span class="token operator">=</span> fsoTemp<span class="token punctuation">.</span>OpenTextFile<span class="token punctuation">(</span>strTargetFile<span class="token punctuation">,</span> ForWriting<span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> TristateFalse<span class="token punctuation">)</span>
 <span class="token keyword keyword-With">With</span> txtstrTemp
@@ -947,6 +1012,48 @@ EOLog "Append Lottery Tickets Recon Info Begin"
 SQLPassThru "sp_LotteryScratch" 
 EOLog "Append Lottery Tickets Recon Info End"
         </code></pre>
+        <pre class="sql"><code class="language-sql">
+[dbo].[sp_LotteryScratch]
+---------------------------------------------------------------------------------------------
+ALTER PROCEDURE [dbo].[sp_LotteryScratch]
+/*
+	(
+		@parameter1 datatype = default value,
+		@parameter2 datatype OUTPUT
+	)
+*/
+AS
+	exec sp_LotteryScratch_Step_1_AppendNew
+	exec sp_LotteryScratch_Step_2_UpdateAmountSold
+
+	/* SET NOCOUNT ON */
+	RETURN 
+        </code></pre>
+        <pre class="sql"><code class="language-sql">
+[dbo].[sp_LotteryScratch_Step_1_AppendNew]
+---------------------------------------------------------------------------------------------
+ALTER PROCEDURE [dbo].[sp_LotteryScratch_Step_1_AppendNew]
+AS 
+INSERT INTO dbo.LotteryScratchRecon (
+    BusinessDate, GameNumber, ItemID, BeginMeter, EndMeter
+)
+SELECT 
+    dbo.vw_LotteryScratchAppendTemplate.BusinessDate, dbo.vw_LotteryScratchAppendTemplate.GameNumber, 
+    dbo.vw_LotteryScratchAppendTemplate.ItemID, dbo.vw_LotteryScratchAppendTemplate.BeginMeter, 
+    dbo.vw_LotteryScratchAppendTemplate.BeginMeter AS EndMeter
+FROM dbo.vw_LotteryScratchAppendTemplate 
+LEFT OUTER JOIN dbo.LotteryScratchRecon ON dbo.vw_LotteryScratchAppendTemplate.GameNumber = dbo.LotteryScratchRecon.GameNumber 
+    AND dbo.vw_LotteryScratchAppendTemplate.BusinessDate = dbo.LotteryScratchRecon.BusinessDate
+WHERE dbo.LotteryScratchRecon.BusinessDate IS NULL
+        </code></pre>
+        <pre class="sql"><code class="language-sql">
+[dbo].[sp_LotteryScratch_Step_2_UpdateAmountSold]
+---------------------------------------------------------------------------------------------
+ALTER PROCEDURE [dbo].[sp_LotteryScratch_Step_2_UpdateAmountSold]
+AS 
+UPDATE dbo.vw_LotteryScratch_UpdateAmountSold
+SET AmountSold = RegisterAmountSold
+        </code></pre>
         <!-- SQL Code -->
     </div>
 
@@ -954,6 +1061,9 @@ EOLog "Append Lottery Tickets Recon Info End"
     <div id="reindex-tables">
         <a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
         <h3>14. Reindex Tables 📇</h3>
+        <ul>
+        <li><code>ReindexTables()</code> function executes a series of SQL Server commands to reindex several database tables.
+            Reindexing helps to improve query performance by reorganizing the data and reducing fragmentation.</li>
         <!-- SQL Code -->
         <pre class="sql"><code class="language-sql">
 EOLog "Reindex Tables Begin"
@@ -961,12 +1071,28 @@ ReindexTables
 EOLog "Reindex Tables End"
         </code></pre>
         <!-- SQL Code -->
+         <li><code>SQLPassThru</code> uses ActiveX Data Objects (ADO) to establish a connection to a SQL Server database and execute a command passed to it as a string argument. <br>
+            <code>DBCC DBREINDEX</code> is a SQL Server command used to rebuild indexes for a specified table. 
+        </li>
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+modEOD.ReindexTables
+---------------------------------------------------------------------------------------------
+SQLPassThru "dbcc DBREINDEX  ('ClubOrderGuides','',0)"
+SQLPassThru "dbcc DBREINDEX  ('PurchaseOrderLine','',0)"
+SQLPassThru "dbcc DBREINDEX  ('OrderLine','',0)"
+SQLPassThru "dbcc DBREINDEX  ('Item','',0)"
+SQLPassThru "dbcc DBREINDEX  ('UPCItem','',0)"
+SQLPassThru "dbcc DBREINDEX  ('Involine','',0)"
+    </code></pre>
+    <!-- SQL Code -->
+        </ul>
     </div>
 
-    <!-- 15. Updates Item Movement --> 
+    <!-- 15. Updates Item Movement and Item Cost--> 
     <div id="updates-item-movement">
         <a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
-        <h3>15. Updates Item Movement 🚇</h3>
+        <h3>15. Updates Item Movement and Item Cost 🚇</h3>
         <!-- SQL Code -->
         <pre class="sql"><code class="language-sql">
 EOLog "Updating ItemMovement"
@@ -1014,18 +1140,38 @@ Else
 End If
         </code></pre>
         <!-- SQL Code -->
+         <ul>
+            <li><code>modOLCTransmit.OLCCDailyTransmit</code>
+                <ul>
+                    <li><code>modWinSCP.WinSCPFTPTransmitKMDS</code> function is designed to transfer a set of daily and monthly report files (Sales, Inventory, Orders, etc.) from a local output folder to a remote server. 
+                    Before the transfer, it cleans up old log files. 
+                    After the transfer, it organizes the sent files by moving them into an archive folder, confirming they were processed.</li>
+                    <li><code>CreateWinSCPtoOLASFTPScriptFile ("DayEnd")</code></li>
+    <!-- SQL Code -->
+    <pre class="sql"><code class="language-sql">
+modWinSCP.CreateWinSCPtoOLASFTPScriptFile
+---------------------------------------------------------------------------------------------
+...
+    </code></pre>
+    <!-- SQL Code -->
+                </ul>
+            </li>
+         </ul>
     </div>
 
-    <!-- 18. Additional Backups --> 
+    <!-- 18. SQL Backup --> 
     <div id="additional-backups">
         <a href="#flowchart" style="display:inline-block; padding:5px 10px; text-align:center; text-decoration:none; border-radius:3px; font-size:14px; float:right;">⬆️ Go Back ⬆️</a>
-        <h3>18. Additional Backups 🔁</h3>
+        <h3>18. SQL Backup 🔁</h3>
+        <ul>
+            <li><code>modDumpTable.MailSQLBackup</code> function creates a single SQL backup file and then pushes that file out to all active cash register computers on the network.</li>
         <!-- SQL Code -->
         <pre class="sql"><code class="language-sql">
 EOLog "MailSQLBackup"
 MailSQLBackup
         </code></pre>
         <!-- SQL Code -->
+        </ul>        
     </div>
 
     <!-- 19. Email & Notifications --> 
